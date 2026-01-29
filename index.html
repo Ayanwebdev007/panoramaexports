@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image" href="/panoramalogo.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Montserrat & Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Panorama Exports</title>
+
+    <meta property="og:title" content="Panorama Exports" />
+    <meta property="og:url" content="https://panoramaexports.co.in" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/panoramalogo.jpg" />
+
+    <style>
+      @keyframes dropFromTop {
+        0% {
+          transform: translateY(-100%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes riseFromBottom {
+        0% {
+          transform: translateY(100%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .drop-letter,
+      .rise-letter {
+        display: inline-block;
+        opacity: 0; /* Prevent text from showing before animation */
+      }
+
+      .drop-letter {
+        animation: dropFromTop 0.5s ease forwards;
+      }
+
+      .rise-letter {
+        animation: riseFromBottom 0.5s ease forwards;
+      }
+
+      @keyframes slideInFromLeft {
+        0% {
+          transform: translateX(-100vw) translateY(0) scale(0.8);
+          opacity: 0;
+        }
+        50% {
+          transform: translateX(-10px) translateY(0) scale(1.1);
+          opacity: 0.8;
+        }
+        100% {
+          transform: translateX(0) translateY(0) scale(1);
+          opacity: 1;
+        }
+      }
+    </style>
+    <style>
+      body {
+        font-family: 'Montserrat';
+      }
+    </style>
+    <style>
+      /* Firefox */
+      .thin-scrollbar {
+        scrollbar-width: thin;                    
+        scrollbar-color: #e5e7eb transparent;     
+      }
+
+      /* WebKit (Chrome/Edge/Safari) */
+      .thin-scrollbar::-webkit-scrollbar {
+        width: 4px;                              
+      }
+      .thin-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .thin-scrollbar::-webkit-scrollbar-thumb {
+        background-color: #e5e7eb;               
+        border-radius: 9999px;
+        border: 1.5px solid transparent;          
+        background-clip: content-box;             
+      }
+      .thin-scrollbar:hover::-webkit-scrollbar-thumb {
+        background-color: #d1d5db;              
+        border-width: 2px;             
+      }
+    </style>
+
+
+
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
