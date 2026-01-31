@@ -1,0 +1,33 @@
+AddType application/javascript .mjs
+AddType application/wasm .wasm
+AddType application/pdf .pdf
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # Ensure react-pdf worker files are served with correct MIME type
+  RewriteCond %{REQUEST_URI} pdf\.worker\.(min\.)?js$
+  RewriteRule ^ - [L]
+</IfModule>
+
+# Simple fallback - if file doesn't exist, serve index.html
+# This is more reliable than complex RewriteRules
+<IfModule mod_negotiation.c>
+  Options -MultiViews
+</IfModule>
+
+FallbackResource /index.html
+
+<IfModule mod_headers.c>
+  # CORS headers for PDFs to allow react-pdf to load them
+  <FilesMatch "\.(pdf|PDF)$">
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, OPTIONS"
+    Header set Access-Control-Allow-Headers "Range"
+    Header set Accept-Ranges "bytes"
+  </FilesMatch>
+  
+  <FilesMatch "\.(js|mjs|wasm)$">
+    Header set Cache-Control "max-age=31536000, public, immutable"
+  </FilesMatch>
+</IfModule>

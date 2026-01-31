@@ -6,8 +6,8 @@ import plant1 from "../assets/OurInfrastructure/unit_1.webp";
 import plant2 from "../assets/OurInfrastructure/unit_2.webp";
 import plant3 from "../assets/OurInfrastructure/Unit3.webp";
 import plant4 from "../assets/OurInfrastructure/Unit4.webp";
-import plant5 from "../assets/OurInfrastructure/Unit5.webp";
-import plant6 from "../assets/OurInfrastructure/Unit6.webp";
+import plant5 from "../assets/OurInfrastructure/unit_5.webp";
+import plant6 from "../assets/OurInfrastructure/unit_6.webp";
 
 const GoogleMapUnits = () => {
 
