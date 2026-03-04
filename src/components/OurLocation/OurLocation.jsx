@@ -193,7 +193,7 @@ const OurLocation = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: loc.id * 0.1 }}
-                            className={`flex flex-col items-center p-6 rounded-2xl border transition-all duration-300 flex-1 hover:shadow-lg hover:-translate-y-1 ${activeLocation?.id === loc.id
+                            className={`flex flex-col items-center py-4 px-6 rounded-2xl border transition-all duration-300 flex-1 hover:shadow-lg hover:-translate-y-1 ${activeLocation?.id === loc.id
                                 ? 'bg-[#01276a] border-[#01276a] text-white shadow-xl scale-105 z-10'
                                 : 'bg-white border-gray-100 text-gray-900 hover:border-[#b89d6d]'
                                 }`}
@@ -203,12 +203,6 @@ const OurLocation = () => {
                                 <MapPin className="w-6 h-6" />
                             </div>
                             <h3 className="text-lg font-bold mb-1">{loc.name}</h3>
-                            <p className={`text-xs uppercase tracking-wider font-semibold ${activeLocation?.id === loc.id ? 'text-white/80' : 'text-gray-400'
-                                }`}>
-                                {loc.region}
-                            </p>
-
-
                         </motion.button>
                     ))}
                 </div>
