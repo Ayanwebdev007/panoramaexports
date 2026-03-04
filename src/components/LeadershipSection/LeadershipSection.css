@@ -1,0 +1,175 @@
+.leadership-outer-container {
+    width: 100%;
+    background-color: #fff;
+    padding-top: 80px;
+}
+
+.leadership-grid-bg {
+    background-color: #01276a;
+    background-image:
+        radial-gradient(at 0% 0%, #003399 0, transparent 50%),
+        radial-gradient(at 50% 0%, #01276a 0, transparent 50%),
+        radial-gradient(at 100% 0%, #001a4d 0, transparent 50%),
+        radial-gradient(at 0% 50%, #01276a 0, transparent 50%),
+        radial-gradient(at 50% 50%, #001233 0, transparent 50%),
+        radial-gradient(at 100% 50%, #01276a 0, transparent 50%),
+        radial-gradient(at 0% 100%, #001a4d 0, transparent 50%),
+        radial-gradient(at 50% 100%, #01276a 0, transparent 50%),
+        radial-gradient(at 100% 100%, #003399 0, transparent 50%);
+    background-size: 200% 200%;
+    animation: meshGradientLeadership 20s ease infinite;
+    position: relative;
+}
+
+@keyframes meshGradientLeadership {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    25% {
+        background-position: 100% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    75% {
+        background-position: 0% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.leadership-grid-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.12) 0px, rgba(255, 255, 255, 0.12) 1px, transparent 1px, transparent 4px),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.12) 0px, rgba(255, 255, 255, 0.12) 1px, transparent 1px, transparent 4px),
+        repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.08) 0px, rgba(0, 0, 0, 0.08) 1px, transparent 1px, transparent 12px);
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.leadership-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Glassmorphism Card Style */
+.leadership-glass-card {
+    flex: 0 0 300px;
+    max-width: 320px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 40px 20px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.leadership-glass-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+    transition: 0.5s;
+}
+
+.leadership-glass-card:hover::after {
+    left: 100%;
+}
+
+.leadership-glass-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.glass-card-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+}
+
+.leader-circle-wrapper {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+}
+
+.leadership-glass-card:hover .leader-circle-wrapper {
+    border-color: #ffcc00;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 204, 0, 0.3);
+}
+
+.leader-circle-image-bg {
+    filter: grayscale(100%);
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.leadership-glass-card:hover .leader-circle-image-bg {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+.leader-details {
+    text-align: center;
+}
+
+.leader-name {
+    font-family: 'Outfit', sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.leader-role {
+    font-family: 'Outfit', sans-serif;
+    color: #ffcc00;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .leadership-glass-card {
+        flex: 0 0 280px;
+        padding: 30px 15px;
+    }
+
+    .leader-circle-wrapper {
+        width: 140px;
+        height: 140px;
+    }
+
+    .leader-name {
+        font-size: 18px;
+    }
+}

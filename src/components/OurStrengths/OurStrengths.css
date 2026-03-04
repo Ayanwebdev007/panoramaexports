@@ -1,0 +1,181 @@
+:root {
+    --panorama-blue: #01276a;
+    /* The exact "Manufacturing Units" blue */
+    --deep-navy: #001233;
+    /* Deep shadow navy */
+    --midnight-blue: #001a4d;
+    /* Midnight shade */
+    --cobalt-deep: #003399;
+    /* Stronger blue accent */
+    --accent-gold: #ffd700;
+    /* Bright Gold */
+    --text-white: #ffffff;
+}
+
+.key-highlights {
+    padding: 100px 20px;
+    background-color: var(--panorama-blue);
+    background-image:
+        radial-gradient(at 0% 0%, var(--cobalt-deep) 0, transparent 50%),
+        radial-gradient(at 50% 0%, var(--panorama-blue) 0, transparent 50%),
+        radial-gradient(at 100% 0%, var(--midnight-blue) 0, transparent 50%),
+        radial-gradient(at 0% 50%, var(--panorama-blue) 0, transparent 50%),
+        radial-gradient(at 50% 50%, var(--deep-navy) 0, transparent 50%),
+        radial-gradient(at 100% 50%, var(--panorama-blue) 0, transparent 50%),
+        radial-gradient(at 0% 100%, var(--midnight-blue) 0, transparent 50%),
+        radial-gradient(at 50% 100%, var(--panorama-blue) 0, transparent 50%),
+        radial-gradient(at 100% 100%, var(--cobalt-deep) 0, transparent 50%);
+    background-size: 200% 200%;
+    animation: meshGradient 20s ease infinite;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+@keyframes meshGradient {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    25% {
+        background-position: 100% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    75% {
+        background-position: 0% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/* Cloth texture effect overlay */
+.key-highlights::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Composite linen weave pattern - boosted visibility */
+    background-image:
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.12) 0px, rgba(255, 255, 255, 0.12) 1px, transparent 1px, transparent 4px),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.12) 0px, rgba(255, 255, 255, 0.12) 1px, transparent 1px, transparent 4px),
+        repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.08) 0px, rgba(0, 0, 0, 0.08) 1px, transparent 1px, transparent 12px);
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.highlights-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.highlights-title {
+    font-size: 52px;
+    color: var(--text-white);
+    margin-bottom: 80px;
+    font-weight: 300;
+    letter-spacing: -1px;
+    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.highlights-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px 0;
+}
+
+/* Base item style */
+.highlight-item {
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    /* Subtle white divider */
+}
+
+/* Row 1: 4 items -> 25% width */
+.highlight-item:nth-child(-n+4) {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+/* Remove border for the 4th item (end of row 1) */
+.highlight-item:nth-child(4) {
+    border-right: none;
+}
+
+.highlight-number {
+    font-size: 42px;
+    font-weight: 800;
+    color: var(--text-white);
+    line-height: 1.2;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.highlight-text {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--accent-gold);
+    line-height: 1.2;
+    white-space: nowrap;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+    .highlights-grid {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .highlight-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+        border-right: none !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 30px;
+    }
+
+    .highlight-item:nth-child(n) {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .highlight-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    .highlights-title {
+        font-size: 36px;
+        margin-bottom: 50px;
+        background: none;
+        -webkit-text-fill-color: var(--text-white);
+    }
+
+    .highlight-number {
+        font-size: 32px;
+    }
+
+    .highlight-text {
+        font-size: 12px;
+        letter-spacing: 1.5px;
+    }
+}

@@ -1,0 +1,213 @@
+.manufacturing-section {
+    position: relative;
+    background-color: #f9fafb;
+    /* Light, clean background */
+    text-align: left;
+    color: #1a1a1a;
+    overflow: hidden;
+    padding: 120px 0 100px 0;
+}
+
+/* Removed mesh gradient keyframes and texture overlay */
+
+.manufacturing-container {
+    width: 90%;
+    max-width: none;
+    /* Let width: 90% take over */
+    margin: 0 auto;
+    padding: 0 8px;
+    /* px-2 */
+    position: relative;
+    z-index: 10;
+}
+
+@media (min-width: 640px) {
+    .manufacturing-container {
+        padding: 0 24px;
+        /* sm:px-6 */
+    }
+}
+
+@media (min-width: 768px) {
+    .manufacturing-container {
+        padding: 0 40px;
+        /* md:px-10 */
+    }
+}
+
+@media (min-width: 1024px) {
+    .manufacturing-container {
+        padding: 0 80px;
+        /* lg:px-20 */
+    }
+}
+
+.mfg-header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 60px;
+}
+
+.mfg-title {
+    font-size: 48px;
+    font-weight: 300;
+    color: #01276a;
+    /* Site's Primary Navy */
+    line-height: 1.1;
+    margin-bottom: 8px;
+    /* Reduced gap */
+    font-family: 'Outfit', sans-serif;
+}
+
+.mfg-title-accent {
+    color: #01276a;
+}
+
+/* Removed .mfg-separator */
+
+.mfg-subtitle {
+    font-size: 20px;
+    font-weight: 500;
+    color: #1f2937;
+    letter-spacing: 0.02em;
+    margin-bottom: 20px;
+}
+
+/* Removed .mfg-description */
+
+.mfg-gallery {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    width: 98%;
+    max-width: 1600px;
+    margin: 0 auto;
+    height: 600px;
+    gap: 0;
+    overflow: hidden;
+    flex-direction: column;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 768px) {
+    .mfg-gallery {
+        flex-direction: row;
+    }
+}
+
+.mfg-unit-item {
+    position: relative;
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    overflow: hidden;
+    transition: flex 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: bottom;
+    /* Performance optimizations */
+    will-change: flex;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.mfg-unit-item:hover {
+    flex: 3.5;
+}
+
+.mfg-overlay-base {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(1, 39, 106, 0.4);
+    /* Panorama Blue Tint */
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1;
+}
+
+.mfg-unit-item:hover .mfg-overlay-base {
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Neutral dark on hover */
+}
+
+.mfg-overlay-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 40%, transparent 100%);
+    opacity: 0.8;
+    transition: opacity 1.2s;
+}
+
+.mfg-unit-content {
+    position: absolute;
+    bottom: 40px;
+    left: 15px;
+    right: 15px;
+    z-index: 10;
+    text-align: center;
+    pointer-events: none;
+}
+
+@media (min-width: 768px) {
+    .mfg-unit-content {
+        left: 30px;
+        right: 30px;
+        text-align: left;
+    }
+}
+
+.mfg-unit-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+    white-space: nowrap;
+}
+
+.mfg-unit-location {
+    font-size: 13px;
+    color: #f3f4f6;
+    /* Brighter white for better visibility */
+    margin-bottom: 10px;
+    /* Reduced from 20px */
+    line-height: 1.5;
+    max-width: 250px;
+    min-height: 54px;
+    /* Reduced from 60px - fits 3 lines of 1.5 line-height */
+    display: flex;
+    align-items: center;
+    /* Center text vertically within the fixed height */
+    opacity: 0.9;
+    /* Slightly transparent by default */
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+    transition: all 0.5s ease;
+}
+
+@media (min-width: 768px) {
+    .mfg-unit-location {
+        align-items: flex-start;
+        /* Align to top for desktop row view */
+    }
+}
+
+.mfg-unit-item:hover .mfg-unit-location {
+    opacity: 1;
+}
+
+.mfg-unit-line {
+    height: 2px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.6);
+    transition: all 0.5s ease;
+    border-radius: 9999px;
+}
+
+.mfg-unit-item:hover .mfg-unit-line {
+    width: 60px;
+    background-color: #01276a;
+    /* Navy hover line */
+}

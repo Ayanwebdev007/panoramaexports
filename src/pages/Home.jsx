@@ -13,8 +13,12 @@ import LiveMap from "../components/LiveMap";
 import MediaScrollSection from "../components/MediaScrollSection";
 import FlipCard from "../components/flipCard/FlipCard";
 import Certifications from "../components/Certifications";
-
+import OurStrengths from "../components/OurStrengths/OurStrengths";
+import ManufacturingExcellence from "../components/ManufacturingExcellence/ManufacturingExcellence";
+import LeadershipSection from "../components/LeadershipSection/LeadershipSection";
 import GoogleMapUnits from "../components/GoogleMapUnits";
+import OurLocation from "../components/OurLocation/OurLocation";
+
 import HumanTouch1 from "../assets/Community/csr.webp";
 import HumanTouch2 from "../assets/Community/csr2.webp";
 
@@ -273,17 +277,17 @@ export default function Home() {
 
             <div className="bg-white sm:pt-6 pt-2">
                 {/* Global presence */}
-                <div className="md:py-8 py-2 md:mt-6 mt-2 text-[#01276a] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">
+                {/* <div className="md:py-8 py-2 md:mt-6 mt-2 text-[#01276a] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">
                     <div className="flex items-center justify-center 2xl:px-5 gap-6">
                         <div className="text-2xl sm:text-3xl md:text-5xl font-regular flex flex-wrap gap-4">
                             <p className="font-bold">Global</p> Presence
                         </div>
                     </div>
-                </div>
+                </div> */}
                 {/* Brands logo section */}
-                <div className="w-full md:mb-10 mb-5">
+                {/* <div className="w-full md:mb-10 mb-5">
                     <div className="overflow-hidden w-full py-6 bg-white space-y-6">
-                        {/* Row 1 */}
+                        Row 1
                         <div className="flex w-max animate-marquee gap-4">
                             {[...brands, ...brands].map((brand, idx) => (
                                 <div
@@ -303,7 +307,7 @@ export default function Home() {
                             ))}
                         </div>
 
-                        {/* Row 2 */}
+                        Row 2
                         <div className="flex w-max animate-marquee-reverse gap-4">
                             {[...brands, ...brands].map((brand, idx) => (
                                 <div
@@ -323,7 +327,7 @@ export default function Home() {
                             ))}
                         </div>
 
-                        {/* Tailwind custom animations */}
+                        Tailwind custom animations
                         <style>
                             {`
                             @keyframes marquee {
@@ -351,8 +355,7 @@ export default function Home() {
                             `}
                         </style>
                     </div>
-                </div>
-                {/* Crafting Tomorrow Content */}
+                </div> */}                {/* Crafting Tomorrow Content */}
                 <div
                     className="relative bg-[#182123] text-white flex flex-col items-center justify-center overflow-hidden w-full"
                     style={{ aspectRatio: "16 / 9" }}
@@ -386,12 +389,18 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* Global Map section */}
-                <LazyRender height="500px" rootMargin="2000px">
-                    <GlobalMap />
-                </LazyRender>
+                <OurStrengths />
+                <ManufacturingExcellence />
+                <LeadershipSection />
 
-                {/* Integrated Units section */}
+
+                {/* Global Map section */}
+                {/* <LazyRender height="500px" rootMargin="2000px">
+                    <GlobalMap />
+                </LazyRender> */}
+
+                {/* Commenting out old manufacturing units section as requested */}
+                {/* 
                 <div className="md:py-8 py-6 sm:mt-6 text-[#01276a] w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">
                     <div className="flex flex-col items-start justify-center">
                         <div className="text-2xl sm:text-3xl md:text-5xl font-regular flex flex-wrap gap-4">
@@ -406,38 +415,40 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* Google Map section */}
                 <div className="">
                     <LazyRender height="400px" rootMargin="2000px">
                         <GoogleMapUnits />
                     </LazyRender>
                 </div>
+                */}
 
                 {/* People section */}
-                <div className="sm:py-8 text-[#01276a] w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md mt-6">
-                    <div className="sm:flex items-center justify-between">
+                <div className="sm:pt-8 sm:pb-0 text-[#01276a] w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md mt-6">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6">
                         <div className="text-2xl sm:text-3xl md:text-5xl font-regular">
                             People
-                            <div className="text-sm md:text-lg sm:text-sm text-[12px] sm:mt-3 mt-2 sm:mb-14 text-gray-600 ml-1">
+                            <div className="text-sm md:text-lg sm:text-sm text-[12px] sm:mt-3 mt-2 text-gray-600 ml-1">
                                 The soul of Panorama is its people
                             </div>
                         </div>
-                        <div className="w-[50%] sm:mx-4">
-                            <p className="2xl:text-xl lg:text-lg text-sm text-gray-600 hidden sm:block">
-                                5,000+ individuals, 40% women, all united by
-                                passion, purpose, and creativity. We foster
-                                safe, inclusive spaces, invest in
-                                skill-building, and champion equal
-                                opportunity—growing together, every step of the
-                                way.
-                            </p>
+                        <div className="flex items-center justify-end">
                             <Link to="/peoples">
-                                <button className="sm:my-4 my-2 group inline-flex items-center hover:text-red-600 font-semibold md:text-lg sm:text-sm text-[12px]">
+                                <button className="my-4 group inline-flex items-center hover:text-red-600 font-semibold md:text-lg sm:text-sm text-[12px]">
                                     Visit People
                                     <IoEnterOutline className="h-6 w-6 mx-2 group-hover:translate-x-1 transition-transform duration-300" />
                                 </button>
                             </Link>
                         </div>
+                    </div>
+                    <div className="w-full">
+                        <p className="2xl:text-xl lg:text-lg text-sm text-gray-600">
+                            5,000+ individuals, 40% women, all united by
+                            passion, purpose, and creativity. We foster
+                            safe, inclusive spaces, invest in
+                            skill-building, and champion equal
+                            opportunity—growing together, every step of the
+                            way.
+                        </p>
                     </div>
                 </div>
                 <LazyRender height="400px" rootMargin="2000px">
@@ -445,7 +456,7 @@ export default function Home() {
                 </LazyRender>
 
                 {/* Certifications section */}
-                <div className="pt-4 pb-0 text-[#01276a] md:mt-6 mt-1 w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">
+                <div className="pt-16 pb-0 text-[#01276a] mt-12 w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">
                     <div className="flex items-center justify-start">
                         <div className="text-2xl sm:text-3xl md:text-5xl font-regular">
                             Certifications
@@ -456,9 +467,8 @@ export default function Home() {
                     </div>
                 </div>
                 <Certifications />
-
                 {/* Community section */}
-                <div className="pb-2 pt-0 text-[#01276a] mt-0 w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">
+                <div className="pb-0 pt-0 text-[#01276a] mt-[-160px] w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md bg-white">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between">
                         <div className="text-2xl sm:text-3xl md:text-5xl font-regular">
                             Human Touch
@@ -473,7 +483,7 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="xl:pt-4 lg:pt-2 md:pt-1 sm:pt-1 pt-1 bg-[#fcfbf7]">
+                <div className="xl:pt-4 lg:pt-2 md:pt-1 sm:pt-1 pt-1 bg-white">
                     <div className="w-[90%] mx-auto px-6 md:px-10 lg:px-20 mb-1">
                         <img
                             src={HumanTouch2}
@@ -496,6 +506,7 @@ export default function Home() {
                         </p>
                     </div>
                 </div>
+                <OurLocation />
             </div>
         </div>
     );

@@ -25,12 +25,12 @@ const CertificateSlider = () => {
 
 
     return (
-        <div className="md:pt-6 md:px-6 md:pb-0 w-[90%] mx-auto md:px-10 lg:px-20">
+        <div className="pt-0 px-6 pb-0 w-[90%] mx-auto md:px-10 lg:px-20">
             <div className="">
                 <img
                     src={AllCertificates}
                     alt="certificates"
-                    className="w-full object-contain block"
+                    className="w-full object-contain block m-0 p-0"
                 />
             </div>
         </div>
