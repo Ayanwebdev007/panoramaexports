@@ -287,7 +287,7 @@ export default function Home() {
                 {/* Brands logo section */}
                 <div className="w-full md:mb-10 mb-5">
                     <div className="overflow-hidden w-full py-6 bg-white space-y-6">
-                        {/* Row 1 */}
+                        Row 1
                         <div className="flex w-max animate-marquee gap-4">
                             {[...brands, ...brands].map((brand, idx) => (
                                 <div
@@ -307,7 +307,7 @@ export default function Home() {
                             ))}
                         </div>
 
-                        {/* Row 2 */}
+                        Row 2
                         <div className="flex w-max animate-marquee-reverse gap-4">
                             {[...brands, ...brands].map((brand, idx) => (
                                 <div
@@ -327,7 +327,7 @@ export default function Home() {
                             ))}
                         </div>
 
-                        {/* Tailwind custom animations */}
+                        Tailwind custom animations
                         <style>
                             {`
                             @keyframes marquee {
@@ -395,9 +395,9 @@ export default function Home() {
 
 
                 {/* Global Map section */}
-                <LazyRender height="500px" rootMargin="2000px">
+                {/* <LazyRender height="500px" rootMargin="2000px">
                     <GlobalMap />
-                </LazyRender>
+                </LazyRender> */}
 
                 {/* Commenting out old manufacturing units section as requested */}
                 {/* 
