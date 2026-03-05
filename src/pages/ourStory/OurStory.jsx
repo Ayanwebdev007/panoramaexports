@@ -152,20 +152,27 @@ export default function OurStory() {
                     }}
                 ></div>
                 <div className="relative z-10 w-[90%] mx-auto">
-                    <motion.p
-                        className="2xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-blue-900 text-justify sm:max-w-[85%] w-full mx-auto leading-relaxed font-light tracking-wide font-outfit"
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between sm:mb-6 mb-3 text-[#01276a] sm:max-w-[85%] w-full mx-auto">
+                        <div className="text-xl sm:text-2xl md:text-4xl font-light font-outfit">
+                            Welcome to Panorama Exports Pvt. Ltd.
+                        </div>
+                    </div>
+                    <motion.div
+                        className="2xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-gray-600 text-justify sm:max-w-[85%] w-full mx-auto leading-relaxed font-light tracking-wide font-outfit"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: false, amount: 0.3 }}
                         transition={{ duration: 1.2, ease: "easeOut" }}
                     >
-                        Since 1973, Panorama Exports has transformed fabrics
-                        into fashion blending Indian craftsmanship with advanced
-                        manufacturing. Today, our garments travel from India to
-                        global wardrobes, each piece echoing artistry,
-                        innovation, and timeless tradition. More than fashion -
-                        it's handcrafted legacy.
-                    </motion.p>
+                        A destination where innovation, dedication, and artistry
+                        converge to craft apparel for a global audience.
+                        Here, design thinking, precision engineering, and human skill
+                        collaborate to transform fabric into timeless fashion.
+                        At Panorama, our philosophy extends far beyond production — we
+                        cultivate opportunity, encourage responsible operations, and
+                        continuously explore forward-thinking methods that shape a
+                        progressive future for the textile and garment industry.
+                    </motion.div>
                 </div>
             </div>
             {/* Founder's Message Sections */}
@@ -221,15 +228,9 @@ export default function OurStory() {
 
 
                     {/* Heading */}
-                    <div className="w-full pt-3 sm:pt-5 pb-4 relative z-20 overflow-hidden">
+                    <div className="w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 pt-3 sm:pt-10 pb-4 relative z-20 overflow-hidden flex flex-col sm:flex-row items-center justify-center">
                         <motion.h2
-                            className="w-full text-center font-semibold font-outfit uppercase m-0 leading-none"
-                            style={{
-                                fontSize: "8.5vw",
-                                letterSpacing: "0.05em",
-                                margin: 0,
-                                color: "rgba(255, 255, 255, 0.35)",
-                            }}
+                            className="w-full text-center font-semibold uppercase tracking-wider font-outfit m-0 text-white text-xl sm:text-2xl md:text-3xl"
                             initial={{ y: "100%" }}
                             whileInView={{ y: 0 }}
                             viewport={{ once: false, amount: 0.1 }}

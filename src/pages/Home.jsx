@@ -406,10 +406,9 @@ export default function Home() {
                         <div className="text-2xl sm:text-3xl md:text-5xl font-regular flex flex-wrap gap-4">
                             <p className="font-bold">Manufacturing</p> Units
                         </div>
-                        <div className="sm:w-[50%] md:mt-5 mt-2">
-                            <p className="2xl:text-xl lg:text-lg sm:text-sm text-[12px] text-gray-600">
-                                Seamless cut-to-pack capabilities for
-                                quality and speed.
+                        <div className="md:mt-5 mt-2">
+                            <p className="2xl:text-xl lg:text-lg sm:text-sm text-[12px] text-gray-600 max-w-2xl leading-relaxed">
+                                Integrated cut-to-pack manufacturing that delivers precision, efficiency, and uncompromising quality.
                             </p>
                         </div>
                     </div>

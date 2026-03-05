@@ -411,7 +411,7 @@ export default function VisionMission() {
                                 </div>
                                 <div className="mt-2">
                                     <span className="inline-block text-[#01276a] text-[10px] uppercase font-bold tracking-widest border-b border-[#01276a]/20 pb-1 group-hover:text-white group-hover:border-white/40 transition-all duration-500 font-outfit">
-                                        Discover Message
+                                        Read Message
                                     </span>
                                 </div>
                             </div>
@@ -449,10 +449,6 @@ export default function VisionMission() {
                             </div>
 
                             <div className="w-full lg:w-[55%] p-10 lg:p-16 flex flex-col justify-center bg-white relative">
-                                {/* Subtle Background Elements */}
-                                <div className="absolute top-0 right-0 p-10 opacity-[0.03] pointer-events-none">
-                                    <h1 className="text-9xl font-black text-[#01276a] select-none font-outfit">MSG</h1>
-                                </div>
 
                                 <motion.div
                                     initial={{ opacity: 0, x: 20 }}
@@ -466,12 +462,8 @@ export default function VisionMission() {
                                     </div>
 
                                     <div className="relative">
-                                        <span className="absolute -top-10 -left-6 text-7xl text-[#01276a]/10 font-serif">“</span>
                                         <div className="text-gray-600 leading-[1.8] text-xl font-light italic text-justify font-outfit">
                                             {selectedLeader.message}
-                                        </div>
-                                        <div className="flex justify-end mt-6">
-                                            <span className="text-7xl text-[#01276a]/10 font-serif leading-none">”</span>
                                         </div>
                                     </div>
 

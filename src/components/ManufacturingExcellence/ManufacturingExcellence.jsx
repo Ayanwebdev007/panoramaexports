@@ -59,8 +59,8 @@ const ManufacturingExcellence = () => {
                             Manufacturing <span className="mfg-title-accent">Units</span>
                         </h2>
                     </div>
-                    <h3 className="mfg-subtitle">
-                        Seamless cut-to-pack capabilities for quality and speed.
+                    <h3 className="mfg-subtitle max-w-2xl leading-relaxed">
+                        Integrated cut-to-pack manufacturing that delivers precision, efficiency, and uncompromising quality.
                     </h3>
                 </div>
             </div>
