@@ -18,7 +18,7 @@ const CoreValues = () => {
             title: "Crafted with Excellence",
             description:
                 "A blend of work & play-allowing passion & precision to coexist -where artisan skill meets advanced technology. Every piece is made with unmatched care, pride, and creativity. ",
-            img:Img1,
+            img: Img1,
         },
         {
             title: "One Team, One Dream",
@@ -49,7 +49,7 @@ const CoreValues = () => {
     return (
         <>
             <div className="md:py-10 sm:py-5 py-2">
-                <h2 className="w-[90%] mx-auto py-5 px-6 lg:px-20 text-3xl md:pb-16 pb-5 sm:text-4xl md:text-5xl text-blue-950 tracking-widest text-center font-semibold">
+                <h2 className="w-[90%] mx-auto py-5 px-6 lg:px-20 text-3xl md:pb-16 pb-5 sm:text-4xl md:text-5xl text-blue-950 tracking-widest text-center font-semibold font-outfit">
                     CORE VALUE
                 </h2>
 
@@ -69,15 +69,15 @@ const CoreValues = () => {
                             <div className="2xl:border-[20px] xl:border-[16px] lg:border-[12px] md:border-[15px] border-[10px] border-white h-full w-full">
                                 <div
                                     className={``}
-                                    
+
                                 >
                                     <img src={value.img} alt="" className="image-contain" />
                                 </div>
                                 <div className="p-4">
-                                    <h3 className="2xl:h-16 xl:h-14 lg:h-12 md:h-12 md:h-10 h-7 2xl:text-xl xl:text-lg lg:text-sm md:text-md md:text-md text-sm text-blue-900 font-semibold mb-2">
+                                    <h3 className="2xl:h-16 xl:h-14 lg:h-12 md:h-12 md:h-10 h-7 2xl:text-xl xl:text-lg lg:text-sm md:text-md md:text-md text-sm text-blue-900 font-semibold mb-2 font-outfit">
                                         {value.title}
                                     </h3>
-                                    <p className="2xl:text-sm xl:text-[12px] lg:text-[10px] text-[12px] text-gray-600">
+                                    <p className="2xl:text-sm xl:text-[12px] lg:text-[10px] text-[12px] text-gray-600 font-outfit">
                                         {value.description}
                                     </p>
                                 </div>

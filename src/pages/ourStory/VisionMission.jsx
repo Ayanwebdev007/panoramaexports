@@ -33,6 +33,7 @@ const directors = [
         role: "Director",
         bg: RajanPng,
         img: RajanPng,
+        objectPosition: "80% center", // Fine-tuned to prevent hand cutting without over-shifting
         message: `Innovation is our language-spoken through
               designs that inspire and lead globally. We
               don't just follow trends-we anticipate them,
@@ -46,6 +47,8 @@ const directors = [
         role: "Director",
         bg: NavinPng,
         img: NavinPng,
+        objectPosition: "10% center", // Fine on card
+        modalPosition: "15% center",  // Fine-tuned to shift him slightly more to the right in the popup
         message: `Our identity is crafted through integrity and defined by an unwavering commitment to brilliance & values that shape every garment, every partnership, and every milestone on our global journey.`,
     },
 ];
@@ -57,6 +60,8 @@ const executiveDirectors = [
         role: "Executive Director",
         bg: ShivaanPng,
         img: ShivaanPng,
+        objectPosition: "80% center",
+        modalPosition: "80% center",
         message: `Each thread tells a story of trust, transformation, and thoughtful design. We’re weaving a future of equity, innovation, and sustainability. Excellence isn’t just an outcome-it’s our mindset, culture, and commitment.`,
     },
     {
@@ -65,6 +70,8 @@ const executiveDirectors = [
         role: "Executive Director",
         bg: SidharthPng,
         img: SidharthPng,
+        objectPosition: "20% center",
+        modalPosition: "20% center",
         message: `Panorama is a harmony of team strength and individual mastery-each creation rooted in emotion, unity, and excellence. Our legacy is built not just in factories, but in the future, we help uplift.`,
     },
 ];
@@ -79,6 +86,7 @@ export default function VisionMission() {
     const swiperRef = useRef(null);
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
     const [currentSlideIndex1, setCurrentSlideIndex1] = useState(0);
+    const [selectedLeader, setSelectedLeader] = useState(null);
     const location = useLocation();
     const { ref, inView } = useInView({
         triggerOnce: false,
@@ -94,7 +102,7 @@ export default function VisionMission() {
     const { ref: leadershipRef, inView: leadershipInView } = useInView({
         threshold: 0.3, // same for leadership for breadcrums control............
     });
-    
+
     // Determine which breadcrumb is active
     const activeCrumb = visionInView ? "Vision & Values" : corevalueInView ? "Core Values" : leadershipInView ? "Leadership" : null;
 
@@ -144,9 +152,8 @@ export default function VisionMission() {
                 announcement.setAttribute("aria-live", "polite");
                 announcement.setAttribute("aria-atomic", "true");
                 announcement.className = "sr-only";
-                announcement.textContent = `Slide ${newIndex + 1} of ${
-                    directors.length
-                }: PANORAMA ${activeSlide.dynamicText}`;
+                announcement.textContent = `Slide ${newIndex + 1} of ${directors.length
+                    }: PANORAMA ${activeSlide.dynamicText}`;
                 document.body.appendChild(announcement);
 
                 // Clean up announcement after screen reader has time to read it
@@ -194,9 +201,8 @@ export default function VisionMission() {
                 announcement.setAttribute("aria-live", "polite");
                 announcement.setAttribute("aria-atomic", "true");
                 announcement.className = "sr-only";
-                announcement.textContent = `Slide ${newIndex + 1} of ${
-                    executiveDirectors.length
-                }: PANORAMA ${activeSlide.dynamicText}`;
+                announcement.textContent = `Slide ${newIndex + 1} of ${executiveDirectors.length
+                    }: PANORAMA ${activeSlide.dynamicText}`;
                 document.body.appendChild(announcement);
 
                 // Clean up announcement after screen reader has time to read it
@@ -239,10 +245,10 @@ export default function VisionMission() {
                         ease: "easeOut",
                     }}
                 >
-                    <h1 className="text-sm sm:text-lg md:text-xl lg:text-3xl xl:text-4xl font-semibold mb-1 sm:mb-0">
+                    <h1 className="text-sm sm:text-lg md:text-xl lg:text-3xl xl:text-4xl font-semibold mb-1 sm:mb-0 font-outfit">
                         Woven into Every Thread
                     </h1>
-                    <div className="hidden sm:block text-[10px] sm:text-sm md:text-md lg:text-xl xl:text-2xl lg:mt-4 sm:mt-2 mt-1 w-[100%] text-justify font-relaxed">
+                    <div className="hidden sm:block text-[10px] sm:text-sm md:text-md lg:text-xl xl:text-2xl lg:mt-4 sm:mt-2 mt-1 w-[100%] text-justify font-extralight font-outfit">
                         Our vision shapes the future of fashion; our values
                         guide every stitch. We don’t just make clothing-we build
                         trust, innovate with intent, and create with heart.
@@ -260,11 +266,10 @@ export default function VisionMission() {
                         >
                             <Link
                                 to={crumb.path}
-                                className={`hover:underline md:text-sm lg:text-lg sm:my-1 ${
-                                    activeCrumb === crumb.label
-                                        ? "font-semibold text-white"
-                                        : "text-gray-300"
-                                }`}
+                                className={`hover:underline md:text-sm lg:text-lg sm:my-1 font-outfit ${activeCrumb === crumb.label
+                                    ? "font-semibold text-white"
+                                    : "text-gray-300"
+                                    }`}
                             >
                                 {crumb.label}
                             </Link>
@@ -281,7 +286,7 @@ export default function VisionMission() {
                         <div className="flex flex-col sm:flex-row items-end sm:items-center gap-4 md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12">
                             <div className="flex sm:justify-end justify-center items-center md:w-[40%] sm:w-[30%] w-full">
                                 <div className="">
-                                    <h2 className="text-lg sm:text-3xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold text-black">
+                                    <h2 className="text-lg sm:text-3xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold text-black font-outfit">
                                         Our Mission
                                         <br />& Vision
                                     </h2>
@@ -302,10 +307,10 @@ export default function VisionMission() {
                                         <div className="absolute inset-0 bg-green-300 mix-blend-multiply opacity-40"></div>
                                     </div>
                                     <div className="md:mx-8 sm:mx-5 mx-3 md:my-6 my-4">
-                                        <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-md font-bold text-black">
+                                        <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-md font-bold text-black font-outfit uppercase tracking-tight">
                                             Mission
                                         </h3>
-                                        <p className="text-[10px] sm:text-[12px] md:text-sm xl:text-md 2xl:text-lg text-gray-700 2xl:max-w-xl lg:max-w-md max-w-xs md:mt-1 mt-2px">
+                                        <p className="text-[10px] sm:text-[12px] md:text-sm xl:text-md 2xl:text-lg text-gray-700 2xl:max-w-xl lg:max-w-md max-w-xs md:mt-1 mt-2px font-outfit">
                                             To exceed expectations through
                                             innovation, efficiency, and a
                                             people-first culture-redefining
@@ -320,10 +325,10 @@ export default function VisionMission() {
                         <div className="flex items-center justify-between bg-[#f2f2f2] shadow-xl xl:w-[55%] md:w-[60%] sm:w-[70%] w-[90%] sm:mt-8 mt-2 xl:mt-12">
                             <div className="flex items-center justify-end w-full">
                                 <div className="text-end md:mx-8 sm:mx-5 mx-3 md:my-6 my-4">
-                                    <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-md font-bold text-black">
+                                    <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-md font-bold text-black font-outfit uppercase tracking-tight">
                                         Vision
                                     </h3>
-                                    <p className="text-[10px] sm:text-[12px] md:text-sm xl:text-md 2xl:text-lg text-gray-700 2xl:max-w-xl lg:max-w-md max-w-xs md:mt-1 mt-2px">
+                                    <p className="text-[10px] sm:text-[12px] md:text-sm xl:text-md 2xl:text-lg text-gray-700 2xl:max-w-xl lg:max-w-md max-w-xs md:mt-1 mt-2px font-outfit">
                                         To be the world’s most trusted apparel
                                         partner, championing technology,
                                         sustainability, and design excellence.
@@ -350,8 +355,142 @@ export default function VisionMission() {
             >
                 <CoreValues />
             </section>
-            {/* Directors's Message Sections */}
-            <section id="leadership" ref={leadershipRef} className="bg-white">
+            {/* New Leadership Section */}
+            <section id="leadership" ref={leadershipRef} className="bg-[#fcfbf9] py-24">
+                <div className="w-[90%] mx-auto px-4 sm:px-6 md:px-10 lg:px-20 mb-12 text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8 }}
+                    >
+                        <h2 className="text-2xl md:text-4xl font-light text-[#01276a] font-outfit tracking-[0.2em] mb-4 uppercase">
+                            Leadership
+                        </h2>
+                        <div className="w-24 h-0.5 bg-[#01276a] mx-auto opacity-30"></div>
+                    </motion.div>
+                </div>
+
+                <div className="w-[85%] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+                    {[...directors, ...executiveDirectors].map((leader, index) => (
+                        <motion.div
+                            key={leader.name + leader.role}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: index * 0.15 }}
+                            className="flex flex-col bg-white shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] rounded-sm overflow-hidden group cursor-pointer border border-gray-100"
+                            onClick={() => setSelectedLeader(leader)}
+                        >
+                            {/* Card Image Section */}
+                            <div className="aspect-square overflow-hidden relative">
+                                <img
+                                    src={leader.img}
+                                    alt={leader.name}
+                                    className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-110"
+                                    style={{
+                                        objectPosition: leader.objectPosition || "center",
+                                        filter: "grayscale(100%)",
+                                    }}
+                                />
+                                <div className="absolute inset-0 bg-[#01276a]/0 group-hover:bg-[#01276a]/10 transition-colors duration-500"></div>
+
+                                {/* Overlay Reveal */}
+                                <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            </div>
+
+                            {/* Footer Section */}
+                            <div className="p-5 text-center flex flex-col justify-between flex-grow bg-white transition-colors duration-500 group-hover:bg-[#01276a]">
+                                <div className="space-y-1">
+                                    <h3 className="text-[#01276a] font-bold text-xl tracking-tighter transition-colors duration-500 group-hover:text-white font-outfit">
+                                        {leader.name}
+                                    </h3>
+                                    <p className="text-[#dcb65b] text-xs font-semibold tracking-wider transition-colors duration-500 font-outfit">
+                                        {leader.role}
+                                    </p>
+                                </div>
+                                <div className="mt-2">
+                                    <span className="inline-block text-[#01276a] text-[10px] uppercase font-bold tracking-widest border-b border-[#01276a]/20 pb-1 group-hover:text-white group-hover:border-white/40 transition-all duration-500 font-outfit">
+                                        Discover Message
+                                    </span>
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+
+                {/* Enhanced Modal / Popup Implementation */}
+                {selectedLeader && (
+                    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8 bg-[#01276a]/95 backdrop-blur-md" onClick={() => setSelectedLeader(null)}>
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.95 }}
+                            className="bg-white rounded-sm overflow-hidden max-w-5xl w-full flex flex-col lg:flex-row relative shadow-2xl"
+                            onClick={(e) => e.stopPropagation()}
+                        >
+                            <button
+                                className="absolute top-6 right-6 z-20 bg-[#01276a] text-white w-10 h-10 rounded-full flex items-center justify-center transition-transform hover:rotate-90 duration-300 shadow-lg"
+                                onClick={() => setSelectedLeader(null)}
+                            >
+                                <span className="text-xl">✕</span>
+                            </button>
+
+                            <div className="w-full lg:w-[45%] aspect-[4/5] lg:aspect-auto overflow-hidden bg-gray-100">
+                                <motion.img
+                                    initial={{ scale: 1.1 }}
+                                    animate={{ scale: 1 }}
+                                    transition={{ duration: 1.2 }}
+                                    src={selectedLeader.img}
+                                    alt={selectedLeader.name}
+                                    className="w-full h-full object-cover"
+                                    style={{ objectPosition: selectedLeader.modalPosition || selectedLeader.objectPosition || "center" }}
+                                />
+                            </div>
+
+                            <div className="w-full lg:w-[55%] p-10 lg:p-16 flex flex-col justify-center bg-white relative">
+                                {/* Subtle Background Elements */}
+                                <div className="absolute top-0 right-0 p-10 opacity-[0.03] pointer-events-none">
+                                    <h1 className="text-9xl font-black text-[#01276a] select-none font-outfit">MSG</h1>
+                                </div>
+
+                                <motion.div
+                                    initial={{ opacity: 0, x: 20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ delay: 0.2 }}
+                                >
+                                    <h2 className="text-4xl md:text-5xl font-light text-[#01276a] font-outfit tracking-tight">{selectedLeader.name}</h2>
+                                    <div className="flex items-center gap-4 mt-2 mb-10">
+                                        <div className="h-px w-12 bg-[#dcb65b]"></div>
+                                        <p className="text-[#dcb65b] font-semibold tracking-wider text-base font-outfit">{selectedLeader.role}</p>
+                                    </div>
+
+                                    <div className="relative">
+                                        <span className="absolute -top-10 -left-6 text-7xl text-[#01276a]/10 font-serif">“</span>
+                                        <div className="text-gray-600 leading-[1.8] text-xl font-light italic text-justify font-outfit">
+                                            {selectedLeader.message}
+                                        </div>
+                                        <div className="flex justify-end mt-6">
+                                            <span className="text-7xl text-[#01276a]/10 font-serif leading-none">”</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="mt-12 pt-8 border-t border-gray-100 flex items-center justify-between">
+                                        <div className="uppercase tracking-[0.3em] text-[10px] font-bold text-[#01276a]/40 font-outfit">
+                                            Panorama Executive Leadership
+                                        </div>
+                                        <div className="w-12 h-px bg-[#01276a]/20"></div>
+                                    </div>
+                                </motion.div>
+                            </div>
+                        </motion.div>
+                    </div>
+                )}
+            </section>
+
+            {/* Original Leadership sections preserved in comments as requested */}
+            {/* 
+            <section id="leadership-original" ref={leadershipRef} className="bg-white">
                 <div className="w-[90%] mx-auto lg:py-16 md:py-12 sm:py-10 py-5 px-2 sm:px-6 md:px-10 lg:px-20 text-lg sm:text-3xl md:text-4xl lg:text-5xl text-[#01276a] font-semibold">
                     <h3 className="py-3 px-4 font-semibold bg-blue-950 inline-block text-white">
                         DIRECTOR'S MESSAGE
@@ -386,80 +525,26 @@ export default function VisionMission() {
                                 className="w-full bg-contain bg-center"
                                 style={{
                                     backgroundImage: `url(${director.bg})`,
-                                    aspectRatio: "16/6", // image ratio wise height ...................
+                                    aspectRatio: "16/6",
                                 }}
                             >
                                 <div className="bg-transparent w-full h-full flex items-center">
-                                    <div
-                                        className={`sm:w-[50%] w-[60%] ${
-                                            director.id === 2 ? "hidden" : ""
-                                        } sm:py-10 flex items-center`}
-                                    >
-                                        <motion.div
-                                            className="sm:w-[90%] w-[98%] ml-auto flex flex-col items-end justify-center"
-                                            initial={{ opacity: 0 }}
-                                            whileInView={{ opacity: 1 }}
-                                            exit={{ opacity: 0 }}
-                                            transition={{
-                                                duration: 1.5,
-                                                ease: "easeInOut",
-                                            }}
-                                            viewport={{
-                                                once: false,
-                                                amount: 0.3,
-                                            }}
-                                        >
+                                    <div className={`sm:w-[50%] w-[60%] ${director.id === 2 ? "hidden" : ""} sm:py-10 flex items-center`}>
+                                        <motion.div className="sm:w-[90%] w-[98%] ml-auto flex flex-col items-end justify-center">
                                             <div className="2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[9px] text-white sm:text-justify sm:leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
-                                                <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
-                                                    “
-                                                </span>
-                                                {director.message}
-                                                <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
-                                                    ”
-                                                </span>
+                                                “ {director.message} ”
                                             </div>
-                                            <h1 className="text-white w-full text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl sm:text-xl text-sm font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 sm:mt-2 mt-[2px]">
-                                                {director.name}
-                                            </h1>
-                                            <h3 className="text-white w-full text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-[10px] md:font-semibold xl:mt-5 sm:mt-2 mt-[2px]">
-                                                {director.role}
-                                            </h3>
+                                            <h1 className="text-white w-full text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl sm:text-xl text-sm font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 sm:mt-2 mt-[2px]">{director.name}</h1>
+                                            <h3 className="text-white w-full text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-[10px] md:font-semibold xl:mt-5 sm:mt-2 mt-[2px]">{director.role}</h3>
                                         </motion.div>
                                     </div>
-                                    <div
-                                        className={`sm:w-[50%] w-[60%] ml-auto ${
-                                            director.id === 1 ? "hidden" : ""
-                                        } sm:py-10 flex items-center`}
-                                    >
-                                        <motion.div
-                                            className="sm:w-[90%] w-[98%] mr-auto flex flex-col items-start justify-center"
-                                            initial={{ opacity: 0 }}
-                                            whileInView={{ opacity: 1 }}
-                                            exit={{ opacity: 0 }}
-                                            transition={{
-                                                duration: 1.5,
-                                                ease: "easeInOut",
-                                            }}
-                                            viewport={{
-                                                once: false,
-                                                amount: 0.3,
-                                            }}
-                                        >
+                                    <div className={`sm:w-[50%] w-[60%] ml-auto ${director.id === 1 ? "hidden" : ""} sm:py-10 flex items-center`}>
+                                        <motion.div className="sm:w-[90%] w-[98%] mr-auto flex flex-col items-start justify-center">
                                             <div className="2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[9px] text-white sm:text-justify sm:leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
-                                                <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
-                                                    “
-                                                </span>
-                                                {director.message}
-                                                <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
-                                                    ”
-                                                </span>
+                                                “ {director.message} ”
                                             </div>
-                                            <h1 className="text-white w-full sm:text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl sm:text-xl text-sm font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 sm:mt-2 mt-[2px]">
-                                                {director.name}
-                                            </h1>
-                                            <h3 className="text-white w-full sm:text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-[10px] md:font-semibold xl:mt-5 sm:mt-2 mt-[2px]">
-                                                {director.role}
-                                            </h3>
+                                            <h1 className="text-white w-full sm:text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl sm:text-xl text-sm font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 sm:mt-2 mt-[2px]">{director.name}</h1>
+                                            <h3 className="text-white w-full sm:text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-[10px] md:font-semibold xl:mt-5 sm:mt-2 mt-[2px]">{director.role}</h3>
                                         </motion.div>
                                     </div>
                                 </div>
@@ -467,12 +552,9 @@ export default function VisionMission() {
                         </SwiperSlide>
                     ))}
                 </Swiper>
-
-                {/* Custom Pagination Dots */}
-                <div className="swiper-pagination absolute bottom-8 left-1/2 transform -translate-x-1/2 z-40 flex space-x-2"></div>
             </section>
-            {/* Executive Directors's Message Sections */}
-            <section id="director-message" className="bg-white">
+
+            <section id="director-message-original" className="bg-white">
                 <div className="w-[90%] mx-auto lg:py-16 md:py-12 sm:py-10 py-5 px-2 sm:px-6 md:px-10 lg:px-20 text-lg sm:text-3xl md:text-4xl lg:text-5xl text-[#01276a] font-semibold">
                     <h3 className="py-3 px-4 font-semibold bg-blue-950 inline-block text-white">
                         EXECUTIVE DIRECTOR'S MESSAGE
@@ -493,12 +575,6 @@ export default function VisionMission() {
                         waitForTransition: true,
                         enabled: true,
                     }}
-                    pagination={{
-                        clickable: true,
-                        el: ".swiper-pagination",
-                        bulletClass: "swiper-pagination-bullet",
-                        bulletActiveClass: "swiper-pagination-bullet-active",
-                    }}
                     className="h-full overflow-hidden bg-[#5b4e39]"
                 >
                     {executiveDirectors.map((director, i) => (
@@ -507,80 +583,26 @@ export default function VisionMission() {
                                 className="w-full bg-contain bg-center"
                                 style={{
                                     backgroundImage: `url(${director.bg})`,
-                                    aspectRatio: "16/6", // image ratio wise height ...................
+                                    aspectRatio: "16/6",
                                 }}
                             >
                                 <div className="bg-transparent w-full h-full flex items-center">
-                                    <div
-                                        className={`sm:w-[50%] w-[60%] ${
-                                            director.id === 2 ? "hidden" : ""
-                                        } py-10 flex items-center`}
-                                    >
-                                        <motion.div
-                                            className="sm:w-[90%] w-[98%] ml-auto flex flex-col items-end justify-center"
-                                            initial={{ opacity: 0 }}
-                                            whileInView={{ opacity: 1 }}
-                                            exit={{ opacity: 0 }}
-                                            transition={{
-                                                duration: 1.5,
-                                                ease: "easeInOut",
-                                            }}
-                                            viewport={{
-                                                once: false,
-                                                amount: 0.3,
-                                            }}
-                                        >
+                                    <div className={`sm:w-[50%] w-[60%] ${director.id === 2 ? "hidden" : ""} py-10 flex items-center`}>
+                                        <motion.div className="sm:w-[90%] w-[98%] ml-auto flex flex-col items-end justify-center">
                                             <div className="2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[9px] text-white sm:text-justify sm:leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
-                                                <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
-                                                    “
-                                                </span>
-                                                {director.message}
-                                                <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
-                                                    ”
-                                                </span>
+                                                “ {director.message} ”
                                             </div>
-                                            <h1 className="text-white w-full text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl sm:text-xl text-sm font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 sm:mt-2 mt-[2px]">
-                                                {director.name}
-                                            </h1>
-                                            <h3 className="text-white w-full text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-[10px] md:font-semibold xl:mt-5 sm:mt-2 mt-[2px]">
-                                                {director.role}
-                                            </h3>
+                                            <h1 className="text-white w-full text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl sm:text-xl text-sm font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 sm:mt-2 mt-[2px]">{director.name}</h1>
+                                            <h3 className="text-white w-full text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-[10px] md:font-semibold xl:mt-5 sm:mt-2 mt-[2px]">{director.role}</h3>
                                         </motion.div>
                                     </div>
-                                    <div
-                                        className={`sm:w-[50%] w-[60%] ml-auto ${
-                                            director.id === 1 ? "hidden" : ""
-                                        } py-10 flex items-center`}
-                                    >
-                                        <motion.div
-                                            className="sm:w-[90%] w-[98%] mr-auto flex flex-col items-start justify-center"
-                                            initial={{ opacity: 0 }}
-                                            whileInView={{ opacity: 1 }}
-                                            exit={{ opacity: 0 }}
-                                            transition={{
-                                                duration: 1.5,
-                                                ease: "easeInOut",
-                                            }}
-                                            viewport={{
-                                                once: false,
-                                                amount: 0.3,
-                                            }}
-                                        >
+                                    <div className={`sm:w-[50%] w-[60%] ml-auto ${director.id === 1 ? "hidden" : ""} py-10 flex items-center`}>
+                                        <motion.div className="sm:w-[90%] w-[98%] mr-auto flex flex-col items-start justify-center">
                                             <div className="2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[9px] text-white sm:text-justify sm:leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
-                                                <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
-                                                    “
-                                                </span>
-                                                {director.message}
-                                                <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold">
-                                                    ”
-                                                </span>
+                                                “ {director.message} ”
                                             </div>
-                                            <h1 className="text-white w-full sm:text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl sm:text-xl text-sm font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 sm:mt-2 mt-[2px]">
-                                                {director.name}
-                                            </h1>
-                                            <h3 className="text-white w-full sm:text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-[10px] md:font-semibold xl:mt-5 sm:mt-2 mt-[2px]">
-                                                {director.role}
-                                            </h3>
+                                            <h1 className="text-white w-full sm:text-end 2xl:text-7xl xl:text-6xl lg:text-5xl md:text-4xl sm:text-xl text-sm font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 sm:mt-2 mt-[2px]">{director.name}</h1>
+                                            <h3 className="text-white w-full sm:text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-[10px] md:font-semibold xl:mt-5 sm:mt-2 mt-[2px]">{director.role}</h3>
                                         </motion.div>
                                     </div>
                                 </div>
@@ -588,10 +610,8 @@ export default function VisionMission() {
                         </SwiperSlide>
                     ))}
                 </Swiper>
-
-                {/* Custom Pagination Dots */}
-                <div className="swiper-pagination absolute bottom-8 left-1/2 transform -translate-x-1/2 z-40 flex space-x-2"></div>
             </section>
+            */}
         </>
     );
 }

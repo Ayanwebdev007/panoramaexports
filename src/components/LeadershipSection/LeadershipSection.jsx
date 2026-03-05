@@ -61,8 +61,7 @@ const LeadershipSection = () => {
                             Leadership
                         </h2>
                         <p className="text-sm md:text-lg text-gray-600 max-w-2xl leading-relaxed font-normal">
-                            Guided by visionaries who blend tradition with innovation, our leadership team steer Panorama towards
-                            global excellence with a steadfast commitment to quality and purpose.
+                            Visionary leadership that inspires innovation, nurtures talent, and drives Panorama toward new horizons of global excellence.
                         </p>
                     </motion.div>
 

@@ -89,12 +89,12 @@ const Milestones = () => {
         <>
             <div
                 className="hidden lg:block w-full lg:h-[600px] h-[1500px] pt-40 pb-20 2xl:px-20 xl:px-10 px-5 bg-white flex justify-center items-start overflow-x-autoX@ relative"
-                // style={{
-                //     backgroundImage: `url('/world-map-bg.svg')`,
-                //     backgroundRepeat: "no-repeat",
-                //     backgroundPosition: "center",
-                //     backgroundSize: "contain",
-                // }}
+            // style={{
+            //     backgroundImage: `url('/world-map-bg.svg')`,
+            //     backgroundRepeat: "no-repeat",
+            //     backgroundPosition: "center",
+            //     backgroundSize: "contain",
+            // }}
             >
                 <div className="my-10 flex lg:flex-row flex-col items-center gap-0">
                     {milestones.map((m, i) => (
@@ -104,11 +104,9 @@ const Milestones = () => {
                         >
                             {/* Top text */}
                             <div
-                                className={`absolute lg:bottom-14 px-2 pt-2 2xl:w-48 xl:w-40 lg:w-28 xl:h-48 lg:h-56 h-36 xl:text-xs lg:text-[10px] md:text-[12px] text-[8px] text-gray-700 leading-relaxed text-center flex lg:flex-col items-center justify-end lg:border-l-2 border-${
-                                    m.color
-                                } transition-opacity duration-500 ${
-                                    visible[i] ? "opacity-100" : "opacity-0"
-                                }`}
+                                className={`absolute lg:bottom-14 px-2 pt-2 2xl:w-48 xl:w-40 lg:w-28 xl:h-48 lg:h-56 h-36 xl:text-xs lg:text-[10px] md:text-[12px] text-[8px] text-gray-700 leading-relaxed text-center flex lg:flex-col items-center justify-end lg:border-l-2 border-${m.color
+                                    } transition-opacity duration-500 font-outfit ${visible[i] ? "opacity-100" : "opacity-0"
+                                    }`}
                             >
                                 {m.text[0]}
                                 {m.year != "2000" && (
@@ -127,12 +125,11 @@ const Milestones = () => {
                                         bg-${m.color}
                                         rounded px-7 py-2 2xl:w-36 xl:w-36 lg:w-24
                                         font-bold text-white text-center shadow-lg 2xl:text-2xl xl:text-xl lg:text-lg
-                                        transition-all duration-700
-                                        ${
-                                            visible[i]
+                                        transition-all duration-700 font-outfit
+                                        ${visible[i]
                                                 ? "translate-x-0 opacity-100"
                                                 : "-translate-x-24 opacity-0"
-                                        }
+                                            }
                                     `}
                                     >
                                         {m.year}
@@ -171,11 +168,9 @@ const Milestones = () => {
 
                             {/* Bottom text*/}
                             <div
-                                className={`absolute lg:top-14 lg:left-0 left-[-300px] px-2 pb-2 2xl:w-48 xl:w-40 lg:w-28 xl:h-60 lg:h-64 xl:text-xs lg:text-[10px] md:text-[12px] text-[8px] text-gray-700 leading-relaxed text-center flex flex-col items-center justify-start lg:border-l-2 border-${
-                                    m.color
-                                } transition-opacity duration-500 ${
-                                    visible[i] ? "opacity-100" : "opacity-0"
-                                }`}
+                                className={`absolute lg:top-14 lg:left-0 left-[-300px] px-2 pb-2 2xl:w-48 xl:w-40 lg:w-28 xl:h-60 lg:h-64 xl:text-xs lg:text-[10px] md:text-[12px] text-[8px] text-gray-700 leading-relaxed text-center flex flex-col items-center justify-start lg:border-l-2 border-${m.color
+                                    } transition-opacity duration-500 font-outfit ${visible[i] ? "opacity-100" : "opacity-0"
+                                    }`}
                             >
                                 {m.year != "2000" && (
                                     <div
@@ -209,12 +204,11 @@ const Milestones = () => {
                                 className={`
             bg-${m.color}
             rounded-full px-7 py-3 min-w-[90px] font-semibold text-white text-center shadow-xl text-base
-            transition-all duration-500
-            ${
-                visible[i]
-                    ? "opacity-100 translate-y-0"
-                    : "opacity-0 -translate-y-10"
-            }
+            transition-all duration-500 font-outfit
+            ${visible[i]
+                                        ? "opacity-100 translate-y-0"
+                                        : "opacity-0 -translate-y-10"
+                                    }
           `}
                             >
                                 {m.year}
@@ -227,9 +221,8 @@ const Milestones = () => {
                         {/* Bottom text (below year) */}
                         {m.year !== "2000" && (
                             <div
-                                className={`p-4 w-full sm:w-sm text-xs text-gray-700 rounded-sm text-center transition-opacity duration-500 ${
-                                    visible[i] ? "opacity-100" : "opacity-0"
-                                }`}
+                                className={`p-4 w-full sm:w-sm text-xs text-gray-700 rounded-sm text-center transition-opacity duration-500 font-outfit ${visible[i] ? "opacity-100" : "opacity-0"
+                                    }`}
                                 style={{
                                     marginLeft: "16px",
                                     boxShadow: "0 0 20px 0 rgba(0,0,0,0.13)",
