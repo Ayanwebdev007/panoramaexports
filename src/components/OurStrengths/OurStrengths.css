@@ -120,7 +120,7 @@
 
 .highlight-number {
     font-size: 42px;
-    font-weight: 800;
+    font-weight: 400;
     color: var(--text-white);
     line-height: 1.2;
     margin-bottom: 10px;
@@ -130,7 +130,7 @@
 
 .highlight-text {
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 500;
     color: var(--accent-gold);
     line-height: 1.2;
     white-space: nowrap;

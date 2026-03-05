@@ -425,7 +425,7 @@ export default function Home() {
                 {/* People section */}
                 <div className="sm:pt-8 sm:pb-0 text-[#01276a] w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md mt-6">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6">
-                        <div className="text-2xl sm:text-3xl md:text-5xl font-regular">
+                        <div className="text-2xl sm:text-3xl md:text-5xl font-light">
                             People
                             <div className="text-sm md:text-lg sm:text-sm text-[12px] sm:mt-3 mt-2 text-gray-600 ml-1">
                                 The soul of Panorama is its people
@@ -458,7 +458,7 @@ export default function Home() {
                 {/* Certifications section */}
                 <div className="pt-16 pb-0 text-[#01276a] mt-12 w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">
                     <div className="flex items-center justify-start">
-                        <div className="text-2xl sm:text-3xl md:text-5xl font-regular">
+                        <div className="text-2xl sm:text-3xl md:text-5xl font-light">
                             Certifications
                             <div className="text-[12px] sm:text-sm md:text-lg sm:mt-3 mt-1 text-gray-600 ml-1">
                                 Our legal certificates
@@ -470,7 +470,7 @@ export default function Home() {
                 {/* Community section */}
                 <div className="pb-0 pt-0 text-[#01276a] mt-[-160px] w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md bg-white">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between">
-                        <div className="text-2xl sm:text-3xl md:text-5xl font-regular">
+                        <div className="text-2xl sm:text-3xl md:text-5xl font-light">
                             Human Touch
                         </div>
                         <div className="sm:w-[40%] lg:w-[50%] lg:mx-4 flex items-center justify-end">
@@ -492,17 +492,18 @@ export default function Home() {
                         />
                     </div>
                     <div
-                        className="w-full flex lg:items-center items-start pt-0 sm:pt-5 lg:pt-0 pr-0 sm:pr-5 lg:pr-0 justify-end aspect-[16/4.823] "
+                        className="w-full flex items-start pt-16 sm:pt-20 lg:pt-24 pr-0 sm:pr-5 lg:pr-0 justify-end aspect-[16/4.823] "
                         style={{
                             backgroundImage: `url(${HumanTouch1})`,
                             backgroundSize: "contain",
                             backgroundPosition: "center",
                         }}
                     >
-                        <p className="2xl:w-[550px] xl:w-[450px] lg:w-[350px] md:w-[300px] w-[150px] 2xl:text-xl lg:text-md md:text-sm sm:text-[10px] text-[8px] sm:pr-2 text-blue-950 font-semibold">
-                            Our motto: People. Progress. Purpose. At Panorama,
-                            we cultivate a culture of responsibility, inclusion,
-                            and continuous growth
+                        <p className="2xl:w-[550px] xl:w-[450px] lg:w-[350px] md:w-[300px] w-[150px] 2xl:text-xl lg:text-md md:text-sm sm:text-[10px] text-[8px] sm:pr-2 text-blue-950">
+                            <span className="font-semibold">Our motto:</span>
+                            <span className="font-light"> People. Progress. Purpose. At Panorama,
+                                we cultivate a culture of responsibility, inclusion,
+                                and <span className="whitespace-nowrap">continuous growth</span></span>
                         </p>
                     </div>
                 </div>

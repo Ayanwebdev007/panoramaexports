@@ -15,7 +15,7 @@ const leaders = [
         name: "RAJAN SAHNI",
         role: "DIRECTOR",
         image: RajanPng,
-        bgPos: "92% 5%",
+        bgPos: "85% 5%",
         bgSize: "350%"
     },
     {
@@ -23,7 +23,7 @@ const leaders = [
         name: "NAVIN SAHNI",
         role: "DIRECTOR",
         image: NavinPng,
-        bgPos: "8% 5%",
+        bgPos: "15% 5%",
         bgSize: "350%"
     },
     {
@@ -31,7 +31,7 @@ const leaders = [
         name: "SHIVAAN SAHNI",
         role: "EXECUTIVE DIRECTOR",
         image: ShivaanPng,
-        bgPos: "92% 3%",
+        bgPos: "82% 3%",
         bgSize: "350%"
     },
     {
@@ -39,14 +39,14 @@ const leaders = [
         name: "SIDHARTH SAHNI",
         role: "EXECUTIVE DIRECTOR",
         image: SidharthPng,
-        bgPos: "8% 3%",
+        bgPos: "18% 3%",
         bgSize: "350%"
     }
 ];
 
 const LeadershipSection = () => {
     return (
-        <section className="leadership-outer-container font-outfit">
+        <section className="leadership-outer-container">
             {/* Header Section - Matches 'People' section style */}
             <div className="leadership-header-container w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 mb-12 lg:mt-6">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
@@ -57,7 +57,7 @@ const LeadershipSection = () => {
                         transition={{ duration: 0.8 }}
                         className="flex-1"
                     >
-                        <h2 className="text-4xl md:text-5xl font-regular text-[#01276a] mb-4">
+                        <h2 className="text-4xl md:text-5xl font-light text-[#01276a] mb-4">
                             Leadership
                         </h2>
                         <p className="text-sm md:text-lg text-gray-600 max-w-2xl leading-relaxed font-normal">

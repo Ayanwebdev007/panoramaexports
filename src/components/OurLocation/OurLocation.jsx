@@ -166,7 +166,7 @@ const OurLocation = () => {
     }, [activeLocation]);
 
     return (
-        <section style={{ paddingTop: '80px' }} className="relative w-full pb-24 bg-white overflow-hidden font-outfit">
+        <section style={{ paddingTop: '80px' }} className="relative w-full pb-24 bg-white overflow-hidden">
 
             {/* Header - Perfectly Aligned with Human Touch/Manufacturing Units */}
             <motion.div
@@ -175,7 +175,7 @@ const OurLocation = () => {
                 viewport={{ once: true }}
                 className="w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 text-left mb-12"
             >
-                <h2 className="text-4xl md:text-5xl font-light text-[#01276a] tracking-tight font-[Outfit]">
+                <h2 className="text-4xl md:text-5xl font-light text-[#01276a] tracking-tight">
                     Our Location
                 </h2>
             </motion.div>
@@ -248,7 +248,7 @@ const OurLocation = () => {
                                 ref={(el) => (markerRefs.current[loc.id] = el)}
                             >
                                 <Popup className="premium-popup">
-                                    <div className="min-w-[240px] font-[Outfit]">
+                                    <div className="min-w-[240px]">
                                         <div className="flex items-start gap-3 mb-4">
                                             <div className="bg-blue-50 p-2.5 rounded-xl text-[#01276a] shrink-0 shadow-sm border border-blue-100">
                                                 <MapPin className="w-5 h-5" />
