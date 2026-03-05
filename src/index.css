@@ -17,6 +17,11 @@ body {
   line-height: 1.6;
 }
 
+/* Force Outfit font for specific sections */
+.font-outfit {
+  font-family: 'Outfit', sans-serif !important;
+}
+
 /* Certifications Section Styles */
 .certifications-section {
   padding: 80px 0;

@@ -46,7 +46,7 @@ const leaders = [
 
 const LeadershipSection = () => {
     return (
-        <section className="leadership-outer-container font-[Outfit]">
+        <section className="leadership-outer-container font-outfit">
             {/* Header Section - Matches 'People' section style */}
             <div className="leadership-header-container w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 mb-12 lg:mt-6">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">

@@ -8,7 +8,7 @@ export default function Footer() {
     };
 
     return (
-        <footer className="bg-[#01276a] text-white font-[Outfit]">
+        <footer className="bg-[#01276a] text-white font-outfit">
             {/* Top Section: Three Main Modules */}
             <div className="flex flex-col lg:flex-row border-b border-white/10">
 
