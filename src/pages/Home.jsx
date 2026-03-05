@@ -277,17 +277,17 @@ export default function Home() {
 
             <div className="bg-white sm:pt-6 pt-2">
                 {/* Global presence */}
-                {/* <div className="md:py-8 py-2 md:mt-6 mt-2 text-[#01276a] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">
+                <div className="md:py-8 py-2 md:mt-6 mt-2 text-[#01276a] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">
                     <div className="flex items-center justify-center 2xl:px-5 gap-6">
                         <div className="text-2xl sm:text-3xl md:text-5xl font-regular flex flex-wrap gap-4">
                             <p className="font-bold">Global</p> Presence
                         </div>
                     </div>
-                </div> */}
+                </div>
                 {/* Brands logo section */}
-                {/* <div className="w-full md:mb-10 mb-5">
+                <div className="w-full md:mb-10 mb-5">
                     <div className="overflow-hidden w-full py-6 bg-white space-y-6">
-                        Row 1
+                        {/* Row 1 */}
                         <div className="flex w-max animate-marquee gap-4">
                             {[...brands, ...brands].map((brand, idx) => (
                                 <div
@@ -307,7 +307,7 @@ export default function Home() {
                             ))}
                         </div>
 
-                        Row 2
+                        {/* Row 2 */}
                         <div className="flex w-max animate-marquee-reverse gap-4">
                             {[...brands, ...brands].map((brand, idx) => (
                                 <div
@@ -327,7 +327,7 @@ export default function Home() {
                             ))}
                         </div>
 
-                        Tailwind custom animations
+                        {/* Tailwind custom animations */}
                         <style>
                             {`
                             @keyframes marquee {
@@ -355,7 +355,7 @@ export default function Home() {
                             `}
                         </style>
                     </div>
-                </div> */}                {/* Crafting Tomorrow Content */}
+                </div>                {/* Crafting Tomorrow Content */}
                 <div
                     className="relative bg-[#182123] text-white flex flex-col items-center justify-center overflow-hidden w-full"
                     style={{ aspectRatio: "16 / 9" }}
@@ -395,9 +395,9 @@ export default function Home() {
 
 
                 {/* Global Map section */}
-                {/* <LazyRender height="500px" rootMargin="2000px">
+                <LazyRender height="500px" rootMargin="2000px">
                     <GlobalMap />
-                </LazyRender> */}
+                </LazyRender>
 
                 {/* Commenting out old manufacturing units section as requested */}
                 {/* 
