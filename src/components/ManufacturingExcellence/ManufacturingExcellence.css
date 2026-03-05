@@ -115,20 +115,22 @@
 
 .mfg-unit-item:hover {
     flex: 3.5;
+    filter: brightness(1.15) saturate(1.05);
+    /* Boost image vibrancy */
 }
 
 .mfg-overlay-base {
     position: absolute;
     inset: 0;
-    background-color: rgba(1, 39, 106, 0.4);
-    /* Panorama Blue Tint */
+    background-color: rgba(1, 39, 106, 0.45);
+    /* Slightly deeper blue tint initially */
     transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 1;
 }
 
 .mfg-unit-item:hover .mfg-overlay-base {
-    background-color: rgba(0, 0, 0, 0.1);
-    /* Neutral dark on hover */
+    background-color: rgba(0, 0, 0, 0);
+    /* Clear base overlay on hover */
 }
 
 .mfg-overlay-gradient {
@@ -136,7 +138,13 @@
     inset: 0;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.4) 40%, transparent 100%);
     opacity: 0.8;
-    transition: opacity 1.2s;
+    transition: opacity 0.8s ease;
+    /* Faster transition for responsive feel */
+}
+
+.mfg-unit-item:hover .mfg-overlay-gradient {
+    opacity: 0.35;
+    /* Dramatically reduce gradient dimming on hover */
 }
 
 .mfg-unit-content {
