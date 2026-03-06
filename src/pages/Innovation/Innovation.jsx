@@ -45,10 +45,10 @@ function Innovation() {
     const activeCrumb = innovationLeadsInView
         ? "Innovation that Leads"
         : standardPerfectionInView
-        ? "Standard Of Perfection"
-        : handcraftedLuxuryInView
-        ? "Handcrafted Luxury"
-        : null;
+            ? "Standard Of Perfection"
+            : handcraftedLuxuryInView
+                ? "Handcrafted Luxury"
+                : null;
 
     const textVariants = {
         hidden: { opacity: 0, x: "-40vw" },
@@ -106,11 +106,11 @@ function Innovation() {
                             ease: "easeOut",
                         }}
                     >
-                        <h1 className="text-md sm:text-lg md:text-xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-semibold">
-                            Innovation that Leads
+                        <h1 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-white">
+                            Innovation That Leads
                         </h1>
-                        <div className="text-[12px] sm:text-sm md:text-md lg:text-xl xl:text-2xl 2xl:text-3xl xl:mt-4 lg:mt-3 md:mt-2 md:w-[60%] text-justify font-relaxed">
-                            At Panorama, innovation is how we stay ahead-and
+                        <div className="text-[12px] sm:text-sm md:text-md lg:text-xl xl:text-2xl 2xl:text-3xl xl:mt-4 lg:mt-3 md:mt-2 md:w-[60%] text-justify font-light font-outfit leading-relaxed">
+                            At Panorama, innovation is how we stay ahead—and
                             stay true.
                         </div>
                     </motion.div>
@@ -127,11 +127,10 @@ function Innovation() {
                         >
                             <Link
                                 to={crumb.path}
-                                className={`hover:underline md:text-sm lg:text-lg sm:my-1 ${
-                                    activeCrumb === crumb.label
-                                        ? "font-semibold text-white"
-                                        : "text-gray-300"
-                                }`}
+                                className={`hover:underline md:text-sm lg:text-lg sm:my-1 font-outfit ${activeCrumb === crumb.label
+                                    ? "font-semibold text-white"
+                                    : "text-gray-300"
+                                    }`}
                             >
                                 {crumb.label}
                             </Link>

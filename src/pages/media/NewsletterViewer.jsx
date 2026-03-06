@@ -42,7 +42,7 @@ export default function NewsletterViewer() {
     if (!newsletter) return null;
 
     return (
-        <div className="min-h-screen bg-gray-50 flex flex-col">
+        <div className="min-h-screen bg-gray-50 flex flex-col font-outfit">
             {/* Navbar Spacer to prevent overlap if Navbar is fixed */}
             <div className="w-full h-20 bg-gray-900 flex-shrink-0"></div>
 
@@ -51,15 +51,15 @@ export default function NewsletterViewer() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between relative">
                     <button
                         onClick={() => navigate('/media?tab=Newsletter')}
-                        className="flex items-center text-gray-600 hover:text-gray-900 transition-colors group z-20"
+                        className="flex items-center text-gray-600 hover:text-gray-900 transition-colors group z-20 font-light"
                     >
                         <ArrowLeft size={20} className="mr-2 group-hover:-translate-x-1 transition-transform" />
-                        <span className="font-medium">Back to Media</span>
+                        <span className="">Back to Media</span>
                     </button>
 
                     {/* Centered Title */}
                     <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                        <h1 className="text-xl font-semibold text-gray-800 hidden md:block pointer-events-auto">
+                        <h1 className="text-xl font-light text-gray-800 hidden md:block pointer-events-auto font-outfit">
                             {newsletter.month} {newsletter.year}
                         </h1>
                     </div>

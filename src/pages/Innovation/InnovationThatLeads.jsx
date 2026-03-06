@@ -24,10 +24,10 @@ import UbtSewingvideo from "../../assets/Innovation/UBTSewingTech/UBT Sewing Tec
 
 function InnovationThatLeads() {
     const location = useLocation();
-      const { ref, inView } = useInView({
-          triggerOnce: false,
-          threshold: 0.2,
-      });
+    const { ref, inView } = useInView({
+        triggerOnce: false,
+        threshold: 0.2,
+    });
 
     return (
         <>
@@ -38,10 +38,10 @@ function InnovationThatLeads() {
                 <div className="w-[80%] bg-white flex">
                     {/* Left Side */}
                     <div className="w-[50%] md:p-10 p-2 flex flex-col justify-center">
-                        <h2 className="text-[12px] sm:text-md md:text-xl lg:text-3xl font-bold text-center text-blue-950">
-                            CAD & 3D DRAPING
+                        <h2 className="text-[12px] sm:text-md md:text-xl lg:text-3xl font-light font-outfit text-center text-blue-950">
+                            CAD & 3D Draping
                         </h2>
-                        <div className="text-[10px] sm:text-[12px] md:text-sm 2xl:text-lg md:mt-3 mt-1 sm:mb-3 text-center text-gray-600 ml-1 font-thin">
+                        <div className="text-[10px] sm:text-[12px] md:text-sm 2xl:text-lg md:mt-3 mt-1 sm:mb-3 text-center text-gray-600 ml-1 font-light font-outfit">
                             Visualizing designs with precision before production
                         </div>
                     </div>
@@ -66,16 +66,16 @@ function InnovationThatLeads() {
                 id=""
                 className="md:my-5 my-1 w-full bg-blue-950 flex justify-center md:py-20 py-10"
             >
-                <div className="w-[80%] bg-white flex">
+                <div className="w-[80%] bg-white flex flex-row-reverse">
                     {/* Left Side */}
                     <div className="w-[50%] md:p-10 p-2 flex flex-col justify-center">
-                        <h2 className="text-[12px] sm:text-md md:text-xl lg:text-3xl font-bold text-center text-blue-950">
-                            WEAVING BRILLIANCE
+                        <h2 className="text-[12px] sm:text-md md:text-xl lg:text-3xl font-light font-outfit text-center text-blue-950">
+                            Weaving Brilliance
                         </h2>
-                        <div className="text-[10px] sm:text-[12px] md:text-sm 2xl:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-thin">
+                        <div className="text-[10px] sm:text-[12px] md:text-sm 2xl:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-light font-outfit text-justify">
                             From loom to luxury, we unite cutting-edge fabric
                             innovation with eco-conscious materials and refined
-                            finishing-infusing every creation with the artistry
+                            finishing—infusing every creation with the artistry
                             and heritage of Made in India
                         </div>
                     </div>
@@ -103,10 +103,10 @@ function InnovationThatLeads() {
                 <div className="w-[80%] bg-white flex">
                     {/* Left Side */}
                     <div className="w-[50%] md:p-10 p-2 flex flex-col justify-center">
-                        <h2 className="text-[12px] sm:text-md md:text-xl lg:text-3xl font-bold text-center text-blue-950">
-                            OPERATIONAL EXCELLENCE
+                        <h2 className="text-[12px] sm:text-md md:text-xl lg:text-3xl font-light font-outfit text-center text-blue-950">
+                            Operational Excellence
                         </h2>
-                        <div className="text-[10px] sm:text-[12px] md:text-sm 2xl:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-thin">
+                        <div className="text-[10px] sm:text-[12px] md:text-sm 2xl:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-light font-outfit text-justify">
                             Systems for faster, cleaner, better production. It’s
                             an art blending innovation with craftsmanship to
                             reduce waste, enhance efficiency, and deliver
@@ -135,18 +135,18 @@ function InnovationThatLeads() {
                 id=""
                 className="md:my-5 my-1 w-full bg-blue-950 flex justify-center md:py-20 py-10"
             >
-                <div className="w-[80%] bg-white flex">
+                <div className="w-[80%] bg-white flex flex-row-reverse">
                     {/* Left Side */}
                     <div className="w-[50%] md:p-10 p-2 flex flex-col justify-center">
-                        <h2 className="text-[12px] sm:text-md md:text-xl lg:text-3xl font-bold text-center text-blue-950">
-                            UBT SEWING TECHNOLOGY
+                        <h2 className="text-[12px] sm:text-md md:text-xl lg:text-3xl font-light font-outfit text-center text-blue-950">
+                            UBT Sewing Technology
                         </h2>
-                        <div className="text-[10px] sm:text-[12px] md:text-sm 2xl:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-thin">
+                        <div className="text-[10px] sm:text-[12px] md:text-sm 2xl:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-light font-outfit text-justify">
                             Seam integrity meets advanced performance. We
-                            engineer resilience into every stitch-using
+                            engineer resilience into every stitch—using
                             ultra-bond thread technology to create seams that
                             endure, perform, and excel in
-                            high-intensity outerwear.
+                            high-intensity outerwear.
                         </div>
                     </div>
 

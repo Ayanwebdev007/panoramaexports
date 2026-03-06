@@ -60,12 +60,12 @@ export default function NewsletterItem({ item, onClick }) {
             </div>
 
             {/* Date & Info Label */}
-            <div className="flex flex-col items-start px-2">
+            <div className="flex flex-col items-start px-2 font-outfit">
                 <div className="flex items-baseline space-x-3 w-full border-b border-gray-100 pb-3 mb-3 group-hover:border-gray-300 transition-colors duration-500">
-                    <h3 className="text-xl font-medium text-gray-800 group-hover:text-blue-900 transition-colors duration-300">
+                    <h3 className="text-xl font-light text-gray-800 group-hover:text-blue-900 transition-colors duration-300">
                         {item.month}
                     </h3>
-                    <span className="text-sm font-semibold tracking-[0.2em] uppercase text-gray-400 group-hover:text-gray-600 transition-colors">
+                    <span className="text-sm font-light tracking-[0.2em] uppercase text-gray-400 group-hover:text-gray-600 transition-colors">
                         {item.year}
                     </span>
                     <div className="flex-grow"></div>
@@ -75,8 +75,8 @@ export default function NewsletterItem({ item, onClick }) {
                     />
                 </div>
 
-                <span className="text-xs text-gray-400 font-medium tracking-wide group-hover:text-gray-600 transition-colors duration-300">
-                    PANORAMA UPDATE
+                <span className="text-xs text-gray-400 font-light tracking-wide group-hover:text-gray-600 transition-colors duration-300">
+                    Panorama Update
                 </span>
             </div>
         </div>

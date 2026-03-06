@@ -42,18 +42,20 @@ const icons = [
 ];
 
 function Responsibility() {
-    
 
-    
+
+
 
     return (
-        <>
+        <div className="font-outfit">
             <div className="h-10 md:h-12 lg:h-20 w-full bg-gray-900"></div>
-            <div className=" bg-[#49883f] lg:py-20 py-12 lg:text-6xl md:text-5xl sm:text-4xl text-3xl text-center text-white font-semibold">
-                SUSTAINABILITY
+            <div className="bg-[#49883f] lg:py-20 py-12 px-2 sm:px-6 md:px-10 lg:px-20">
+                <h1 className="text-3xl sm:text-4xl md:text-6xl font-light text-white text-center font-outfit">
+                    Sustainability
+                </h1>
             </div>
             <div className="lg:w-[90%] w-full mx-auto md:pt-16 pt-5 px-2 sm:px-6 md:px-10 lg:px-20">
-                <div className="text-gray-700 text-center 2xl:text-xl lg:text-lg text-sm leading-relaxed">
+                <div className="text-gray-700 text-center 2xl:text-xl lg:text-lg text-sm leading-relaxed font-light">
                     For Panorama, sustainability means designing with
                     conscience,<br></br> producing with care, and leaving a
                     legacy the planet can wear with pride.
@@ -72,7 +74,7 @@ function Responsibility() {
                             alt="image"
                             className="rounded-lg xl:w-36 md:w-28 w-36 xl:h-36 md:h-28 h-36"
                         />
-                        <h2 className="text-blue-950 font-semibold my-4 text-[12px] sm:text-sm md:text-[12px] lg:text-sm xl:text-md 2xl:text-lg">
+                        <h2 className="text-blue-950 font-light my-4 text-[12px] sm:text-sm md:text-[12px] lg:text-sm xl:text-md 2xl:text-lg font-outfit">
                             {item.header}
                         </h2>
                     </div>
@@ -92,16 +94,14 @@ function Responsibility() {
                 </div>
             </section>
             <div className="w-[90%] w-full mx-auto 2xl:py-16 md:py-10 py-5 px-2 sm:px-6 md:px-10 lg:px-20">
-                <div className="w-full h-[1px] bg-blue-900"></div>
-                <div className="w-full h-[1px] bg-blue-900 mt-[1px] md:mb-10 mb-5"></div>
+                <div className="w-full h-[1px] bg-blue-900 md:mb-10 mb-5"></div>
 
                 {/* Our Approaches */}
                 <section className="lg:my-16 md:my-10 my-5 flex flex-col justify- items-center md:gap-10 gap-5">
-                    <p className="text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-snug">
-                        {" "}
+                    <p className="text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-[#01276a] leading-snug text-center">
                         Sustainability is stitched into everything we do
                     </p>
-                    <div className="text-gray-700 2xl:text-xl lg:text-lg text-sm leading-relaxed">
+                    <div className="text-gray-700 2xl:text-xl lg:text-lg text-sm leading-relaxed font-light text-justify">
                         Responsible sourcing and clean production guide our
                         operations-powered by renewable energy, efficient
                         logistics, and eco-conscious infrastructure. Ethical
@@ -115,10 +115,10 @@ function Responsibility() {
                 <section className="lg:mb-12 md:mb-10 mb-5 grid grid-cols-1 lg:grid-cols-3 md:gap-8 gap-5 lg:mt-20 mt-10">
                     <div className="flex flex-col items-center">
                         <img src={cert1} alt="" />
-                        <h3 className="font-semibold text-lg text-center">
+                        <h3 className="font-light text-lg text-center text-blue-950 mt-4 mb-2">
                             Global Organic Textile Standards (GOTS)
                         </h3>
-                        <p className="text-justify leading-relaxed text-sm md:text-base">
+                        <p className="text-justify leading-relaxed text-sm md:text-base font-light">
                             Global Organic Textile Standard ensures that
                             textiles are truly organic, environmentally
                             friendly, and socially responsible — all the way
@@ -128,10 +128,10 @@ function Responsibility() {
                     </div>
                     <div className="flex flex-col items-center">
                         <img src={cert2} alt="" />
-                        <h3 className="font-semibold text-lg text-center">
+                        <h3 className="font-light text-lg text-center text-blue-950 mt-4 mb-2">
                             Global Recycled Standard (GRS)
                         </h3>
-                        <p className="text-justify leading-relaxed text-sm md:text-base">
+                        <p className="text-justify leading-relaxed text-sm md:text-base font-light">
                             GRS certification underscores our dedication to
                             responsible production—integrating recycled inputs,
                             verified traceability, and sustainable manufacturing
@@ -140,10 +140,10 @@ function Responsibility() {
                     </div>
                     <div className="flex flex-col items-center">
                         <img src={cert3} alt="" />
-                        <h3 className="font-semibold text-lg text-center">
-                            OEKO-TEX® STANDARD 100
+                        <h3 className="font-light text-lg text-center text-blue-950 mt-4 mb-2">
+                            OEKO-TEX® Standard 100
                         </h3>
-                        <p className="text-justify leading-relaxed text-sm md:text-base">
+                        <p className="text-justify leading-relaxed text-sm md:text-base font-light">
                             OEKO-TEX® STANDARD 100 ensures that every component
                             of a textile product—right from threads and buttons
                             to labels—is tested for harmful chemicals and proven
@@ -156,15 +156,15 @@ function Responsibility() {
                 </section>
             </div>
 
-            <section className="w-[90%] mx-auto md:pb-16 pb-5 px-2 sm:px-6 md:px-10 lg:px-20 text-lg sm:text-3xl md:text-4xl lg:text-5xl">
-                <div className="py-3 px-4 font-semibold bg-blue-950 inline-block text-white">
-                    CORPORATE SOCIAL RESPONSIBILITY
-                </div>
-                <div className="mt-5 md:mt-10 text-sm md:text-lg flex flex-col gap-3">
+            <section className="w-[90%] mx-auto md:pb-16 pb-5 px-2 sm:px-6 md:px-10 lg:px-20">
+                <h2 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#01276a]">
+                    Corporate Social Responsibility
+                </h2>
+                <div className="mt-5 md:mt-10 text-sm md:text-lg flex flex-col gap-3 font-light text-justify">
                     Driven by purpose, Panorama nurtures progress through
                     education and women empowerment. By creating safe, inclusive
                     workplaces and community programs, we turn opportunity into
-                    impact-strengthening both individuals and society. 
+                    impact-strengthening both individuals and society.
                 </div>
             </section>
 
@@ -179,7 +179,7 @@ function Responsibility() {
                     <img src={cimg3} alt="" />
                 </div>
             </section>
-        </>
+        </div>
     );
 }
 

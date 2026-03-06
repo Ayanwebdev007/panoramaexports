@@ -35,7 +35,7 @@ export default function Media() {
     );
 
     return (
-        <div className="bg-white">
+        <div className="bg-white font-outfit">
             <div className="w-full h-10 md:h-12 lg:h-20 bg-gray-900"></div>
             {/* Top Hero Section */}
             <section className="w-full py-1">
@@ -48,7 +48,7 @@ export default function Media() {
                             className="w-full aspect-[16/6] object-contain group-hover:scale-105 duration-200"
                         />
                         <div className="absolute bottom-0 left-0 w-full h-full flex justify-center items-end bg-gradient-to-t from-black/40 via-black/20 to-transparent px-4 py-3">
-                            <h2 className="text-white sm:font-semibold 2xl:text-4xl lg:text-2xl sm:text-lg text-sm 2xl:pb-16 lg:pb-10 md:pb-6 sm:pb-5 pb-1">
+                            <h2 className="text-white font-light 2xl:text-4xl lg:text-2xl sm:text-lg text-sm 2xl:pb-16 lg:pb-10 md:pb-6 sm:pb-5 pb-1 font-outfit">
                                 Panorama Exports Sustainable Fashion Innovation
                             </h2>
                         </div>
@@ -61,11 +61,8 @@ export default function Media() {
                                 alt="Shahi Exports Champion for Reproductive Justice"
                                 className="w-full aspect-[16/6.9] object-contain"
                             />
-                            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 via-black/30 to-transparent px-4 py-3">
-                                {/* <div className="text-xs text-gray-200">
-                                    Media & Research | October 17, 2025
-                                </div> */}
-                                <h2 className="text-white lg:font-semibold 2xl:text-2xl lg:text-lg text-sm text-center">
+                            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 via-black/30 to-transparent px-4 py-3 text-center">
+                                <h2 className="text-white font-light 2xl:text-2xl lg:text-lg text-sm font-outfit">
                                     Panorama Exports Media & News
                                 </h2>
                             </div>
@@ -77,11 +74,8 @@ export default function Media() {
                                 alt="The Manufacturing Perspective 2025"
                                 className="w-full aspect-[16/6.9] object-contain "
                             />
-                            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/50 via-black/30 to-transparent px-4 py-3">
-                                {/* <div className="text-xs text-gray-200">
-                                    Media & Research | September 30, 2025
-                                </div> */}
-                                <h2 className="text-white lg:font-semibold 2xl:text-2xl lg:text-lg text-sm text-center">
+                            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/50 via-black/30 to-transparent px-4 py-3 text-center">
+                                <h2 className="text-white font-light 2xl:text-2xl lg:text-lg text-sm font-outfit">
                                     The Manufacturing Perspective
                                 </h2>
                             </div>
@@ -96,8 +90,8 @@ export default function Media() {
                     {tabNames.map((tab) => (
                         <button
                             key={tab}
-                            className={`py-2 ${activeTab === tab
-                                ? "border-b-2 border-blue-900 text-blue-900 font-semibold"
+                            className={`py-2 font-outfit font-light ${activeTab === tab
+                                ? "border-b-2 border-blue-900 text-blue-900"
                                 : "text-gray-800"
                                 }`}
                             onClick={() => setActiveTab(tab)}
@@ -145,7 +139,7 @@ export default function Media() {
       group-hover:opacity-100 group-hover:translate-y-0
       bg-gradient-to-b from-blue-500 to-purple-500"
                                 >
-                                    <h3 className="font-semibold text-base text-white text-center">
+                                    <h3 className="font-light text-base text-white text-center font-outfit">
                                         {item.title}
                                     </h3>
                                 </div>

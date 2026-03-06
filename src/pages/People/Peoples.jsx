@@ -135,7 +135,7 @@ function Peoples() {
     }, []);
 
     return (
-        <>
+        <div className="font-outfit">
             <section className="bg-white">
                 <div className="w-full h-10 md:h-12 lg:h-20 bg-gray-900"></div>
                 {executiveDirectors.map((director) => (
@@ -191,11 +191,10 @@ function Peoples() {
                         >
                             <a
                                 href={crumb.path}
-                                className={`hover:underline md:text-sm lg:text-lg sm:my-1 ${
-                                    activeCrumb === crumb.path.substring(1)
-                                        ? "font-semibold text-white"
-                                        : "text-gray-300"
-                                }`}
+                                className={`hover:underline md:text-sm lg:text-lg sm:my-1 ${activeCrumb === crumb.path.substring(1)
+                                    ? "font-semibold text-white"
+                                    : "text-gray-300"
+                                    }`}
                             >
                                 {crumb.label}
                             </a>
@@ -205,11 +204,11 @@ function Peoples() {
             </div>
 
             <section>
-                <div className="w-[90%] mx-auto md:py-16 py-5 px-2 sm:px-6 md:px-10 lg:px-20 text-lg sm:text-3xl md:text-4xl lg:text-5xl">
-                    <h2 className="py-3 px-4 font-semibold bg-blue-950 inline-block text-white">
-                        PEOPLE
+                <div className="w-[90%] mx-auto md:py-16 py-5 px-2 sm:px-6 md:px-10 lg:px-20">
+                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#01276a]">
+                        People
                     </h2>
-                    <p className="text-sm sm:text-md lg:text-lg py-3 md:mt-5 mt-2 text-justify leading-relaxed">
+                    <p className="text-sm sm:text-md lg:text-lg py-3 md:mt-5 mt-2 text-justify leading-relaxed font-light">
                         Driven by our People First ethos, Panorama Exports
                         embraces integrity, inclusivity, and respect as the
                         cornerstones of its culture. Through collaboration and
@@ -225,10 +224,10 @@ function Peoples() {
                 <div className="w-[80%] bg-white flex flex-col sm:flex-row">
                     {/* Left Side */}
                     <div className="sm:w-[50%] md:p-10 p-2 flex flex-col justify-center">
-                        <h2 className="text-sm sm:text-md md:text-xl lg:text-4xl 2xl:text-5xl font-bold text-center text-blue-950">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-light text-center text-blue-950 font-outfit">
                             Our Strength
                         </h2>
-                        <p className="text-[10px] sm:text-[12px] md:text-sm 2xl:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-thin text-justify">
+                        <p className="text-[10px] sm:text-[12px] md:text-sm 2xl:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-light text-justify">
                             The true fabric of Panorama is made of people 5,000
                             individuals, each adding their own thread of talent,
                             passion, and creativity. With women making up half
@@ -257,9 +256,9 @@ function Peoples() {
                 id="life-at-panorama"
                 className="w-[90%] mx-auto md:pt-16 pt-5 px-2 sm:px-6 md:px-10 lg:px-20"
             >
-                <div className="text-lg sm:text-3xl md:text-4xl lg:text-5xl pb-5 md:pb-16">
-                    <h2 className="py-3 px-4 font-semibold bg-blue-950 inline-block text-white">
-                        LIFE AT PANORAMA
+                <div className="pb-5 md:pb-16">
+                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#01276a]">
+                        Life at Panorama
                     </h2>
                 </div>
                 <div className="w-[80%] mx-auto relative">
@@ -301,9 +300,9 @@ function Peoples() {
             </section>
 
             <section>
-                <div className="w-[90%] mx-auto md:py-16 py-5 px-2 sm:px-6 md:px-10 lg:px-20 text-lg sm:text-3xl md:text-4xl lg:text-5xl text-[#01276a] font-semibold">
-                    <h2 className="py-3 px-4 font-semibold bg-blue-950 inline-block text-white">
-                        WE BELIEVE IN
+                <div className="w-[90%] mx-auto md:py-16 py-5 px-2 sm:px-6 md:px-10 lg:px-20">
+                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#01276a]">
+                        We Believe In
                     </h2>
                 </div>
                 <div className="w-[90%] mx-auto md:pb-16 pb-5 px-2 sm:px-6 md:px-10 lg:px-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 lg:gap-6 gap-4">
@@ -318,8 +317,8 @@ function Peoples() {
                                 className="w-full object-contain transform transition-transform duration-[4000ms] ease-out group-hover:scale-[1.1]"
                             />
                             {/* Overlay */}
-                            <div className="absolute bottom-0 h-[50%] w-full py-[10%] bg-gradient-to-t from-blue-950/20 via-blue-950/10 via-blue-950/0 via-blue-950/0 to-transparent group-hover:from-blue-950/90 group-hover:via-blue-950/80 group-hover:via-blue-950/50 group-hover:via-blue-950/40 group-hover:to-transparent transition-all duration-500 flex flex-col justify-end p-6">
-                                <p className="text-white text-md md:text-lg lg:text-xl xl:text-2xl font-semibold mx-[10%] text-center">
+                            <div className="absolute bottom-0 h-[50%] w-full py-[10%] bg-gradient-to-t from-blue-950/90 via-blue-950/80 via-blue-950/50 via-blue-950/40 to-transparent transition-all duration-500 flex flex-col justify-end p-6">
+                                <p className="text-white text-md md:text-lg lg:text-xl xl:text-xl font-semibold mx-[1%] text-center whitespace-nowrap">
                                     {item.text}
                                 </p>
                                 <p className="mx-[10%] mt-4 text-white">
@@ -338,19 +337,19 @@ function Peoples() {
                 <div className="w-[80%] bg-white flex flex-col lg:flex-row">
                     {/* Left Side */}
                     <div className="lg:w-[50%] md:p-10 p-2 flex flex-col justify-center">
-                        <h2 className="text-sm sm:text-md md:text-xl lg:text-4xl 2xl:text-5xl font-bold text-center text-blue-950">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-light text-center text-blue-950 font-outfit">
                             Commitment to Care & Compliance
                         </h2>
-                        <div className="text-[10px] sm:text-[12px] md:text-sm 2xl:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-thin text-justify">
+                        <div className="text-[10px] sm:text-[12px] md:text-sm 2xl:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-light text-justify">
                             Panorama fosters a culture of accountability,
                             ensuring rigorous compliance with global labour
                             laws, buyer mandates, and ethical business
                             practices. Our unwavering commitment to workers’
                             rights and brand protection is anchored in:
-                            <p>• Ensuring Workplace Safety & Fair Wages </p>
-                            <p>• Promoting Equality & Zero Discrimination </p>
-                            <p>• Banning Child & Forced Labour</p>
-                            <p>
+                            <p className="font-light">• Ensuring Workplace Safety & Fair Wages </p>
+                            <p className="font-light">• Promoting Equality & Zero Discrimination </p>
+                            <p className="font-light">• Banning Child & Forced Labour</p>
+                            <p className="font-light">
                                 • Maintaining Ethical & Safe Working Conditions
                             </p>
                             We take a firm stand against workplace misconduct,
@@ -406,7 +405,7 @@ function Peoples() {
                     </div>
                 </div>
             </section>
-        </>
+        </div>
     );
 }
 

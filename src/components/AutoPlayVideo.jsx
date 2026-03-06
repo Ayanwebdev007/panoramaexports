@@ -2,36 +2,18 @@ import { useEffect, useRef } from "react";
 
 const AutoPlayVideo = ({
     src,
-    threshold = 0.4,
+    threshold = 0.1,
     className = "",
     videoClassName = "",
     bgColor = "#000",
 }) => {
     const videoRef = useRef(null);
-    const containerRef = useRef(null);
 
     useEffect(() => {
         const video = videoRef.current;
-        const container = containerRef.current;
-        if (!container) return;
-
-        // Observer for loading the video
-        const loadObserver = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting && video && !video.src) {
-                    video.src = src;
-                    video.load();
-                    loadObserver.disconnect();
-                }
-            },
-            { rootMargin: "200px" } // Start loading 200px before it comes into view
-        );
-
-        loadObserver.observe(container);
-
         if (!video) return;
 
-        // Observer for playing/pausing
+        // Play/Pause based on intersection
         const playObserver = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
@@ -46,24 +28,22 @@ const AutoPlayVideo = ({
         playObserver.observe(video);
 
         return () => {
-            loadObserver.disconnect();
             playObserver.disconnect();
         };
-    }, [src, threshold]);
+    }, [threshold]);
 
     return (
         <div
-            ref={containerRef}
             className={`w-full overflow-hidden ${className}`}
             style={{ backgroundColor: bgColor }}
         >
             <video
                 ref={videoRef}
-                // src is removed from here and added via JS
+                src={src}
                 muted
                 playsInline
-                loop // ✅ native loop
-                preload="none" // ✅ strictly no preload
+                loop
+                preload="metadata"
                 className={`w-full h-auto object-cover ${videoClassName}`}
                 style={{
                     willChange: "transform",
