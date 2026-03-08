@@ -32,6 +32,7 @@ import cert3 from "../../assets/Responsible/certificate/oeko.webp";
 
 import wasteImg from "../../assets/waste-diversion.jpg";
 import sroiImg from "../../assets/sroi-impact.jpg";
+import esgImg from "../../assets/ESG.png";
 
 const icons = [
     {
@@ -250,11 +251,11 @@ function Responsibility() {
                             <div className="h-full flex flex-col bg-white border border-gray-100 rounded-lg overflow-hidden group">
                                 <div className="flex-grow p-6 flex flex-col justify-center">
                                     <span className="text-2xl font-light text-[#01276a] block mb-2">60%</span>
-                                    <p className="text-xs text-gray-500 font-light leading-snug uppercase tracking-widest">reduced carbon intensity</p>
+                                    <p className="text-xs text-gray-500 font-light leading-snug uppercase tracking-widest">Energy Save</p>
                                 </div>
                                 <div className="h-[65%] relative overflow-hidden">
                                     <img
-                                        src={img1}
+                                        src={esgImg}
                                         alt="Carbon Reduction"
                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                     />
