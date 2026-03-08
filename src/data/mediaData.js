@@ -11,14 +11,30 @@ import NewsletterImg9 from "../assets/Media/Workshop/Img9.webp";
 import NewsletterImg10 from "../assets/Media/Workshop/Img10.webp";
 
 import Safety from "../assets/Media/Workshop/Safety.webp";
-
 import Environment1 from "../assets/Media/Workshop/Environment1.webp";
 import Environment2 from "../assets/Media/Workshop/Environment2.webp";
 import Environment3 from "../assets/Media/Workshop/DSC03107.webp";
 import Environment4 from "../assets/Media/Workshop/CM100651.webp";
+import wd4 from "../assets/WD4.webp";
+import wd5 from "../assets/WD 5.webp";
+
+// PDFs
+import NewsletterJanFeb2026 from "../assets/Newsletter-Jan1.pdf";
 
 export const mediaData = {
     Workshop: [
+        {
+            id: 16,
+            title: "Womens day special",
+            date: "March 8, 2026",
+            image: wd4,
+        },
+        {
+            id: 17,
+            title: "Womens day special",
+            date: "March 8, 2026",
+            image: wd5,
+        },
         {
             id: 1,
             title: "PanoTEAM UP Training Sessions",
@@ -111,6 +127,14 @@ export const mediaData = {
         },
     ],
     Newsletter: [
+        {
+            id: 3,
+            title: "Panorama Exports Newsletter",
+            date: "Jan-Feb 2026",
+            month: "Jan-Feb",
+            year: "2026",
+            url: NewsletterJanFeb2026,
+        },
         {
             id: 1,
             title: "Panorama Exports Newsletter",

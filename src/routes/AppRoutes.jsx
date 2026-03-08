@@ -7,7 +7,7 @@ import Home from "../pages/Home";
 // const Home = lazy(() => import("../pages/Home"));
 const OurStory = lazy(() => import("../pages/ourStory/OurStory"));
 const VisionMission = lazy(() => import("../pages/ourStory/VisionMission"));
-const OurPurpose = lazy(() => import("../pages/ourStory/OurPurpose"));
+// const OurPurpose = lazy(() => import("../pages/ourStory/OurPurpose"));
 
 const CraftedPrecision = lazy(() => import("../pages/CraftedPrecision/CraftedPrecision"));
 const MfgExcellence = lazy(() => import("../pages/CraftedPrecision/MfgExcellence"));
@@ -32,6 +32,7 @@ const Media = lazy(() => import("../pages/media/Media"));
 const NewsletterViewer = lazy(() => import("../pages/media/NewsletterViewer"));
 const UnitLocationMap = lazy(() => import("../components/UnitLocationMap"));
 const LookBook = lazy(() => import("../pages/LookBook/LookBook"));
+const LookbookViewer = lazy(() => import("../pages/LookBook/LookbookViewer"));
 const ContactUs = lazy(() => import("../pages/Contact/ContactUs"));
 
 export default function AppRoutes() {
@@ -42,7 +43,7 @@ export default function AppRoutes() {
 
                 <Route path="/ourstory" element={<OurStory />} />
                 <Route path="/vision-values" element={<VisionMission />} />
-                <Route path="/our-purpose" element={<OurPurpose />} />
+                {/* <Route path="/our-purpose" element={<OurPurpose />} /> */}
 
                 <Route path="/craftedprecision" element={<CraftedPrecision />} />
                 <Route path="/mfg-excellence" element={<MfgExcellence />} />
@@ -67,6 +68,7 @@ export default function AppRoutes() {
                 <Route path="/media/newsletter/:id" element={<NewsletterViewer />} />
                 <Route path="/unitmap" element={<UnitLocationMap />} />
                 <Route path="/lookbook" element={<LookBook />} />
+                <Route path="/lookbook/:id" element={<LookbookViewer />} />
                 <Route path="/contactus" element={<ContactUs />} />
 
                 <Route

@@ -4,7 +4,6 @@ import { useInView } from "react-intersection-observer";
 import { Link, useLocation } from "react-router-dom";
 import InnovationThatLeads from "./InnovationThatLeads";
 import StandardOfPerfection from "./StandardOfPerfection";
-import HandcraftedLuxury from "./HandcraftedLuxury";
 // import bgImage from "../../assets/Innovation/Header/frontbg.webp";
 import bgImage from "../../assets/Innovation/Header/Header1.webp";
 
@@ -37,18 +36,13 @@ function Innovation() {
     const { ref: standardRef, inView: standardPerfectionInView } = useInView({
         threshold: 0.3, // same for standard for breadcrums control............
     });
-    const { ref: handcraftedRef, inView: handcraftedLuxuryInView } = useInView({
-        threshold: 0.3, // same for Handcrafted for breadcrums control............
-    });
 
     // Determine which breadcrumb is active
     const activeCrumb = innovationLeadsInView
         ? "Innovation that Leads"
         : standardPerfectionInView
             ? "Standard Of Perfection"
-            : handcraftedLuxuryInView
-                ? "Handcrafted Luxury"
-                : null;
+            : null;
 
     const textVariants = {
         hidden: { opacity: 0, x: "-40vw" },
@@ -142,10 +136,6 @@ function Innovation() {
 
             <section id="standard-perfection" ref={standardRef}>
                 <StandardOfPerfection />
-            </section>
-
-            <section id="handcrafted-luxury" ref={handcraftedRef}>
-                <HandcraftedLuxury />
             </section>
         </>
     );

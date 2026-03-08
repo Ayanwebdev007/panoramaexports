@@ -18,6 +18,7 @@ import ManufacturingExcellence from "../components/ManufacturingExcellence/Manuf
 import LeadershipSection from "../components/LeadershipSection/LeadershipSection";
 import GoogleMapUnits from "../components/GoogleMapUnits";
 import OurLocation from "../components/OurLocation/OurLocation";
+import JoinUs from "../components/JoinUs/JoinUs";
 
 import HumanTouch1 from "../assets/Community/csr.webp";
 import HumanTouch2 from "../assets/Community/csr2.webp";
@@ -441,7 +442,7 @@ export default function Home() {
                     </div>
                     <div className="w-full">
                         <p className="2xl:text-xl lg:text-lg text-sm text-gray-600">
-                            5,000+ individuals, 40% women, all united by
+                            5,000+ individuals, 45% women, all united by
                             passion, purpose, and creativity. We foster
                             safe, inclusive spaces, invest in
                             skill-building, and champion equal
@@ -506,6 +507,7 @@ export default function Home() {
                         </p>
                     </div>
                 </div>
+                <JoinUs />
                 <OurLocation />
             </div>
         </div>

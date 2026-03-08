@@ -1,25 +1,36 @@
-import React from 'react'
-import Image1 from "../../assets/LookBook/Tabloid1.webp";
-import Image2 from "../../assets/LookBook/Lookbook2.webp";
-import Image3 from "../../assets/LookBook/Lookbook3.webp";
-import Image4 from "../../assets/LookBook/Lookbook4.webp";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { lookbookData } from '../../data/lookbookData';
+import LookbookGrid from '../../components/LookBook/LookbookGrid';
 
 function LookBook() {
+    const navigate = useNavigate();
 
-  console.log("Developed By: Gs3 Solutions Pvt Ltd");
-  console.log("Developer: sudiptasamanta917@gmail.com");
-  
-  return (
-      <div>
-          <div className="w-full h-10 md:h-12 lg:h-20 bg-gray-900"></div>
-          <div className='w-full grid grid-cols-1 md:grid-cols-2 gap-0'>
-              <img src={Image1} alt="lookbook" className="w-full" />
-              <img src={Image2} alt="lookbook" className="w-full" />
-              <img src={Image3} alt="lookbook" className="w-full" />
-              <img src={Image4} alt="lookbook" className="w-full" />
-          </div>
-      </div>
-  );
+    return (
+        <div className="bg-white font-outfit min-h-screen">
+            {/* Spacer for Navbar */}
+            <div className="w-full h-10 md:h-12 lg:h-20 bg-gray-900"></div>
+            
+            {/* Hero Header Section */}
+            <header className="w-full pt-10 pb-2 md:pt-14 md:pb-4 bg-white">
+                <div className="w-[90%] mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
+                    <div className="max-w-3xl">
+                        <h1 className="text-4xl md:text-5xl font-light text-[#01276a] leading-tight">
+                            Lookbook Collections
+                        </h1>
+                    </div>
+                </div>
+            </header>
+
+            {/* Grid Content */}
+            <main className="w-[90%] mx-auto px-4 sm:px-6 md:px-10 lg:px-20 py-10 lg:py-16">
+                <LookbookGrid 
+                    items={lookbookData} 
+                    onSelect={(item) => navigate(`/lookbook/${item.id}`)} 
+                />
+            </main>
+        </div>
+    );
 }
 
-export default LookBook
+export default LookBook;

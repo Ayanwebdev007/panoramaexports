@@ -1,4 +1,16 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { IoEnterOutline } from "react-icons/io5";
+import { 
+    Droplet, 
+    RefreshCcw, 
+    TrendingUp, 
+    ChevronsDown, 
+    Trees, 
+    Users, 
+    Zap, 
+    Globe 
+} from "lucide-react";
 
 import icon1 from "../../assets/Responsible/Icons/ReduceEmission.webp";
 import icon2 from "../../assets/Responsible/Icons/SaveGreenery.webp";
@@ -38,6 +50,24 @@ const icons = [
         id: 4,
         icon: icon4,
         header: "Respect Water",
+    },
+];
+
+const csrItems = [
+    {
+        id: 1,
+        image: cimg1,
+        title: "Social Impact",
+    },
+    {
+        id: 2,
+        image: cimg2,
+        title: "Empowering Communities",
+    },
+    {
+        id: 3,
+        image: cimg3,
+        title: "Inclusive Growth",
     },
 ];
 
@@ -111,6 +141,7 @@ function Responsibility() {
                     </div>
                 </section>
 
+
                 {/* Certifications */}
                 <section className="lg:mb-12 md:mb-10 mb-5 grid grid-cols-1 lg:grid-cols-3 md:gap-8 gap-5 lg:mt-20 mt-10">
                     <div className="flex flex-col items-center">
@@ -154,6 +185,116 @@ function Responsibility() {
                         </p>
                     </div>
                 </section>
+
+                {/* ESG Report & Bento Grid Section */}
+                <section className="sm:pt-8 sm:pb-0 text-[#01276a] w-full mt-24 mb-12">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 px-2 sm:px-6 md:px-10 lg:px-20">
+                        <div className="text-2xl sm:text-3xl md:text-5xl font-light">
+                            ESG Report
+                            <div className="text-sm md:text-base text-gray-600 mt-2 font-light max-w-2xl leading-relaxed">
+                                Our ESG Report reflects Panorama's commitment to transparency, 
+                                accountability, and the measurable impact of our sustainability 
+                                initiatives across global operations.
+                            </div>
+                        </div>
+                        <div className="flex items-center justify-end">
+                            <Link to="/media">
+                                <button className="my-4 group inline-flex items-center hover:text-red-600 font-semibold md:text-lg sm:text-sm text-[12px]">
+                                    Read ESG Report
+                                    <IoEnterOutline className="h-6 w-6 mx-2 group-hover:translate-x-1 transition-transform duration-300" />
+                                </button>
+                            </Link>
+                        </div>
+                    </div>
+
+                    {/* Bento Grid Integrated directly */}
+                    <div className="px-2 sm:px-6 md:px-10 lg:px-20">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 min-h-[500px] lg:h-[550px]">
+                            {/* Column 1 */}
+                            <div className="grid grid-rows-2 gap-4 h-full">
+                                <div className="bg-[#01276a] text-white p-6 rounded-lg flex flex-col justify-between relative group hover:bg-[#02388e] transition-colors duration-300">
+                                    <div>
+                                        <span className="text-3xl font-light block mb-2">2X</span>
+                                        <p className="text-sm font-light leading-snug">water positivity through daily operations</p>
+                                    </div>
+                                    <Droplet className="w-8 h-8 opacity-60 self-end" strokeWidth={1.2} />
+                                </div>
+                                <div className="relative rounded-lg overflow-hidden group">
+                                    <img 
+                                        src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=800&auto=format&fit=crop" 
+                                        alt="Waste Diversion" 
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-black/40 p-6 flex flex-col justify-between text-white">
+                                        <div>
+                                            <span className="text-3xl font-light block mb-2">100%</span>
+                                            <p className="text-xs font-light leading-snug">waste diversion from landfill to be achieved</p>
+                                        </div>
+                                        <RefreshCcw className="w-6 h-6 opacity-60 self-end" strokeWidth={1.2} />
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Column 2 - Tall Card */}
+                            <div className="h-full flex flex-col bg-white border border-gray-100 rounded-lg overflow-hidden group">
+                                <div className="h-[65%] relative overflow-hidden">
+                                    <img 
+                                        src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=800&auto=format&fit=crop" 
+                                        alt="SROI Impact" 
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                </div>
+                                <div className="flex-grow p-6 flex flex-col justify-center">
+                                    <span className="text-2xl font-light text-[#01276a] block mb-2">10X</span>
+                                    <p className="text-xs text-gray-500 font-light leading-snug uppercase tracking-widest">SROI to be accomplished</p>
+                                </div>
+                            </div>
+
+                            {/* Column 3 - Carbon Intensity Tall Card */}
+                            <div className="h-full flex flex-col bg-white border border-gray-100 rounded-lg overflow-hidden group">
+                                <div className="flex-grow p-6 flex flex-col justify-center">
+                                    <span className="text-2xl font-light text-[#01276a] block mb-2">60%</span>
+                                    <p className="text-xs text-gray-500 font-light leading-snug uppercase tracking-widest">reduced carbon intensity</p>
+                                </div>
+                                <div className="h-[65%] relative overflow-hidden">
+                                    <img 
+                                        src={img1} 
+                                        alt="Carbon Reduction" 
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                    <div className="absolute top-4 right-4">
+                                        <ChevronsDown className="w-6 h-6 text-[#01276a] opacity-60" strokeWidth={1.2} />
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Column 4 */}
+                            <div className="grid grid-rows-2 gap-4 h-full">
+                                <div className="relative rounded-lg overflow-hidden group">
+                                    <img 
+                                        src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=800&auto=format&fit=crop" 
+                                        alt="Renewable Energy" 
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-black/40 p-6 flex flex-col justify-between text-white">
+                                        <div>
+                                            <span className="text-2xl font-light block mb-2">40%</span>
+                                            <p className="text-xs font-light leading-snug">renewable energy usage to be achieved</p>
+                                        </div>
+                                        <Zap className="w-6 h-6 opacity-60 self-end" strokeWidth={1.2} />
+                                    </div>
+                                </div>
+                                <div className="bg-white border border-gray-200 p-6 rounded-lg flex flex-col justify-between group hover:border-[#01276a]/30 transition-colors duration-300">
+                                    <div className="mt-auto">
+                                        <span className="text-2xl font-light text-[#01276a] block mb-2">100%</span>
+                                        <p className="text-xs text-gray-600 font-light leading-snug">inclusive communities and supply chains to be set across</p>
+                                    </div>
+                                    <Globe className="w-6 h-6 text-[#01276a] opacity-60 self-end" strokeWidth={1.2} />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
 
             <section className="w-[90%] mx-auto md:pb-16 pb-5 px-2 sm:px-6 md:px-10 lg:px-20">
@@ -168,15 +309,26 @@ function Responsibility() {
                 </div>
             </section>
 
-            <section className="grid sm:grid-cols-3 grid-cols-1 2xl:gap-5 lg:gap-4 md:gap-3 gap-2">
-                <div className="">
-                    <img src={cimg1} alt="" />
-                </div>
-                <div className="">
-                    <img src={cimg2} alt="" />
-                </div>
-                <div className="">
-                    <img src={cimg3} alt="" />
+            <section className="w-[90%] mx-auto md:pb-16 pb-5 px-2 sm:px-6 md:px-10 lg:px-20">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:gap-6 gap-4">
+                    {csrItems.map((item) => (
+                        <div
+                            key={item.id}
+                            className="relative overflow-hidden shadow-lg group"
+                        >
+                            <img
+                                src={item.image}
+                                alt={item.title}
+                                className="w-full h-full object-cover transform transition-transform duration-[4000ms] ease-out group-hover:scale-[1.1]"
+                            />
+                            {/* Overlay */}
+                            <div className="absolute bottom-0 h-[50%] w-full py-[10%] bg-gradient-to-t from-[#01276a]/90 via-[#01276a]/80 via-[#01276a]/50 via-[#01276a]/40 to-transparent transition-all duration-500 flex flex-col justify-end p-6">
+                                <p className="text-white text-md md:text-lg lg:text-xl xl:text-xl font-semibold text-center whitespace-nowrap">
+                                    {item.title}
+                                </p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </section>
         </div>

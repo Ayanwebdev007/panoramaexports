@@ -40,11 +40,11 @@ export default function Navbar() {
                     path: "/ourstory#milestones",
                     image: "",
                 },
-                {
+                /* {
                     label: "Our Purpose",
                     path: "/our-purpose",
                     image: "",
-                },
+                }, */
             ],
         },
         {
@@ -266,14 +266,14 @@ export default function Navbar() {
                                 Vision & Values
                             </Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link
                                 to="/our-purpose"
                                 onClick={() => setIsOpen(false)}
                             >
                                 Our Purpose
                             </Link>
-                        </li>
+                        </li> */}
                         <li>
                             <Link
                                 to="/craftedprecision"

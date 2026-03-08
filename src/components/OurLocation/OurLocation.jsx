@@ -166,7 +166,7 @@ const OurLocation = () => {
     }, [activeLocation]);
 
     return (
-        <section style={{ paddingTop: '80px' }} className="relative w-full pb-24 bg-white overflow-hidden">
+        <section style={{ paddingTop: '40px' }} className="relative w-full pb-24 bg-white overflow-hidden">
 
             {/* Header - Perfectly Aligned with Human Touch/Manufacturing Units */}
             <motion.div

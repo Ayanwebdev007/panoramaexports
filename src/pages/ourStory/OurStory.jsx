@@ -4,6 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { Link, useLocation } from "react-router-dom";
 
 import Milestones from "./Milestones";
+import PurposeCards from "../../components/PurposeCards/PurposeCards";
 
 import LegacyImage from "../../assets/Legacy/final.webp";
 
@@ -19,6 +20,7 @@ const labels = {
 const crumbs = [
     { label: "Legacy", path: "/ourstory#legacy" },
     { label: "Milestones", path: "/ourstory#milestones" },
+    { label: "Our Purpose", path: "/ourstory#our-purpose" },
 ];
 
 export default function OurStory() {
@@ -35,13 +37,18 @@ export default function OurStory() {
     const { ref: milestonesRef, inView: milestonesInView } = useInView({
         threshold: 0.3, // same for milestones for breadcrums control............
     });
+    const { ref: ourPurposeRef, inView: ourPurposeInView } = useInView({
+        threshold: 0.3,
+    });
 
     // Determine which breadcrumb is active
     const activeCrumb = legacyInView
         ? "Legacy"
         : milestonesInView
             ? "Milestones"
-            : null;
+            : ourPurposeInView
+                ? "Our Purpose"
+                : null;
 
     const textVariants = {
         hidden: { opacity: 0, x: "-40vw" },
@@ -334,6 +341,11 @@ export default function OurStory() {
                     </div>
                 </div>
                 <Milestones />
+            </section>
+
+            {/* Our Purpose Cards Section */}
+            <section id="our-purpose" ref={ourPurposeRef} className="bg-white border-t border-gray-100">
+                <PurposeCards />
             </section>
         </div>
     );

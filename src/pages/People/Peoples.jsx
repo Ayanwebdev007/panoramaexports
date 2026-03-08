@@ -42,29 +42,22 @@ import img23 from "../../assets/People/LifePanorama/23.webp";
 import img24 from "../../assets/People/LifePanorama/24.webp";
 import img25 from "../../assets/People/LifePanorama/25.webp";
 import img26 from "../../assets/People/LifePanorama/26.webp";
+import wd1 from "../../assets/WD1.webp";
+import wd2 from "../../assets/WD2.webp";
+import wd3 from "../../assets/WD3.webp";
 
 import TeamworkImage from "../../assets/People/TeamWork1.webp";
 import ForwardThinkingImage from "../../assets/People/ForwardThinking1.webp";
 import SpeedActionImage from "../../assets/People/SpeedAction1.webp";
 import CustomerCentricityImage from "../../assets/People/CustomerCentricity1.webp";
 
+import PeopleHeroPng from "../../assets/people hero demo.png";
 import CareerPng from "../../assets/People/Career.webp";
 
 const crumbs = [
     { label: "Our Strength", path: "#our-strength" },
     { label: "Life at Panorama", path: "#life-at-panorama" },
     { label: "Commitment", path: "#commitment" },
-];
-
-const executiveDirectors = [
-    {
-        id: 1,
-        name: "",
-        role: "",
-        bg: CareerPng,
-        img: PeopleImg,
-        message: ``,
-    },
 ];
 
 const industries = [
@@ -103,9 +96,43 @@ const WeBelieveImages = [
     },
 ];
 
-function Peoples() {
+const testimonials = [
+    {
+        id: 1,
+        name: "Kanak Israni",
+        designation: "Assistant Vice President",
+        department: "Sourcing",
+        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&h=200&auto=format&fit=crop",
+        text: "Panorama's commitment to development is evident in my 15 years here. The nurturing environment fosters continuous growth and makes it a unique place to build a career."
+    },
+    {
+        id: 2,
+        name: "Ashok Raman",
+        designation: "Executive Vice President",
+        department: "Marketing",
+        image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&h=200&auto=format&fit=crop",
+        text: "I enjoy navigating customer paradigms while mentoring future leaders. Seeing growth through empowerment is a proud achievement in our collaborative culture."
+    },
+    {
+        id: 3,
+        name: "Susan Paul",
+        designation: "Vice President",
+        department: "Marketing",
+        image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&h=200&auto=format&fit=crop",
+        text: "From graduate to VP, Panorama has been an incredible journey. Witnessing our evolution into a global leader is a testament to our team's shared vision."
+    },
+    {
+        id: 4,
+        name: "Michael Chen",
+        designation: "Director",
+        department: "Operations",
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&h=200&auto=format&fit=crop",
+        text: "Operational excellence here is driven by precision and innovation. It's rewarding to see our collective efforts translate into global industry leadership."
+    }
+];
 
-    const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, img24, img25, img26];
+function Peoples() {
+    const images = [wd1, wd2, wd3, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16, img17, img18, img19, img20, img21, img22, img23, img24, img25, img26];
     const location = useLocation();
     const [activeCrumb, setActiveCrumb] = useState("");
 
@@ -135,50 +162,62 @@ function Peoples() {
     }, []);
 
     return (
-        <div className="font-outfit">
+        <div className="font-outfit overflow-x-hidden">
             <section className="bg-white">
-                <div className="w-full h-10 md:h-12 lg:h-20 bg-gray-900"></div>
-                {executiveDirectors.map((director) => (
-                    <div
-                        key={director.id}
-                        className="w-full bg-contain bg-center"
-                        style={{
-                            backgroundImage: `url(${director.img})`,
-                            aspectRatio: "16/7.17", // maintain image ratio
-                        }}
-                    >
-                        <div className="bg-transparent w-full h-full flex items-center">
-                            {/* Right Side (Visible for id=2) */}
-                            <div
-                                className={`w-[50%] ml-auto py-10 flex items-center`}
-                            >
-                                <motion.div
-                                    className="w-[90%] mr-auto flex flex-col items-start justify-center"
-                                    initial={{ opacity: 0 }}
-                                    whileInView={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    transition={{
-                                        duration: 1.5,
-                                        ease: "easeInOut",
-                                    }}
-                                    viewport={{ once: false, amount: 0.3 }}
-                                >
-                                    <div className="2xl:text-3xl xl:text-2xl md:text-xl sm:text-[12px] text-[8px] text-white text-justify leading-loose 2xl:w-[80%] xl:w-[90%] lg:w-[95%] w-full">
-                                        <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold"></span>
-                                        {director.message}
-                                        <span className="2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-md font-semibold"></span>
+                <div className="w-full h-10 md:h-12 lg:h-20 bg-gray-900 shadow-inner"></div>
+
+                {/* Board of Directors Header */}
+                <div className="w-[90%] mx-auto max-w-[1400px] pt-6 md:pt-10 px-2 sm:px-6 md:px-10 lg:px-20">
+                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#01276a]">
+                        Board of Directors
+                    </h2>
+                </div>
+
+                {/* New Premium Hero Section (Arvind Style) */}
+                <div className="w-full bg-white lg:pt-[250px] md:pt-[180px] pt-32 pb-12 overflow-visible">
+                    <div className="w-[90%] mx-auto max-w-[1400px] relative">
+                        
+                        {/* The Large Grey Background Box */}
+                        <motion.div 
+                            className="bg-gradient-to-br from-[#e5e5e5] to-[#d4d4d4] rounded-2xl md:rounded-[40px] relative z-10 border border-black/5 w-full"
+                            initial={{ opacity: 0, y: 50 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                        >
+                            <div className="flex flex-col lg:flex-row items-center justify-end px-6 pt-10 md:pt-14 pb-6 md:pb-8 lg:px-24 min-h-[280px] md:min-h-[350px]">
+                                
+                                {/* Content Box - Significantly narrowed to perfectly clear the PNG */}
+                                <div className="w-full lg:w-[38%] space-y-4 md:space-y-8 z-30 mr-4">
+                                    <div className="space-y-2">
+                                        <h1 className="text-lg md:text-xl lg:text-2xl font-light text-gray-800 tracking-tight leading-none whitespace-nowrap">
+                                            Shivaan Sahni & Sidharth Sahni
+                                        </h1>
+                                        <p className="text-gray-500 text-sm md:text-lg font-light tracking-widest uppercase">
+                                            Executive Directors
+                                        </p>
                                     </div>
-                                    <h1 className="text-white w-full text-end 2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl text-lg font-semibold 2xl:mt-20 xl:mt-10 md:mt-5 mt-2">
-                                        {director.name}
-                                    </h1>
-                                    <h3 className="text-white w-full text-end 2xl:text-4xl xl:text-3xl lg:text-2xl md:text-xl text-lg md:font-semibold xl:mt-5 md:mt-2">
-                                        {director.role}
-                                    </h3>
-                                </motion.div>
+
+                                    <p className="text-gray-600 text-[10px] md:text-base md:leading-relaxed font-light text-justify max-w-sm lg:max-w-md">
+                                        We define leadership through empowerment — by cultivating creativity, collaborative partnerships, and embracing global opportunities. Our people are at the heart of this journey, growing with us as we set new benchmarks and continue to lead with purpose, ambition, innovation and excellence across every collection we create.
+                                    </p>
+                                </div>
                             </div>
-                        </div>
+
+                            <motion.div
+                                className="absolute left-[2%] lg:left-[4%] bottom-0 w-[60%] sm:w-[50%] lg:w-[44%] z-20 pointer-events-none"
+                                initial={{ opacity: 0, y: 40, scale: 0.9 }}
+                                animate={{ opacity: 1, y: 0, scale: 1 }}
+                                transition={{ duration: 1.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                            >
+                                <img
+                                    src={PeopleHeroPng}
+                                    alt="Shivaan and Sidharth Sahni"
+                                    className="w-full h-auto object-contain origin-bottom-left scale-[1.1] md:scale-[1.15] lg:scale-[1.25]"
+                                />
+                            </motion.div>
+                        </motion.div>
                     </div>
-                ))}
+                </div>
             </section>
 
             {/* Breadcrumbs */}
@@ -261,7 +300,7 @@ function Peoples() {
                         Life at Panorama
                     </h2>
                 </div>
-                <div className="w-[80%] mx-auto relative">
+                <div className="w-full relative px-10 md:px-14">
                     <Swiper
                         modules={[Navigation]}
                         slidesPerView={1}
@@ -272,7 +311,7 @@ function Peoples() {
                         }}
                         breakpoints={{
                             768: { slidesPerView: 2 },
-                            1024: { slidesPerView: 3 },
+                            1024: { slidesPerView: 4 },
                         }}
                         className="pb-6"
                     >
@@ -366,6 +405,75 @@ function Peoples() {
                             alt="Innovation"
                             className="w-full h-full object-cover"
                         />
+                    </div>
+                </div>
+            </section>
+
+            {/* Employee Testimonials Section */}
+            <section className="w-full bg-gray-50 py-16 md:py-24">
+                <div className="w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20">
+                    <div className="mb-12 md:mb-16">
+                        <h2 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#01276a] mb-4">
+                            Employee Testimonials
+                        </h2>
+                    </div>
+
+                    <div className="relative px-10 md:px-14">
+                        <Swiper
+                            modules={[Navigation]}
+                            slidesPerView={1}
+                            spaceBetween={30}
+                            navigation={{
+                                nextEl: ".testimonials-next",
+                                prevEl: ".testimonials-prev",
+                            }}
+                            breakpoints={{
+                                768: { slidesPerView: 2 },
+                                1150: { slidesPerView: 3 },
+                            }}
+                            className="pb-12"
+                        >
+                            {testimonials.map((item) => (
+                                <SwiperSlide key={item.id} className="!h-auto">
+                                    <div className="bg-white rounded-2xl p-6 h-full flex flex-col border border-[#01276a]/40 relative">
+                                        {/* Avatar */}
+                                        <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-4 border-2 border-white shadow-lg mx-auto md:mx-0">
+                                            <img 
+                                                src={item.image} 
+                                                alt={item.name} 
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+
+                                        {/* Content */}
+                                        <div className="flex-grow mb-4">
+                                            <p className="text-gray-500 text-sm md:text-base leading-relaxed font-light italic">
+                                                "{item.text}"
+                                            </p>
+                                        </div>
+
+                                        {/* Footer */}
+                                        <div className="mt-auto pt-4 border-t border-gray-100">
+                                            <h4 className="text-[#01276a] font-semibold text-lg">{item.name}</h4>
+                                            <p className="text-gray-600 text-sm font-medium">{item.designation}</p>
+                                            <p className="text-gray-400 text-xs uppercase tracking-widest mt-1">{item.department}</p>
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
+
+                        {/* Navigation */}
+                        <button className="testimonials-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 text-[#01276a] hover:text-blue-400 transition-colors">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <path d="M15 18l-6-6 6-6" />
+                            </svg>
+                        </button>
+                        <button className="testimonials-next absolute right-0 top-1/2 -translate-y-1/2 z-10 text-[#01276a] hover:text-blue-400 transition-colors">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                <path d="M11 18l6-6-6-6" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </section>
