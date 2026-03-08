@@ -51,7 +51,7 @@ import ForwardThinkingImage from "../../assets/People/ForwardThinking1.webp";
 import SpeedActionImage from "../../assets/People/SpeedAction1.webp";
 import CustomerCentricityImage from "../../assets/People/CustomerCentricity1.webp";
 
-import PeopleHeroPng from "../../assets/people hero demo.png";
+import PeopleHeroPng from "../../assets/people-hero-demo.png";
 import CareerPng from "../../assets/People/Career.webp";
 
 const crumbs = [

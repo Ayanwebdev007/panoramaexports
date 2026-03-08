@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import AutoPlayVideo from "../../components/AutoPlayVideo";
 
-import video from "../../assets/Crafted_Precision/Manufacturing_Excellence/1st big pic.mp4";
+import video from "../../assets/Crafted_Precision/Manufacturing_Excellence/1st-big-pic.mp4";
 import mfg1 from "../../assets/Crafted_Precision/Manufacturing_Excellence/Small1stPic.jpg";
 import mfg2 from "../../assets/Crafted_Precision/Manufacturing_Excellence/Small2ndPic.jpg";
 import mfg3 from "../../assets/Crafted_Precision/Manufacturing_Excellence/Small3rdPic.jpg";

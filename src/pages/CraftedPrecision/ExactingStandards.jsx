@@ -6,7 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import AutoPlayVideo from "../../components/AutoPlayVideo";
 
-import video from "../../assets/Crafted_Precision/Exacting_Standards/1st big pic.mp4";
+import video from "../../assets/Crafted_Precision/Exacting_Standards/1st-big-pic.mp4";
 import aet1 from "../../assets/Crafted_Precision/Exacting_Standards/1.webp";
 import aet2 from "../../assets/Crafted_Precision/Exacting_Standards/Small2.jpg";
 import aet3 from "../../assets/Crafted_Precision/Exacting_Standards/3.webp";

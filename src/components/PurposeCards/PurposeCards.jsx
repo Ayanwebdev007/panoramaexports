@@ -5,7 +5,7 @@ import { IoArrowForward } from "react-icons/io5";
 
 import EnrichingLives from "../../assets/OurPurpose/1.webp";
 import DynamicHeart from "../../assets/OurPurpose/2.webp";
-import ResponsibleReverence from "../../assets/our purpose responsible reverence.JPG";
+import ResponsibleReverence from "../../assets/our-purpose-responsible-reverence.JPG";
 import TrustCore from "../../assets/OurPurpose/Trusted.webp";
 
 const purposeItems = [
@@ -41,7 +41,7 @@ const PurposeCards = () => {
     const [currentIndex, setCurrentIndex] = useState(purposeItems.length);
     const controls = useAnimation();
     const [isAnimating, setIsAnimating] = useState(false);
-    
+
     const [cardWidth, setCardWidth] = useState(404);
     const indexRef = useRef(purposeItems.length);
 
@@ -74,24 +74,24 @@ const PurposeCards = () => {
 
         window.addEventListener('resize', onResize);
         return () => window.removeEventListener('resize', onResize);
-    }, [controls]); 
+    }, [controls]);
 
     const handleScroll = async (direction) => {
         if (isAnimating) return;
-        
+
         setIsAnimating(true);
         const newIndex = direction === 'right' ? currentIndex + 1 : currentIndex - 1;
-        
+
         // Update local state for index
         setCurrentIndex(newIndex);
 
         // Perform the smooth animation
         await controls.start({
             x: -(newIndex * cardWidth),
-            transition: { 
-                type: "tween", 
-                duration: 1.2, 
-                ease: [0.32, 0.72, 0, 1] 
+            transition: {
+                type: "tween",
+                duration: 1.2,
+                ease: [0.32, 0.72, 0, 1]
             }
         });
 
@@ -101,7 +101,7 @@ const PurposeCards = () => {
 
     const checkLoop = (index) => {
         let jumpIndex = index;
-        
+
         if (index <= 0) {
             jumpIndex = index + purposeItems.length;
         } else if (index >= purposeItems.length * 2) {
@@ -116,7 +116,8 @@ const PurposeCards = () => {
 
     return (
         <section className="bg-white py-16 lg:py-24 overflow-hidden font-outfit relative">
-            <style dangerouslySetInnerHTML={{ __html: `
+            <style dangerouslySetInnerHTML={{
+                __html: `
                 @keyframes meshGradient {
                     0% { background-position: 0% 0%; }
                     25% { background-position: 100% 0%; }
@@ -169,7 +170,7 @@ const PurposeCards = () => {
             {/* Carousel Container with Side Arrows */}
             <div className="relative w-full px-4 md:px-12 max-w-[1400px] mx-auto group/container">
                 {/* Navigation Arrows - Side Positioned */}
-                <button 
+                <button
                     onClick={() => handleScroll('left')}
                     disabled={isAnimating}
                     className="absolute left-0 lg:-left-4 top-1/2 -translate-y-1/2 z-30 w-12 md:w-14 h-12 md:h-14 flex items-center justify-center rounded-full bg-white border border-[#01276a]/20 text-[#01276a] shadow-lg hover:bg-[#01276a] hover:text-white transition-all duration-500 group disabled:opacity-30 disabled:cursor-not-allowed md:opacity-0 group-hover/container:opacity-100"
@@ -177,8 +178,8 @@ const PurposeCards = () => {
                 >
                     <IoArrowForward className="rotate-180 group-hover:-translate-x-1 transition-transform text-xl" />
                 </button>
-                
-                <button 
+
+                <button
                     onClick={() => handleScroll('right')}
                     disabled={isAnimating}
                     className="absolute right-0 lg:-right-4 top-1/2 -translate-y-1/2 z-30 w-12 md:w-14 h-12 md:h-14 flex items-center justify-center rounded-full bg-white border border-[#01276a]/20 text-[#01276a] shadow-lg hover:bg-[#01276a] hover:text-white transition-all duration-500 group disabled:opacity-30 disabled:cursor-not-allowed md:opacity-0 group-hover/container:opacity-100"
@@ -189,7 +190,7 @@ const PurposeCards = () => {
 
                 {/* Viewport Window - Shows exactly 3 cards on MD+, 2 on SM, 1 on Mobile */}
                 <div className="relative overflow-hidden mx-auto w-[280px] sm:w-[664px] md:w-[1188px] z-20">
-                    <motion.div 
+                    <motion.div
                         className="flex gap-6"
                         animate={controls}
                     >
@@ -205,7 +206,7 @@ const PurposeCards = () => {
                                         alt={item.title}
                                         className="w-full h-full object-cover transition-transform duration-[2000ms] ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:scale-110"
                                     />
-                                    </div>
+                                </div>
 
                                 {/* Content Container */}
                                 <div className="p-8 md:p-10 flex flex-col flex-1 relative z-10">

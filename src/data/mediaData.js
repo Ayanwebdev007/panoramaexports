@@ -16,7 +16,7 @@ import Environment2 from "../assets/Media/Workshop/Environment2.webp";
 import Environment3 from "../assets/Media/Workshop/DSC03107.webp";
 import Environment4 from "../assets/Media/Workshop/CM100651.webp";
 import wd4 from "../assets/WD4.webp";
-import wd5 from "../assets/WD 5.webp";
+import wd5 from "../assets/WD-5.webp";
 
 // PDFs
 import NewsletterJanFeb2026 from "../assets/Newsletter-Jan1.pdf";

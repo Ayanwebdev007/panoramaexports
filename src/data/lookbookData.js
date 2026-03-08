@@ -7,8 +7,8 @@ import thumb1 from "../assets/lookbook1.png";
 import thumb2 from "../assets/lookbook2.png";
 
 import lookbook3 from "../assets/N1.png";
-import lookbook4 from "../assets/lookbook 2.png";
-import lookbook5 from "../assets/lookbook 3.png";
+import lookbook4 from "../assets/lookbook-2.png";
+import lookbook5 from "../assets/lookbook-3.png";
 
 export const lookbookData = [
     {
