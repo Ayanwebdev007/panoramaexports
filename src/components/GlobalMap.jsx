@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import React from "react";
 // import { motion } from "framer-motion"; // Removing framer-motion
 import { MdLocationPin } from "react-icons/md";
-import globalMap from "../assets/GlobalFootprint/MAP PNG.webp";
+import globalMap from "../assets/GlobalFootprint/MAP-PNG.webp";
 
 
 //marker positions in percentages (relative to map div)

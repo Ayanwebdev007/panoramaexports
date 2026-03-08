@@ -1,7 +1,7 @@
 import React from 'react';
 import img1 from "../../assets/CM100256.webp";
 import img2 from "../../assets/CM100440.webp";
-import img3 from "../../assets/DSC02823.webp";
+import img3 from "../../assets/CM100034.JPG";
 import img4 from "../../assets/DSC03338.webp";
 
 export default function JoinUs() {
@@ -13,12 +13,12 @@ export default function JoinUs() {
                 <div className="absolute inset-0 opacity-[0.4]" style={{ backgroundImage: 'radial-gradient(#cbd5e1 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
             </div>
             */}
-            
+
             <div className="flex flex-col lg:flex-row gap-2 md:gap-4 w-full max-w-[1050px] relative z-10">
-                
+
                 {/* Left Side Container */}
                 <div className="w-full lg:absolute lg:top-0 lg:left-0 lg:w-[calc(72%-1rem)] flex flex-col gap-4 lg:h-full">
-                    
+
                     {/* Top Row: JOIN, Image1, Image2 */}
                     <div className="flex flex-col md:flex-row gap-2 md:gap-4 h-auto lg:h-[calc(50%-0.5rem)]">
                         <div className="w-full md:w-[35%] flex-none flex items-center justify-center lg:justify-start lg:pr-2 overflow-visible relative z-20">
@@ -32,7 +32,7 @@ export default function JoinUs() {
                         </div>
                         <div className="w-full md:flex-1 min-w-0 h-48 md:h-full overflow-hidden rounded-[1.25rem] relative z-10 group shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(1,39,106,0.12)] hover:-translate-y-1 transition-all duration-700 ease-out ring-1 ring-gray-900/5">
                             <img src={img2} alt="Apparel Display" className="w-full h-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-[1.03]" />
-                             <div className="absolute inset-0 bg-[#01276a]/0 group-hover:bg-[#01276a]/5 transition-colors duration-700 z-10 pointer-events-none"></div>
+                            <div className="absolute inset-0 bg-[#01276a]/0 group-hover:bg-[#01276a]/5 transition-colors duration-700 z-10 pointer-events-none"></div>
                         </div>
                     </div>
 
@@ -44,7 +44,7 @@ export default function JoinUs() {
                             </h2>
                         </div>
                         <div className="w-full md:w-[83%] h-[300px] sm:h-[400px] md:h-full overflow-hidden rounded-[1.25rem] relative z-10 group shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(1,39,106,0.12)] hover:-translate-y-1 transition-all duration-700 ease-out ring-1 ring-gray-900/5">
-                            <img src={img3} alt="Factory Floor" className="w-full h-full object-cover object-bottom transition-transform duration-[1200ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-[1.03]" />
+                            <img src={img3} alt="Factory Floor" className="w-full h-full object-cover object-[center_60%] transition-transform duration-[1200ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-[1.03]" />
                             <div className="absolute inset-0 bg-[#01276a]/0 group-hover:bg-[#01276a]/5 transition-colors duration-700 z-10 pointer-events-none"></div>
                         </div>
                     </div>

@@ -101,7 +101,7 @@ import img1 from "../assets/CraftingTomorrow/01.webp";
 import img2 from "../assets/CraftingTomorrow/2.webp";
 import img3 from "../assets/CraftingTomorrow/3.webp";
 import img4 from "../assets/CraftingTomorrow/4.webp";
-import video from "../assets/CraftingTomorrow/Crafting Tomorrow.mp4";
+import video from "../assets/CraftingTomorrow/Crafting-Tomorrow.mp4";
 
 const crImages = [img2, img4];
 

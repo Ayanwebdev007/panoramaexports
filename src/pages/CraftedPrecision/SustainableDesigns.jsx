@@ -5,7 +5,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import AutoPlayVideo from "../../components/AutoPlayVideo";
 
-import video from "../../assets/Crafted_Precision/Sustainable_Designs/1st big pic.mp4";
+import video from "../../assets/Crafted_Precision/Sustainable_Designs/1st-big-pic.mp4";
 import aet1 from "../../assets/Crafted_Precision/Sustainable_Designs/Small01.webp";
 import aet2 from "../../assets/Crafted_Precision/Sustainable_Designs/Small2.jpg";
 import aet3 from "../../assets/Crafted_Precision/Sustainable_Designs/Small3.jpg";

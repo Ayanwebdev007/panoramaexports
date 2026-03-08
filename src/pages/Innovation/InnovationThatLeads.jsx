@@ -1,11 +1,11 @@
 import React from "react";
 import InnovationStack from "../../components/Innovation/InnovationStack";
 
-import CadImg from "../../assets/CAD & 3D Draping.webp";
-import WeavingImg from "../../assets/Weaving Brilliance.webp";
-import OperationalImg from "../../assets/Operational Excellence (2).webp";
-import UbtImg from "../../assets/UBT Sewing Machine.webp";
-import HandcraftedImg from "../../assets/Handcrafted Luxury.webp";
+import CadImg from "../../assets/CAD-and-3D-Draping.webp";
+import WeavingImg from "../../assets/Weaving-Brilliance.webp";
+import OperationalImg from "../../assets/Operational-Excellence-2.webp";
+import UbtImg from "../../assets/UBT-Sewing-Machine.webp";
+import HandcraftedImg from "../../assets/Handcrafted-Luxury.webp";
 
 function InnovationThatLeads() {
     const stackingItems = [

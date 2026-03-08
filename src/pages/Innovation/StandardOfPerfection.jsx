@@ -1,5 +1,5 @@
 import React from 'react'
-import Certifications from '../../components/Certifications';
+import SegregatedCertifications from '../../components/SegregatedCertifications';
 
 function StandardOfPerfection() {
     return (
@@ -24,7 +24,7 @@ function StandardOfPerfection() {
                     </div>
                 </div>
             </div>
-            <Certifications />
+            <SegregatedCertifications />
         </>
     );
 }

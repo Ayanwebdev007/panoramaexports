@@ -1,0 +1,61 @@
+.cert-header-bg {
+    background-color: #01276a;
+    background-image:
+        radial-gradient(at 0% 0%, #003399 0, transparent 50%),
+        radial-gradient(at 50% 0%, #01276a 0, transparent 50%),
+        radial-gradient(at 100% 0%, #001a4d 0, transparent 50%),
+        radial-gradient(at 0% 50%, #01276a 0, transparent 50%),
+        radial-gradient(at 50% 50%, #001233 0, transparent 50%),
+        radial-gradient(at 100% 50%, #01276a 0, transparent 50%),
+        radial-gradient(at 0% 100%, #001a4d 0, transparent 50%),
+        radial-gradient(at 50% 100%, #01276a 0, transparent 50%),
+        radial-gradient(at 100% 100%, #003399 0, transparent 50%);
+    background-size: 200% 200%;
+    animation: meshGradient 20s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes meshGradient {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    25% {
+        background-position: 100% 0%;
+    }
+
+    50% {
+        background-position: 100% 100%;
+    }
+
+    75% {
+        background-position: 0% 100%;
+    }
+
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/* Linen texture effect overlay */
+.cert-header-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.08) 0px, rgba(255, 255, 255, 0.08) 1px, transparent 1px, transparent 4px),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.08) 0px, rgba(255, 255, 255, 0.08) 1px, transparent 1px, transparent 4px);
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.cert-header-text {
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}

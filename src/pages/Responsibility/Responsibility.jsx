@@ -1,15 +1,15 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { IoEnterOutline } from "react-icons/io5";
-import { 
-    Droplet, 
-    RefreshCcw, 
-    TrendingUp, 
-    ChevronsDown, 
-    Trees, 
-    Users, 
-    Zap, 
-    Globe 
+import {
+    Droplet,
+    RefreshCcw,
+    TrendingUp,
+    ChevronsDown,
+    Trees,
+    Users,
+    Zap,
+    Globe
 } from "lucide-react";
 
 import icon1 from "../../assets/Responsible/Icons/ReduceEmission.webp";
@@ -29,6 +29,9 @@ import cimg3 from "../../assets/Responsible/Corporate/3.webp";
 import cert1 from "../../assets/Responsible/certificate/gots.webp";
 import cert2 from "../../assets/Responsible/certificate/grs.webp";
 import cert3 from "../../assets/Responsible/certificate/oeko.webp";
+
+import wasteImg from "../../assets/waste-diversion.jpg";
+import sroiImg from "../../assets/sroi-impact.jpg";
 
 const icons = [
     {
@@ -192,19 +195,12 @@ function Responsibility() {
                         <div className="text-2xl sm:text-3xl md:text-5xl font-light">
                             ESG Report
                             <div className="text-sm md:text-base text-gray-600 mt-2 font-light max-w-2xl leading-relaxed">
-                                Our ESG Report reflects Panorama's commitment to transparency, 
-                                accountability, and the measurable impact of our sustainability 
+                                Our ESG Report reflects Panorama's commitment to transparency,
+                                accountability, and the measurable impact of our sustainability
                                 initiatives across global operations.
                             </div>
                         </div>
-                        <div className="flex items-center justify-end">
-                            <Link to="/media">
-                                <button className="my-4 group inline-flex items-center hover:text-red-600 font-semibold md:text-lg sm:text-sm text-[12px]">
-                                    Read ESG Report
-                                    <IoEnterOutline className="h-6 w-6 mx-2 group-hover:translate-x-1 transition-transform duration-300" />
-                                </button>
-                            </Link>
-                        </div>
+
                     </div>
 
                     {/* Bento Grid Integrated directly */}
@@ -220,9 +216,9 @@ function Responsibility() {
                                     <Droplet className="w-8 h-8 opacity-60 self-end" strokeWidth={1.2} />
                                 </div>
                                 <div className="relative rounded-lg overflow-hidden group">
-                                    <img 
-                                        src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=800&auto=format&fit=crop" 
-                                        alt="Waste Diversion" 
+                                    <img
+                                        src={wasteImg}
+                                        alt="Waste Diversion"
                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                     />
                                     <div className="absolute inset-0 bg-black/40 p-6 flex flex-col justify-between text-white">
@@ -238,10 +234,10 @@ function Responsibility() {
                             {/* Column 2 - Tall Card */}
                             <div className="h-full flex flex-col bg-white border border-gray-100 rounded-lg overflow-hidden group">
                                 <div className="h-[65%] relative overflow-hidden">
-                                    <img 
-                                        src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=800&auto=format&fit=crop" 
-                                        alt="SROI Impact" 
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    <img
+                                        src={sroiImg}
+                                        alt="SROI Impact"
+                                        className="w-full h-full object-cover object-left transition-transform duration-500 group-hover:scale-105"
                                     />
                                 </div>
                                 <div className="flex-grow p-6 flex flex-col justify-center">
@@ -257,9 +253,9 @@ function Responsibility() {
                                     <p className="text-xs text-gray-500 font-light leading-snug uppercase tracking-widest">reduced carbon intensity</p>
                                 </div>
                                 <div className="h-[65%] relative overflow-hidden">
-                                    <img 
-                                        src={img1} 
-                                        alt="Carbon Reduction" 
+                                    <img
+                                        src={img1}
+                                        alt="Carbon Reduction"
                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                     />
                                     <div className="absolute top-4 right-4">
@@ -271,9 +267,9 @@ function Responsibility() {
                             {/* Column 4 */}
                             <div className="grid grid-rows-2 gap-4 h-full">
                                 <div className="relative rounded-lg overflow-hidden group">
-                                    <img 
-                                        src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=800&auto=format&fit=crop" 
-                                        alt="Renewable Energy" 
+                                    <img
+                                        src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=800&auto=format&fit=crop"
+                                        alt="Renewable Energy"
                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                     />
                                     <div className="absolute inset-0 bg-black/40 p-6 flex flex-col justify-between text-white">

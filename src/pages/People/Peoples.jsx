@@ -176,16 +176,16 @@ function Peoples() {
                 {/* New Premium Hero Section (Arvind Style) */}
                 <div className="w-full bg-white lg:pt-[250px] md:pt-[180px] pt-32 pb-12 overflow-visible">
                     <div className="w-[90%] mx-auto max-w-[1400px] relative">
-                        
+
                         {/* The Large Grey Background Box */}
-                        <motion.div 
+                        <motion.div
                             className="bg-gradient-to-br from-[#e5e5e5] to-[#d4d4d4] rounded-2xl md:rounded-[40px] relative z-10 border border-black/5 w-full"
                             initial={{ opacity: 0, y: 50 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                         >
                             <div className="flex flex-col lg:flex-row items-center justify-end px-6 pt-10 md:pt-14 pb-6 md:pb-8 lg:px-24 min-h-[280px] md:min-h-[350px]">
-                                
+
                                 {/* Content Box - Significantly narrowed to perfectly clear the PNG */}
                                 <div className="w-full lg:w-[38%] space-y-4 md:space-y-8 z-30 mr-4">
                                     <div className="space-y-2">
@@ -438,9 +438,9 @@ function Peoples() {
                                     <div className="bg-white rounded-2xl p-6 h-full flex flex-col border border-[#01276a]/40 relative">
                                         {/* Avatar */}
                                         <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-4 border-2 border-white shadow-lg mx-auto md:mx-0">
-                                            <img 
-                                                src={item.image} 
-                                                alt={item.name} 
+                                            <img
+                                                src={item.image}
+                                                alt={item.name}
                                                 className="w-full h-full object-cover"
                                             />
                                         </div>
