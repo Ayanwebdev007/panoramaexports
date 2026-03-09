@@ -6,7 +6,7 @@ import img4 from "../../assets/DSC03338.webp";
 
 export default function JoinUs() {
     return (
-        <section className="bg-white pt-16 lg:pt-24 pb-8 lg:pb-12 w-full mx-auto px-4 sm:px-6 md:px-10 lg:px-20 flex justify-center overflow-hidden relative">
+        <section className="bg-white pt-4 lg:pt-8 pb-8 lg:pb-12 w-full mx-auto px-4 sm:px-6 md:px-10 lg:px-20 flex justify-center overflow-hidden relative">
             {/* Background Decorative Element: Sharp Grey Rectangle with Texture (Commented out for experiment) */}
             {/*
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] h-[80%] bg-[#f1f3f5] z-0 hidden lg:block overflow-hidden">

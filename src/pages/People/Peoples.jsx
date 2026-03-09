@@ -49,6 +49,7 @@ import testmon1 from "../../assets/testmon1.JPG";
 import testmon2 from "../../assets/testmon2.JPG";
 import testmon3 from "../../assets/testmon3.JPG";
 import testmon4 from "../../assets/testmon4.jpg";
+import GSR from "../../assets/GSR.jpg";
 
 import TeamworkImage from "../../assets/People/TeamWork1.webp";
 import ForwardThinkingImage from "../../assets/People/ForwardThinking1.webp";
@@ -103,35 +104,36 @@ const WeBelieveImages = [
 const testimonials = [
     {
         id: 1,
-        name: "Kanak Israni",
-        designation: "Assistant Vice President",
-        department: "Sourcing",
+        name: "Mohit Babbar",
+        designation: "Senior Merchandiser",
+        department: "",
         image: testmon1,
-        text: "Panorama's commitment to development is evident in my 15 years here. The nurturing environment fosters continuous growth and makes it a unique place to build a career."
+        text: "As an employee, I am proud to be part of a company known for its integrity, quality, and commitment to excellence. The organization maintains a strong reputation by valuing both its customers and employees. Working in this company has shown me its dedication to high standards and customer satisfaction. Its positive work culture and reliability have helped build a strong reputation in the industry. I am proud to work for a company that is respected for its professionalism, quality service, and strong commitment to customer satisfaction."
     },
     {
         id: 2,
-        name: "Ashok Raman",
-        designation: "Executive Vice President",
-        department: "Marketing",
+        name: "Kanika Gupta",
+        designation: "Digital Marketing – Brand Communication Lead",
+        department: "Designer (Women's essential-wear)",
         image: testmon2,
-        text: "I enjoy navigating customer paradigms while mentoring future leaders. Seeing growth through empowerment is a proud achievement in our collaborative culture."
+        text: "My journey has allowed me to work at the intersection of creativity and strategy. From shaping brand communication through digital platforms to contributing to also being a designer for women's essential-wear , I’ve had the opportunity to express creativity while building meaningful brand narratives. The environment encourages innovation, collaboration, and continuous learning, making it a rewarding space to grow both professionally and creatively."
     },
     {
         id: 3,
-        name: "Susan Paul",
-        designation: "Vice President",
-        department: "Marketing",
-        image: testmon3,
-        text: "From graduate to VP, Panorama has been an incredible journey. Witnessing our evolution into a global leader is a testament to our team's shared vision."
+        name: "Mithun Jana",
+        designation: "Sr. PD Head – Ladieswear",
+        department: "",
+        image: testmon4,
+        text: "My 18-year journey with Panorama Exports has been both rewarding and inspiring. Since joining in 2008, I have had the opportunity to contribute to the growth of the Ladieswear division while continuously evolving with the industry. The trust, collaboration, and strong team culture here have allowed me to push creative boundaries and deliver quality product development year after year. Panorama truly values dedication and provides an environment where long-term careers can thrive."
     },
     {
         id: 4,
-        name: "Michael Chen",
-        designation: "Director",
-        department: "Operations",
-        image: testmon4,
-        text: "Operational excellence here is driven by precision and innovation. It's rewarding to see our collective efforts translate into global industry leadership."
+        name: "Gaurav Singh Rawat",
+        designation: "Head Of Sampling",
+        department: "",
+        image: GSR,
+        text: "My 20-year journey & being the Head of Sampling, has been an inspiring experience. Watching our organization grow into a global leader fills me with immense pride. It stands as a testament to our shared vision, commitment, and the power of teamwork. I truly believe great teams always achieve great victories.",
+        objectPosition: "object-center"
     }
 ];
 
@@ -439,7 +441,7 @@ function Peoples() {
                                             <img
                                                 src={item.image}
                                                 alt={item.name}
-                                                className={`w-full h-full object-cover ${item.id === 2 ? "object-top scale-110" : ""}`}
+                                                className={`w-full h-full object-cover ${item.id === 2 ? "object-top scale-110" : ""} ${item.objectPosition || ""}`}
                                             />
                                         </div>
 

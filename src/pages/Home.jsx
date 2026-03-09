@@ -391,7 +391,6 @@ export default function Home() {
                 </div>
 
                 <OurStrengths />
-                <ManufacturingExcellence />
                 <LeadershipSection />
 
 
@@ -507,8 +506,9 @@ export default function Home() {
                         </p>
                     </div>
                 </div>
-                <JoinUs />
+                <ManufacturingExcellence />
                 <OurLocation />
+                <JoinUs />
             </div>
         </div>
     );
