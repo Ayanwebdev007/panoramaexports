@@ -8,8 +8,8 @@ import AutoPlayVideo from "../../components/AutoPlayVideo";
 
 import video from "../../assets/Crafted_Precision/Adaptive_Capacity/1st-big-pic.mp4";
 import aet1 from "../../assets/Crafted_Precision/Adaptive_Capacity/Adp1.webp";
-import aet2 from "../../assets/Crafted_Precision/Adaptive_Capacity/Small2.jpg";
-import aet3 from "../../assets/Crafted_Precision/Adaptive_Capacity/Small3.jpg";
+import aet2 from "../../assets/Crafted_Precision/Adaptive_Capacity/Small2.webp";
+import aet3 from "../../assets/Crafted_Precision/Adaptive_Capacity/Small3.webp";
 
 // const mfgImages = [
 //     {

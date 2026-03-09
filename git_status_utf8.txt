@@ -1,0 +1,100 @@
+﻿ D "src/assets/CAD & 3D Draping.JPG"
+ D "src/assets/CAD & 3D Draping.webp"
+ D "src/assets/Certificates/cert 1.webp"
+ D "src/assets/Certificates/cert 2.webp"
+ D "src/assets/Certificates/cert 3.webp"
+ D "src/assets/Certificates/cert 4.webp"
+ D "src/assets/Certificates/cert 5.webp"
+ D "src/assets/Certificates/cert 6.webp"
+ D "src/assets/Certificates/cert 7.webp"
+ D "src/assets/Certificates/cert 8.webp"
+ D "src/assets/Crafted_Precision/Adaptive_Capacity/1st big pic.mp4"
+ D "src/assets/Crafted_Precision/Advanced_washing/1st big pic.mp4"
+ D "src/assets/Crafted_Precision/Art_in_Every_Thread/1st big pic.mp4"
+ D "src/assets/Crafted_Precision/Exacting_Standards/1st big pic.mp4"
+ D "src/assets/Crafted_Precision/Manufacturing_Excellence/1st big pic.mp4"
+ D "src/assets/Crafted_Precision/Smart_Warehousing/1st big pic.mp4"
+ D "src/assets/Crafted_Precision/Sustainable_Designs/1st big pic.mp4"
+ D "src/assets/CraftingTomorrow/Crafting Tomorrow.mp4"
+ D "src/assets/GlobalFootprint/MAP PNG.webp"
+ D "src/assets/GlobalFootprint/brandss/images (1).webp"
+ D "src/assets/Handcrafted Luxury.JPG"
+ D "src/assets/Handcrafted Luxury.webp"
+ D "src/assets/Innovation/HandcraftedLuxury/Hand Crafted Luxury.mp4"
+ D "src/assets/Innovation/LeanManufacturing/Operational Excellence.mp4"
+ D "src/assets/Innovation/TextileIngenuity/Weaving Excellence.mp4"
+ D "src/assets/Innovation/UBTSewingTech/UBT Sewing Technology.mp4"
+ D "src/assets/Operational Excellence (2).JPG"
+ D "src/assets/Operational Excellence (2).webp"
+ D "src/assets/UBT Sewing Machine.JPG"
+ D "src/assets/UBT Sewing Machine.webp"
+ D "src/assets/WD 5.HEIC"
+ D "src/assets/WD 5.webp"
+ D "src/assets/Weaving Brilliance.JPG"
+ D "src/assets/Weaving Brilliance.webp"
+ D "src/assets/our purpose responsible reverence.JPG"
+ D "src/assets/people hero demo.png"
+ M src/components/GlobalMap.jsx
+ M src/components/JoinUs/JoinUs.jsx
+ M src/data/lookbookData.js
+ M src/pages/CraftedPrecision/SustainableDesigns.jsx
+ M src/pages/Home.jsx
+ M src/pages/Innovation/InnovationThatLeads.jsx
+ M src/pages/Innovation/StandardOfPerfection.jsx
+ M src/pages/People/Peoples.jsx
+ M src/pages/Responsibility/Responsibility.jsx
+?? build_log.txt
+?? build_log_utf8.txt
+?? git_status.txt
+?? git_status_utf8.txt
+?? src/assets/CAD-and-3D-Draping.JPG
+?? src/assets/CAD-and-3D-Draping.webp
+?? src/assets/CM100034.JPG
+?? src/assets/Certificates/PDCA.png
+?? src/assets/Certificates/cert-1.png
+?? src/assets/Certificates/cert-1.webp
+?? src/assets/Certificates/cert-2.webp
+?? src/assets/Certificates/cert-3.webp
+?? src/assets/Certificates/cert-4.webp
+?? src/assets/Certificates/cert-5.webp
+?? src/assets/Certificates/cert-6.webp
+?? src/assets/Certificates/cert-7.webp
+?? src/assets/Certificates/cert-8.webp
+?? src/assets/Certificates/cuc-new.png
+?? src/assets/Certificates/gmp-new.png
+?? src/assets/Certificates/oeko-tex-new.png
+?? src/assets/Crafted_Precision/Adaptive_Capacity/1st-big-pic.mp4
+?? src/assets/Crafted_Precision/Advanced_washing/1st-big-pic.mp4
+?? src/assets/Crafted_Precision/Art_in_Every_Thread/1st-big-pic.mp4
+?? src/assets/Crafted_Precision/Exacting_Standards/1st-big-pic.mp4
+?? src/assets/Crafted_Precision/Manufacturing_Excellence/1st-big-pic.mp4
+?? src/assets/Crafted_Precision/Smart_Warehousing/1st-big-pic.mp4
+?? src/assets/Crafted_Precision/Sustainable_Designs/1st-big-pic.mp4
+?? src/assets/CraftingTomorrow/Crafting-Tomorrow.mp4
+?? src/assets/ESG.png
+?? src/assets/GlobalFootprint/MAP-PNG.webp
+?? src/assets/GlobalFootprint/brandss/images-1.webp
+?? src/assets/Handcrafted-Luxury.JPG
+?? src/assets/Handcrafted-Luxury.webp
+?? src/assets/Innovation/HandcraftedLuxury/Hand-Crafted-Luxury.mp4
+?? src/assets/Innovation/LeanManufacturing/Operational-Excellence.mp4
+?? src/assets/Innovation/TextileIngenuity/Weaving-Excellence.mp4
+?? src/assets/Innovation/UBTSewingTech/UBT-Sewing-Technology.mp4
+?? src/assets/N1.png
+?? src/assets/OKEO-TEXT-NEW.png
+?? src/assets/Operational-Excellence-2.JPG
+?? src/assets/Operational-Excellence-2.webp
+?? src/assets/UBT-Sewing-Machine.JPG
+?? src/assets/UBT-Sewing-Machine.webp
+?? src/assets/WD-5.HEIC
+?? src/assets/WD-5.webp
+?? src/assets/Weaving-Brilliance.JPG
+?? src/assets/Weaving-Brilliance.webp
+?? src/assets/lookbook-2.png
+?? src/assets/lookbook-3.png
+?? src/assets/our-purpose-responsible-reverence.JPG
+?? src/assets/people-hero-demo.png
+?? src/assets/sroi-impact.jpg
+?? src/assets/waste-diversion.jpg
+?? src/components/SegregatedCertifications.css
+?? src/components/SegregatedCertifications.jsx

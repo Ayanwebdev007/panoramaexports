@@ -9,7 +9,7 @@ import PurposeCards from "../../components/PurposeCards/PurposeCards";
 import LegacyImage from "../../assets/Legacy/final.webp";
 
 import FounderImage from "../../assets/Founders/founderImage.webp";
-import FabricTexture from "../../assets/backgrounds/fabric-texture.jpg";
+import FabricTexture from "../../assets/backgrounds/fabric-texture.webp";
 
 const heroImages = [LegacyImage];
 const labels = {

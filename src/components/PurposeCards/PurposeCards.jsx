@@ -5,7 +5,7 @@ import { IoArrowForward } from "react-icons/io5";
 
 import EnrichingLives from "../../assets/OurPurpose/1.webp";
 import DynamicHeart from "../../assets/OurPurpose/2.webp";
-import ResponsibleReverence from "../../assets/our-purpose-responsible-reverence.JPG";
+import ResponsibleReverence from "../../assets/our-purpose-responsible-reverence.webp";
 import TrustCore from "../../assets/OurPurpose/Trusted.webp";
 
 const purposeItems = [
@@ -213,7 +213,7 @@ const PurposeCards = () => {
                                     <h3 className="text-xl md:text-2xl font-medium text-white mb-4 tracking-tight leading-tight group-hover:text-[#ffd700] transition-colors duration-500">
                                         {item.title}
                                     </h3>
-                                    <p className="text-[0.95rem] md:text-[1rem] text-gray-300 leading-relaxed text-left font-light transition-colors duration-500 group-hover:text-white">
+                                    <p className="text-[0.95rem] md:text-[0.95rem] text-gray-300 leading-relaxed text-justify font-light transition-colors duration-500 group-hover:text-white mt-4">
                                         {item.description}
                                     </p>
                                 </div>

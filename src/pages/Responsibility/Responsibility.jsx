@@ -30,9 +30,9 @@ import cert1 from "../../assets/Responsible/certificate/gots.webp";
 import cert2 from "../../assets/Responsible/certificate/grs.webp";
 import cert3 from "../../assets/Responsible/certificate/oeko.webp";
 
-import wasteImg from "../../assets/waste-diversion.jpg";
-import sroiImg from "../../assets/sroi-impact.jpg";
-import esgImg from "../../assets/ESG.png";
+import wasteImg from "../../assets/waste-diversion.webp";
+import sroiImg from "../../assets/sroi-impact.webp";
+import esgImg from "../../assets/ESG.webp";
 
 const icons = [
     {

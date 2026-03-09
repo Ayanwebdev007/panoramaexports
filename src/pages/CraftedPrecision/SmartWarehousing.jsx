@@ -7,7 +7,7 @@ import AutoPlayVideo from "../../components/AutoPlayVideo";
 
 import video from "../../assets/Crafted_Precision/Smart_Warehousing/1st-big-pic.mp4";
 import mfg1 from "../../assets/Crafted_Precision/Smart_Warehousing/1.webp";
-import mfg2 from "../../assets/Crafted_Precision/Smart_Warehousing/Small2.jpg";
+import mfg2 from "../../assets/Crafted_Precision/Smart_Warehousing/Small2.webp";
 import mfg3 from "../../assets/Crafted_Precision/Smart_Warehousing/3.webp";
 
 // const mfgImages = [

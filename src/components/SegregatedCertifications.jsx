@@ -3,12 +3,12 @@ import './SegregatedCertifications.css';
 
 import gots from "../assets/Responsible/certificate/gots.webp";
 import grs from "../assets/Responsible/certificate/grs.webp";
-import oeko from "../assets/Certificates/oeko-tex-new.png";
-import cert1 from "../assets/Certificates/cert-1.png";
-import gmpNew from "../assets/Certificates/gmp-new.png";
-import pdca from "../assets/Certificates/PDCA.png";
+import oeko from "../assets/Certificates/oeko-tex-new.webp";
+import cert1 from "../assets/Certificates/cert-1.webp";
+import gmpNew from "../assets/Certificates/gmp-new.webp";
+import pdca from "../assets/Certificates/PDCA.webp";
 
-import C1 from "../assets/Certificates/cuc-new.png";
+import C1 from "../assets/Certificates/cuc-new.webp";
 import C2 from "../assets/Certificates/cert-2.webp";
 import C3 from "../assets/Certificates/cert-3.webp";
 import C4 from "../assets/Certificates/cert-4.webp";

@@ -8,7 +8,7 @@ import AutoPlayVideo from "../../components/AutoPlayVideo";
 
 import video from "../../assets/Crafted_Precision/Art_in_Every_Thread/1st-big-pic.mp4";
 import aet1 from "../../assets/Crafted_Precision/Art_in_Every_Thread/1.webp";
-import aet2 from "../../assets/Crafted_Precision/Art_in_Every_Thread/Small2.jpg";
+import aet2 from "../../assets/Crafted_Precision/Art_in_Every_Thread/Small2.webp";
 import aet3 from "../../assets/Crafted_Precision/Art_in_Every_Thread/2.webp";
 
 // const mfgImages = [

@@ -2,11 +2,11 @@ import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-import Img1 from "../../assets/OurStory/coreValues/CraftedExcellence.jpg";
-import Img2 from "../../assets/OurStory/coreValues/OneTeamOneDream.jpg";
-import Img3 from "../../assets/OurStory/coreValues/InnovatingPurpose.jpg";
+import Img1 from "../../assets/OurStory/coreValues/CraftedExcellence.webp";
+import Img2 from "../../assets/OurStory/coreValues/OneTeamOneDream.webp";
+import Img3 from "../../assets/OurStory/coreValues/InnovatingPurpose.webp";
 import Img4 from "../../assets/OurStory/coreValues/PlanetFirstProcess.webp";
-import Img5 from "../../assets/OurStory/coreValues/ProudlyMadeIndia.jpg";
+import Img5 from "../../assets/OurStory/coreValues/ProudlyMadeIndia.webp";
 
 //hello
 

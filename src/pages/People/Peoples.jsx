@@ -51,7 +51,7 @@ import ForwardThinkingImage from "../../assets/People/ForwardThinking1.webp";
 import SpeedActionImage from "../../assets/People/SpeedAction1.webp";
 import CustomerCentricityImage from "../../assets/People/CustomerCentricity1.webp";
 
-import PeopleHeroPng from "../../assets/people-hero-demo.png";
+import PeopleHeroPng from "../../assets/shivaan and sidharth new.webp";
 import CareerPng from "../../assets/People/Career.webp";
 
 const crumbs = [
@@ -166,12 +166,6 @@ function Peoples() {
             <section className="bg-white">
                 <div className="w-full h-10 md:h-12 lg:h-20 bg-gray-900 shadow-inner"></div>
 
-                {/* Board of Directors Header */}
-                <div className="w-[90%] mx-auto max-w-[1400px] pt-6 md:pt-10 px-2 sm:px-6 md:px-10 lg:px-20">
-                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#01276a]">
-                        Board of Directors
-                    </h2>
-                </div>
 
                 {/* New Premium Hero Section (Arvind Style) */}
                 <div className="w-full bg-white lg:pt-[250px] md:pt-[180px] pt-32 pb-12 overflow-visible">
@@ -212,7 +206,7 @@ function Peoples() {
                                 <img
                                     src={PeopleHeroPng}
                                     alt="Shivaan and Sidharth Sahni"
-                                    className="w-full h-auto object-contain origin-bottom-left scale-[1.1] md:scale-[1.15] lg:scale-[1.25]"
+                                    className="w-full h-auto object-contain origin-bottom-left scale-[1.0] md:scale-[1.05] lg:scale-[1.15]"
                                 />
                             </motion.div>
                         </motion.div>

@@ -1,0 +1,43 @@
+﻿
+> frontend@0.0.0 build
+> vite build
+
+[36mvite v6.3.5 [32mbuilding for production...[36m[39m
+transforming...
+[32mΓ£ô[39m 1061 modules transformed.
+node.exe : [31mΓ£ù[39m Build failed in 1.92s
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" 
+"C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: 
+([31mΓ£ù    [39m Build failed in 1.92s:String) 
+[], RemoteExc    eption
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[31merror during build:
+[31mCould not resolve "../../assets/Crafted_Prec
+ision/Sustainable_Designs/1st big pic.mp4" from "
+src/pages/CraftedPrecision/SustainableDesigns.jsx
+"[31m
+file: [36mC:/Users/girid/Downloads/Panorama-Expo
+rts-main (1)/Panorama-Exports-main/src/pages/Craf
+tedPrecision/SustainableDesigns.jsx[31m
+    at getRollupError (file:///C:/Users/girid/Dow
+nloads/Panorama-Exports-main%20(1)/Panorama-Expor
+ts-main/node_modules/vite/node_modules/rollup/dis
+t/es/shared/parseAst.js:401:41)
+    at error (file:///C:/Users/girid/Downloads/Pa
+norama-Exports-main%20(1)/Panorama-Exports-main/n
+ode_modules/vite/node_modules/rollup/dist/es/shar
+ed/parseAst.js:397:42)
+    at ModuleLoader.handleInvalidResolvedId (file
+:///C:/Users/girid/Downloads/Panorama-Exports-mai
+n%20(1)/Panorama-Exports-main/node_modules/vite/n
+ode_modules/rollup/dist/es/shared/node-entry.js:2
+1490:24)
+    at file:///C:/Users/girid/Downloads/Panorama-
+Exports-main%20(1)/Panorama-Exports-main/node_mod
+ules/vite/node_modules/rollup/dist/es/shared/node
+-entry.js:21450:26[39m

@@ -89,7 +89,7 @@ export default function LookbookViewer() {
 
                         <a
                             href={lookbook.image}
-                            download={`${lookbook.title}.png`}
+                            download={`${lookbook.title}.webp`}
                             className="flex items-center px-5 py-2.5 bg-blue-950 text-white rounded-sm text-sm font-light hover:bg-blue-900 transition-all shadow-sm hover:shadow-md active:scale-95"
                         >
                             <Download size={16} className="mr-2" />

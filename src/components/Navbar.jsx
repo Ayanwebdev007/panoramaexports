@@ -151,7 +151,7 @@ export default function Navbar() {
                     className="flex items-center h-full justify-center 2xl:w-[30%] xl:w-[20%] w-[15%]"
                 >
                     <img
-                        src="/panoramalogo.jpg"
+                        src="/panoramalogo.webp"
                         alt="Panorama Exports Logo"
                         className="2xl:h-24 sm:h-20 max-h-20 w-auto object-contain"
                     />
