@@ -509,6 +509,14 @@ export default function Home() {
                 <ManufacturingExcellence />
                 <OurLocation />
                 <JoinUs />
+                <div className="w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 pb-16 lg:pb-24 flex justify-center">
+                    <Link to="/contactus">
+                        <button className="group inline-flex items-center hover:text-red-600 font-semibold md:text-lg sm:text-sm text-[12px]">
+                            Contact Us
+                            <IoEnterOutline className="h-6 w-6 mx-2 group-hover:translate-x-1 transition-transform duration-300" />
+                        </button>
+                    </Link>
+                </div>
             </div>
         </div>
     );
