@@ -32,7 +32,7 @@ import cert3 from "../../assets/Responsible/certificate/oeko.webp";
 
 import wasteImg from "../../assets/waste-diversion.webp";
 import sroiImg from "../../assets/sroi-impact.webp";
-import esgImg from "../../assets/DSC03065.JPG";
+import esgImg from "../../assets/CM100387 copy.jpg";
 
 const icons = [
     {

@@ -142,7 +142,7 @@ const testimonials = [
         name: "Narendra Nath",
         designation: "GM - HR, Compliance & Admin",
         department: "",
-        image: narendraImg,
+        image: kritiImg,
         text: "As the GM – HR, Compliance & Admin, I have witnessed how Panorama Exports prioritizes its people, maintains strong compliance standards, and fosters a culture of accountability and respect. The organization’s dedication to continuous improvement and responsible business practices makes it a trusted partner for employees, clients, and stakeholders.",
         objectPosition: "object-center"
     },
@@ -151,7 +151,7 @@ const testimonials = [
         name: "Kriti Tewary",
         designation: "General Manager - Sustainability",
         department: "",
-        image: kritiImg,
+        image: narendraImg,
         text: "At Panorama, we believe in doing things right the first time. We carry with us the heritage of decades, decades of craft and a future shaped by responsibility. As we continue to grow, we are strengthening our efforts to produce garments in ways that respect people, partners, and the planet. Thoughtfully made. Responsibly delivered.",
         objectPosition: "object-center"
     }

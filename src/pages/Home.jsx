@@ -23,12 +23,12 @@ import JoinUs from "../components/JoinUs/JoinUs";
 import HumanTouch1 from "../assets/Community/csr.webp";
 import HumanTouch2 from "../assets/Community/csr2.webp";
 
-import Hero1 from "../assets/HeroImages/WearYourStory.webp";
+import Hero1 from "../assets/Wear Your Story.JPG";
 import Hero2 from "../assets/HeroImages/Elegance.webp";
-import Hero3 from "../assets/HeroImages/WarmAlcove.webp";
-import Hero4 from "../assets/HeroImages/ThreadsLegacy.webp";
-import Hero05 from "../assets/HeroImages/AheadCurve.webp";
-import Hero06 from "../assets/HeroImages/WorkPlay.webp";
+import Hero3 from "../assets/The warm Alcovec.jpg";
+import Hero4 from "../assets/Threads of Legacy.JPG";
+import Hero05 from "../assets/Ahead of Curve.JPG";
+import Hero06 from "../assets/Work Play.jpg";
 
 import AutoPlayVideo from "../components/AutoPlayVideo";
 import LazyRender from "../components/LazyRender";
@@ -55,6 +55,7 @@ const heroSlides = [
         id: 4,
         image: Hero4,
         dynamicText: "THREADS OF LEGACY",
+        objectPosition: "object-bottom"
     },
     {
         id: 5,
@@ -192,12 +193,12 @@ export default function Home() {
                         bulletClass: "swiper-pagination-bullet",
                         bulletActiveClass: "swiper-pagination-bullet-active",
                     }}
-                    className="h-full"
+                    className="w-full h-auto aspect-[1920/944]"
                 >
                     {heroSlides.map((slide, index) => (
-                        <SwiperSlide key={slide.id} className="relative">
+                        <SwiperSlide key={slide.id} className="relative h-full">
                             {/* Background Image */}
-                            <picture className="block w-full">
+                            <picture className="block w-full h-full">
                                 <source
                                     srcSet={`${slide.image}?format=webp`}
                                     type="image/webp"
@@ -205,7 +206,7 @@ export default function Home() {
                                 <img
                                     src={slide.image}
                                     alt={`PANORAMA ${slide.dynamicText}`}
-                                    className="w-full object-contain"
+                                    className={`w-full h-full object-cover ${slide.objectPosition || "object-center"}`}
                                     loading={index === 0 ? "eager" : "lazy"}
                                 />
                             </picture>
