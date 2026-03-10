@@ -12,6 +12,15 @@ import Img5 from "../../assets/OurStory/coreValues/ProudlyMadeIndia.webp";
 
 
 const CoreValues = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.innerWidth < 768);
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
+
     // CoreValues data
     const values = [
         {
@@ -53,37 +62,40 @@ const CoreValues = () => {
                     CORE VALUE
                 </h2>
 
-                <div className="w-[90%] mx-auto py-5 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 2xl:gap-10 xl:gap-8 lg:gap-6 md:gap-8 gap-6">
-                    {values.map((value, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ y: -100, opacity: 0 }}
-                            whileInView={{ y: 0, opacity: 1 }}
-                            transition={{
-                                duration: 0.6,
-                                delay: index * 0.2,
-                            }}
-                            viewport={{ once: false }}
-                            className="border border-amber-700/30 shadow-[0_0_20px_#ab9777] rounded-sm overflow-hidden"
-                        >
-                            <div className="2xl:border-[20px] xl:border-[16px] lg:border-[12px] md:border-[15px] border-[10px] border-white h-full w-full">
-                                <div
-                                    className={``}
+                <div className="w-[90%] md:w-[85%] lg:w-[90%] mx-auto py-5 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 2xl:gap-10 xl:gap-8 lg:gap-6 md:gap-8 gap-4 sm:gap-6 relative z-10">
+                    {values.map((value, index) => {
+                        return (
+                            <motion.div
+                                key={index}
+                                initial={{ y: isMobile ? 20 : 50, opacity: 0 }}
+                                whileInView={{ y: 0, opacity: 1 }}
+                                transition={{
+                                    duration: isMobile ? 0.4 : 0.6,
+                                    delay: isMobile ? (index % 2) * 0.1 : (index % 2) * 0.15,
+                                    ease: "easeOut"
+                                }}
+                                viewport={{ once: false, amount: isMobile ? 0.05 : 0.1, margin: isMobile ? "0px 0px -30px 0px" : "0px 0px -50px 0px" }}
+                                className={`border border-amber-700/30 shadow-[0_0_15px_rgba(171,151,119,0.3)] rounded-sm overflow-hidden flex flex-col bg-white ${isMobile ? 'transform-gpu' : ''}`}
+                            >
+                                <div className="2xl:border-[20px] xl:border-[16px] lg:border-[12px] md:border-[15px] border-[10px] border-white h-full w-full">
+                                    <div
+                                        className={``}
 
-                                >
-                                    <img src={value.img} alt="" className="image-contain" />
+                                    >
+                                        <img src={value.img} alt="" className="image-contain" />
+                                    </div>
+                                    <div className="p-3 sm:p-4 flex flex-col flex-1">
+                                        <h3 className="h-8 sm:h-10 md:h-12 lg:h-12 xl:h-14 2xl:h-16 text-[11px] sm:text-sm md:text-md lg:text-sm xl:text-lg 2xl:text-xl text-blue-900 font-semibold mb-1 sm:mb-2 font-outfit leading-tight">
+                                            {value.title}
+                                        </h3>
+                                        <p className="text-[10px] sm:text-[12px] lg:text-[10px] xl:text-[12px] 2xl:text-sm text-gray-600 font-outfit leading-snug">
+                                            {value.description}
+                                        </p>
+                                    </div>
                                 </div>
-                                <div className="p-4">
-                                    <h3 className="2xl:h-16 xl:h-14 lg:h-12 md:h-12 md:h-10 h-7 2xl:text-xl xl:text-lg lg:text-sm md:text-md md:text-md text-sm text-blue-900 font-semibold mb-2 font-outfit">
-                                        {value.title}
-                                    </h3>
-                                    <p className="2xl:text-sm xl:text-[12px] lg:text-[10px] text-[12px] text-gray-600 font-outfit">
-                                        {value.description}
-                                    </p>
-                                </div>
-                            </div>
-                        </motion.div>
-                    ))}
+                            </motion.div>
+                        );
+                    })}
                 </div>
             </div>
         </>

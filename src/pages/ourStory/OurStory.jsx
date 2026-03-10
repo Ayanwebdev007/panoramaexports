@@ -159,13 +159,13 @@ export default function OurStory() {
                     }}
                 ></div>
                 <div className="relative z-10 w-[90%] mx-auto">
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between sm:mb-6 mb-3 text-[#01276a] sm:max-w-[85%] w-full mx-auto">
-                        <div className="text-xl sm:text-2xl md:text-4xl font-light font-outfit">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between sm:mb-6 mb-4 text-[#01276a] sm:max-w-[85%] w-full mx-auto px-2 sm:px-0">
+                        <div className="text-2xl sm:text-2xl md:text-4xl font-light font-outfit">
                             Welcome to Panorama Exports Pvt. Ltd.
                         </div>
                     </div>
                     <motion.div
-                        className="2xl:text-2xl lg:text-xl md:text-lg sm:text-base text-sm text-gray-600 text-justify sm:max-w-[85%] w-full mx-auto leading-relaxed font-light tracking-wide font-outfit"
+                        className="2xl:text-2xl lg:text-xl md:text-lg sm:text-base text-[15px] sm:leading-relaxed leading-normal text-gray-600 text-justify sm:max-w-[85%] w-full mx-auto px-2 sm:px-0 font-light tracking-wide font-outfit mb-8 sm:mb-0"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: false, amount: 0.3 }}

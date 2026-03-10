@@ -67,9 +67,9 @@ export default function Footer() {
             {/* Top Section: Three Main Modules */}
             <div className="flex flex-col lg:flex-row border-b border-white/10">
 
-                {/* Module 1: Legacy */}
+                {/* Module 1: Who We Are */}
                 <div className="lg:w-[30%] p-8 md:p-12 lg:p-16 border-b lg:border-b-0 lg:border-r border-white/10 flex flex-col justify-center">
-                    <h2 className="text-2xl md:text-3xl font-bold mb-6 tracking-tight">LEGACY</h2>
+                    <h2 className="text-2xl md:text-3xl font-bold mb-6 tracking-tight">WHO WE ARE</h2>
                     <p className="text-[#b89d6d] font-light leading-relaxed text-base md:text-lg max-w-md">
                         Since 1973, Panorama Exports has transformed fabric into global fashion, blending timeless craftsmanship with modern precision. From India to the world, every garment reflects creativity, technology, and decades of dedication.
                     </p>

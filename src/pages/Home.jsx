@@ -423,18 +423,18 @@ export default function Home() {
 
                 {/* People section */}
                 <div className="sm:pt-8 sm:pb-0 text-[#01276a] w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md mt-6">
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6">
+                    <div className="flex flex-row items-center justify-between mb-1 sm:mb-6">
                         <div className="text-2xl sm:text-3xl md:text-5xl font-light">
                             People
-                            <div className="text-sm md:text-lg sm:text-sm text-[12px] sm:mt-3 mt-2 text-gray-600 ml-1">
+                            <div className="text-[10px] sm:text-sm md:text-lg sm:mt-3 mt-1 text-gray-600 ml-1">
                                 The soul of Panorama is its people
                             </div>
                         </div>
                         <div className="flex items-center justify-end">
                             <Link to="/peoples">
-                                <button className="my-4 group inline-flex items-center hover:text-red-600 font-semibold md:text-lg sm:text-sm text-[12px]">
+                                <button className="my-1 sm:my-4 group inline-flex items-center hover:text-red-600 font-semibold md:text-lg sm:text-sm text-[12px]">
                                     Visit People
-                                    <IoEnterOutline className="h-6 w-6 mx-2 group-hover:translate-x-1 transition-transform duration-300" />
+                                    <IoEnterOutline className="h-4 w-4 sm:h-6 sm:w-6 mx-1 sm:mx-2 group-hover:translate-x-1 transition-transform duration-300" />
                                 </button>
                             </Link>
                         </div>
@@ -455,11 +455,11 @@ export default function Home() {
                 </LazyRender>
 
                 {/* Certifications section */}
-                <div className="pt-16 pb-0 text-[#01276a] mt-12 w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">
-                    <div className="flex items-center justify-start">
+                <div className="pt-4 sm:pt-16 pb-0 text-[#01276a] mt-4 sm:mt-12 w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">
+                    <div className="flex flex-row items-center justify-between mb-6">
                         <div className="text-2xl sm:text-3xl md:text-5xl font-light">
                             Certifications
-                            <div className="text-[12px] sm:text-sm md:text-lg sm:mt-3 mt-1 text-gray-600 ml-1">
+                            <div className="text-[10px] sm:text-sm md:text-lg sm:mt-3 mt-1 text-gray-600 ml-1">
                                 Our legal certificates
                             </div>
                         </div>
@@ -467,23 +467,32 @@ export default function Home() {
                 </div>
                 <Certifications />
                 {/* Community section */}
-                <div className="pb-0 pt-0 text-[#01276a] mt-[-160px] w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md bg-white">
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center sm:justify-between">
+                <div className="pb-0 pt-0 text-[#01276a] mt-[-20px] sm:mt-[-160px] w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md bg-white">
+                    <div className="flex flex-row items-center justify-between mb-2 sm:mb-6">
                         <div className="text-2xl sm:text-3xl md:text-5xl font-light">
                             Human Touch
                         </div>
-                        <div className="sm:w-[40%] lg:w-[50%] lg:mx-4 flex items-center justify-end">
+                        <div className="flex items-center justify-end">
                             <Link to="/responsibility">
                                 <button className="my-4 group inline-flex items-center hover:text-red-600 font-semibold md:text-lg sm:text-sm text-[12px]">
                                     Visit Responsibility
-                                    <IoEnterOutline className="md:h-6 md:w-6 h-4 w-4 mx-2 group-hover:translate-x-1 transition-transform duration-300" />
+                                    <IoEnterOutline className="h-4 w-4 sm:h-6 sm:w-6 mx-1 sm:mx-2 group-hover:translate-x-1 transition-transform duration-300" />
                                 </button>
                             </Link>
                         </div>
                     </div>
+                    {/* Mobile-only motto text */}
+                    <div className="block sm:hidden mb-4 text-[#01276a]">
+                        <p className="text-[12px] leading-tight text-blue-950">
+                            <span className="font-semibold">Our motto:</span>
+                            <span className="font-light"> People. Progress. Purpose. At Panorama,
+                                we cultivate a culture of responsibility, inclusion,
+                                and continuous growth</span>
+                        </p>
+                    </div>
                 </div>
                 <div className="xl:pt-4 lg:pt-2 md:pt-1 sm:pt-1 pt-1 bg-white">
-                    <div className="w-[90%] mx-auto px-6 md:px-10 lg:px-20 mb-1">
+                    <div className="w-[90%] mx-auto px-6 md:px-10 lg:px-20 mb-[-2px] sm:mb-1">
                         <img
                             src={HumanTouch2}
                             alt="Human Touch"
@@ -491,14 +500,15 @@ export default function Home() {
                         />
                     </div>
                     <div
-                        className="w-full flex items-start pt-16 sm:pt-20 lg:pt-24 pr-0 sm:pr-5 lg:pr-0 justify-end aspect-[16/4.823] "
+                        className="w-full flex items-start mt-[-8px] pt-3 sm:pt-20 lg:pt-24 pr-2 sm:pr-5 lg:pr-0 justify-end aspect-[16/5] sm:aspect-[16/4.823]"
                         style={{
                             backgroundImage: `url(${HumanTouch1})`,
                             backgroundSize: "contain",
                             backgroundPosition: "center",
+                            backgroundRepeat: "no-repeat",
                         }}
                     >
-                        <p className="2xl:w-[550px] xl:w-[450px] lg:w-[350px] md:w-[300px] w-[150px] 2xl:text-xl lg:text-md md:text-sm sm:text-[10px] text-[8px] sm:pr-2 text-blue-950">
+                        <p className="hidden sm:block 2xl:w-[550px] xl:w-[450px] lg:w-[350px] md:w-[300px] w-[240px] 2xl:text-xl lg:text-md md:text-sm sm:text-[10px] text-[12px] leading-tight sm:leading-normal sm:pr-2 text-blue-950">
                             <span className="font-semibold">Our motto:</span>
                             <span className="font-light"> People. Progress. Purpose. At Panorama,
                                 we cultivate a culture of responsibility, inclusion,

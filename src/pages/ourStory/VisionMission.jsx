@@ -228,27 +228,30 @@ export default function VisionMission() {
             <div className="sm:hidden w-full h-10 bg-gray-900"></div>
             <div
                 ref={ref}
-                className="w-full bg-contain bg-center flex flex-col items-center justify-end aspect-[16/7]"
+                className="w-full bg-contain bg-center flex flex-col items-center justify-end aspect-[16/7] relative"
                 style={{ backgroundImage: `url(${bgImage})` }}
             >
+                {/* Static Background Gradient - separated from animation to prevent tearing */}
+                <div className="absolute inset-x-0 bottom-0 h-[80%] bg-gradient-to-t from-black/90 via-black/80 via-black/70 to-transparent pointer-events-none z-0"></div>
+
                 <motion.div
-                    className="text-white bg-gradient-to-t from-black/90 via-black/80 via-black/70 to-transparent lg:px-[10%] md:px-[8%] sm:px-[6%] px-[4%] lg:pb-[4%] md:pb-5 sm:pb-4 pb-2 pt-[10%]"
+                    className="text-white lg:px-[10%] md:px-[8%] sm:px-[6%] px-[4%] lg:pb-[4%] md:pb-5 sm:pb-4 pb-2 pt-[10%] relative z-10 w-full"
                     variants={{
                         hidden: { opacity: 0, y: 50 },
                         visible: { opacity: 1, y: 0 },
                     }}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: false, amount: 0.6 }}
+                    viewport={{ once: false, amount: 0.2, margin: "0px 0px -50px 0px" }}
                     transition={{
-                        duration: 1,
+                        duration: 0.8,
                         ease: "easeOut",
                     }}
                 >
-                    <h1 className="text-sm sm:text-lg md:text-xl lg:text-3xl xl:text-4xl font-semibold mb-1 sm:mb-0 font-outfit">
+                    <h1 className="text-base sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-1 sm:mb-0 font-outfit uppercase tracking-wider">
                         Woven into Every Thread
                     </h1>
-                    <div className="hidden sm:block text-[10px] sm:text-sm md:text-md lg:text-xl xl:text-2xl lg:mt-4 sm:mt-2 mt-1 w-[100%] text-justify font-extralight font-outfit">
+                    <div className="text-[11px] sm:text-sm md:text-md lg:text-xl xl:text-2xl lg:mt-4 sm:mt-2 mt-1 w-[100%] text-justify sm:text-left leading-snug sm:font-extralight font-light font-outfit">
                         Our vision shapes the future of fashion; our values
                         guide every stitch. We don’t just make clothing-we build
                         trust, innovate with intent, and create with heart.
@@ -361,8 +364,8 @@ export default function VisionMission() {
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
+                        viewport={{ once: false, amount: 0.2, margin: "0px 0px -50px 0px" }}
+                        transition={{ duration: 0.5, ease: "easeOut" }}
                     >
                         <h2 className="text-2xl md:text-4xl font-light text-[#01276a] font-outfit tracking-[0.2em] mb-4 uppercase">
                             Leadership
@@ -371,14 +374,14 @@ export default function VisionMission() {
                     </motion.div>
                 </div>
 
-                <div className="w-[85%] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+                <div className="w-[90%] md:w-[85%] mx-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-10">
                     {[...directors, ...executiveDirectors].map((leader, index) => (
                         <motion.div
                             key={leader.name + leader.role}
-                            initial={{ opacity: 0, y: 40 }}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: index * 0.15 }}
+                            viewport={{ once: false, amount: 0.1, margin: "0px 0px -50px 0px" }}
+                            transition={{ duration: 0.4, delay: (index % 2) * 0.15, ease: "easeOut" }}
                             className="flex flex-col bg-white shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] rounded-sm overflow-hidden group cursor-pointer border border-gray-100"
                             onClick={() => setSelectedLeader(leader)}
                         >
@@ -400,17 +403,17 @@ export default function VisionMission() {
                             </div>
 
                             {/* Footer Section */}
-                            <div className="p-5 text-center flex flex-col justify-between flex-grow bg-white transition-colors duration-500 group-hover:bg-[#01276a]">
+                            <div className="p-3 sm:p-5 text-center flex flex-col justify-between flex-grow bg-white transition-colors duration-500 group-hover:bg-[#01276a]">
                                 <div className="space-y-1">
-                                    <h3 className="text-[#01276a] font-bold text-xl tracking-tighter transition-colors duration-500 group-hover:text-white font-outfit">
+                                    <h3 className="text-[#01276a] font-bold text-sm sm:text-xl tracking-tighter transition-colors duration-500 group-hover:text-white font-outfit">
                                         {leader.name}
                                     </h3>
-                                    <p className="text-[#dcb65b] text-xs font-semibold tracking-wider transition-colors duration-500 font-outfit">
+                                    <p className="text-[#dcb65b] text-[10px] sm:text-xs font-semibold tracking-wider transition-colors duration-500 font-outfit">
                                         {leader.role}
                                     </p>
                                 </div>
                                 <div className="mt-2">
-                                    <span className="inline-block text-[#01276a] text-[10px] uppercase font-bold tracking-widest border-b border-[#01276a]/20 pb-1 group-hover:text-white group-hover:border-white/40 transition-all duration-500 font-outfit">
+                                    <span className="inline-block text-[#01276a] text-[8px] sm:text-[10px] uppercase font-bold tracking-widest border-b border-[#01276a]/20 pb-1 group-hover:text-white group-hover:border-white/40 transition-all duration-500 font-outfit">
                                         Read Message
                                     </span>
                                 </div>
@@ -426,17 +429,17 @@ export default function VisionMission() {
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
                             exit={{ opacity: 0, scale: 0.95 }}
-                            className="bg-white rounded-sm overflow-hidden max-w-5xl w-full flex flex-col lg:flex-row relative shadow-2xl"
+                            className="bg-white rounded-sm overflow-hidden max-w-5xl w-full flex flex-col lg:flex-row relative shadow-2xl max-h-[90vh] lg:max-h-[85vh] overflow-y-auto lg:overflow-y-hidden"
                             onClick={(e) => e.stopPropagation()}
                         >
                             <button
-                                className="absolute top-6 right-6 z-20 bg-[#01276a] text-white w-10 h-10 rounded-full flex items-center justify-center transition-transform hover:rotate-90 duration-300 shadow-lg"
+                                className="absolute top-3 right-3 sm:top-6 sm:right-6 z-20 bg-[#01276a] text-white w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-transform hover:rotate-90 duration-300 shadow-lg"
                                 onClick={() => setSelectedLeader(null)}
                             >
-                                <span className="text-xl">✕</span>
+                                <span className="text-lg sm:text-xl">✕</span>
                             </button>
 
-                            <div className="w-full lg:w-[45%] aspect-[4/5] lg:aspect-auto overflow-hidden bg-gray-100">
+                            <div className="w-full lg:w-[45%] h-[250px] sm:h-auto lg:aspect-auto overflow-hidden bg-gray-100 flex-shrink-0">
                                 <motion.img
                                     initial={{ scale: 1.1 }}
                                     animate={{ scale: 1 }}
@@ -448,30 +451,30 @@ export default function VisionMission() {
                                 />
                             </div>
 
-                            <div className="w-full lg:w-[55%] p-10 lg:p-16 flex flex-col justify-center bg-white relative">
+                            <div className="w-full lg:w-[55%] p-6 sm:p-10 lg:p-16 flex flex-col justify-center bg-white relative">
 
                                 <motion.div
                                     initial={{ opacity: 0, x: 20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 0.2 }}
                                 >
-                                    <h2 className="text-4xl md:text-5xl font-light text-[#01276a] font-outfit tracking-tight">{selectedLeader.name}</h2>
-                                    <div className="flex items-center gap-4 mt-2 mb-10">
-                                        <div className="h-px w-12 bg-[#dcb65b]"></div>
-                                        <p className="text-[#dcb65b] font-semibold tracking-wider text-base font-outfit">{selectedLeader.role}</p>
+                                    <h2 className="text-2xl sm:text-4xl md:text-5xl font-light text-[#01276a] font-outfit tracking-tight">{selectedLeader.name}</h2>
+                                    <div className="flex items-center gap-3 sm:gap-4 mt-1 sm:mt-2 mb-4 sm:mb-10">
+                                        <div className="h-px w-8 sm:w-12 bg-[#dcb65b]"></div>
+                                        <p className="text-[#dcb65b] font-semibold tracking-wider text-xs sm:text-base font-outfit">{selectedLeader.role}</p>
                                     </div>
 
                                     <div className="relative">
-                                        <div className="text-gray-600 leading-[1.8] text-xl font-light italic text-justify font-outfit">
+                                        <div className="text-gray-600 leading-relaxed sm:leading-[1.8] text-sm sm:text-lg md:text-xl font-normal text-justify font-outfit">
                                             {selectedLeader.message}
                                         </div>
                                     </div>
 
-                                    <div className="mt-12 pt-8 border-t border-gray-100 flex items-center justify-between">
-                                        <div className="uppercase tracking-[0.3em] text-[10px] font-bold text-[#01276a]/40 font-outfit">
+                                    <div className="mt-6 sm:mt-12 pt-4 sm:pt-8 border-t border-gray-100 flex items-center justify-between">
+                                        <div className="uppercase tracking-[0.2em] sm:tracking-[0.3em] text-[8px] sm:text-[10px] font-bold text-[#01276a]/40 font-outfit">
                                             Panorama Executive Leadership
                                         </div>
-                                        <div className="w-12 h-px bg-[#01276a]/20"></div>
+                                        <div className="hidden sm:block w-12 h-px bg-[#01276a]/20"></div>
                                     </div>
                                 </motion.div>
                             </div>

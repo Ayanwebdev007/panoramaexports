@@ -1,7 +1,7 @@
 .leadership-outer-container {
     width: 100%;
     background-color: #fff;
-    padding-top: 80px;
+    padding-top: 40px;
 }
 
 .leadership-grid-bg {
@@ -158,18 +158,74 @@
     text-transform: uppercase;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    .leadership-container {
+        padding-top: 15px;
+        padding-bottom: 20px;
+    }
+
+    .leadership-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px;
+        gap: 15px;
+    }
+
     .leadership-glass-card {
-        flex: 0 0 280px;
-        padding: 30px 15px;
+        flex: 0 0 calc(50% - 15px);
+        max-width: calc(50% - 15px);
+        padding: 25px 15px;
+        border-radius: 20px;
     }
 
     .leader-circle-wrapper {
-        width: 140px;
-        height: 140px;
+        width: 110px;
+        height: 110px;
+        margin-bottom: 15px;
     }
 
     .leader-name {
-        font-size: 18px;
+        font-size: 14px;
+        margin-bottom: 6px;
+        text-align: center;
+        word-wrap: break-word;
+    }
+
+    .leader-role {
+        font-size: 10px;
+        letter-spacing: 0.8px;
+        text-align: center;
+        word-wrap: break-word;
+    }
+}
+
+@media (max-width: 768px) {
+    .leadership-grid {
+        padding: 0;
+        gap: 10px;
+    }
+
+    .leadership-glass-card {
+        flex: 0 0 calc(50% - 5px);
+        max-width: calc(50% - 5px);
+        padding: 20px 10px;
+        border-radius: 16px;
+    }
+
+    .leader-circle-wrapper {
+        width: 85px;
+        height: 85px;
+        margin-bottom: 12px;
+        border-width: 1.5px;
+    }
+
+    .leader-name {
+        font-size: 13px;
+        letter-spacing: 0.5px;
+    }
+
+    .leader-role {
+        font-size: 9px;
+        letter-spacing: 0.5px;
     }
 }

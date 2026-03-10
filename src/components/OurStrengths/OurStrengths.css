@@ -13,7 +13,7 @@
 }
 
 .key-highlights {
-    padding: 100px 20px;
+    padding: 120px 20px 100px 20px;
     background-color: var(--panorama-blue);
     background-image:
         radial-gradient(at 0% 0%, var(--cobalt-deep) 0, transparent 50%),
@@ -83,7 +83,7 @@
 .highlights-title {
     font-size: 52px;
     color: var(--text-white);
-    margin-bottom: 80px;
+    margin-bottom: 60px;
     font-weight: 300;
     letter-spacing: -1px;
     text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -140,42 +140,82 @@
 
 /* Mobile Responsiveness */
 @media (max-width: 1024px) {
-    .highlights-grid {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .highlight-item {
-        flex: 0 0 100%;
-        max-width: 100%;
-        border-right: none !important;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        padding-bottom: 30px;
-    }
-
-    .highlight-item:nth-child(n) {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
-
-    .highlight-item:last-child {
-        border-bottom: none;
-        padding-bottom: 0;
+    .key-highlights {
+        padding: 60px 20px 60px 20px;
     }
 
     .highlights-title {
-        font-size: 36px;
-        margin-bottom: 50px;
+        font-size: 28px;
+        margin-bottom: 35px;
         background: none;
         -webkit-text-fill-color: var(--text-white);
     }
 
+    .highlights-grid {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        gap: 0;
+        width: 100%;
+        overflow-x: auto;
+        /* Hide scrollbar for cleaner look */
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .highlights-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .highlight-item {
+        flex: 0 0 25%;
+        max-width: 25%;
+        padding: 0 10px;
+        border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-bottom: none !important;
+        border-left: none;
+    }
+
+    .highlight-item:last-child {
+        border-right: none !important;
+    }
+
     .highlight-number {
-        font-size: 32px;
+        font-size: 20px;
+        margin-bottom: 5px;
     }
 
     .highlight-text {
-        font-size: 12px;
-        letter-spacing: 1.5px;
+        font-size: 9px;
+        letter-spacing: 0.5px;
+        white-space: normal;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .key-highlights {
+        padding: 45px 10px;
+    }
+
+    .highlights-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .highlight-item {
+        padding: 0 5px;
+    }
+
+    .highlight-number {
+        font-size: 16px;
+    }
+
+    .highlight-text {
+        font-size: 8px;
+        letter-spacing: 0;
     }
 }

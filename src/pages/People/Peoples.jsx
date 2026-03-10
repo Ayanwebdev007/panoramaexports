@@ -50,6 +50,8 @@ import testmon2 from "../../assets/testmon2.JPG";
 import testmon3 from "../../assets/testmon3.JPG";
 import testmon4 from "../../assets/testmon4.jpg";
 import GSR from "../../assets/GSR.jpg";
+import narendraImg from "../../assets/Gemini_Generated_Image_jtuumnjtuumnjtuu.png";
+import kritiImg from "../../assets/Gemini_Generated_Image_qnvlj4qnvlj4qnvl.png";
 
 import TeamworkImage from "../../assets/People/TeamWork1.webp";
 import ForwardThinkingImage from "../../assets/People/ForwardThinking1.webp";
@@ -134,6 +136,24 @@ const testimonials = [
         image: GSR,
         text: "My 20-year journey & being the Head of Sampling, has been an inspiring experience. Watching our organization grow into a global leader fills me with immense pride. It stands as a testament to our shared vision, commitment, and the power of teamwork. I truly believe great teams always achieve great victories.",
         objectPosition: "object-center"
+    },
+    {
+        id: 5,
+        name: "Narendra Nath",
+        designation: "GM - HR, Compliance & Admin",
+        department: "",
+        image: narendraImg,
+        text: "As the GM – HR, Compliance & Admin, I have witnessed how Panorama Exports prioritizes its people, maintains strong compliance standards, and fosters a culture of accountability and respect. The organization’s dedication to continuous improvement and responsible business practices makes it a trusted partner for employees, clients, and stakeholders.",
+        objectPosition: "object-center"
+    },
+    {
+        id: 6,
+        name: "Kriti Tewary",
+        designation: "General Manager - Sustainability",
+        department: "",
+        image: kritiImg,
+        text: "At Panorama, we believe in doing things right the first time. We carry with us the heritage of decades, decades of craft and a future shaped by responsibility. As we continue to grow, we are strengthening our efforts to produce garments in ways that respect people, partners, and the planet. Thoughtfully made. Responsibly delivered.",
+        objectPosition: "object-center"
     }
 ];
 
@@ -174,45 +194,45 @@ function Peoples() {
 
 
                 {/* New Premium Hero Section (Arvind Style) */}
-                <div className="w-full bg-white lg:pt-[250px] md:pt-[180px] pt-32 pb-12 overflow-visible">
+                <div className="w-full bg-white lg:pt-[250px] md:pt-[180px] pt-12 sm:pt-[120px] pb-8 overflow-visible">
                     <div className="w-[90%] mx-auto max-w-[1400px] relative">
 
                         {/* The Large Grey Background Box */}
                         <motion.div
                             className="bg-gradient-to-br from-[#e5e5e5] to-[#d4d4d4] rounded-2xl md:rounded-[40px] relative z-10 border border-black/5 w-full"
-                            initial={{ opacity: 0, y: 50 }}
+                            initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                         >
-                            <div className="flex flex-col lg:flex-row items-center justify-end px-6 pt-10 md:pt-14 pb-6 md:pb-8 lg:px-24 min-h-[280px] md:min-h-[350px]">
+                            <div className="flex flex-row items-center justify-end px-[4%] lg:px-24 py-[6%] lg:pt-14 lg:pb-8 min-h-[140px] sm:min-h-[280px] md:min-h-[350px]">
 
-                                {/* Content Box - Significantly narrowed to perfectly clear the PNG */}
-                                <div className="w-full lg:w-[38%] space-y-4 md:space-y-8 z-30 mr-4">
-                                    <div className="space-y-2">
-                                        <h1 className="text-lg md:text-xl lg:text-2xl font-light text-gray-800 tracking-tight leading-none whitespace-nowrap">
+                                {/* Text Section - bounded on right side, scaled width to give image more room */}
+                                <div className="w-[50%] lg:w-[38%] space-y-1 sm:space-y-4 md:space-y-8 z-30 mr-2 sm:mr-4">
+                                    <div className="space-y-0.5 sm:space-y-2">
+                                        <h1 className="text-[10px] sm:text-lg md:text-xl lg:text-2xl font-light text-gray-800 tracking-tight leading-none whitespace-nowrap">
                                             Shivaan Sahni & Sidharth Sahni
                                         </h1>
-                                        <p className="text-gray-500 text-sm md:text-lg font-light tracking-widest uppercase">
+                                        <p className="text-gray-500 text-[6px] sm:text-xs md:text-lg font-light tracking-widest uppercase mt-0 sm:mt-1">
                                             Executive Directors
                                         </p>
                                     </div>
 
-                                    <p className="text-gray-600 text-[10px] md:text-base md:leading-relaxed font-light text-justify max-w-sm lg:max-w-md">
+                                    <p className="text-gray-600 text-[6px] sm:text-[10px] md:text-base leading-tight md:leading-relaxed font-light text-justify max-w-sm lg:max-w-md">
                                         We define leadership through empowerment — by cultivating creativity, collaborative partnerships, and embracing global opportunities. Our people are at the heart of this journey, growing with us as we set new benchmarks and continue to lead with purpose, ambition, innovation and excellence across every collection we create.
                                     </p>
                                 </div>
                             </div>
 
                             <motion.div
-                                className="absolute left-[2%] lg:left-[4%] bottom-0 w-[60%] sm:w-[50%] lg:w-[44%] z-20 pointer-events-none"
-                                initial={{ opacity: 0, y: 40, scale: 0.9 }}
+                                className="absolute left-[2%] lg:left-[4%] bottom-0 w-[42%] lg:w-[44%] z-20 pointer-events-none"
+                                initial={{ opacity: 0, y: 20, scale: 0.95 }}
                                 animate={{ opacity: 1, y: 0, scale: 1 }}
-                                transition={{ duration: 1.5, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                                transition={{ duration: 1.0, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                             >
                                 <img
                                     src={PeopleHeroPng}
                                     alt="Shivaan and Sidharth Sahni"
-                                    className="w-full h-auto object-contain origin-bottom-left scale-[1.0] md:scale-[1.05] lg:scale-[1.15]"
+                                    className="w-full h-auto object-contain origin-bottom-left scale-[1.12] sm:scale-[1.10] lg:scale-[1.15]"
                                 />
                             </motion.div>
                         </motion.div>
@@ -243,11 +263,11 @@ function Peoples() {
             </div>
 
             <section>
-                <div className="w-[90%] mx-auto md:py-16 py-5 px-2 sm:px-6 md:px-10 lg:px-20">
+                <div className="w-[90%] mx-auto md:py-16 pt-2 pb-5 px-2 sm:px-6 md:px-10 lg:px-20">
                     <h2 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#01276a]">
                         People
                     </h2>
-                    <p className="text-sm sm:text-md lg:text-lg py-3 md:mt-5 mt-2 text-justify leading-relaxed font-light">
+                    <p className="text-sm sm:text-md lg:text-lg py-3 md:mt-5 mt-1 text-justify leading-relaxed font-light">
                         Driven by our People First ethos, Panorama Exports
                         embraces integrity, inclusivity, and respect as the
                         cornerstones of its culture. Through collaboration and
@@ -260,10 +280,10 @@ function Peoples() {
                 id="our-strength"
                 className="w-full bg-blue-950 flex justify-center md:py-20 py-10"
             >
-                <div className="w-[80%] bg-white flex flex-col sm:flex-row">
+                <div className="w-[90%] md:w-[80%] bg-white flex flex-col sm:flex-row">
                     {/* Left Side */}
-                    <div className="sm:w-[50%] md:p-10 p-2 flex flex-col justify-center">
-                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-light text-center text-blue-950 font-outfit">
+                    <div className="sm:w-[50%] p-6 md:p-10 flex flex-col justify-center">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-light text-center sm:text-left text-blue-950 font-outfit">
                             Our Strength
                         </h2>
                         <p className="text-[10px] sm:text-[12px] md:text-sm 2xl:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-light text-justify">
@@ -328,11 +348,11 @@ function Peoples() {
                         ))}
                     </Swiper>
 
-                    {/* Custom navigation buttons */}
-                    <button className="swiper-button-prev-custom absolute left-[-33px] md:left-[-45px] top-1/2 -translate-y-1/2 z-10 bg-blue-950 hover:bg-blue-700 text-white md:w-10 w-8 md:h-10 h-8 rounded-full shadow-md">
+                    {/* Custom navigation buttons - enabled on all screens */}
+                    <button className="swiper-button-prev-custom absolute left-0 md:left-[-45px] top-1/2 -translate-y-1/2 z-10 bg-blue-950/80 hover:bg-blue-700 text-white md:w-10 w-8 md:h-10 h-8 rounded-full shadow-md flex items-center justify-center">
                         ❮
                     </button>
-                    <button className="swiper-button-next-custom absolute right-[-33px] md:right-[-45px] top-1/2 -translate-y-1/2 z-10 bg-blue-950 hover:bg-blue-700 text-white md:w-10 w-8 md:h-10 h-8 rounded-full shadow-md">
+                    <button className="swiper-button-next-custom absolute right-0 md:right-[-45px] top-1/2 -translate-y-1/2 z-10 bg-blue-950/80 hover:bg-blue-700 text-white md:w-10 w-8 md:h-10 h-8 rounded-full shadow-md flex items-center justify-center">
                         ❯
                     </button>
                 </div>
@@ -344,7 +364,7 @@ function Peoples() {
                         We Believe In
                     </h2>
                 </div>
-                <div className="w-[90%] mx-auto md:pb-16 pb-5 px-2 sm:px-6 md:px-10 lg:px-20 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 lg:gap-6 gap-4">
+                <div className="w-[90%] mx-auto md:pb-16 pb-5 px-2 sm:px-6 md:px-10 lg:px-20 grid grid-cols-2 md:grid-cols-2 xl:grid-cols-4 lg:gap-6 gap-2 sm:gap-4">
                     {WeBelieveImages.map((item) => (
                         <div
                             key={item.id}
@@ -356,8 +376,8 @@ function Peoples() {
                                 className="w-full object-contain transform transition-transform duration-[4000ms] ease-out group-hover:scale-[1.1]"
                             />
                             {/* Overlay */}
-                            <div className="absolute bottom-0 h-[50%] w-full py-[10%] bg-gradient-to-t from-blue-950/90 via-blue-950/80 via-blue-950/50 via-blue-950/40 to-transparent transition-all duration-500 flex flex-col justify-end p-6">
-                                <p className="text-white text-md md:text-lg lg:text-xl xl:text-xl font-semibold mx-[1%] text-center whitespace-nowrap">
+                            <div className="absolute bottom-0 h-[60%] sm:h-[50%] w-full py-[10%] bg-gradient-to-t from-blue-950/90 via-blue-950/80 via-blue-950/50 via-blue-950/40 to-transparent transition-all duration-500 flex flex-col justify-end p-2 sm:p-6">
+                                <p className="text-white text-[10px] sm:text-md md:text-lg lg:text-xl xl:text-xl font-semibold mx-[1%] text-center whitespace-normal sm:whitespace-nowrap">
                                     {item.text}
                                 </p>
                                 <p className="mx-[10%] mt-4 text-white">
@@ -373,10 +393,10 @@ function Peoples() {
                 id="commitment"
                 className="w-full bg-blue-950 flex justify-center md:py-20 py-10"
             >
-                <div className="w-[80%] bg-white flex flex-col lg:flex-row">
+                <div className="w-[90%] md:w-[80%] bg-white flex flex-col lg:flex-row">
                     {/* Left Side */}
-                    <div className="lg:w-[50%] md:p-10 p-2 flex flex-col justify-center">
-                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-light text-center text-blue-950 font-outfit">
+                    <div className="lg:w-[50%] p-6 md:p-10 flex flex-col justify-center">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-light text-center sm:text-left text-blue-950 font-outfit">
                             Commitment to Care & Compliance
                         </h2>
                         <div className="text-[10px] sm:text-[12px] md:text-sm 2xl:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-light text-justify">
@@ -418,20 +438,34 @@ function Peoples() {
                         </h2>
                     </div>
 
-                    <div className="relative px-10 md:px-14">
+                    <div className="relative px-4 md:px-14">
                         <Swiper
-                            modules={[Navigation]}
-                            slidesPerView={1}
-                            spaceBetween={30}
+                            modules={[Navigation, Pagination]}
+                            slidesPerView={1.05}
+                            spaceBetween={15}
                             navigation={{
                                 nextEl: ".testimonials-next",
                                 prevEl: ".testimonials-prev",
                             }}
-                            breakpoints={{
-                                768: { slidesPerView: 2 },
-                                1150: { slidesPerView: 3 },
+                            pagination={{
+                                clickable: true,
+                                dynamicBullets: true,
                             }}
-                            className="pb-12"
+                            breakpoints={{
+                                640: {
+                                    slidesPerView: 1.2,
+                                    spaceBetween: 20
+                                },
+                                768: {
+                                    slidesPerView: 2,
+                                    spaceBetween: 30
+                                },
+                                1150: {
+                                    slidesPerView: 3,
+                                    spaceBetween: 30
+                                },
+                            }}
+                            className="pb-14 testimonials-swiper"
                         >
                             {testimonials.map((item) => (
                                 <SwiperSlide key={item.id} className="!h-auto">
@@ -447,30 +481,30 @@ function Peoples() {
 
                                         {/* Content */}
                                         <div className="flex-grow mb-4">
-                                            <p className="text-gray-500 text-sm md:text-base leading-relaxed font-light italic">
-                                                "{item.text}"
+                                            <p className="text-gray-500 text-sm md:text-base leading-relaxed font-normal text-justify">
+                                                {item.text}
                                             </p>
                                         </div>
 
                                         {/* Footer */}
                                         <div className="mt-auto pt-4 border-t border-gray-100">
-                                            <h4 className="text-[#01276a] font-semibold text-lg">{item.name}</h4>
-                                            <p className="text-gray-600 text-sm font-medium">{item.designation}</p>
-                                            <p className="text-gray-400 text-xs uppercase tracking-widest mt-1">{item.department}</p>
+                                            <h4 className="text-[#01276a] font-semibold text-base md:text-lg">{item.name}</h4>
+                                            <p className="text-gray-600 text-xs md:text-sm font-medium">{item.designation}</p>
+                                            <p className="text-gray-400 text-[10px] md:text-xs uppercase tracking-widest mt-1">{item.department}</p>
                                         </div>
                                     </div>
                                 </SwiperSlide>
                             ))}
                         </Swiper>
 
-                        {/* Navigation */}
-                        <button className="testimonials-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 text-[#01276a] hover:text-blue-400 transition-colors">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        {/* Navigation - refined positioning for mobile */}
+                        <button className="testimonials-prev absolute left-[-15px] md:left-0 top-1/2 -translate-y-1/2 z-10 text-[#01276a] hover:text-blue-400 transition-colors bg-white/50 rounded-full md:bg-transparent p-1 md:p-0">
+                            <svg width="32" height="32" className="md:w-[40px] md:h-[40px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <path d="M15 18l-6-6 6-6" />
                             </svg>
                         </button>
-                        <button className="testimonials-next absolute right-0 top-1/2 -translate-y-1/2 z-10 text-[#01276a] hover:text-blue-400 transition-colors">
-                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <button className="testimonials-next absolute right-[-15px] md:right-0 top-1/2 -translate-y-1/2 z-10 text-[#01276a] hover:text-blue-400 transition-colors bg-white/50 rounded-full md:bg-transparent p-1 md:p-0">
+                            <svg width="32" height="32" className="md:w-[40px] md:h-[40px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                 <path d="M11 18l6-6-6-6" />
                             </svg>
                         </button>
@@ -480,10 +514,9 @@ function Peoples() {
 
             <section
                 id="career"
-                className="relative bg-contain bg-center flex items-center justify-center"
+                className="relative bg-cover md:bg-contain bg-center flex items-center justify-center min-h-[250px] sm:min-h-[300px] md:min-h-0 md:aspect-[16/5]"
                 style={{
                     backgroundImage: `url(${CareerPng})`,
-                    aspectRatio: "16/5", // maintain image ratio
                 }}
             >
                 {/* Overlay */}

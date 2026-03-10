@@ -48,28 +48,28 @@ const LeadershipSection = () => {
     return (
         <section className="leadership-outer-container">
             {/* Header Section - Matches 'People' section style */}
-            <div className="leadership-header-container w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 mb-12 lg:mt-6">
-                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <div className="leadership-header-container w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 mb-12">
+                <div className="flex flex-row items-center justify-between mb-6">
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: false }}
                         transition={{ duration: 0.8 }}
-                        className="flex-1"
+                        className="flex-1 pr-4"
                     >
-                        <h2 className="text-4xl md:text-5xl font-light text-[#01276a] mb-4">
+                        <h2 className="text-2xl sm:text-3xl md:text-5xl font-light text-[#01276a] mb-1 sm:mb-4">
                             Leadership
                         </h2>
-                        <p className="text-sm md:text-lg text-gray-600 max-w-2xl leading-relaxed font-normal">
+                        <p className="text-[10px] sm:text-sm md:text-lg text-gray-600 max-w-2xl leading-relaxed font-normal mt-1 sm:mt-0">
                             Visionary leadership that inspires innovation, nurtures talent, and drives Panorama toward new horizons of global excellence.
                         </p>
                     </motion.div>
 
-                    <div className="flex items-center justify-end">
+                    <div className="flex items-center justify-end shrink-0">
                         <Link to="/vision-values#leadership">
                             <button className="my-4 group inline-flex items-center hover:text-red-600 font-semibold md:text-lg sm:text-sm text-[12px] text-[#01276a]">
                                 Visit Leadership
-                                <IoEnterOutline className="h-6 w-6 mx-2 group-hover:translate-x-1 transition-transform duration-300" />
+                                <IoEnterOutline className="h-4 w-4 md:h-6 md:w-6 mx-1 md:mx-2 group-hover:translate-x-1 transition-transform duration-300" />
                             </button>
                         </Link>
                     </div>

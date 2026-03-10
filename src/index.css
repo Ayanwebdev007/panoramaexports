@@ -397,3 +397,35 @@ body {
   animation: scroll 25s linear infinite;
   /* adjust 25s for speed */
 }
+
+/* Utility classes */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Testimonials Swiper Pagination */
+.testimonials-swiper .swiper-pagination-bullet {
+  background: #01276a !important;
+  opacity: 0.3;
+  width: 8px;
+  height: 8px;
+  transition: all 0.3s ease;
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+  opacity: 1;
+  width: 24px;
+  border-radius: 4px;
+}
+
+.testimonials-swiper .swiper-horizontal>.swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 0px !important;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}

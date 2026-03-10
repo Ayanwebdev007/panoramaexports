@@ -13,39 +13,39 @@ const InnovationStack = ({ items }) => {
 
 const StackCard = ({ item, index, total }) => {
     return (
-        <div 
+        <div
             id={item.id}
             className="h-screen sticky top-[112px] flex items-center justify-center overflow-hidden bg-blue-950"
             style={{ zIndex: index + 1 }}
         >
-            <motion.div 
+            <motion.div
                 className="relative w-full h-full flex items-center justify-center overflow-hidden"
             >
                 {/* Media Layer (Video or Image) */}
                 <div className="absolute inset-0 z-0">
                     {item.video ? (
-                        <video 
+                        <video
                             src={item.video}
-                            autoPlay 
-                            loop 
-                            muted 
+                            autoPlay
+                            loop
+                            muted
                             playsInline
                             className="w-full h-full object-cover"
                         />
                     ) : (
-                        <div 
+                        <div
                             className="w-full h-full bg-cover bg-center"
                             style={{ backgroundImage: `url("${item.img}")` }}
                         />
                     )}
                 </div>
-                
+
                 {/* Overlay Vignette for depth */}
                 <div className="absolute inset-0 bg-black/30 z-1" />
 
                 {/* Content Box - Blue Semi-Transparent Rectangle */}
                 <div className={`relative z-10 w-full h-full flex ${item.alignItems || "items-center"} ${item.justifyContent || (index % 2 === 0 ? "justify-start" : "justify-end")} ${item.containerPadding || "px-[5%] md:px-[10%]"}`}>
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
@@ -57,8 +57,8 @@ const StackCard = ({ item, index, total }) => {
                         <h2 className="text-lg md:text-xl lg:text-2xl font-light font-outfit mb-3 tracking-wider leading-tight uppercase">
                             {item.title}
                         </h2>
-                        
-                        <div 
+
+                        <div
                             className="text-[10px] md:text-xs lg:text-sm font-light font-outfit leading-relaxed text-blue-50/70 text-justify"
                             dangerouslySetInnerHTML={{ __html: item.description }}
                         />

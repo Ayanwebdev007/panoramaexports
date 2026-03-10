@@ -54,7 +54,7 @@ const PurposeCards = () => {
     useEffect(() => {
         const calculateWidth = () => {
             let width = 404; // default md+
-            if (window.innerWidth < 640) width = 304; // mobile
+            if (window.innerWidth < 640) width = window.innerWidth - 8; // card width (100vw - 32px) + gap (24px) = window.innerWidth - 8
             else if (window.innerWidth < 768) width = 344; // sm
             return width;
         };
@@ -189,7 +189,7 @@ const PurposeCards = () => {
                 </button>
 
                 {/* Viewport Window - Shows exactly 3 cards on MD+, 2 on SM, 1 on Mobile */}
-                <div className="relative overflow-hidden mx-auto w-[280px] sm:w-[664px] md:w-[1188px] z-20">
+                <div className="relative overflow-hidden mx-auto w-full sm:w-[664px] md:w-[1188px] z-20">
                     <motion.div
                         className="flex gap-6"
                         animate={controls}
@@ -197,7 +197,7 @@ const PurposeCards = () => {
                         {items.map((item, idx) => (
                             <div
                                 key={idx}
-                                className="flex-none w-[280px] sm:w-[320px] md:w-[380px] group heritage-mesh cloth-texture shadow-[0_10px_30px_-10px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_50px_-12px_rgba(1,39,106,0.25)] transition-all duration-700 flex flex-col relative overflow-hidden"
+                                className="flex-none w-[calc(100vw-32px)] sm:w-[320px] md:w-[380px] group heritage-mesh cloth-texture shadow-[0_10px_30px_-10px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_50px_-12px_rgba(1,39,106,0.25)] transition-all duration-700 flex flex-col relative overflow-hidden"
                             >
                                 {/* Image Container */}
                                 <div className="relative overflow-hidden aspect-[4/3] z-10">

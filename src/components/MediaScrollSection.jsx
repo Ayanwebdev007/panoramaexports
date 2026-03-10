@@ -17,14 +17,48 @@ const MediaScrollSection = () => {
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50/50 rounded-full blur-[120px] -z-10" />
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-blue-50/30 rounded-full blur-[100px] -z-10" />
 
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-8 h-auto min-h-[700px]">
+            {/* Mobile View (Matches Desktop Aesthetic) */}
+            <div className="block md:hidden grid grid-cols-12 gap-1.5 h-auto">
+                <div className="col-span-8 row-span-2 group relative overflow-hidden rounded-[16px] border border-blue-100/40 bg-white/40 backdrop-blur-sm shadow-md h-[224px]">
+                    <div
+                        className="w-full h-full bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
+                        style={{ backgroundImage: `url(${images[0].src})` }}
+                    />
+                    <div className="absolute inset-0 border-[1px] border-white/40 rounded-[16px] pointer-events-none" />
+                </div>
+                <div className="col-span-4 group relative overflow-hidden rounded-[12px] border border-blue-100/40 bg-white/40 backdrop-blur-sm shadow-sm h-[110px]">
+                    <div
+                        className="w-full h-full bg-cover transition-transform duration-1000 group-hover:scale-110"
+                        style={{ backgroundImage: `url(${images[1].src})`, backgroundPosition: "center 25%" }}
+                    />
+                    <div className="absolute inset-0 border-[1px] border-white/40 rounded-[12px] pointer-events-none" />
+                </div>
+                <div className="col-span-4 flex flex-col gap-1.5 h-auto">
+                    <div className="group relative overflow-hidden rounded-[12px] border border-blue-100/40 bg-white/40 backdrop-blur-sm shadow-sm h-[51px]">
+                        <div
+                            className="w-full h-full bg-cover transition-transform duration-1000 group-hover:scale-110"
+                            style={{ backgroundImage: `url(${images[2].src})`, backgroundPosition: "center 25%" }}
+                        />
+                        <div className="absolute inset-0 border-[1px] border-white/40 rounded-[12px] pointer-events-none" />
+                    </div>
+                    <div className="group relative overflow-hidden rounded-[12px] border border-blue-100/40 bg-white/40 backdrop-blur-sm shadow-sm h-[51px]">
+                        <div
+                            className="w-full h-full bg-cover bg-center transition-transform duration-1000 group-hover:scale-110"
+                            style={{ backgroundImage: `url(${images[3].src})` }}
+                        />
+                        <div className="absolute inset-0 border-[1px] border-white/40 rounded-[12px] pointer-events-none" />
+                    </div>
+                </div>
+            </div>
+
+            {/* Desktop View (RESTORING ORIGINAL) */}
+            <div className="hidden md:grid grid-cols-12 gap-8 h-auto min-h-[700px]">
                 {/* 01: Hero Featured Card (Spans 8 columns) */}
                 <div className="md:col-span-8 md:row-span-2 group relative overflow-hidden rounded-[48px] border border-blue-100/40 bg-white/40 backdrop-blur-sm shadow-[0_20px_50px_rgba(1,39,106,0.05)] hover:shadow-[0_40px_80px_rgba(1,39,106,0.15)] transition-all duration-700 pointer-events-auto h-[450px] md:h-auto">
                     <div
                         className="w-full h-full bg-cover bg-center transition-transform duration-1000 ease-out group-hover:scale-110"
                         style={{ backgroundImage: `url(${images[0].src})` }}
                     />
-                    {/* Futuristic Glass Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                     <div className="absolute inset-0 border-[1px] border-white/40 rounded-[48px] pointer-events-none" />
                 </div>

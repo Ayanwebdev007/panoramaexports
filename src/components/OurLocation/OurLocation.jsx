@@ -166,7 +166,7 @@ const OurLocation = () => {
     }, [activeLocation]);
 
     return (
-        <section style={{ paddingTop: '40px' }} className="relative w-full pb-8 bg-white overflow-hidden">
+        <section className="relative w-full py-10 sm:py-20 bg-white overflow-hidden">
 
 
             {/* Header - Perfectly Aligned with Human Touch/Manufacturing Units */}
@@ -174,18 +174,18 @@ const OurLocation = () => {
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                className="w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 text-left mb-12"
+                className="w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 text-left mb-6 sm:mb-12"
             >
-                <h2 className="text-4xl md:text-5xl font-light text-[#01276a] tracking-tight">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-[#01276a] tracking-tight whitespace-nowrap">
                     Our Location
                 </h2>
             </motion.div>
 
-            <div style={{ width: '85%', maxWidth: '1600px', margin: '0 auto' }} className="relative z-10 flex flex-col items-center">
+            <div className="w-[90%] max-w-[1600px] mx-auto relative z-10 flex flex-col items-center">
 
 
                 {/* Location Bars */}
-                <div className="flex flex-col md:flex-row gap-4 md:gap-6 justify-center w-full mx-auto">
+                <div className="grid grid-cols-3 sm:flex sm:flex-row gap-2 sm:gap-6 justify-center w-full px-2 sm:px-0">
                     {locations.map((loc) => (
                         <motion.button
                             key={loc.id}
@@ -194,26 +194,26 @@ const OurLocation = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: loc.id * 0.1 }}
-                            className={`flex flex-col items-center py-4 px-6 rounded-2xl border transition-all duration-300 flex-1 hover:shadow-lg hover:-translate-y-1 ${activeLocation?.id === loc.id
+                            className={`flex flex-col items-center py-2 sm:py-4 px-1 sm:px-6 rounded-xl sm:rounded-2xl border transition-all duration-300 sm:flex-1 hover:shadow-lg hover:-translate-y-1 ${activeLocation?.id === loc.id
                                 ? 'bg-[#01276a] border-[#01276a] text-white shadow-xl scale-105 z-10'
                                 : 'bg-white border-gray-100 text-gray-900 hover:border-[#b89d6d]'
                                 }`}
                         >
-                            <div className={`p-3 rounded-full mb-3 ${activeLocation?.id === loc.id ? 'bg-white/20 text-white' : 'bg-blue-50 text-[#01276a]'
+                            <div className={`p-1.5 sm:p-3 rounded-full mb-1 sm:mb-3 ${activeLocation?.id === loc.id ? 'bg-white/20 text-white' : 'bg-blue-50 text-[#01276a]'
                                 }`}>
-                                <MapPin className="w-6 h-6" />
+                                <MapPin className="w-4 h-4 sm:w-6 sm:h-6" />
                             </div>
-                            <h3 className="text-lg font-bold mb-1">{loc.name}</h3>
+                            <h3 className="text-[10px] sm:text-lg font-bold mb-0.5 sm:mb-1 whitespace-nowrap">{loc.name}</h3>
                         </motion.button>
                     ))}
                 </div>
 
                 {/* Explicit Vertical Spacer - Brute Force Gap */}
-                <div className="w-full h-8 min-h-[32px] bg-transparent shrink-0"></div>
+                <div className="w-full h-4 sm:h-8 min-h-[16px] bg-transparent shrink-0"></div>
 
                 {/* Leaflet Map Section - Clean positioning for stability */}
                 <div
-                    className="w-full h-[500px] md:h-[600px] bg-gray-100 rounded-3xl overflow-hidden shadow-2xl border-4 border-white relative z-0 mx-auto"
+                    className="w-full h-[350px] sm:h-[500px] md:h-[600px] bg-gray-100 rounded-3xl overflow-hidden shadow-2xl border-4 border-white relative z-0 mx-auto"
                 >
                     <MapContainer
                         center={initialCenter}
@@ -287,10 +287,9 @@ const OurLocation = () => {
                                     if (marker) marker.closePopup();
                                 });
                             }}
-                            style={{ padding: '15px 40px' }}
-                            className="absolute top-4 right-4 bg-[#01276a] rounded-full shadow-lg text-base font-bold text-white hover:bg-white hover:text-[#011a4a] transition-all z-[1000] border border-transparent hover:border-[#011a4a] flex items-center gap-2 tracking-wide"
+                            className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-[#01276a] rounded-full shadow-lg text-[10px] sm:text-base font-bold text-white hover:bg-white hover:text-[#011a4a] transition-all z-[1000] border border-transparent hover:border-[#011a4a] flex items-center gap-2 tracking-wide px-4 py-2 sm:px-10 sm:py-4"
                         >
-                            <Maximize2 className="w-4 h-4" /> View All Units
+                            <Maximize2 className="w-3 h-3 sm:w-4 sm:h-4" /> View All Units
                         </motion.button>
                     )}
                 </div>

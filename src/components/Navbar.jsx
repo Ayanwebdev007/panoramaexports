@@ -140,9 +140,8 @@ export default function Navbar() {
 
     return (
         <nav
-            className={`${
-                scrolled ? "bg-white" : "bg-transparent backdrop-blur-md"
-            } shadow-md lg:h-20 md:h-12 h-10 fixed top-0 left-0 right-0 z-50 transition-colors duration-500`}
+            className={`${scrolled ? "bg-white" : "bg-transparent backdrop-blur-md"
+                } shadow-md lg:h-20 md:h-12 h-10 fixed top-0 left-0 right-0 z-50 transition-colors duration-500`}
         >
             <div className=" mx-auto xl:px-4 px-2 lg:h-20 md:h-12 h-10 flex items-center justify-end xl:gap-3 gap-2">
                 {/* Logo */}
@@ -172,11 +171,10 @@ export default function Navbar() {
                             <li key={index} className="relative group">
                                 <Link
                                     to={item.path}
-                                    className={`${
-                                        scrolled
+                                    className={`${scrolled
                                             ? "text-[#073281] hover:text-[#073281]"
                                             : "text-white hover:text-red-300"
-                                    } transition-colors duration-500 font-medium hover:underline underline-offset-4`}
+                                        } transition-colors duration-500 font-medium hover:underline underline-offset-4`}
                                 >
                                     {item.label}
                                 </Link>
@@ -184,11 +182,10 @@ export default function Navbar() {
                                 {item.subItems && (
                                     <ul className="absolute left-1/2 -translate-x-1/2 hidden group-hover:flex flex-col shadow-lg rounded-sm text-base z-10 w-[220px]">
                                         <div
-                                            className={`flex justify-center xl:text-2xl text-lg ${
-                                                scrolled
+                                            className={`flex justify-center xl:text-2xl text-lg ${scrolled
                                                     ? "text-[#073281] hover:text-[#073281]"
                                                     : "text-white hover:text-red-300"
-                                            } transition-colors duration-500`}
+                                                } transition-colors duration-500`}
                                         >
                                             <IoMdArrowDropdown />
                                         </div>
@@ -223,11 +220,10 @@ export default function Navbar() {
                         aria-label="Toggle mobile menu"
                     >
                         <FaBars
-                            className={`${
-                                scrolled
+                            className={`${scrolled
                                     ? "text-[#073281] hover:text-[#073281]"
                                     : "text-white hover:text-red-300"
-                            }`}
+                                }`}
                         />
                     </button>
                 </div>
@@ -304,6 +300,14 @@ export default function Navbar() {
                                 onClick={() => setIsOpen(false)}
                             >
                                 People
+                            </Link>
+                        </li>
+                        <li>
+                            <Link
+                                to="/responsibility"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Responsibility
                             </Link>
                         </li>
 

@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "nodemon --ext js,jsx,css,html --exec vite",
+    "dev": "nodemon --ext js,jsx,css,html --exec \"vite --host\"",
     "vite": "vite",
     "build": "vite build",
     "lint": "eslint .",
