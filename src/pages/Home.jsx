@@ -33,6 +33,13 @@ import Hero06 from "../assets/Work Play.jpg";
 import AutoPlayVideo from "../components/AutoPlayVideo";
 import LazyRender from "../components/LazyRender";
 
+import testmon1 from "../assets/testmon1.JPG";
+import testmon2 from "../assets/testmon2.JPG";
+import testmon3 from "../assets/testmon3.JPG";
+import testmon4 from "../assets/testmon4.jpg";
+import GSR from "../assets/GSR.jpg";
+import narendraImg from "../assets/Gemini_Generated_Image_qnvlj4qnvlj4qnvl.png";
+
 
 // Hero data
 const heroSlides = [
@@ -105,6 +112,51 @@ import img4 from "../assets/CraftingTomorrow/4.webp";
 import video from "../assets/CraftingTomorrow/Crafting-Tomorrow.mp4";
 
 const crImages = [img2, img4];
+
+const testimonials = [
+    {
+        id: 1,
+        name: "Mohit Babbar",
+        designation: "Senior Merchandiser",
+        department: "",
+        image: testmon1,
+        text: "As an employee, I am proud to be part of a company known for its integrity, quality, and commitment to excellence. The organization maintains a strong reputation by valuing both its customers and employees. Working in this company has shown me its dedication to high standards and customer satisfaction. Its positive work culture and reliability have helped build a strong reputation in the industry. I am proud to work for a company that is respected for its professionalism, quality service, and strong commitment to customer satisfaction."
+    },
+    {
+        id: 2,
+        name: "Kanika Gupta",
+        designation: "Digital Marketing – Brand Communication Lead",
+        department: "Designer (Women's essential-wear)",
+        image: testmon2,
+        text: "My journey has allowed me to work at the intersection of creativity and strategy. From shaping brand communication through digital platforms to contributing to also being a designer for women's essential-wear , I’ve had the opportunity to express creativity while building meaningful brand narratives. The environment encourages innovation, collaboration, and continuous learning, making it a rewarding space to grow both professionally and creatively."
+    },
+    {
+        id: 3,
+        name: "Mithun Jana",
+        designation: "Sr. PD Head – Ladieswear",
+        department: "",
+        image: testmon4,
+        text: "My 18-year journey with Panorama Exports has been both rewarding and inspiring. Since joining in 2008, I have had the opportunity to contribute to the growth of the Ladieswear division while continuously evolving with the industry. The trust, collaboration, and strong team culture here have allowed me to push creative boundaries and deliver quality product development year after year. Panorama truly values dedication and provides an environment where long-term careers can thrive."
+    },
+    {
+        id: 4,
+        name: "Gaurav Singh Rawat",
+        designation: "Head Of Sampling",
+        department: "",
+        image: GSR,
+        text: "My 20-year journey & being the Head of Sampling, has been an inspiring experience. Watching our organization grow into a global leader fills me with immense pride. It stands as a testament to our shared vision, commitment, and the power of teamwork. I truly believe great teams always achieve great victories.",
+        objectPosition: "object-center"
+    },
+    {
+        id: 5,
+        name: "Narendra Nath",
+        designation: "GM - HR, Compliance & Admin",
+        department: "",
+        image: narendraImg,
+        text: "As the GM – HR, Compliance & Admin, I have witnessed how Panorama Exports prioritizes its people, maintains strong compliance standards, and fosters a culture of accountability and respect. The organization’s dedication to continuous improvement and responsible business practices makes it a trusted partner for employees, clients, and stakeholders.",
+        objectPosition: "object-center"
+    }
+];
 
 export default function Home() {
     const swiperRef = useRef(null);
@@ -393,6 +445,89 @@ export default function Home() {
 
                 <OurStrengths />
                 <LeadershipSection />
+
+                {/* Employee Testimonials Section */}
+                <section className="w-full bg-gray-50 py-16 md:py-24">
+                    <div className="w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20">
+                        <div className="mb-12 md:mb-16">
+                            <h2 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#01276a] mb-4">
+                                Employee Testimonials
+                            </h2>
+                        </div>
+
+                        <div className="relative px-4 md:px-14">
+                            <Swiper
+                                modules={[Navigation, Pagination]}
+                                slidesPerView={1.05}
+                                spaceBetween={15}
+                                navigation={{
+                                    nextEl: ".testimonials-next",
+                                    prevEl: ".testimonials-prev",
+                                }}
+                                pagination={{
+                                    clickable: true,
+                                    dynamicBullets: true,
+                                }}
+                                breakpoints={{
+                                    640: {
+                                        slidesPerView: 1.2,
+                                        spaceBetween: 20
+                                    },
+                                    768: {
+                                        slidesPerView: 2,
+                                        spaceBetween: 30
+                                    },
+                                    1150: {
+                                        slidesPerView: 3,
+                                        spaceBetween: 30
+                                    },
+                                }}
+                                className="pb-14 testimonials-swiper"
+                            >
+                                {testimonials.map((item) => (
+                                    <SwiperSlide key={item.id} className="!h-auto">
+                                        <div className="bg-white rounded-2xl p-6 h-full flex flex-col border border-[#01276a]/40 relative">
+                                            {/* Avatar */}
+                                            <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-4 border-2 border-white shadow-lg mx-auto md:mx-0">
+                                                <img
+                                                    src={item.image}
+                                                    alt={item.name}
+                                                    className={`w-full h-full object-cover ${item.id === 2 ? "object-top scale-110" : ""} ${item.objectPosition || ""}`}
+                                                />
+                                            </div>
+
+                                            {/* Content */}
+                                            <div className="flex-grow mb-4">
+                                                <p className="text-gray-500 text-sm md:text-base leading-relaxed font-normal text-justify">
+                                                    {item.text}
+                                                </p>
+                                            </div>
+
+                                            {/* Footer */}
+                                            <div className="mt-auto pt-4 border-t border-gray-100">
+                                                <h4 className="text-[#01276a] font-semibold text-base md:text-lg">{item.name}</h4>
+                                                <p className="text-gray-600 text-xs md:text-sm font-medium">{item.designation}</p>
+                                                <p className="text-gray-400 text-[10px] md:text-xs uppercase tracking-widest mt-1">{item.department}</p>
+                                            </div>
+                                        </div>
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
+
+                            {/* Navigation - refined positioning for mobile */}
+                            <button className="testimonials-prev absolute left-[-15px] md:left-0 top-1/2 -translate-y-1/2 z-10 text-[#01276a] hover:text-blue-400 transition-colors bg-white/50 rounded-full md:bg-transparent p-1 md:p-0">
+                                <svg width="32" height="32" className="md:w-[40px] md:h-[40px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <path d="M15 18l-6-6 6-6" />
+                                </svg>
+                            </button>
+                            <button className="testimonials-next absolute right-[-15px] md:right-0 top-1/2 -translate-y-1/2 z-10 text-[#01276a] hover:text-blue-400 transition-colors bg-white/50 rounded-full md:bg-transparent p-1 md:p-0">
+                                <svg width="32" height="32" className="md:w-[40px] md:h-[40px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                    <path d="M11 18l6-6-6-6" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </section>
 
 
                 {/* Global Map section */}
