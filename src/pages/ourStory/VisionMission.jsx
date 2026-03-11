@@ -16,6 +16,8 @@ import RajanPng from "../../assets/Founders/rajan.webp";
 import NavinPng from "../../assets/Founders/navin.webp";
 import ShivaanPng from "../../assets/Founders/shivaan.webp";
 import SidharthPng from "../../assets/Founders/Sidharth.webp";
+import AmitPng from "../../assets/leadership 5.png";
+import KritiPng from "../../assets/Gemini_Generated_Image_jtuumnjtuumnjtuu.png";
 
 import VisionImage from "../../assets/OurStory/visionMission/Vision.webp";
 import MissionImage from "../../assets/OurStory/visionMission/Mission.webp";
@@ -56,7 +58,7 @@ const directors = [
 const executiveDirectors = [
     {
         id: 1,
-        name: "Shivaan Sahni ",
+        name: "Shivaan Sahni",
         role: "Executive Director",
         bg: ShivaanPng,
         img: ShivaanPng,
@@ -73,6 +75,26 @@ const executiveDirectors = [
         objectPosition: "20% center",
         modalPosition: "20% center",
         message: `Panorama is a harmony of team strength and individual mastery-each creation rooted in emotion, unity, and excellence. Our legacy is built not just in factories, but in the future, we help uplift.`,
+    },
+    {
+        id: 3,
+        name: "Amit Saraff",
+        role: "CEO, Panorama Exports",
+        bg: AmitPng,
+        img: AmitPng,
+        objectPosition: "center 20%",
+        modalPosition: "center 20%",
+        message: `Panorama Exports has built a strong foundation over the years, and I’m excited to lead its next phase of transformation. Our focus is on strengthening innovation, enhancing our design-led approach, and building a more agile and future-ready organization. By empowering our teams and nurturing strong global partnerships, we aim to drive sustainable growth and long-term success.`,
+    },
+    {
+        id: 4,
+        name: "Kriti Tewary",
+        role: "Lead - Sustainability",
+        bg: KritiPng,
+        img: KritiPng,
+        objectPosition: "center 20%",
+        modalPosition: "center 20%",
+        message: `At Panorama, we believe in doing things right the first time. We carry with us the heritage of decades, decades of craft and a future shaped by responsibility. As we continue to grow, we are strengthening our efforts to produce garments in ways that respect people, partners, and the planet. Thoughtfully made. Responsibly delivered.`,
     },
 ];
 
@@ -374,7 +396,7 @@ export default function VisionMission() {
                     </motion.div>
                 </div>
 
-                <div className="w-[90%] md:w-[85%] mx-auto grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-10">
+                <div className="w-[90%] md:w-[85%] mx-auto flex flex-wrap justify-center gap-3 sm:gap-10">
                     {[...directors, ...executiveDirectors].map((leader, index) => (
                         <motion.div
                             key={leader.name + leader.role}
@@ -382,7 +404,7 @@ export default function VisionMission() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: false, amount: 0.1, margin: "0px 0px -50px 0px" }}
                             transition={{ duration: 0.4, delay: (index % 2) * 0.15, ease: "easeOut" }}
-                            className="flex flex-col bg-white shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] rounded-sm overflow-hidden group cursor-pointer border border-gray-100"
+                            className="flex flex-col bg-white shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] rounded-sm overflow-hidden group cursor-pointer border border-gray-100 w-[calc(50%-12px)] lg:w-[calc(25%-30px)] max-w-[320px]"
                             onClick={() => setSelectedLeader(leader)}
                         >
                             {/* Card Image Section */}

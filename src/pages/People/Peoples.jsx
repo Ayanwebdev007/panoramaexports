@@ -50,8 +50,7 @@ import testmon2 from "../../assets/testmon2.JPG";
 import testmon3 from "../../assets/testmon3.JPG";
 import testmon4 from "../../assets/testmon4.jpg";
 import GSR from "../../assets/GSR.jpg";
-import narendraImg from "../../assets/Gemini_Generated_Image_jtuumnjtuumnjtuu.png";
-import kritiImg from "../../assets/Gemini_Generated_Image_qnvlj4qnvlj4qnvl.png";
+import narendraImg from "../../assets/Gemini_Generated_Image_qnvlj4qnvlj4qnvl.png";
 
 import TeamworkImage from "../../assets/People/TeamWork1.webp";
 import ForwardThinkingImage from "../../assets/People/ForwardThinking1.webp";
@@ -142,17 +141,8 @@ const testimonials = [
         name: "Narendra Nath",
         designation: "GM - HR, Compliance & Admin",
         department: "",
-        image: kritiImg,
-        text: "As the GM – HR, Compliance & Admin, I have witnessed how Panorama Exports prioritizes its people, maintains strong compliance standards, and fosters a culture of accountability and respect. The organization’s dedication to continuous improvement and responsible business practices makes it a trusted partner for employees, clients, and stakeholders.",
-        objectPosition: "object-center"
-    },
-    {
-        id: 6,
-        name: "Kriti Tewary",
-        designation: "General Manager - Sustainability",
-        department: "",
         image: narendraImg,
-        text: "At Panorama, we believe in doing things right the first time. We carry with us the heritage of decades, decades of craft and a future shaped by responsibility. As we continue to grow, we are strengthening our efforts to produce garments in ways that respect people, partners, and the planet. Thoughtfully made. Responsibly delivered.",
+        text: "As the GM – HR, Compliance & Admin, I have witnessed how Panorama Exports prioritizes its people, maintains strong compliance standards, and fosters a culture of accountability and respect. The organization’s dedication to continuous improvement and responsible business practices makes it a trusted partner for employees, clients, and stakeholders.",
         objectPosition: "object-center"
     }
 ];

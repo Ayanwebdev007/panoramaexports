@@ -33,6 +33,8 @@ import cert3 from "../../assets/Responsible/certificate/oeko.webp";
 import wasteImg from "../../assets/waste-diversion.webp";
 import sroiImg from "../../assets/sroi-impact.webp";
 import esgImg from "../../assets/CM100387 copy.jpg";
+import RegenerativeCycle from "../../components/RegenerativeCycle/RegenerativeCycle";
+import "./Responsibility.css";
 
 const icons = [
     {
@@ -75,6 +77,27 @@ const csrItems = [
     },
 ];
 
+const certifications = [
+    {
+        id: 1,
+        image: cert1,
+        title: "Global Organic Textile Standards (GOTS)",
+        description: "Global Organic Textile Standard ensures that textiles are truly organic, environmentally friendly, and socially responsible — all the way from the harvesting of raw materials to the final labelled product."
+    },
+    {
+        id: 2,
+        image: cert3,
+        title: "OEKO-TEX® Standard 100",
+        description: "OEKO-TEX® STANDARD 100 ensures that every component of a textile product—right from threads and buttons to labels—is tested for harmful chemicals and proven safe for human use. Products carrying this label meet strict global criteria, guaranteeing they are free from substances that can harm health or the environment."
+    },
+    {
+        id: 3,
+        image: cert2,
+        title: "Global Recycled Standard (GRS)",
+        description: "GRS certification underscores our dedication to responsible production—integrating recycled inputs, verified traceability, and sustainable manufacturing practices."
+    }
+];
+
 function Responsibility() {
 
 
@@ -83,21 +106,27 @@ function Responsibility() {
     return (
         <div className="font-outfit">
             <div className="h-10 md:h-12 lg:h-20 w-full bg-gray-900"></div>
-            <div className="bg-[#49883f] lg:py-20 py-12 px-2 sm:px-6 md:px-10 lg:px-20">
+            <div className="mesh-gradient-bg lg:py-20 py-12 px-2 sm:px-6 md:px-10 lg:px-20">
                 <h1 className="text-3xl sm:text-4xl md:text-6xl font-light text-white text-center font-outfit">
-                    Sustainability
+                    Responsibility
                 </h1>
             </div>
-            <div className="lg:w-[90%] w-full mx-auto md:pt-16 pt-5 px-2 sm:px-6 md:px-10 lg:px-20">
+
+            {/* Regenerative Cycle Section */}
+            <div className="lg:w-[90%] w-full mx-auto px-2 sm:px-6 md:px-10 lg:px-20">
+                <RegenerativeCycle />
+            </div>
+
+            {/* <div className="lg:w-[90%] w-full mx-auto pb-10 px-2 sm:px-6 md:px-10 lg:px-20">
                 <div className="text-gray-700 text-center 2xl:text-xl lg:text-lg text-sm leading-relaxed font-light">
                     For Panorama, sustainability means designing with
                     conscience,<br></br> producing with care, and leaving a
                     legacy the planet can wear with pride.
                 </div>
-                <div className="w-full h-[1px] bg-blue-800 md:my-8 my-5"></div>
-            </div>
+            </div> */}
+
             {/* Focus Areas */}
-            <section className="grid md:grid-cols-4 grid-cols-2 sm:gap-5 gap-2 mx-auto 2xl:w-[65%] xl:w-[70%] lg:w-[85%] w-[90%] mx-auto 2xl:py-16 md:py-10 py-5 px-2 sm:px-6 md:px-10 lg:px-20">
+            {/* <section className="grid md:grid-cols-4 grid-cols-2 sm:gap-5 gap-2 mx-auto 2xl:w-[65%] xl:w-[70%] lg:w-[85%] w-[90%] mx-auto 2xl:py-16 md:py-10 py-5 px-2 sm:px-6 md:px-10 lg:px-20">
                 {icons.map((item) => (
                     <div
                         key={item.id}
@@ -113,23 +142,35 @@ function Responsibility() {
                         </h2>
                     </div>
                 ))}
-            </section>
+            </section> */}
 
-            {/* Images Area */}
-            <section className="grid sm:grid-cols-3 grid-cols-1 gap-2 sm:gap-0">
-                <div className="sm:border-r-4 border-blue-900">
-                    <img src={img1} alt="" />
-                </div>
-                <div className="sm:border-r-4 border-blue-900">
-                    <img src={img2} alt="" />
-                </div>
-                <div className="sm:border-r-4 border-gray-500">
-                    <img src={img3} alt="" />
+            {/* Images Area - Premium Layout */}
+            <section className="px-2 sm:px-6 md:px-10 lg:px-20 mb-12">
+                <div className="lg:w-[90%] w-full mx-auto grid sm:grid-cols-3 grid-cols-1 gap-6">
+                    <div className="overflow-hidden rounded-2xl group shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <img
+                            src={img1}
+                            alt="Sustainable Manufacturing"
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                    </div>
+                    <div className="overflow-hidden rounded-2xl group shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <img
+                            src={img2}
+                            alt="Ethical Sourcing"
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                    </div>
+                    <div className="overflow-hidden rounded-2xl group shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <img
+                            src={img3}
+                            alt="Community Impact"
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                    </div>
                 </div>
             </section>
             <div className="w-[90%] w-full mx-auto 2xl:py-16 md:py-10 py-5 px-2 sm:px-6 md:px-10 lg:px-20">
-                <div className="w-full h-[1px] bg-blue-900 md:mb-10 mb-5"></div>
-
                 {/* Our Approaches */}
                 <section className="lg:my-16 md:my-10 my-5 flex flex-col justify- items-center md:gap-10 gap-5">
                     <p className="text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-[#01276a] leading-snug text-center">
@@ -146,48 +187,28 @@ function Responsibility() {
                 </section>
 
 
-                {/* Certifications */}
-                <section className="lg:mb-12 md:mb-10 mb-5 grid grid-cols-1 lg:grid-cols-3 md:gap-8 gap-5 lg:mt-20 mt-10">
-                    <div className="flex flex-col items-center">
-                        <img src={cert1} alt="" />
-                        <h3 className="font-light text-lg text-center text-blue-950 mt-4 mb-2">
-                            Global Organic Textile Standards (GOTS)
-                        </h3>
-                        <p className="text-justify leading-relaxed text-sm md:text-base font-light">
-                            Global Organic Textile Standard ensures that
-                            textiles are truly organic, environmentally
-                            friendly, and socially responsible — all the way
-                            from the harvesting of raw materials to the final
-                            labelled product.
-                        </p>
-                    </div>
-                    <div className="flex flex-col items-center">
-                        <img src={cert2} alt="" />
-                        <h3 className="font-light text-lg text-center text-blue-950 mt-4 mb-2">
-                            Global Recycled Standard (GRS)
-                        </h3>
-                        <p className="text-justify leading-relaxed text-sm md:text-base font-light">
-                            GRS certification underscores our dedication to
-                            responsible production—integrating recycled inputs,
-                            verified traceability, and sustainable manufacturing
-                            practices.
-                        </p>
-                    </div>
-                    <div className="flex flex-col items-center">
-                        <img src={cert3} alt="" />
-                        <h3 className="font-light text-lg text-center text-blue-950 mt-4 mb-2">
-                            OEKO-TEX® Standard 100
-                        </h3>
-                        <p className="text-justify leading-relaxed text-sm md:text-base font-light">
-                            OEKO-TEX® STANDARD 100 ensures that every component
-                            of a textile product—right from threads and buttons
-                            to labels—is tested for harmful chemicals and proven
-                            safe for human use. Products carrying this label
-                            meet strict global criteria, guaranteeing they are
-                            free from substances that can harm health or the
-                            environment.
-                        </p>
-                    </div>
+                {/* Certifications - Premium Card Layout */}
+                <section className="lg:mb-12 md:mb-10 mb-5 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:mt-24 mt-12">
+                    {certifications.map((cert) => (
+                        <div
+                            key={cert.id}
+                            className="flex flex-col items-center bg-slate-50 p-10 rounded-[2.5rem] shadow-[0_10px_40px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition-all duration-500 border border-gray-100 group hover:-translate-y-2"
+                        >
+                            <div className="h-40 w-full flex items-center justify-center mb-8 px-6">
+                                <img
+                                    src={cert.image}
+                                    alt={cert.title}
+                                    className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500"
+                                />
+                            </div>
+                            <h3 className="font-semibold text-xl text-center text-[#01276a] mb-6 min-h-[3.5rem] flex items-center justify-center px-2">
+                                {cert.title}
+                            </h3>
+                            <p className="text-justify leading-relaxed text-[15px] text-gray-500 font-light px-2">
+                                {cert.description}
+                            </p>
+                        </div>
+                    ))}
                 </section>
 
                 {/* ESG Report & Bento Grid Section */}

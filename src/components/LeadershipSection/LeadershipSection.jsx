@@ -8,6 +8,8 @@ import RajanPng from "../../assets/Founders/rajan.webp";
 import NavinPng from "../../assets/Founders/navin.webp";
 import ShivaanPng from "../../assets/Founders/shivaan.webp";
 import SidharthPng from "../../assets/Founders/Sidharth.webp";
+import AmitPng from "../../assets/leadership 5.png";
+import KritiPng from "../../assets/Gemini_Generated_Image_jtuumnjtuumnjtuu.png";
 
 const leaders = [
     {
@@ -41,6 +43,22 @@ const leaders = [
         image: SidharthPng,
         bgPos: "18% 3%",
         bgSize: "350%"
+    },
+    {
+        id: 5,
+        name: "AMIT SARAFF",
+        role: "CEO",
+        image: AmitPng,
+        bgPos: "center 35%",
+        bgSize: "120%"
+    },
+    {
+        id: 6,
+        name: "KRITI TEWARY",
+        role: "Lead - Sustainability",
+        image: KritiPng,
+        bgPos: "center 35%",
+        bgSize: "120%"
     }
 ];
 
