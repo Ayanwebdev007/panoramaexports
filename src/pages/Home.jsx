@@ -39,6 +39,7 @@ import testmon3 from "../assets/testmon3.JPG";
 import testmon4 from "../assets/testmon4.jpg";
 import GSR from "../assets/GSR.jpg";
 import narendraImg from "../assets/Gemini_Generated_Image_qnvlj4qnvlj4qnvl.png";
+import aprajitaImg from "../assets/Aparajita.png";
 
 
 // Hero data
@@ -115,6 +116,33 @@ const crImages = [img2, img4];
 
 const testimonials = [
     {
+        id: 4,
+        name: "Gaurav Singh Rawat",
+        designation: "Head Of Sampling",
+        department: "",
+        image: GSR,
+        text: "My 20-year journey & being the Head of Sampling, has been an inspiring experience. Watching our organization grow into a global leader fills me with immense pride. It stands as a testament to our shared vision, commitment, and the power of teamwork. I truly believe great teams always achieve great victories.",
+        objectPosition: "object-center"
+    },
+    {
+        id: 5,
+        name: "Narendra Nath",
+        designation: "GM - HR, Compliance & Admin",
+        department: "",
+        image: narendraImg,
+        text: "As the GM – HR, Compliance & Admin, I have witnessed how Panorama Exports prioritizes its people, maintains strong compliance standards, and fosters a culture of accountability and respect. The organization’s dedication to continuous improvement and responsible business practices makes it a trusted partner for employees, clients, and stakeholders.",
+        objectPosition: "object-center"
+    },
+    {
+        id: 6,
+        name: "Aprajita Verma",
+        designation: "Vice President",
+        department: "",
+        image: aprajitaImg,
+        text: "At Panorama Exports, leadership is built on collaboration, trust, and a shared pursuit of excellence. Working with dedicated teams and global partners allows us to constantly innovate and deliver value through strong product and design capabilities. It is a privilege to contribute to the company’s growth and future direction. It is inspiring to work alongside passionate individuals who share a common vision of growth and building lasting partnerships.",
+        objectPosition: "object-center"
+    },
+    {
         id: 1,
         name: "Mohit Babbar",
         designation: "Senior Merchandiser",
@@ -137,24 +165,6 @@ const testimonials = [
         department: "",
         image: testmon4,
         text: "My 18-year journey with Panorama Exports has been both rewarding and inspiring. Since joining in 2008, I have had the opportunity to contribute to the growth of the Ladieswear division while continuously evolving with the industry. The trust, collaboration, and strong team culture here have allowed me to push creative boundaries and deliver quality product development year after year. Panorama truly values dedication and provides an environment where long-term careers can thrive."
-    },
-    {
-        id: 4,
-        name: "Gaurav Singh Rawat",
-        designation: "Head Of Sampling",
-        department: "",
-        image: GSR,
-        text: "My 20-year journey & being the Head of Sampling, has been an inspiring experience. Watching our organization grow into a global leader fills me with immense pride. It stands as a testament to our shared vision, commitment, and the power of teamwork. I truly believe great teams always achieve great victories.",
-        objectPosition: "object-center"
-    },
-    {
-        id: 5,
-        name: "Narendra Nath",
-        designation: "GM - HR, Compliance & Admin",
-        department: "",
-        image: narendraImg,
-        text: "As the GM – HR, Compliance & Admin, I have witnessed how Panorama Exports prioritizes its people, maintains strong compliance standards, and fosters a culture of accountability and respect. The organization’s dedication to continuous improvement and responsible business practices makes it a trusted partner for employees, clients, and stakeholders.",
-        objectPosition: "object-center"
     }
 ];
 

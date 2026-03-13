@@ -7,7 +7,9 @@ import {
     Factory,
     Lightbulb,
     RefreshCcw,
-    Recycle
+    Recycle,
+    Users,
+    Handshake
 } from "lucide-react";
 
 const cycleSteps = [
@@ -37,14 +39,14 @@ const cycleSteps = [
         step: "Step 4",
         title: "Community Progress",
         description: "Supporting Local Communities",
-        icon: Trees
+        icon: Users
     },
     {
         id: 5,
         step: "Step 5",
         title: "Transparent Partnerships",
         description: "Ethical & Traceable Supply Chain",
-        icon: Recycle
+        icon: Handshake
     }
 ];
 

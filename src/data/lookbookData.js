@@ -9,6 +9,7 @@ import thumb2 from "../assets/lookbook2.webp";
 import lookbook3 from "../assets/N1.webp";
 import lookbook4 from "../assets/lookbook-2.webp";
 import lookbook5 from "../assets/lookbook-3.webp";
+import lookbook6 from "../assets/lookbook 6.png";
 
 export const lookbookData = [
     {
@@ -55,5 +56,14 @@ export const lookbookData = [
         image: lookbook5,
         thumbnail: lookbook5,
         category: "Evening Wear"
+    },
+    {
+        id: 6,
+        title: "Elegant Sequined Design",
+        subtitle: "TIMELESS ELEGANCE",
+        year: "2024-25",
+        image: lookbook6,
+        thumbnail: lookbook6,
+        category: "Luxury Collection"
     }
 ];

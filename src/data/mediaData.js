@@ -20,6 +20,7 @@ import wd5 from "../assets/WD-5.webp";
 
 // PDFs
 import NewsletterJanFeb2026 from "../assets/Newsletter-Jan1.pdf";
+import NewsletterMar2026 from "../assets/Mar 26.pdf";
 
 export const mediaData = {
     Workshop: [
@@ -134,6 +135,14 @@ export const mediaData = {
             month: "Jan-Feb",
             year: "2026",
             url: NewsletterJanFeb2026,
+        },
+        {
+            id: 4,
+            title: "Panorama Exports Newsletter",
+            date: "March 2026",
+            month: "March",
+            year: "2026",
+            url: NewsletterMar2026,
         },
         {
             id: 1,
