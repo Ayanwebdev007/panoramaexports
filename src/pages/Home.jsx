@@ -134,15 +134,6 @@ const testimonials = [
         objectPosition: "object-center"
     },
     {
-        id: 6,
-        name: "Aprajita Verma",
-        designation: "Vice President",
-        department: "",
-        image: aprajitaImg,
-        text: "At Panorama Exports, leadership is built on collaboration, trust, and a shared pursuit of excellence. Working with dedicated teams and global partners allows us to constantly innovate and deliver value through strong product and design capabilities. It is a privilege to contribute to the company’s growth and future direction. It is inspiring to work alongside passionate individuals who share a common vision of growth and building lasting partnerships.",
-        objectPosition: "object-center"
-    },
-    {
         id: 1,
         name: "Mohit Babbar",
         designation: "Senior Merchandiser",

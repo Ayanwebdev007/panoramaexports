@@ -17,115 +17,60 @@ import Environment3 from "../assets/Media/Workshop/DSC03107.webp";
 import Environment4 from "../assets/Media/Workshop/CM100651.webp";
 import wd4 from "../assets/WD4.webp";
 import wd5 from "../assets/WD-5.webp";
+import ChristmasMain from "../assets/The warm Alcovec.jpg";
+import Christmas2 from "../assets/DSC03400.JPG";
+import Christmas3 from "../assets/Christmas3.jpg";
+import Christmas4 from "../assets/Christmas4.jpg";
 
 // PDFs
 import NewsletterJanFeb2026 from "../assets/Newsletter-Jan1.pdf";
 import NewsletterMar2026 from "../assets/Mar 26.pdf";
 
 export const mediaData = {
-    Workshop: [
-        {
-            id: 16,
-            title: "Womens day special",
-            date: "March 8, 2026",
-            image: wd4,
-        },
-        {
-            id: 17,
-            title: "Womens day special",
-            date: "March 8, 2026",
-            image: wd5,
-        },
+    Media: [
         {
             id: 1,
-            title: "PanoTEAM UP Training Sessions",
-            date: "December 11, 2024",
+            title: "PANO Team Up Training Sessions",
+            date: "December 2024",
             image: NewsletterImg1,
+            images: [
+                NewsletterImg1, NewsletterImg2, NewsletterImg3, NewsletterImg4, NewsletterImg5,
+                NewsletterImg6, NewsletterImg7, NewsletterImg8, NewsletterImg9, NewsletterImg10
+            ],
+            count: 10
         },
         {
             id: 2,
-            title: "PanoTEAM UP Training Sessions",
-            date: "December 11, 2024",
-            image: NewsletterImg2,
-        },
-        {
-            id: 3,
-            title: "PanoTEAM UP Training Sessions",
-            date: "December 11, 2024",
-            image: NewsletterImg3,
-        },
-        {
-            id: 4,
-            title: "PanoTEAM UP Training Sessions",
-            date: "December 11, 2024",
-            image: NewsletterImg4,
+            title: "Environment Day 2025",
+            date: "June 5, 2025",
+            image: Environment1,
+            images: [Environment1, Environment2, Environment3],
+            count: 3
         },
         {
             id: 5,
-            title: "PanoTEAM UP Training Sessions",
-            date: "December 11, 2024",
-            image: NewsletterImg5,
+            title: "Christmas Day Celebration 2025",
+            date: "December 25, 2025",
+            image: Christmas2,
+            images: [Christmas2, Christmas3, Christmas4, Environment4],
+            count: 4
         },
         {
-            id: 6,
-            title: "PanoTEAM UP Training Sessions",
-            date: "December 11, 2024",
-            image: NewsletterImg6,
+            id: 3,
+            title: "Women's Day Celebration 2026",
+            date: "March 8, 2026",
+            image: wd4,
+            images: [wd4, wd5],
+            count: 2
         },
         {
-            id: 7,
-            title: "PanoTEAM UP Training Sessions",
-            date: "December 11, 2024",
-            image: NewsletterImg7,
-        },
-        {
-            id: 8,
-            title: "PanoTEAM UP Training Sessions",
-            date: "December 11, 2024",
-            image: NewsletterImg8,
-        },
-        {
-            id: 9,
-            title: "PanoTEAM UP Training Sessions",
-            date: "December 11, 2024",
-            image: NewsletterImg9,
-        },
-        {
-            id: 10,
-            title: "PanoTEAM UP Training Sessions",
-            date: "December 11, 2024",
-            image: NewsletterImg10,
-        },
-        {
-            id: 11,
-            title: "Safety",
-            date: "",
+            id: 4,
+            title: "Safety Drills 2025",
+            date: "February 2025",
             image: Safety,
-        },
-        {
-            id: 12,
-            title: "Environment Day",
-            date: "",
-            image: Environment1,
-        },
-        {
-            id: 13,
-            title: "Environment Day",
-            date: "",
-            image: Environment2,
-        },
-        {
-            id: 14,
-            title: "Environment Day",
-            date: "",
-            image: Environment3,
-        },
-        {
-            id: 15,
-            title: "Environment Day",
-            date: "",
-            image: Environment4,
-        },
+            images: [Safety],
+            count: 1
+        }
     ],
     Newsletter: [
         {
@@ -161,6 +106,5 @@ export const mediaData = {
             url: "/media/Christmas Newletter.pdf",
         },
     ],
-    Community: [],
-    News: [],
+    News: []
 };

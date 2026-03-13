@@ -8,8 +8,9 @@ import RajanPng from "../../assets/Founders/rajan.webp";
 import NavinPng from "../../assets/Founders/navin.webp";
 import ShivaanPng from "../../assets/Founders/shivaan.webp";
 import SidharthPng from "../../assets/Founders/Sidharth.webp";
-import AmitPng from "../../assets/leadership 5.png";
+import AmitPng from "../../assets/amit.png";
 import KritiPng from "../../assets/Gemini_Generated_Image_jtuumnjtuumnjtuu.png";
+import AprajitaPng from "../../assets/Aparajita.png";
 
 const leaders = [
     {
@@ -49,8 +50,16 @@ const leaders = [
         name: "AMIT SARAFF",
         role: "CEO",
         image: AmitPng,
-        bgPos: "center 35%",
+        bgPos: "center 20%",
         bgSize: "120%"
+    },
+    {
+        id: 7,
+        name: "APRAJITA VERMA",
+        role: "VICE PRESIDENT",
+        image: AprajitaPng,
+        bgPos: "center 25%",
+        bgSize: "160%"
     },
     {
         id: 6,

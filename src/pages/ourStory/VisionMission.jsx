@@ -16,8 +16,9 @@ import RajanPng from "../../assets/Founders/rajan.webp";
 import NavinPng from "../../assets/Founders/navin.webp";
 import ShivaanPng from "../../assets/Founders/shivaan.webp";
 import SidharthPng from "../../assets/Founders/Sidharth.webp";
-import AmitPng from "../../assets/leadership 5.png";
+import AmitPng from "../../assets/amit.png";
 import KritiPng from "../../assets/Gemini_Generated_Image_jtuumnjtuumnjtuu.png";
+import AprajitaPng from "../../assets/Aparajita.png";
 
 import VisionImage from "../../assets/OurStory/visionMission/Vision.webp";
 import MissionImage from "../../assets/OurStory/visionMission/Mission.webp";
@@ -85,6 +86,16 @@ const executiveDirectors = [
         objectPosition: "center 20%",
         modalPosition: "center 20%",
         message: `Panorama Exports has built a strong foundation over the years, and I’m excited to lead its next phase of transformation. Our focus is on strengthening innovation, enhancing our design-led approach, and building a more agile and future-ready organization. By empowering our teams and nurturing strong global partnerships, we aim to drive sustainable growth and long-term success.`,
+    },
+    {
+        id: 5,
+        name: "Aprajita Verma",
+        role: "Vice President",
+        bg: AprajitaPng,
+        img: AprajitaPng,
+        objectPosition: "center 20%",
+        modalPosition: "center 20%",
+        message: `At Panorama Exports, leadership is built on collaboration, trust, and a shared pursuit of excellence. Working with dedicated teams and global partners allows us to constantly innovate and deliver value through strong product and design capabilities. It is a privilege to contribute to the company’s growth and future direction. It is inspiring to work alongside passionate individuals who share a common vision of growth and building lasting partnerships.`,
     },
     {
         id: 4,

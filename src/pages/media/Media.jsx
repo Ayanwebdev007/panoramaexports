@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { pdfjs } from "react-pdf";
 import NewsletterGrid from "../../components/Newsletter/NewsletterGrid";
 import { mediaData } from "../../data/mediaData";
@@ -10,14 +10,12 @@ import pdfjsWorker from "pdfjs-dist/build/pdf.worker.min.mjs?url";
 pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
 import TopHeader from "../../assets/Media/LeftImg.webp";
-import RightHeader1 from "../../assets/Media/RightImg1.webp";
-import RightHeader2 from "../../assets/Media/RightImg2.webp";
 
 
 
 
 
-const tabNames = Object.keys(mediaData);
+const tabNames = ["Media", "Newsletter", "News"];
 
 
 
@@ -34,51 +32,58 @@ export default function Media() {
         initialTab && tabNames.includes(initialTab) ? initialTab : tabNames[0]
     );
 
+    const [selectedGallery, setSelectedGallery] = useState(null);
+    const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+    const lightboxRef = useRef(null);
+
+    // Handle body scroll lock
+    useEffect(() => {
+        if (isLightboxOpen) {
+            document.body.style.overflow = "hidden";
+            document.documentElement.style.overflow = "hidden";
+            if (lightboxRef.current) {
+                lightboxRef.current.focus();
+            }
+        } else {
+            document.body.style.overflow = "auto";
+            document.documentElement.style.overflow = "auto";
+        }
+        return () => {
+            document.body.style.overflow = "auto";
+            document.documentElement.style.overflow = "auto";
+        };
+    }, [isLightboxOpen]);
+
+    const openLightbox = (mediaItem) => {
+        setSelectedGallery(mediaItem);
+        setIsLightboxOpen(true);
+    };
+
+    const closeLightbox = () => {
+        setIsLightboxOpen(false);
+        setSelectedGallery(null);
+    };
+
     return (
         <div className="bg-white font-outfit">
             <div className="w-full h-10 md:h-12 lg:h-20 bg-gray-900"></div>
-            {/* Top Hero Section */}
-            <section className="w-full py-1">
-                <div className="flex gap-2">
-                    {/* Card 1 */}
-                    <div className="md:w-[70%] w-full relative overflow-hidden shadow-lg group">
+            {/* Top Hero Section - Full Width */}
+            <section className="w-full">
+                <div className="relative w-full overflow-hidden shadow-2xl group">
+                    <div className="relative aspect-[21/9] md:aspect-[21/7] overflow-hidden">
                         <img
                             src={TopHeader}
-                            alt="The Missing Link in Scaling Sustainable Fashion Innovation"
-                            className="w-full aspect-[16/6] object-contain group-hover:scale-105 duration-200"
+                            alt="Panorama Exports Sustainable Fashion Innovation"
+                            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                         />
-                        <div className="absolute bottom-0 left-0 w-full h-full flex justify-center items-end bg-gradient-to-t from-black/40 via-black/20 to-transparent px-4 py-3">
-                            <h2 className="text-white font-light 2xl:text-4xl lg:text-2xl sm:text-lg text-sm 2xl:pb-16 lg:pb-10 md:pb-6 sm:pb-5 pb-1 font-outfit">
+                        {/* Overlay Gradient */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                        
+                        {/* Centered Text at Bottom */}
+                        <div className="absolute inset-0 flex flex-col justify-end items-center pb-12 md:pb-24 px-6 text-center">
+                            <h2 className="text-white font-extralight text-[10px] md:text-xl lg:text-3xl tracking-[0.3em] whitespace-nowrap uppercase">
                                 Panorama Exports Sustainable Fashion Innovation
                             </h2>
-                        </div>
-                    </div>
-                    <div className="hidden md:block w-[30%] flex flex-col">
-                        {/* Card 2 */}
-                        <div className="relative overflow-hidden shadow-lg group">
-                            <img
-                                src={RightHeader1}
-                                alt="Shahi Exports Champion for Reproductive Justice"
-                                className="w-full aspect-[16/6.9] object-contain"
-                            />
-                            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 via-black/30 to-transparent px-4 py-3 text-center">
-                                <h2 className="text-white font-light 2xl:text-2xl lg:text-lg text-sm font-outfit">
-                                    Panorama Exports Media & News
-                                </h2>
-                            </div>
-                        </div>
-                        {/* Card 3 */}
-                        <div className="relative mt-2 overflow-hidden shadow-lg group">
-                            <img
-                                src={RightHeader2}
-                                alt="The Manufacturing Perspective 2025"
-                                className="w-full aspect-[16/6.9] object-contain "
-                            />
-                            <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/50 via-black/30 to-transparent px-4 py-3 text-center">
-                                <h2 className="text-white font-light 2xl:text-2xl lg:text-lg text-sm font-outfit">
-                                    The Manufacturing Perspective
-                                </h2>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -113,38 +118,103 @@ export default function Media() {
                 </div>
             )}
 
-            {activeTab !== "Newsletter" && (
-                <div className="md:max-w-7xl mx-auto px-4 py-8">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-                        {(mediaData[activeTab] || []).map((item) => (
+            {activeTab === "Media" && (
+                <div className="md:max-w-7xl mx-auto px-4 py-12">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        {(mediaData.Media || []).map((item) => (
                             <div
                                 key={item.id}
-                                className="relative group bg-white rounded-sm overflow-hidden shadow transition-shadow duration-500 aspect-[16/14]"
+                                onClick={() => openLightbox(item)}
+                                className="group relative bg-[#f8faff] rounded-2xl overflow-hidden border border-blue-50 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col h-[320px] cursor-pointer"
                             >
-                                {/* Front (Image) - Slides Up & Fades Out on Hover */}
-                                <div
-                                    className="absolute inset-0 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]
-      group-hover:-translate-y-48 group-hover:opacity-0"
-                                >
+                                {/* Image Container */}
+                                <div className="h-full relative overflow-hidden">
                                     <img
                                         src={item.image}
                                         alt={item.title}
-                                        className="w-full h-full object-cover"
+                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
-                                </div>
-                                {/* Back (Text Panel) - Slides Up & Fades In on Hover */}
-                                <div
-                                    className="absolute inset-0 p-4 flex items-center justify-center
-      opacity-0 translate-y-48 transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)]
-      group-hover:opacity-100 group-hover:translate-y-0
-      bg-gradient-to-b from-blue-500 to-purple-500"
-                                >
-                                    <h3 className="font-light text-base text-white text-center font-outfit">
-                                        {item.title}
-                                    </h3>
+                                    {/* Overlay Gradient */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#01276a]/90 via-[#01276a]/20 to-transparent opacity-100 group-hover:opacity-80 transition-opacity duration-500" />
+
+                                    {/* Text Content in Overlay */}
+                                    <div className="absolute bottom-0 left-0 w-full p-6 text-white translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                                        <h3 className="text-xl font-light leading-tight mb-4">
+                                            {item.title}
+                                        </h3>
+                                        
+                                        {/* View Images Button */}
+                                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                            <span className="inline-flex items-center text-xs font-medium uppercase tracking-[0.2em] border-b border-white/40 pb-1 hover:border-white transition-colors">
+                                                View Images
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         ))}
+                    </div>
+                </div>
+            )}
+
+            {/* Premium Lightbox Modal */}
+            {isLightboxOpen && selectedGallery && (
+                <div 
+                    ref={lightboxRef}
+                    className="fixed inset-0 z-[9999] bg-white/95 backdrop-blur-2xl overflow-y-auto no-scrollbar scroll-smooth outline-none overscroll-contain"
+                    tabIndex={0}
+                    onWheel={(e) => e.stopPropagation()}
+                >
+                    {/* Close Button */}
+                    <button
+                        onClick={closeLightbox}
+                        className="fixed top-8 right-8 text-[#01276a] hover:text-blue-600 transition-colors p-2 z-[1000] bg-white/40 backdrop-blur-md rounded-full shadow-sm"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+
+                    {/* Modal Content container */}
+                    <div className="min-h-screen w-full flex flex-col px-4 md:px-20 py-16">
+                        {/* Header */}
+                        <div className="mb-16 text-center">
+                            <h2 className="text-[#01276a] text-3xl md:text-6xl font-light tracking-tight px-4 lg:px-44">
+                                {selectedGallery.title}
+                            </h2>
+                        </div>
+
+                        {/* Image Grid */}
+                        <div className="w-full max-w-7xl mx-auto flex-1 px-2">
+                            <div className="columns-1 sm:columns-2 lg:columns-3 gap-10 space-y-10 pb-20">
+                                {selectedGallery.images.map((img, idx) => (
+                                    <div key={idx} className="break-inside-avoid relative group overflow-hidden rounded-3xl border border-blue-50/50 shadow-[0_15px_40px_rgba(1,39,106,0.08)] bg-white">
+                                        <img
+                                            src={img}
+                                            alt={`${selectedGallery.title} - ${idx + 1}`}
+                                            className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-110"
+                                        />
+                                        <div className="absolute inset-0 bg-blue-900/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            )}
+            {activeTab === "News" && (
+                <div className="md:max-w-7xl mx-auto px-4 py-32 text-center">
+                    <div className="max-w-md mx-auto">
+                        <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-[#01276a] opacity-40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                            </svg>
+                        </div>
+                        <h3 className="text-2xl font-light text-[#01276a] mb-3">Latest News Coming Soon</h3>
+                        <p className="text-gray-500 font-light">Stay tuned for the latest updates, press releases, and announcements from Panorama Exports.</p>
                     </div>
                 </div>
             )}

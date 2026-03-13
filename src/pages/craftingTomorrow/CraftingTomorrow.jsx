@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import craftingTomorrowImage from "../../assets/CraftingTomorrow/01.webp";
 import { CiPlay1 } from "react-icons/ci";
 import { IoClose } from "react-icons/io5";
-import { FaCloudDownloadAlt } from "react-icons/fa";
 
 export default function CraftingTomorrow() {
     const [showModal, setShowModal] = useState(false);
@@ -13,15 +12,6 @@ export default function CraftingTomorrow() {
 
     const handleToggleModal = () => {
         setShowModal(!showModal);
-    };
-
-    const handleDownload = () => {
-        const link = document.createElement("a");
-        link.href = "/Panorama company profile - REVISED - Copy 2026.pdf";
-        link.download = "Panorama company profile - REVISED - Copy 2026.pdf";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
     };
 
     return (
@@ -57,13 +47,6 @@ export default function CraftingTomorrow() {
                         >
                             Watch Now
                             <CiPlay1 className="lg:text-lg md:text-md sm:text-sm text-[12px] group-hover:translate-x-1 transition-transform duration-300" />
-                        </button>
-                        <button
-                            onClick={handleDownload}
-                            className="md:mt-10 mt-5 group inline-flex items-center gap-2 rounded-xl border px-6 py-3 text-white bg-transparent border-white hover:bg-white hover:text-blue-900 lg:text-lg md:text-md sm:text-sm text-[12px] font-semibold shadow-[0_6px_10px_#ffffff88] hover:shadow-[0_8px_12px_#ffffffcc] transform hover:-translate-y-1 transition-all duration-300"
-                        >
-                            Download PPT
-                            <FaCloudDownloadAlt className="lg:text-lg md:text-md sm:text-sm text-[12px] group-hover:translate-x-1 transition-transform duration-300" />
                         </button>
                     </div>
                 </div>
