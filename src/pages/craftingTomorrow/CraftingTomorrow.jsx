@@ -67,7 +67,7 @@ export default function CraftingTomorrow() {
                         {/* YouTube Iframe */}
                         <iframe
                             className="w-full h-full rounded-lg shadow-lg"
-                            src="https://www.youtube.com/embed/_rxfOLuXvOY?autoplay=1"
+                            src="https://www.youtube.com/embed/39a60K_QZL4?autoplay=1"
                             title="YouTube video player"
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

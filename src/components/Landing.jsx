@@ -1,6 +1,8 @@
 // import bg from "../assets/Landing_bg.webp";
 import React, { useState, useRef, useEffect } from "react";
 
+import logoAnimation from "../assets/new logo animation.mp4";
+
 export default function Landing({ onEnter }) {
     const [hasEntered, setHasEntered] = useState(false); // New state for button click
     const [showButton, setShowButton] = useState(false); // New state for button visibility
@@ -9,15 +11,15 @@ export default function Landing({ onEnter }) {
     useEffect(() => {
         const video = videoRef.current;
         if (video) {
-            video.playbackRate = 1.1;
+            video.playbackRate = 1.6;
             video.addEventListener("timeupdate", handleTimeUpdate);
             video.addEventListener("play", handleVideoPlay);
         }
         
-        // Show button after 2 seconds (since video is 2x speed)
+        // Show button faster
         const buttonTimer = setTimeout(() => {
             setShowButton(true);
-        }, 1800);
+        }, 1200);
         
         return () => {
             if (video) {
@@ -59,7 +61,7 @@ export default function Landing({ onEnter }) {
                         playsInline
                         className="w-full lg:h-full lg:object-cover object-contain z-[-1]"
                     >
-                        <source src="/logo.mp4" type="video/mp4" />
+                        <source src={logoAnimation} type="video/mp4" />
                     </video>
                     {/* Button overlay on video */}
                     {showButton && (
