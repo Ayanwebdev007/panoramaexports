@@ -6,12 +6,11 @@ import logoAnimation from "../assets/new logo animation.mp4";
 export default function Landing({ onEnter }) {
     const [hasEntered, setHasEntered] = useState(false); // New state for button click
     const [showButton, setShowButton] = useState(false); // New state for button visibility
-    const [isVideoReady, setIsVideoReady] = useState(false);
     const videoRef = useRef(null);
 
     useEffect(() => {
         const video = videoRef.current;
-        if (video && isVideoReady) {
+        if (video) {
             video.playbackRate = 1.6;
             video.addEventListener("timeupdate", handleTimeUpdate);
             video.addEventListener("play", handleVideoPlay);
@@ -29,11 +28,7 @@ export default function Landing({ onEnter }) {
             }
             clearTimeout(buttonTimer);
         };
-    }, [isVideoReady]);
-
-    const handleVideoReady = () => {
-        setIsVideoReady(true);
-    };
+    }, []);
 
     const handleVideoPlay = () => {
         // Video started playing - could add analytics here if needed
@@ -53,29 +48,18 @@ export default function Landing({ onEnter }) {
         setHasEntered(true);
         if (onEnter) onEnter();
     };
+
     return (
         <div className="fixed inset-0 z-50 flex justify-center items-start bg-white border border-black">
             {/* Background Video */}
             {!hasEntered && (
                 <>
-                    {/* Fallback Logo - Shown while video is buffering */}
-                    {!isVideoReady && (
-                        <div className="absolute inset-0 flex items-center justify-center bg-white z-0">
-                            <img 
-                                src="/panoramalogo.webp" 
-                                alt="Panorama Logo" 
-                                className="w-64 h-auto animate-pulse opacity-70"
-                            />
-                        </div>
-                    )}
-
                     <video
                         ref={videoRef}
                         autoPlay
                         muted
                         playsInline
-                        onLoadedData={handleVideoReady}
-                        className={`w-full lg:h-full lg:object-cover object-contain z-[-1] transition-opacity duration-700 ${isVideoReady ? "opacity-100" : "opacity-0"}`}
+                        className="w-full lg:h-full lg:object-cover object-contain z-[-1]"
                     >
                         <source src={logoAnimation} type="video/mp4" />
                     </video>
