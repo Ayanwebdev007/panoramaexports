@@ -8,7 +8,7 @@ import RajanPng from "../../assets/Founders/rajan.webp";
 import NavinPng from "../../assets/Founders/navin.webp";
 import ShivaanPng from "../../assets/Founders/shivaan.webp";
 import SidharthPng from "../../assets/Founders/Sidharth.webp";
-import AmitPng from "../../assets/amit.png";
+import AmitPng from "../../assets/AMIT FINAL.jpeg";
 import KritiPng from "../../assets/Gemini_Generated_Image_jtuumnjtuumnjtuu.png";
 import AprajitaPng from "../../assets/Aparajita.png";
 
