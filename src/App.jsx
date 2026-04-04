@@ -8,7 +8,7 @@ import Lenis from "lenis";
 import "lenis/dist/lenis.css";
 
 function App() {
-    const [entered, setEntered] = useState(false);
+    const [entered, setEntered] = useState(true); // Default to true to bypass loader
 
     useEffect(() => {
         const lenis = new Lenis({
@@ -40,7 +40,7 @@ function App() {
 
     return (
         <>
-            {!entered && <Landing onEnter={handleEnter} />}
+            {/* {!entered && <Landing onEnter={handleEnter} />} */}
             {entered && (
                 <div className="">
                     <Navbar />

@@ -1,134 +1,69 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { FaBars } from "react-icons/fa";
+import { X, Mail, Check } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+
+// Import Mega-Menu Images
+import legacyImg from "../assets/Threads of Legacy.JPG";
+import mfgImg from "../assets/Manufacturing/Unit1.webp";
+import innovationImg from "../assets/Handcrafted-Luxury.webp";
+import lookbookImg from "../assets/lookbook1.webp";
+import peopleImg from "../assets/people-hero-demo.webp";
+import esgImg from "../assets/ESG.webp";
+import mediaImg from "../assets/AMIT FINAL.jpeg";
 
 export default function Navbar() {
     const location = useLocation();
-
-    const navItems = [
-        {
-            label: "HOME",
-            path: "/",
-        },
-        {
-            label: "OUR STORY",
-            path: "/ourstory#legacy",
-            subItems: [
-                {
-                    label: "Legacy",
-                    path: "/ourstory#legacy",
-                    image: "",
-                },
-                {
-                    label: "Vision & Values",
-                    path: "/vision-values",
-                    image: "",
-                },
-                {
-                    label: "Core Values",
-                    path: "/vision-values#core-values",
-                    image: "",
-                },
-                {
-                    label: "Leadership",
-                    path: "/vision-values#leadership",
-                    image: "",
-                },
-                {
-                    label: "Milestones",
-                    path: "/ourstory#milestones",
-                    image: "",
-                },
-                /* {
-                    label: "Our Purpose",
-                    path: "/our-purpose",
-                    image: "",
-                }, */
-            ],
-        },
-        {
-            label: "CRAFTED PRECISION",
-            path: "/craftedprecision",
-            subItems: [
-                {
-                    label: "Manufacturing Excellence",
-                    path: "/mfg-excellence",
-                    image: "",
-                },
-                {
-                    label: "Smart Warehousing",
-                    path: "/smart-warehousing",
-                    image: "",
-                },
-                {
-                    label: "Art in Every Thread",
-                    path: "/art-thread",
-                    image: "",
-                },
-                {
-                    label: "Exacting Standards",
-                    path: "/exacting-standards",
-                    image: "",
-                },
-                {
-                    label: "Sustainable Designs",
-                    path: "/sustainable-designs",
-                    image: "",
-                },
-                {
-                    label: "Advanced Washing",
-                    path: "/advanced-washing",
-                    image: "",
-                },
-                {
-                    label: "Adaptive Capacity",
-                    path: "/adaptive-capacity",
-                    image: "",
-                },
-            ],
-        },
-        {
-            label: "INNOVATION",
-            path: "/innovation",
-            subItems: [
-                {
-                    label: "Innovation that Leads",
-                    path: "/innovation#innovation-leads",
-                    image: "",
-                },
-                {
-                    label: "Standard Of Perfection",
-                    path: "/innovation#standard-perfection",
-                    image: "",
-                },
-                {
-                    label: "Handcrafted Luxury",
-                    path: "/innovation#handcrafted-luxury",
-                    image: "",
-                },
-            ],
-        },
-        {
-            label: "LOOK BOOK",
-            path: "/lookbook",
-        },
-        {
-            label: "PEOPLE",
-            path: "/peoples",
-        },
-        {
-            label: "RESPONSIBILITY",
-            path: "/responsibility",
-        },
-        {
-            label: "MEDIA",
-            path: "/media",
-        },
-    ];
-
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [hoveredIndex, setHoveredIndex] = useState(null);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const timeoutRef = useRef(null);
+    const [isNewsletterOpen, setIsNewsletterOpen] = useState(false);
+
+    const navItems = [
+        { label: "HOME", path: "/" },
+        {
+            label: "OUR STORY",
+            path: "/ourstory",
+            featuredImage: legacyImg,
+            subItems: [
+                { label: "Discover Panorama", path: "/ourstory" },
+                { label: "Our Values", path: "/vision-values" },
+                { label: "Our Journey", path: "/ourstory" },
+                { label: "Leadership", path: "/vision-values#leadership" },
+            ],
+        },
+        {
+            label: "MASTERY OF CRAFT",
+            path: "/craftedprecision",
+            featuredImage: mfgImg,
+            subItems: [
+                { label: "Material Excellence", path: "/art-thread" },
+                { label: "Design & Development", path: "/craftedprecision" },
+                { label: "Technical Mastery", path: "/mfg-excellence" },
+                { label: "Quality Assurance", path: "/exacting-standards" },
+            ],
+        },
+        {
+            label: "INNOVATION THAT LEADS",
+            path: "/innovation",
+            featuredImage: innovationImg,
+            subItems: [
+                { label: "Digital Precision", path: "/innovation/innovationleads" },
+                { label: "Weaving Brilliance", path: "/innovation/standardperfection" },
+                { label: "Operational Intelligence", path: "/innovation" },
+                { label: "Evolving Methodologies", path: "/innovation" },
+                { label: "Refined Craft", path: "/innovation/handcraftedluxury" },
+            ],
+        },
+        { label: "LOOK BOOK", path: "/lookbook", featuredImage: lookbookImg },
+        { label: "PANORAMA FAMILY", path: "/peoples", featuredImage: peopleImg },
+        { label: "RESPONSIBILITY", path: "/responsibility", featuredImage: esgImg },
+        { label: "MEDIA", path: "/media", featuredImage: mediaImg },
+    ];
 
     useEffect(() => {
         const handleScroll = () => {
@@ -138,195 +73,317 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    const handleMouseEnter = (index) => {
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        // Open menu for items with subItems (Story, Precision, Innovation)
+        if (navItems[index].subItems) {
+            setHoveredIndex(index);
+            setIsMenuOpen(true);
+        } else {
+            setIsMenuOpen(false);
+        }
+    };
+
+    const handleMouseLeave = () => {
+        timeoutRef.current = setTimeout(() => {
+            setIsMenuOpen(false);
+            setHoveredIndex(null);
+        }, 300);
+    };
+
     return (
         <nav
-            className={`${scrolled ? "bg-white" : "bg-transparent backdrop-blur-md"
-                } shadow-md lg:h-20 md:h-12 h-10 fixed top-0 left-0 right-0 z-50 transition-colors duration-500`}
+            onMouseLeave={handleMouseLeave}
+            className="bg-white border-b border-gray-100 shadow-sm fixed top-0 left-0 right-0 z-50 transition-all duration-500 w-full lg:h-12 h-10"
         >
-            <div className=" mx-auto xl:px-4 px-2 lg:h-20 md:h-12 h-10 flex items-center justify-end xl:gap-3 gap-2">
-                {/* Logo */}
-                {/* <Link
-                    to="/"
-                    className="flex items-center h-full justify-center 2xl:w-[30%] xl:w-[20%] w-[15%]"
-                >
-                    <img
-                        src="/panoramalogo.webp"
-                        alt="Panorama Exports Logo"
-                        className="2xl:h-24 sm:h-20 max-h-20 w-auto object-contain"
-                    />
-                </Link> */}
+            <div className="w-full px-4 lg:px-8 xl:px-12 h-full flex items-center">
+                
+                {/* Desktop: 3-Column Split */}
+                <div className="hidden lg:flex w-full items-center h-full">
+                    
+                    {/* Left: Nav Links */}
+                    <div className="flex-1 flex justify-start items-center gap-x-1 xl:gap-x-2">
+                        {navItems.map((item, index) => (
+                            <Link
+                                key={index}
+                                to={item.path}
+                                onMouseEnter={() => handleMouseEnter(index)}
+                                className={`text-gray-900 text-[10px] xl:text-[11px] font-medium tracking-[0.1em] hover:opacity-60 transition-all duration-300 uppercase whitespace-nowrap py-4 px-1.5 ${hoveredIndex === index ? "opacity-60" : ""}`}
+                            >
+                                {item.label}
+                            </Link>
+                        ))}
+                    </div>
 
-                {/* Navigation Links */}
-                <ul className="xl:w-[80%] w-[90%] hidden lg:flex xl:gap-8 gap-6 justify-end items-center relative text-white 2xl:text-base text-sm mr-5">
-                    {navItems.map((item, index) => {
-                        // Skip rendering if item is Home and current path is "/"
-                        if (
-                            item.label === "HOME" &&
-                            location.pathname === "/"
-                        ) {
-                            return null;
-                        }
 
-                        return (
-                            <li key={index} className="relative group">
-                                <Link
-                                    to={item.path}
-                                    className={`${scrolled
-                                            ? "text-[#073281] hover:text-[#073281]"
-                                            : "text-white hover:text-red-300"
-                                        } transition-colors duration-500 font-medium hover:underline underline-offset-4`}
-                                >
-                                    {item.label}
-                                </Link>
 
-                                {item.subItems && (
-                                    <ul className="absolute left-1/2 -translate-x-1/2 hidden group-hover:flex flex-col shadow-lg rounded-sm text-base z-10 w-[220px]">
-                                        <div
-                                            className={`flex justify-center xl:text-2xl text-lg ${scrolled
-                                                    ? "text-[#073281] hover:text-[#073281]"
-                                                    : "text-white hover:text-red-300"
-                                                } transition-colors duration-500`}
-                                        >
-                                            <IoMdArrowDropdown />
-                                        </div>
-                                        <div className="bg-[#beaf8e]/70 text-white rounded-sm grid grid-cols-1 border-t">
-                                            {item.subItems.map(
-                                                (subItem, subIndex) => (
-                                                    <li
-                                                        key={subIndex}
-                                                        className="hover:bg-[#beaf8e] hover:text-white px-2 whitespace-nowrap border-b"
-                                                    >
-                                                        <Link to={subItem.path}>
-                                                            <h3 className="py-2">
-                                                                {subItem.label}
-                                                            </h3>
-                                                        </Link>
-                                                    </li>
-                                                )
-                                            )}
-                                        </div>
-                                    </ul>
-                                )}
-                            </li>
-                        );
-                    })}
-                </ul>
+                    {/* Right: Contact */}
+                    <div className="flex-1 flex justify-end items-center gap-x-4 xl:gap-x-6">
+                        <button
+                            onClick={() => setIsNewsletterOpen(true)}
+                            className="text-gray-900 text-[10px] xl:text-[11px] font-medium tracking-[0.1em] hover:opacity-60 transition-all duration-300 uppercase whitespace-nowrap"
+                        >
+                            Newsletter
+                        </button>
+                        <Link
+                            to="/contactus"
+                            className="text-gray-900 text-[10px] xl:text-[11px] font-medium tracking-[0.1em] hover:opacity-60 transition-all duration-300 uppercase whitespace-nowrap"
+                        >
+                            Contact Us
+                        </Link>
+                    </div>
+                </div>
 
-                <div className={`lg:hidden flex`}>
-                    {/* Mobile Menu Button */}
+                {/* Mobile View */}
+                <div className="lg:hidden flex justify-between items-center w-full h-full">
+
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className="px-2 rounded-md text-white ml-10"
-                        aria-label="Toggle mobile menu"
+                        className="text-gray-900 p-2"
                     >
-                        <FaBars
-                            className={`${scrolled
-                                    ? "text-[#073281] hover:text-[#073281]"
-                                    : "text-white hover:text-red-300"
-                                }`}
-                        />
+                        <FaBars size={22} />
                     </button>
                 </div>
             </div>
 
+            {/* Mega Menu */}
+            <AnimatePresence>
+                {isMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.3 }}
+                        onMouseEnter={() => {
+                            if (timeoutRef.current) clearTimeout(timeoutRef.current);
+                        }}
+                        className="absolute top-full left-0 w-full bg-white border-b border-gray-200 shadow-2xl overflow-hidden"
+                    >
+                        {/* Streamlined Top-Aligned 3-Column Layout */}
+                        <div className="w-full px-4 lg:px-8 xl:px-12 py-8">
+                            <div className="flex w-full divide-x divide-gray-100">
+                                {navItems.filter(item => item.subItems).map((item, index, filteredArr) => {
+                                    const fullIndex = navItems.findIndex(ni => ni.label === item.label);
+                                    const isFirst = index === 0;
+                                    const isLast = index === filteredArr.length - 1;
+                                    
+                                    return (
+                                        <div 
+                                            key={index} 
+                                            className={`flex-1 flex flex-col justify-start min-h-[150px] transition-opacity duration-300 ${hoveredIndex === fullIndex ? "opacity-100" : "opacity-40"} 
+                                                ${isFirst ? "pr-8 xl:pr-12 pl-0" : isLast ? "pl-8 xl:pl-12 pr-0" : "px-8 xl:px-12"}`}
+                                        >
+                                            <div className="flex items-start justify-between gap-4 pt-1">
+                                                {/* Sub-item List (Black Text, No Caps, Larger Font) */}
+                                                <div className="space-y-3">
+                                                    <ul className="space-y-3">
+                                                        {item.subItems.map((sub, idx) => (
+                                                            <li key={idx}>
+                                                                <Link
+                                                                    to={sub.path}
+                                                                    className="text-gray-900 hover:opacity-60 transition-colors text-[12px] font-medium tracking-wide block whitespace-nowrap"
+                                                                >
+                                                                    {sub.label}
+                                                                </Link>
+                                                            </li>
+                                                        ))}
+                                                    </ul>
+                                                </div>
+
+                                                {/* Landscape Featured Image (Conditional Grayscale) */}
+                                                <div className="w-[170px] xl:w-[210px] aspect-[4/3] overflow-hidden rounded-[1px] relative group flex-shrink-0">
+                                                    <img
+                                                        src={item.featuredImage}
+                                                        alt={item.label}
+                                                        className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-105 ${hoveredIndex === fullIndex ? "grayscale-0" : "grayscale"}`}
+                                                    />
+                                                    <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
             {/* Mobile Menu */}
             {isOpen && (
-                <div>
-                    {/* Close Button */}
+                <div className="fixed inset-0 z-50 bg-white">
                     <button
-                        className="absolute top-12 right-4 text-white text-2xl hover:text-gray-300"
+                        className="absolute top-4 right-4 text-gray-900 text-2xl"
                         onClick={() => setIsOpen(false)}
                     >
                         ✕
                     </button>
-
-                    <ul className="lg:hidden bg-black bg-opacity-80 px-4 py-6 space-y-4 text-white text-base">
+                    <ul className="flex flex-col items-center justify-center h-full space-y-6 text-gray-900 text-lg uppercase font-medium tracking-widest">
+                        {navItems.map((item, index) => (
+                            <li key={index}>
+                                <Link to={item.path} onClick={() => setIsOpen(false)}>
+                                    {item.label}
+                                </Link>
+                            </li>
+                        ))}
                         <li>
-                            <Link to="/" onClick={() => setIsOpen(false)}>
-                                Home
-                            </Link>
+                            <button 
+                                onClick={() => { setIsOpen(false); setIsNewsletterOpen(true); }}
+                                className="uppercase font-medium tracking-widest text-gray-900"
+                            >
+                                Newsletter
+                            </button>
                         </li>
                         <li>
-                            <Link
-                                to="/Ourstory"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                Our Story
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                to="/vision-values"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                Vision & Values
-                            </Link>
-                        </li>
-                        {/* <li>
-                            <Link
-                                to="/our-purpose"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                Our Purpose
-                            </Link>
-                        </li> */}
-                        <li>
-                            <Link
-                                to="/craftedprecision"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                Crafted Precision
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                to="/innovation"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                Innovation
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                to="/lookbook"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                Lookbook
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                to="/peoples"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                People
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                to="/responsibility"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                Responsibility
-                            </Link>
-                        </li>
-
-                        <li>
-                            <Link to="/media" onClick={() => setIsOpen(false)}>
-                                Media
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                to="/contactus"
-                                onClick={() => setIsOpen(false)}
-                            >
+                            <Link to="/contactus" onClick={() => setIsOpen(false)}>
                                 Contact Us
                             </Link>
                         </li>
                     </ul>
                 </div>
             )}
+            {/* Newsletter Popup */}
+            <NewsletterPopup 
+                isOpen={isNewsletterOpen} 
+                onClose={() => setIsNewsletterOpen(false)} 
+            />
         </nav>
+    );
+}
+
+function NewsletterPopup({ isOpen, onClose }) {
+    const [isSubscribed, setIsSubscribed] = useState(false);
+
+    // Reset subscription state when modal opens
+    useEffect(() => {
+        if (isOpen) setIsSubscribed(false);
+    }, [isOpen]);
+
+    return (
+        <AnimatePresence>
+            {isOpen && (
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+                    onClick={onClose}
+                >
+                    <motion.div
+                        initial={{ scale: 0.9, opacity: 0, y: 20 }}
+                        animate={{ scale: 1, opacity: 1, y: 0 }}
+                        exit={{ scale: 0.9, opacity: 0, y: 20 }}
+                        transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                        className="bg-white w-full max-w-5xl shadow-2xl relative overflow-hidden flex flex-col md:flex-row h-auto max-h-[95vh] md:h-[550px]"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* Left side: Image */}
+                        <div className="hidden md:block w-2/5 relative h-full">
+                            <img
+                                src={legacyImg}
+                                alt="Panorama"
+                                className="w-full h-full object-cover"
+                            />
+                            <div className="absolute inset-0 bg-black/5"></div>
+                        </div>
+
+                        {/* Right side: Form */}
+                        <div className="w-full md:w-3/5 p-8 sm:p-10 md:p-12 lg:p-14 flex flex-col relative overflow-hidden justify-center min-h-[400px]">
+                            <button
+                                onClick={onClose}
+                                className="absolute top-6 right-6 text-gray-400 hover:text-gray-900 transition-colors z-10"
+                            >
+                                <X size={28} strokeWidth={1} />
+                            </button>
+
+                            <AnimatePresence mode="wait">
+                                {isSubscribed ? (
+                                    <motion.div 
+                                        key="success"
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -20 }}
+                                        className="h-full flex flex-col items-center justify-center text-center space-y-8"
+                                    >
+                                        <div className="w-20 h-20 bg-gray-50 rounded-full flex items-center justify-center text-gray-900 border border-gray-100">
+                                            <Check size={36} strokeWidth={1} />
+                                        </div>
+                                        <div className="space-y-4">
+                                            <h2 className="text-3xl font-light tracking-tight text-gray-900 uppercase font-outfit">Welcome</h2>
+                                            <p className="text-[14px] text-gray-500 font-light max-w-xs mx-auto leading-relaxed">
+                                                Successfully subscribed! You are now a member of the Panorama inner circle.
+                                            </p>
+                                        </div>
+                                        <button
+                                            onClick={onClose}
+                                            className="bg-gray-900 text-white px-10 py-4 text-[11px] font-medium tracking-[0.25em] uppercase hover:bg-black transition-all duration-300 shadow-xl"
+                                        >
+                                            Continue
+                                        </button>
+                                    </motion.div>
+                                ) : (
+                                    <motion.div 
+                                        key="form"
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        className="space-y-10 md:space-y-12"
+                                    >
+                                        <div className="space-y-8 md:space-y-10 text-center md:text-left">
+                                            <span className="text-[10px] tracking-[0.25em] font-medium text-gray-400 uppercase block">Newsletter</span>
+                                            <div className="space-y-3">
+                                                <h2 className="text-3xl sm:text-4xl font-light tracking-tight text-gray-900 leading-tight font-outfit">
+                                                    Discover Panorama
+                                                </h2>
+                                                <p className="text-[13px] text-gray-500 font-light leading-relaxed max-w-sm mx-auto md:mx-0">
+                                                    Subscribe to receive updates and be inspired by the new collections.
+                                                </p>
+                                                <p className="text-[10px] text-gray-400 italic">Fields marked with an asterisk (*) are required</p>
+                                            </div>
+                                        </div>
+
+                                        <form
+                                            className="space-y-8 md:space-y-10"
+                                            onSubmit={(e) => {
+                                                e.preventDefault();
+                                                setIsSubscribed(true);
+                                            }}
+                                        >
+                                            <div className="space-y-2">
+                                                <label className="text-[11px] font-medium tracking-[0.15em] text-gray-900 uppercase">
+                                                    e-mail *
+                                                </label>
+                                                <input
+                                                    type="email"
+                                                    placeholder="Enter e-mail"
+                                                    className="w-full px-0 py-3 border-b border-gray-200 bg-transparent text-sm focus:outline-none focus:border-gray-900 transition-colors placeholder:text-gray-300 rounded-none font-light"
+                                                    required
+                                                />
+                                            </div>
+
+                                            <div className="space-y-6 md:space-y-8">
+                                                <button
+                                                    type="submit"
+                                                    className="w-full bg-[#1A1A1A] text-white py-5 text-[11px] font-medium tracking-[0.25em] uppercase hover:bg-black transition-all duration-500 flex items-center justify-center gap-3 shadow-lg"
+                                                >
+                                                    <Mail size={16} strokeWidth={1.5} />
+                                                    SUBSCRIBE TO NEWSLETTER
+                                                </button>
+
+                                                <div className="space-y-4 text-center md:text-left">
+                                                    <p className="text-[11px] text-gray-400 font-light leading-relaxed">
+                                                        By entering your e-mail, you agree to receive Panorama communications. For more, see our <span className="underline cursor-pointer hover:text-gray-600 transition-colors">Privacy Policy</span>.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </motion.div>
+                                )}
+                            </AnimatePresence>
+                        </div>
+                    </motion.div>
+                </motion.div>
+            )}
+        </AnimatePresence>
     );
 }
