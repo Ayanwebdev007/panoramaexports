@@ -59,7 +59,7 @@ export default function Header() {
                             <span className="text-white font-bold text-xl">P</span>
                         </div>
                         <div>
-                            <h1 className="text-2xl font-bold text-gray-800">PANORAMA</h1>
+                            <h1 className="text-2xl font-bold text-[#AD1E1E]">PANORAMA</h1>
                             <p className="text-sm text-gray-600">EXPORTS</p>
                         </div>
                     </Link>
@@ -74,7 +74,7 @@ export default function Header() {
                                 onMouseLeave={() => setActiveDropdown(null)}
                             >
                                 <span
-                                    className="text-gray-800 hover:text-red-700 font-semibold transition-colors duration-200 cursor-pointer"
+                                    className="text-[#AD1E1E] hover:text-black font-semibold transition-colors duration-200 cursor-pointer"
                                     onClick={() => setActiveDropdown(index)}
                                     onMouseEnter={() => setActiveDropdown(index)}
                                 >

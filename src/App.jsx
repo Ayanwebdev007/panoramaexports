@@ -4,11 +4,13 @@ import Header from "./components/Header";
 import Navbar from "./components/Navbar";
 import AppRoutes from "./routes/AppRoutes";
 import Footer from "./components/Footer";
+import NewsletterPopup from "./components/Newsletter/NewsletterPopup";
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
 
 function App() {
     const [entered, setEntered] = useState(true); // Default to true to bypass loader
+    const [isNewsletterOpen, setIsNewsletterOpen] = useState(false);
 
     useEffect(() => {
         const lenis = new Lenis({
@@ -43,9 +45,13 @@ function App() {
             {/* {!entered && <Landing onEnter={handleEnter} />} */}
             {entered && (
                 <div className="">
-                    <Navbar />
+                    <Navbar setIsNewsletterOpen={setIsNewsletterOpen} />
                     <AppRoutes />
-                    <Footer />
+                    <Footer setIsNewsletterOpen={setIsNewsletterOpen} />
+                    <NewsletterPopup 
+                        isOpen={isNewsletterOpen} 
+                        onClose={() => setIsNewsletterOpen(false)} 
+                    />
                 </div>
             )}
         </>

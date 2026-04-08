@@ -4,7 +4,7 @@ import { Mail, ArrowUp, Youtube, Twitter, Linkedin } from "lucide-react";
 
 const LETTERS = "REACH US".split("");
 
-export default function Footer() {
+export default function Footer({ setIsNewsletterOpen }) {
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
@@ -137,9 +137,15 @@ export default function Footer() {
                     </div>
                     <nav className="flex flex-wrap justify-center gap-6 md:gap-12">
                         <Link to="/ourstory" className="text-xs md:text-sm font-bold tracking-wider hover:text-[#b89d6d] transition-colors">About</Link>
-                        <Link to="/contactus" className="text-xs md:text-sm font-bold tracking-wider hover:text-[#b89d6d] transition-colors">Contact</Link>
                         <Link to="/peoples" className="text-xs md:text-sm font-bold tracking-wider hover:text-[#b89d6d] transition-colors">Career</Link>
                         <Link to="/responsibility" className="text-xs md:text-sm font-bold tracking-wider hover:text-[#b89d6d] transition-colors">Sustainability</Link>
+                        <button 
+                            onClick={() => setIsNewsletterOpen(true)}
+                            className="text-xs md:text-sm font-bold tracking-wider hover:text-[#b89d6d] transition-colors"
+                        >
+                            Newsletter
+                        </button>
+                        <Link to="/contactus" className="text-xs md:text-sm font-bold tracking-wider hover:text-[#b89d6d] transition-colors">Contact</Link>
                     </nav>
                     <button
                         onClick={scrollToTop}
