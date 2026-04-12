@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -19,6 +20,7 @@ import LeadershipSection from "../components/LeadershipSection/LeadershipSection
 import GoogleMapUnits from "../components/GoogleMapUnits";
 import OurLocation from "../components/OurLocation/OurLocation";
 import JoinUs from "../components/JoinUs/JoinUs";
+import IntentionSection from "../components/IntentionSection";
 
 import HumanTouch1 from "../assets/Community/csr.webp";
 import HumanTouch2 from "../assets/Community/csr2.webp";
@@ -111,6 +113,7 @@ import img2 from "../assets/CraftingTomorrow/2.webp";
 import img3 from "../assets/CraftingTomorrow/3.webp";
 import img4 from "../assets/CraftingTomorrow/4.webp";
 import video from "../assets/CraftingTomorrow/Crafting-Tomorrow.mp4";
+import intentionVideo from "../assets/Master Video.mp4";
 
 const crImages = [img2, img4];
 
@@ -163,6 +166,8 @@ export default function Home() {
     const swiperRef = useRef(null);
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
     const [currentIndex, setCurrentIndex] = useState(0);
+
+    const showHero = false; // Set to true to show the Hero Section in the future
 
     useEffect(() => {
         const swiper = swiperRef.current?.swiper;
@@ -218,121 +223,126 @@ export default function Home() {
         return () => clearInterval(interval);
     }, []);
 
-
-
     return (
         <div className="relative">
             <div className="sm:hidden w-full h-10 bg-gray-900"></div>
-            {/* Hero Carousel */}
-            <div className="relative z-10 w-full">
-                <Swiper
-                    ref={swiperRef}
-                    modules={[Navigation, Pagination, Autoplay]}
-                    spaceBetween={0}
-                    slidesPerView={1}
-                    loop={true}
-                    initialSlide={0}
-                    speed={600}
-                    autoplay={{
-                        delay: 3500,
-                        disableOnInteraction: false,
-                        pauseOnMouseEnter: false,
-                        waitForTransition: true,
-                        enabled: true,
-                    }}
-                    pagination={{
-                        clickable: true,
-                        el: ".swiper-pagination",
-                        bulletClass: "swiper-pagination-bullet",
-                        bulletActiveClass: "swiper-pagination-bullet-active",
-                    }}
-                    className="w-full h-auto aspect-[1920/944]"
-                >
-                    {heroSlides.map((slide, index) => (
-                        <SwiperSlide key={slide.id} className="relative h-full">
-                            {/* Background Image */}
-                            <picture className="block w-full h-full">
-                                <source
-                                    srcSet={`${slide.image}?format=webp`}
-                                    type="image/webp"
-                                />
-                                <img
-                                    src={slide.image}
-                                    alt={`PANORAMA ${slide.dynamicText}`}
-                                    className={`w-full h-full object-cover ${slide.objectPosition || "object-center"}`}
-                                    loading={index === 0 ? "eager" : "lazy"}
-                                />
-                            </picture>
+            
+            {showHero && (
+                <>
+                    {/* Hero Carousel */}
+                    <div className="relative z-10 w-full">
+                        <Swiper
+                            ref={swiperRef}
+                            modules={[Navigation, Pagination, Autoplay]}
+                            spaceBetween={0}
+                            slidesPerView={1}
+                            loop={true}
+                            initialSlide={0}
+                            speed={600}
+                            autoplay={{
+                                delay: 3500,
+                                disableOnInteraction: false,
+                                pauseOnMouseEnter: false,
+                                waitForTransition: true,
+                                enabled: true,
+                            }}
+                            pagination={{
+                                clickable: true,
+                                el: ".swiper-pagination",
+                                bulletClass: "swiper-pagination-bullet",
+                                bulletActiveClass: "swiper-pagination-bullet-active",
+                            }}
+                            className="w-full h-auto aspect-[1920/944]"
+                        >
+                            {heroSlides.map((slide, index) => (
+                                <SwiperSlide key={slide.id} className="relative h-full">
+                                    {/* Background Image */}
+                                    <picture className="block w-full h-full">
+                                        <source
+                                            srcSet={`${slide.image}?format=webp`}
+                                            type="image/webp"
+                                        />
+                                        <img
+                                            src={slide.image}
+                                            alt={`PANORAMA ${slide.dynamicText}`}
+                                            className={`w-full h-full object-cover ${slide.objectPosition || "object-center"}`}
+                                            loading={index === 0 ? "eager" : "lazy"}
+                                        />
+                                    </picture>
 
-                            {/* Dark Gradient Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
+                                    {/* Dark Gradient Overlay */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                                </SwiperSlide>
+                            ))}
+                        </Swiper>
 
-                {/* Fixed Text Content - Outside of Swiper */}
-                <div className="absolute 2xl:mt-[550px] xl:mt-[450px] lg:mt-[350px] md:mt-[250px] sm:mt-[150px] xs:mt-[100px] mt-[50px] 2xl:ml-[30px] md:m-[10px] h-[20vh] inset-0 flex items-center justify-start pointer-events-none z-20">
-                    <div className="2xl:w-[65%] xl:w-[70%] lg:w-[90%] w-[97%] sm:ml-20 px-4 md:px-8 flex items-center">
-                        <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight flex ">
-                            <span className="text-white text-xl sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl flex items-center">
-                                PANORAMA{" "}
-                                <RxDividerVertical className="lg:text-[80px] md:text-[60px] sm:text-[40px] text-[30px]" />{" "}
-                            </span>
-                            <DynamicText
-                                slides={heroSlides}
-                                currentIndex={currentSlideIndex}
-                            />
-                        </h1>
+                        {/* Fixed Text Content - Outside of Swiper */}
+                        <div className="absolute 2xl:mt-[550px] xl:mt-[450px] lg:mt-[350px] md:mt-[250px] sm:mt-[150px] xs:mt-[100px] mt-[50px] 2xl:ml-[30px] md:m-[10px] h-[20vh] inset-0 flex items-center justify-start pointer-events-none z-20">
+                            <div className="2xl:w-[65%] xl:w-[70%] lg:w-[90%] w-[97%] sm:ml-20 px-4 md:px-8 flex items-center">
+                                <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight flex ">
+                                    <span className="text-white text-xl sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl flex items-center">
+                                        PANORAMA{" "}
+                                        <RxDividerVertical className="lg:text-[80px] md:text-[60px] sm:text-[40px] text-[30px]" />{" "}
+                                    </span>
+                                    <DynamicText
+                                        slides={heroSlides}
+                                        currentIndex={currentSlideIndex}
+                                    />
+                                </h1>
+                            </div>
+                        </div>
+
+                        {/* Custom Navigation Arrows */}
+                        <button
+                            className="hidden absolute left-4 top-1/2 transform -translate-y-1/2 z-50 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full sm:flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 pointer-events-auto"
+                            aria-label="Previous slide"
+                            onClick={() => swiperRef.current?.swiper?.slidePrev()}
+                        >
+                            <svg
+                                className="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M15 19l-7-7 7-7"
+                                />
+                            </svg>
+                        </button>
+                        <button
+                            className="hidden absolute right-4 top-1/2 transform -translate-y-1/2 z-50 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full sm:flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 pointer-events-auto"
+                            aria-label="Next slide"
+                            onClick={() => swiperRef.current?.swiper?.slideNext()}
+                        >
+                            <svg
+                                className="w-6 h-6"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M9 5l7 7-7 7"
+                                />
+                            </svg>
+                        </button>
+
+                        {/* Custom Pagination Dots */}
+                        <div className="swiper-pagination absolute bottom-8 left-1/2 transform -translate-x-1/2 z-40 flex space-x-2"></div>
                     </div>
-                </div>
+                </>
+            )}
 
-                {/* Custom Navigation Arrows */}
-                <button
-                    className="hidden absolute left-4 top-1/2 transform -translate-y-1/2 z-50 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full sm:flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 pointer-events-auto"
-                    aria-label="Previous slide"
-                    onClick={() => swiperRef.current?.swiper?.slidePrev()}
-                >
-                    <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M15 19l-7-7 7-7"
-                        />
-                    </svg>
-                </button>
-                <button
-                    className="hidden absolute right-4 top-1/2 transform -translate-y-1/2 z-50 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full sm:flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 pointer-events-auto"
-                    aria-label="Next slide"
-                    onClick={() => swiperRef.current?.swiper?.slideNext()}
-                >
-                    <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9 5l7 7-7 7"
-                        />
-                    </svg>
-                </button>
+            <IntentionSection videoSrc={intentionVideo} />
 
-                {/* Custom Pagination Dots */}
-                <div className="swiper-pagination absolute bottom-8 left-1/2 transform -translate-x-1/2 z-40 flex space-x-2"></div>
-            </div>
-
-            <div className="bg-white sm:pt-6 pt-2">
+            <div className="bg-white pt-2">
                 {/* Global presence */}
-                <div className="md:py-8 py-2 md:mt-6 mt-2 text-[#01276a] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">
+                <div className="md:py-4 py-2 text-[#AD1E1E] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">
                     <div className="flex items-center justify-center 2xl:px-5 gap-6">
                         <div className="text-2xl sm:text-3xl md:text-5xl font-regular flex flex-wrap gap-4">
                             <p className="font-bold">Global</p> Presence
@@ -410,7 +420,27 @@ export default function Home() {
                             `}
                         </style>
                     </div>
-                </div>                {/* Crafting Tomorrow Content */}
+                </div>
+
+                {/* New Brand Statement Section */}
+                <section className="bg-white pt-4 pb-16 sm:pt-6 sm:pb-24 font-outfit">
+                    <div className="max-w-[1700px] mx-auto px-6 sm:px-10 lg:px-20 flex flex-col items-center">
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1.5 }}
+                            className="max-w-[1400px] text-center"
+                        >
+                            <p className="text-[#1a1a1a] text-sm sm:text-lg md:text-xl lg:text-[20px] leading-[1.9] font-light tracking-wide">
+                                Panorama brings together craftsmanship and consistency to be a trusted partner to global brands—creating timeless fashion defined by responsiveness and meticulous attention to detail.
+                                From the outset, Panorama has been driven by a collective vision—to create timeless fashion, crafted with intention and designed to stand the test of time.
+                            </p>
+                        </motion.div>
+                    </div>
+                </section>
+
+                {/* Crafting Tomorrow Content */}
                 <div
                     className="relative bg-[#182123] text-white flex flex-col items-center justify-center overflow-hidden w-full"
                     style={{ aspectRatio: "16 / 9" }}
