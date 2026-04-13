@@ -1,7 +1,7 @@
 .manufacturing-section {
     position: relative;
-    background-color: #f9fafb;
-    /* Light, clean background */
+    background-color: #F9F6F1;
+    /* Soft Beige background */
     text-align: left;
     color: #1a1a1a;
     overflow: hidden;
@@ -10,7 +10,7 @@
 
 @media (min-width: 768px) {
     .manufacturing-section {
-        padding: 120px 0 100px 0;
+        padding: 100px 0 40px 0; /* Balanced bottom padding */
     }
 }
 
@@ -61,14 +61,14 @@
     .mfg-header {
         flex-direction: column;
         align-items: flex-start;
-        margin-bottom: 60px;
+        margin-bottom: 30px; /* Reduced header margin */
     }
 }
 
 .mfg-title {
     font-size: 24px;
     font-weight: 300;
-    color: #01276a;
+    color: #AD1E1E;
     line-height: 1.1;
     margin-bottom: 4px;
     font-family: 'Outfit', sans-serif;
@@ -83,7 +83,8 @@
 }
 
 .mfg-title-accent {
-    color: #01276a;
+    color: #AD1E1E;
+    font-weight: 300;
 }
 
 /* Removed .mfg-separator */
@@ -125,7 +126,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     border-radius: 12px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    box-shadow: none;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
     /* Firefox */
@@ -180,14 +181,14 @@
 .mfg-overlay-base {
     position: absolute;
     inset: 0;
-    background-color: rgba(1, 39, 106, 0.45);
-    /* Slightly deeper blue tint initially */
+    background-color: rgba(173, 30, 30, 0.4);
+    /* Soft Red tint initially */
     transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     z-index: 1;
 }
 
 .mfg-unit-item:hover .mfg-overlay-base {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.1);
     /* Clear base overlay on hover */
 }
 
@@ -289,6 +290,6 @@
 
 .mfg-unit-item:hover .mfg-unit-line {
     width: 60px;
-    background-color: #01276a;
-    /* Navy hover line */
+    background-color: #AD1E1E;
+    /* Brand Red hover line */
 }

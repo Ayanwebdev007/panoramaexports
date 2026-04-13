@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+.detail-section {
+    background-color: #F9F6F1;
+    padding: 40px 0 60px 0;
+    overflow: hidden;
+    position: relative;
+    perspective: 2000px;
+}
+
+@media (min-width: 768px) {
+    .detail-section {
+        padding: 40px 0 60px 0; /* Balanced middle ground */
+    }
+}
+
+/* Header Sections */
+.detail-header-container {
+    width: 90%;
+    margin: 0 auto 30px auto; /* Balanced header margin */
+    text-align: center;
+    position: relative;
+    z-index: 200;
+}
+
+.detail-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 34px;
+    font-weight: 300;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+    .detail-title {
+        font-size: 52px;
+    }
+}
+
+.detail-description {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px; /* Base for mobile */
+    font-weight: 300;
+    color: #4b5563;
+    max-width: 1400px; /* Expanded for longer lines */
+    margin: 0 auto;
+    line-height: 1.8;
+    letter-spacing: 0.04em;
+    opacity: 0.9;
+}
+
+@media (min-width: 1024px) {
+    .detail-description {
+        font-size: 18px; /* Balanced for exactly two lines */
+    }
+}
+
+/* Tilted Gallery Viewport */
+.detail-gallery-viewport {
+    position: relative;
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.detail-swiper {
+    width: 100%;
+    padding: 80px 0 !important;
+    overflow: visible !important;
+    transform-style: preserve-3d;
+}
+
+/* Swiper Slide Stacking Fix */
+.detail-slide {
+    width: auto !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: z-index 0.3s ease; /* Smooth layer transition */
+    z-index: 10; /* Default layer */
+    transform-style: preserve-3d;
+    /* Performance: Hint the browser to prepare for 3D movements */
+    will-change: transform;
+}
+
+.detail-slide.swiper-slide-active {
+    z-index: 2000 !important; /* Secondary backup for non-3D browsers */
+}
+
+/* Dynamic Tilt & FULL OPACITY Logic with Organic Scattering */
+.detail-card-wrapper {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    /* Combine vertical jitter, initial tilt, and base position */
+    transform: translate3d(0, var(--y-offset), 0) rotate(var(--initial-rotation)) scale(0.95);
+    /* Optimized transition: targeting specific properties avoids expensive layout recalculations */
+    transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+    opacity: 1 !important; 
+    filter: brightness(1) contrast(1);
+    box-shadow: none; /* Removed shadow per user request */
+}
+
+@media (min-width: 768px) {
+    .detail-card-wrapper {
+        width: 320px;
+        height: 480px;
+    }
+}
+
+/* Focused State: 3D SUPREMACY */
+.detail-card-wrapper.active {
+    /* Physically move closer to viewer (translateZ) to ENSURE it sits ON TOP of all neighbors */
+    transform: translate3d(0, var(--y-offset), 300px) rotate(var(--initial-rotation)) scale(1.1); 
+    opacity: 1 !important;
+    filter: brightness(1);
+    box-shadow: none; /* Removed heavy shadow per user request */
+}
+
+.detail-image-inner {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.6); /* Cleaner border */
+    background-color: #ede8e3;
+}
+
+.detail-image-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    /* High-Performance Rendering */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate3d(0,0,0); /* Force GPU texture layer without breaking parent 3D */
+}
+
+.detail-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.15) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Navigation Arrows */
+.detail-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #1a1a1a;
+    z-index: 1000;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    opacity: 0.3;
+}
+
+.detail-nav-btn:hover {
+    opacity: 1;
+    color: #AD1E1E;
+}
+
+.detail-nav-btn.left { left: 0; }
+.detail-nav-btn.right { right: 0; }
+
+@media (max-width: 1024px) {
+    .detail-nav-btn {
+        display: none;
+    }
+}
+
+/* Interaction Hint */
+.detail-interaction-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.hint-text {
+    font-size: 10px;
+    font-weight: 500;
+    color: #4b5563;
+    letter-spacing: 0.6em;
+    opacity: 0.4;
+    text-transform: uppercase;
+}
+
+/* Utilities */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

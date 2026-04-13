@@ -16,7 +16,7 @@ export default function JoinUs() {
                     {/* Top Row: JOIN, Image1, Image2 */}
                     <div className="flex flex-row gap-1 sm:gap-4 h-[calc(50%-0.125rem)] sm:h-[calc(50%-0.5rem)] flex-nowrap">
                         <div className="w-[35%] flex-none flex items-center justify-start lg:pr-2 overflow-visible relative z-20">
-                            <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-[#01276a] to-[#0a3da1] text-[32px] sm:text-[80px] lg:text-[100px] xl:text-[120px] 2xl:text-[140px] leading-[0.8] font-outfit font-normal tracking-tight whitespace-nowrap relative -left-1 lg:-left-4 xl:-left-8 drop-shadow-[0_2px_10px_rgba(1,39,106,0.05)]">
+                            <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-[#AD1E1E] to-[#801616] text-[32px] sm:text-[80px] lg:text-[100px] xl:text-[120px] 2xl:text-[140px] leading-[0.8] font-outfit font-normal tracking-tight whitespace-nowrap relative -left-1 lg:-left-4 xl:-left-8 drop-shadow-[0_2px_10px_rgba(173,30,30,0.05)]">
                                 JOIN
                             </h2>
                         </div>
@@ -33,7 +33,7 @@ export default function JoinUs() {
                     {/* Bottom Row: US, Image3 */}
                     <div className="flex flex-row gap-1 sm:gap-4 h-[calc(50%-0.125rem)] sm:h-[calc(50%-0.5rem)] flex-nowrap">
                         <div className="w-[17%] flex-none flex items-center justify-start lg:pr-2 overflow-visible relative z-20">
-                            <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-[#01276a] to-[#0a3da1] text-[32px] sm:text-[80px] lg:text-[100px] xl:text-[120px] 2xl:text-[140px] leading-[0.8] font-outfit font-normal tracking-tighter whitespace-nowrap relative -left-1 lg:-left-4 xl:-left-8 drop-shadow-[0_2px_10px_rgba(1,39,106,0.05)]">
+                            <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-[#AD1E1E] to-[#801616] text-[32px] sm:text-[80px] lg:text-[100px] xl:text-[120px] 2xl:text-[140px] leading-[0.8] font-outfit font-normal tracking-tighter whitespace-nowrap relative -left-1 lg:-left-4 xl:-left-8 drop-shadow-[0_2px_10px_rgba(173,30,30,0.05)]">
                                 US
                             </h2>
                         </div>

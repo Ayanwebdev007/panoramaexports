@@ -190,6 +190,7 @@ export default function Navbar({ setIsNewsletterOpen }) {
                         <div className="w-full px-4 lg:px-8 xl:px-12 py-8 overflow-hidden">
                             <motion.div 
                                 className="flex w-full divide-x divide-gray-100"
+                                style={{ willChange: "transform" }}
                                 animate={{ 
                                     x: hoveredIndex === 1 ? "0%" : 
                                        hoveredIndex === 2 ? "-33.33%" : 
@@ -226,10 +227,13 @@ export default function Navbar({ setIsNewsletterOpen }) {
                                                 </div>
 
                                                 {/* Landscape Featured Image (Conditional Grayscale) */}
-                                                <div className="w-[170px] xl:w-[210px] aspect-[4/3] overflow-hidden rounded-[1px] relative group flex-shrink-0">
+                                                <div className="w-[170px] xl:w-[210px] aspect-[4/3] overflow-hidden rounded-[1px] relative group flex-shrink-0"
+                                                     style={{ willChange: "transform, opacity" }}>
                                                     <img
                                                         src={item.featuredImage}
                                                         alt={item.label}
+                                                        decoding="async"
+                                                        loading="eager"
                                                         className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-105 ${hoveredIndex === fullIndex ? "grayscale-0" : "grayscale"}`}
                                                     />
                                                     <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500"></div>

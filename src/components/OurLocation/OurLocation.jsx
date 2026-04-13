@@ -20,11 +20,11 @@ const createCustomIcon = () => {
     const iconMarkup = renderToStaticMarkup(
         <div className="relative flex items-center justify-center w-12 h-12">
             {/* Pulsing Outer Ring */}
-            <div className="absolute inset-0 bg-[#01276a] rounded-full opacity-30 animate-pulse scale-150"></div>
+            <div className="absolute inset-0 bg-[#AD1E1E] rounded-full opacity-30 animate-pulse scale-150"></div>
             {/* Solid Outer Ring */}
             <div className="absolute inset-2 bg-white rounded-full shadow-lg"></div>
-            {/* Inner Navy Circle */}
-            <div className="absolute inset-3 bg-gradient-to-br from-[#01276a] to-[#011a4a] rounded-full flex items-center justify-center text-white transform-gpu">
+            {/* Inner Red Circle */}
+            <div className="absolute inset-3 bg-gradient-to-br from-[#AD1E1E] to-[#8B1818] rounded-full flex items-center justify-center text-white transform-gpu">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -41,7 +41,7 @@ const createCustomIcon = () => {
                 </svg>
             </div>
             {/* Needle Point */}
-            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#011a4a] rotate-45 transform origin-center rounded-sm"></div>
+            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#8B1818] rotate-45 transform origin-center rounded-sm"></div>
         </div>
     );
 
@@ -166,7 +166,7 @@ const OurLocation = () => {
     }, [activeLocation]);
 
     return (
-        <section className="relative w-full py-10 sm:py-20 bg-white overflow-hidden">
+        <section className="relative w-full py-10 sm:py-20 bg-[#F9F6F1] overflow-hidden">
 
 
             {/* Header - Perfectly Aligned with Human Touch/Manufacturing Units */}
@@ -176,7 +176,7 @@ const OurLocation = () => {
                 viewport={{ once: true }}
                 className="w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 text-left mb-6 sm:mb-12"
             >
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-[#01276a] tracking-tight whitespace-nowrap">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-[#AD1E1E] tracking-tight whitespace-nowrap">
                     Our Location
                 </h2>
             </motion.div>
@@ -195,11 +195,11 @@ const OurLocation = () => {
                             viewport={{ once: true }}
                             transition={{ delay: loc.id * 0.1 }}
                             className={`flex flex-col items-center py-2 sm:py-4 px-1 sm:px-6 rounded-xl sm:rounded-2xl border transition-all duration-300 sm:flex-1 hover:shadow-lg hover:-translate-y-1 ${activeLocation?.id === loc.id
-                                ? 'bg-[#01276a] border-[#01276a] text-white shadow-xl scale-105 z-10'
-                                : 'bg-white border-gray-100 text-gray-900 hover:border-[#b89d6d]'
+                                ? 'bg-[#AD1E1E] border-[#AD1E1E] text-white shadow-xl scale-105 z-10'
+                                : 'bg-white border-gray-100 text-gray-900 hover:border-[#AD1E1E]/30'
                                 }`}
                         >
-                            <div className={`p-1.5 sm:p-3 rounded-full mb-1 sm:mb-3 ${activeLocation?.id === loc.id ? 'bg-white/20 text-white' : 'bg-blue-50 text-[#01276a]'
+                            <div className={`p-1.5 sm:p-3 rounded-full mb-1 sm:mb-3 ${activeLocation?.id === loc.id ? 'bg-white/20 text-white' : 'bg-[#AD1E1E]/5 text-[#AD1E1E]'
                                 }`}>
                                 <MapPin className="w-4 h-4 sm:w-6 sm:h-6" />
                             </div>
@@ -251,7 +251,7 @@ const OurLocation = () => {
                                 <Popup className="premium-popup">
                                     <div className="min-w-[240px]">
                                         <div className="flex items-start gap-3 mb-4">
-                                            <div className="bg-blue-50 p-2.5 rounded-xl text-[#01276a] shrink-0 shadow-sm border border-blue-100">
+                                            <div className="bg-[#AD1E1E]/5 p-2.5 rounded-xl text-[#AD1E1E] shrink-0 shadow-sm border border-[#AD1E1E]/10">
                                                 <MapPin className="w-5 h-5" />
                                             </div>
                                             <div>
@@ -264,7 +264,7 @@ const OurLocation = () => {
                                             href={loc.link}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="flex items-center justify-center gap-2 w-full bg-[#01276a] !text-white text-sm font-bold px-4 py-4 rounded-xl hover:bg-[#011a4a] transition-all group shadow-md no-underline"
+                                            className="flex items-center justify-center gap-2 w-full bg-[#AD1E1E] !text-white text-sm font-bold px-4 py-4 rounded-xl hover:bg-[#8B1818] transition-all group shadow-md no-underline"
                                         >
                                             <span>View on Google Maps</span>
                                             <Navigation className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -287,7 +287,7 @@ const OurLocation = () => {
                                     if (marker) marker.closePopup();
                                 });
                             }}
-                            className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-[#01276a] rounded-full shadow-lg text-[10px] sm:text-base font-bold text-white hover:bg-white hover:text-[#011a4a] transition-all z-[1000] border border-transparent hover:border-[#011a4a] flex items-center gap-2 tracking-wide px-4 py-2 sm:px-10 sm:py-4"
+                            className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-[#AD1E1E] rounded-full shadow-lg text-[10px] sm:text-base font-bold text-white hover:bg-white hover:text-[#AD1E1E] transition-all z-[1000] border border-transparent hover:border-[#AD1E1E] flex items-center gap-2 tracking-wide px-4 py-2 sm:px-10 sm:py-4"
                         >
                             <Maximize2 className="w-3 h-3 sm:w-4 sm:h-4" /> View All Units
                         </motion.button>
@@ -295,8 +295,8 @@ const OurLocation = () => {
                 </div>
 
                 {/* Legend/Note */}
-                <div className="mt-8 text-center text-gray-400 text-sm">
-                    Interactive Map • Click markers for details
+                <div className="mt-8 text-center text-gray-400 text-sm italic">
+                    Interactive Map • Select a unit to explore our footprint
                 </div>
 
             </div>

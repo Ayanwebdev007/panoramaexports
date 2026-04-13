@@ -23,16 +23,18 @@ import JoinUs from "../components/JoinUs/JoinUs";
 import IntentionSection from "../components/IntentionSection";
 import MasonrySection from "../components/MasonrySection";
 import HeritageSection from "../components/HeritageSection";
+import DefinedByDetail from "../components/DefinedByDetail/DefinedByDetail";
+import ResponsibilityShowcase from "../components/ResponsibilityShowcase/ResponsibilityShowcase";
 
 import HumanTouch1 from "../assets/Community/csr.webp";
 import HumanTouch2 from "../assets/Community/csr2.webp";
 
-import Hero1 from "../assets/Wear Your Story.JPG";
+import Hero1 from "../assets/HeroImages/WearYourStory.webp";
 import Hero2 from "../assets/HeroImages/Elegance.webp";
-import Hero3 from "../assets/The warm Alcovec.jpg";
-import Hero4 from "../assets/Threads of Legacy.JPG";
-import Hero05 from "../assets/Ahead of Curve.JPG";
-import Hero06 from "../assets/Work Play.jpg";
+import Hero3 from "../assets/HeroImages/WarmAlcove.webp";
+import Hero104 from "../assets/HeroImages/ThreadsLegacy.webp";
+import Hero05 from "../assets/HeroImages/AheadCurve.webp";
+import Hero06 from "../assets/HeroImages/WorkPlay.webp";
 
 import AutoPlayVideo from "../components/AutoPlayVideo";
 import LazyRender from "../components/LazyRender";
@@ -65,7 +67,7 @@ const heroSlides = [
     },
     {
         id: 4,
-        image: Hero4,
+        image: Hero104,
         dynamicText: "THREADS OF LEGACY",
         objectPosition: "object-bottom"
     },
@@ -89,7 +91,7 @@ import brand3 from "../assets/GlobalFootprint/new_brands/Boden-new-logo-.webp";
 import brand4 from "../assets/GlobalFootprint/new_brands/Boots_logo.svg.webp";
 import brand5 from "../assets/GlobalFootprint/new_brands/DKNY-Donna-Karan-New-York-logo-880x625.webp";
 import brand6 from "../assets/GlobalFootprint/new_brands/Matalan-logo.webp";
-import brand7 from "../assets/GlobalFootprint/new_brands/Mothercare-Emblem.png";
+import brand7 from "../assets/GlobalFootprint/new_brands/Mothercare-Emblem.webp";
 import brand8 from "../assets/GlobalFootprint/new_brands/Tesco_Logo.svg.webp";
 import brand9 from "../assets/GlobalFootprint/new_brands/c_and_a.webp";
 import brand10 from "../assets/GlobalFootprint/new_brands/george.webp";
@@ -172,6 +174,9 @@ export default function Home() {
     const showHero = false; // Set to true to show the Hero Section in the future
     const showCraftingTomorrow = false;
     const showGrowingEveryday = false;
+    const showCertifications = false; // Toggle to show/hide Certifications section
+    const showHumanTouch = false; // Toggle to show/hide Human Touch section
+    const showOurLocation = false; // Toggle to show/hide Our Location section
 
     useEffect(() => {
         const swiper = swiperRef.current?.swiper;
@@ -344,87 +349,88 @@ export default function Home() {
 
             <IntentionSection videoSrc={intentionVideo} />
 
-            <div className="bg-white pt-2">
-                {/* Global presence */}
-                <div className="md:py-4 py-2 text-[#AD1E1E] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">
-                    <div className="flex items-center justify-center 2xl:px-5 gap-6">
-                        <div className="text-2xl sm:text-3xl md:text-5xl font-regular flex flex-wrap gap-4">
-                            <p className="font-bold">Global</p> Presence
+            <LazyRender height="400px">
+                <div className="bg-white pt-2">
+                    {/* Global presence */}
+                    <div className="md:py-4 py-2 text-[#AD1E1E] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">
+                        <div className="flex items-center justify-center 2xl:px-5 gap-6">
+                            <div className="text-2xl sm:text-3xl md:text-5xl font-regular flex flex-wrap gap-4">
+                                <p className="font-bold">Global</p> Presence
+                            </div>
+                        </div>
+                    </div>
+                    {/* Brands logo section */}
+                    <div className="w-full md:mb-10 mb-5">
+                        <div className="overflow-hidden w-full py-6 bg-white space-y-6">
+                            {/* Row 1 */}
+                            <div className="flex w-max animate-marquee gap-4" style={{ willChange: "transform", transform: "translateZ(0)" }}>
+                                {[...brands, ...brands].map((brand, idx) => (
+                                    <div
+                                        key={`row1-${idx}`}
+                                        className="flex-shrink-0 flex items-center justify-center"
+                                    >
+                                        <div className="bg-white border-2 border-[#d4af37] rounded-sm px-6 py-4 flex items-center justify-center shadow-[-6px_-6px_13px_#ab9777]">
+                                            <img
+                                                src={brand}
+                                                loading="lazy"
+                                                decoding="async"
+                                                alt="brand"
+                                                className="2xl:h-20 lg:h-16 md:h-12 sm:h-10 h-6 2xl:w-28 lg:w-24 md:w-20 sm:w-16 w-10 object-contain"
+                                            />
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* Row 2 */}
+                            <div className="flex w-max animate-marquee-reverse gap-4" style={{ willChange: "transform", transform: "translateZ(0)" }}>
+                                {[...brands, ...brands].map((brand, idx) => (
+                                    <div
+                                        key={`row2-${idx}`}
+                                        className="flex-shrink-0 flex items-center justify-center"
+                                    >
+                                        <div className="bg-white border-2 border-[#d4af37] rounded-sm px-6 py-4 flex items-center justify-center shadow-[-6px_-6px_13px_#ab9777]">
+                                            <img
+                                                src={brand}
+                                                loading="lazy"
+                                                decoding="async"
+                                                alt="brand"
+                                                className="2xl:h-20 lg:h-16 md:h-12 sm:h-10 h-6 2xl:w-28 lg:w-24 md:w-20 sm:w-16 w-10 object-contain"
+                                            />
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+
+                            {/* Tailwind custom animations */}
+                            <style>
+                                {`
+                                @keyframes marquee {
+                                0% { transform: translateX(0); }
+                                100% { transform: translateX(-50%); }
+                                }
+                                @keyframes marquee-reverse {
+                                0% { transform: translateX(-50%); }
+                                100% { transform: translateX(0); }
+                                }
+                                .animate-marquee {
+                                animation: marquee 60s linear infinite;
+                                }
+                                .animate-marquee:hover {
+                                animation-play-state: paused;
+                                }
+                                .animate-marquee-reverse {
+                                animation: marquee-reverse 60s linear infinite;
+                                }
+                                .animate-marquee-reverse:hover {
+                                animation-play-state: paused;
+                                }
+                                `}
+                            </style>
                         </div>
                     </div>
                 </div>
-                {/* Brands logo section */}
-                <div className="w-full md:mb-10 mb-5">
-                    <div className="overflow-hidden w-full py-6 bg-white space-y-6">
-                        {/* Row 1 */}
-                        <div className="flex w-max animate-marquee gap-4">
-                            {[...brands, ...brands].map((brand, idx) => (
-                                <div
-                                    key={`row1-${idx}`}
-                                    className="flex-shrink-0 flex items-center justify-center"
-                                >
-                                    <div className="bg-white border-2 border-[#d4af37] rounded-sm px-6 py-4 flex items-center justify-center shadow-[-6px_-6px_13px_#ab9777]">
-                                        <img
-                                            src={brand}
-                                            loading="lazy"
-                                            decoding="async"
-                                            alt="brand"
-                                            className="2xl:h-20 lg:h-16 md:h-12 sm:h-10 h-6 2xl:w-28 lg:w-24 md:w-20 sm:w-16 w-10 object-contain"
-                                        />
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* Row 2 */}
-                        <div className="flex w-max animate-marquee-reverse gap-4">
-                            {[...brands, ...brands].map((brand, idx) => (
-                                <div
-                                    key={`row2-${idx}`}
-                                    className="flex-shrink-0 flex items-center justify-center"
-                                >
-                                    <div className="bg-white border-2 border-[#d4af37] rounded-sm px-6 py-4 flex items-center justify-center shadow-[-6px_-6px_13px_#ab9777]">
-                                        <img
-                                            src={brand}
-                                            loading="lazy"
-                                            decoding="async"
-                                            alt="brand"
-                                            className="2xl:h-20 lg:h-16 md:h-12 sm:h-10 h-6 2xl:w-28 lg:w-24 md:w-20 sm:w-16 w-10 object-contain"
-                                        />
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-
-                        {/* Tailwind custom animations */}
-                        <style>
-                            {`
-                            @keyframes marquee {
-                            0% { transform: translateX(0); }
-                            100% { transform: translateX(-50%); }
-                            }
-                            @keyframes marquee-reverse {
-                            0% { transform: translateX(-50%); }
-                            100% { transform: translateX(0); }
-                            }
-                            .animate-marquee {
-                            animation: marquee 60s linear infinite;
-                            will-change: transform;
-                            }
-                            .animate-marquee:hover {
-                            animation-play-state: paused;
-                            }
-                            .animate-marquee-reverse {
-                            animation: marquee-reverse 60s linear infinite;
-                            will-change: transform;
-                            }
-                            .animate-marquee-reverse:hover {
-                            animation-play-state: paused;
-                            }
-                            `}
-                        </style>
-                    </div>
-                </div>
+            </LazyRender>
 
                 {/* New Brand Statement Section */}
                 <section className="bg-white pt-4 pb-16 sm:pt-6 sm:pb-24 font-outfit">
@@ -444,26 +450,33 @@ export default function Home() {
                     </div>
                 </section>
 
-                <MasonrySection />
+                <LazyRender height="800px">
+                    <MasonrySection />
+                </LazyRender>
 
                 {/* Masonry Description Section */}
-                <section className="bg-[#F9F6F1] pb-20 sm:pb-32 font-outfit">
-                    <div className="max-w-[1700px] mx-auto px-6 sm:px-10 lg:px-20 flex flex-col items-center">
-                        <motion.div 
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1.5 }}
-                            className="max-w-[1200px] text-center"
-                        >
-                            <p className="text-[#1a1a1a] text-sm sm:text-lg md:text-xl lg:text-[22px] leading-[1.8] font-light tracking-wide">
-                                We bring trends to life with thoughtful craftsmanship—from detailed embroidery to refined finishing. 
-                                Every garment is designed to look good, feel effortless, and resonate across international markets.
-                            </p>
-                        </motion.div>
-                    </div>
-                </section>
-                <HeritageSection />
+                <LazyRender height="150px">
+                    <section className="bg-[#F9F6F1] pt-4 pb-12 sm:pb-16 font-outfit">
+                        <div className="max-w-[1700px] mx-auto px-6 sm:px-10 lg:px-20 flex flex-col items-center">
+                            <motion.div 
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 1.5 }}
+                                className="max-w-[1200px] text-center"
+                            >
+                                <p className="text-[#1a1a1a] text-sm sm:text-lg md:text-xl lg:text-[22px] leading-[1.8] font-light tracking-wide">
+                                    We bring trends to life with thoughtful craftsmanship—from detailed embroidery to refined finishing. 
+                                    Every garment is designed to look good, feel effortless, and resonate across international markets.
+                                </p>
+                            </motion.div>
+                        </div>
+                    </section>
+                </LazyRender>
+
+                <LazyRender height="600px">
+                    <HeritageSection />
+                </LazyRender>
 
                 {/* Crafting Tomorrow Content */}
                 {showCraftingTomorrow && (
@@ -501,91 +514,94 @@ export default function Home() {
                     </div>
                 )}
 
-                {showGrowingEveryday && <OurStrengths />}
-                <LeadershipSection />
+                <LazyRender height="400px">
+                    <LeadershipSection />
+                </LazyRender>
 
                 {/* Employee Testimonials Section */}
-                <section className="w-full bg-gray-50 py-16 md:py-24">
-                    <div className="w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20">
-                        <div className="mb-12 md:mb-16">
-                            <h2 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#01276a] mb-4">
-                                Employee Testimonials
-                            </h2>
+                <LazyRender height="600px">
+                    <section className="w-full bg-[#f9f6f1] py-16 md:py-24">
+                        <div className="w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20">
+                            <div className="mb-12 md:mb-16">
+                                <h2 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#AD1E1E] mb-4">
+                                    Employee Testimonials
+                                </h2>
+                            </div>
+
+                            <div className="relative px-4 md:px-14">
+                                <Swiper
+                                    modules={[Navigation, Pagination]}
+                                    slidesPerView={1.05}
+                                    spaceBetween={15}
+                                    navigation={{
+                                        nextEl: ".testimonials-next",
+                                        prevEl: ".testimonials-prev",
+                                    }}
+                                    pagination={{
+                                        clickable: true,
+                                        dynamicBullets: true,
+                                    }}
+                                    breakpoints={{
+                                        640: {
+                                            slidesPerView: 1.2,
+                                            spaceBetween: 20
+                                        },
+                                        768: {
+                                            slidesPerView: 2,
+                                            spaceBetween: 30
+                                        },
+                                        1150: {
+                                            slidesPerView: 3,
+                                            spaceBetween: 30
+                                        },
+                                    }}
+                                    className="pb-14 testimonials-swiper"
+                                >
+                                    {testimonials.map((item) => (
+                                        <SwiperSlide key={item.id} className="!h-auto">
+                                            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 h-full flex flex-col border border-[#AD1E1E]/20 relative shadow-sm">
+                                                {/* Avatar */}
+                                                <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-4 border-2 border-white shadow-lg mx-auto md:mx-0">
+                                                    <img
+                                                        src={item.image}
+                                                        alt={item.name}
+                                                        className={`w-full h-full object-cover ${item.id === 2 ? "object-top scale-110" : ""} ${item.objectPosition || ""}`}
+                                                    />
+                                                </div>
+
+                                                {/* Content */}
+                                                <div className="flex-grow mb-4">
+                                                    <p className="text-gray-600 text-sm md:text-base leading-relaxed font-normal text-justify italic">
+                                                        “{item.text}”
+                                                    </p>
+                                                </div>
+
+                                                {/* Footer */}
+                                                <div className="mt-auto pt-4 border-t border-gray-100">
+                                                    <h4 className="text-[#AD1E1E] font-semibold text-base md:text-lg tracking-tight">{item.name}</h4>
+                                                    <p className="text-gray-600 text-xs md:text-sm font-medium">{item.designation}</p>
+                                                    <p className="text-[#AD1E1E]/60 text-[10px] md:text-xs uppercase tracking-widest mt-1 font-bold">{item.department}</p>
+                                                </div>
+                                            </div>
+                                        </SwiperSlide>
+                                    ))}
+                                </Swiper>
+
+                                {/* Navigation - refined positioning for mobile */}
+                                <button className="testimonials-prev absolute left-[-15px] md:left-0 top-1/2 -translate-y-1/2 z-10 text-[#AD1E1E] hover:text-[#8B1818] transition-colors bg-white/50 rounded-full md:bg-transparent p-1 md:p-0">
+                                    <svg width="32" height="32" className="md:w-[40px] md:h-[40px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M15 18l-6-6 6-6" />
+                                    </svg>
+                                </button>
+                                <button className="testimonials-next absolute right-[-15px] md:right-0 top-1/2 -translate-y-1/2 z-10 text-[#AD1E1E] hover:text-[#8B1818] transition-colors bg-white/50 rounded-full md:bg-transparent p-1 md:p-0">
+                                    <svg width="32" height="32" className="md:w-[40px] md:h-[40px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M11 18l6-6-6-6" />
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
-
-                        <div className="relative px-4 md:px-14">
-                            <Swiper
-                                modules={[Navigation, Pagination]}
-                                slidesPerView={1.05}
-                                spaceBetween={15}
-                                navigation={{
-                                    nextEl: ".testimonials-next",
-                                    prevEl: ".testimonials-prev",
-                                }}
-                                pagination={{
-                                    clickable: true,
-                                    dynamicBullets: true,
-                                }}
-                                breakpoints={{
-                                    640: {
-                                        slidesPerView: 1.2,
-                                        spaceBetween: 20
-                                    },
-                                    768: {
-                                        slidesPerView: 2,
-                                        spaceBetween: 30
-                                    },
-                                    1150: {
-                                        slidesPerView: 3,
-                                        spaceBetween: 30
-                                    },
-                                }}
-                                className="pb-14 testimonials-swiper"
-                            >
-                                {testimonials.map((item) => (
-                                    <SwiperSlide key={item.id} className="!h-auto">
-                                        <div className="bg-white rounded-2xl p-6 h-full flex flex-col border border-[#01276a]/40 relative">
-                                            {/* Avatar */}
-                                            <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden mb-4 border-2 border-white shadow-lg mx-auto md:mx-0">
-                                                <img
-                                                    src={item.image}
-                                                    alt={item.name}
-                                                    className={`w-full h-full object-cover ${item.id === 2 ? "object-top scale-110" : ""} ${item.objectPosition || ""}`}
-                                                />
-                                            </div>
-
-                                            {/* Content */}
-                                            <div className="flex-grow mb-4">
-                                                <p className="text-gray-500 text-sm md:text-base leading-relaxed font-normal text-justify">
-                                                    {item.text}
-                                                </p>
-                                            </div>
-
-                                            {/* Footer */}
-                                            <div className="mt-auto pt-4 border-t border-gray-100">
-                                                <h4 className="text-[#01276a] font-semibold text-base md:text-lg">{item.name}</h4>
-                                                <p className="text-gray-600 text-xs md:text-sm font-medium">{item.designation}</p>
-                                                <p className="text-gray-400 text-[10px] md:text-xs uppercase tracking-widest mt-1">{item.department}</p>
-                                            </div>
-                                        </div>
-                                    </SwiperSlide>
-                                ))}
-                            </Swiper>
-
-                            {/* Navigation - refined positioning for mobile */}
-                            <button className="testimonials-prev absolute left-[-15px] md:left-0 top-1/2 -translate-y-1/2 z-10 text-[#01276a] hover:text-blue-400 transition-colors bg-white/50 rounded-full md:bg-transparent p-1 md:p-0">
-                                <svg width="32" height="32" className="md:w-[40px] md:h-[40px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <path d="M15 18l-6-6 6-6" />
-                                </svg>
-                            </button>
-                            <button className="testimonials-next absolute right-[-15px] md:right-0 top-1/2 -translate-y-1/2 z-10 text-[#01276a] hover:text-blue-400 transition-colors bg-white/50 rounded-full md:bg-transparent p-1 md:p-0">
-                                <svg width="32" height="32" className="md:w-[40px] md:h-[40px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                                    <path d="M11 18l6-6-6-6" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </section>
+                    </section>
+                </LazyRender>
 
 
                 {/* Global Map section */}
@@ -616,17 +632,17 @@ export default function Home() {
                 */}
 
                 {/* People section */}
-                <div className="sm:pt-8 sm:pb-0 text-[#01276a] w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md mt-6">
+                <div className="sm:pt-8 sm:pb-0 text-[#AD1E1E] w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md mt-6">
                     <div className="flex flex-row items-center justify-between mb-1 sm:mb-6">
                         <div className="text-2xl sm:text-3xl md:text-5xl font-light">
-                            People
+                            We are growing everyday
                             <div className="text-[10px] sm:text-sm md:text-lg sm:mt-3 mt-1 text-gray-600 ml-1">
                                 The soul of Panorama is its people
                             </div>
                         </div>
                         <div className="flex items-center justify-end">
                             <Link to="/peoples">
-                                <button className="my-1 sm:my-4 group inline-flex items-center hover:text-red-600 font-semibold md:text-lg sm:text-sm text-[12px]">
+                                <button className="my-1 sm:my-4 group inline-flex items-center hover:text-[#8B1818] font-semibold md:text-lg sm:text-sm text-[12px]">
                                     Visit People
                                     <IoEnterOutline className="h-4 w-4 sm:h-6 sm:w-6 mx-1 sm:mx-2 group-hover:translate-x-1 transition-transform duration-300" />
                                 </button>
@@ -634,13 +650,11 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="w-full">
-                        <p className="2xl:text-xl lg:text-lg text-sm text-gray-600">
-                            5,000+ individuals, 45% women, all united by
-                            passion, purpose, and creativity. We foster
-                            safe, inclusive spaces, invest in
-                            skill-building, and champion equal
-                            opportunity—growing together, every step of the
-                            way.
+                        <p className="2xl:text-xl lg:text-lg text-sm text-gray-600 leading-relaxed font-light">
+                            5,000+ individuals. 45% women. One shared purpose.
+                            <br />
+                            We are united by passion and creativity, grounded in inclusion, and committed to growth. 
+                            With a strong focus on safe workplaces, continuous learning, and equal opportunity, we are building a culture where everyone has the space to succeed.
                         </p>
                     </div>
                 </div>
@@ -648,80 +662,102 @@ export default function Home() {
                     <MediaScrollSection />
                 </LazyRender>
 
-                {/* Certifications section */}
-                <div className="pt-4 sm:pt-16 pb-0 text-[#01276a] mt-4 sm:mt-12 w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">
-                    <div className="flex flex-row items-center justify-between mb-6">
-                        <div className="text-2xl sm:text-3xl md:text-5xl font-light">
-                            Certifications
-                            <div className="text-[10px] sm:text-sm md:text-lg sm:mt-3 mt-1 text-gray-600 ml-1">
-                                Our legal certificates
+                {showCertifications && (
+                    <>
+                        {/* Certifications section */}
+                        <div className="pt-4 sm:pt-16 pb-0 text-[#AD1E1E] mt-4 sm:mt-12 w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">
+                            <div className="flex flex-row items-center justify-between mb-6">
+                                <div className="text-2xl sm:text-3xl md:text-5xl font-light">
+                                    Certifications
+                                    <div className="text-[10px] sm:text-sm md:text-lg sm:mt-3 mt-1 text-gray-600 ml-1">
+                                        Our legal certificates
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <Certifications />
-                {/* Community section */}
-                <div className="pb-0 pt-0 text-[#01276a] mt-[-20px] sm:mt-[-160px] w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md bg-white">
-                    <div className="flex flex-row items-center justify-between mb-2 sm:mb-6">
-                        <div className="text-2xl sm:text-3xl md:text-5xl font-light">
-                            Human Touch
+                        <Certifications />
+                    </>
+                )}
+
+                {showHumanTouch && (
+                    <>
+                        {/* Community section */}
+                        <div className="pb-0 pt-0 text-[#AD1E1E] mt-8 sm:mt-16 w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md bg-white">
+                            <div className="flex flex-row items-center justify-between mb-2 sm:mb-6">
+                                <div className="text-2xl sm:text-3xl md:text-5xl font-light">
+                                    Human Touch
+                                </div>
+                                <div className="flex items-center justify-end">
+                                    <Link to="/responsibility">
+                                        <button className="my-4 group inline-flex items-center hover:text-[#8B1818] font-semibold md:text-lg sm:text-sm text-[12px]">
+                                            Visit Responsibility
+                                            <IoEnterOutline className="h-4 w-4 sm:h-6 sm:w-6 mx-1 sm:mx-2 group-hover:translate-x-1 transition-transform duration-300" />
+                                        </button>
+                                    </Link>
+                                </div>
+                            </div>
+                            {/* Mobile-only motto text */}
+                            <div className="block sm:hidden mb-4 text-[#AD1E1E]">
+                                <p className="text-[12px] leading-tight text-blue-950">
+                                    <span className="font-semibold">Our motto:</span>
+                                    <span className="font-light"> People. Progress. Purpose. At Panorama,
+                                        we cultivate a culture of responsibility, inclusion,
+                                        and continuous growth</span>
+                                </p>
+                            </div>
                         </div>
-                        <div className="flex items-center justify-end">
-                            <Link to="/responsibility">
-                                <button className="my-4 group inline-flex items-center hover:text-red-600 font-semibold md:text-lg sm:text-sm text-[12px]">
-                                    Visit Responsibility
-                                    <IoEnterOutline className="h-4 w-4 sm:h-6 sm:w-6 mx-1 sm:mx-2 group-hover:translate-x-1 transition-transform duration-300" />
-                                </button>
-                            </Link>
+                        <div className="xl:pt-4 lg:pt-2 md:pt-1 sm:pt-1 pt-1 bg-white">
+                            <div className="w-[90%] mx-auto px-6 md:px-10 lg:px-20 mb-[-2px] sm:mb-1">
+                                <img
+                                    src={HumanTouch2}
+                                    alt="Human Touch"
+                                    className="rounded-t-md shadow-sm"
+                                />
+                            </div>
+                            <div
+                                className="w-full flex items-start mt-[-8px] pt-3 sm:pt-20 lg:pt-24 pr-2 sm:pr-5 lg:pr-0 justify-end aspect-[16/5] sm:aspect-[16/4.823]"
+                                style={{
+                                    backgroundImage: `url(${HumanTouch1})`,
+                                    backgroundSize: "contain",
+                                    backgroundPosition: "center",
+                                    backgroundRepeat: "no-repeat",
+                                }}
+                            >
+                                <p className="hidden sm:block 2xl:w-[550px] xl:w-[450px] lg:w-[350px] md:w-[300px] w-[240px] 2xl:text-xl lg:text-md md:text-sm sm:text-[10px] text-[12px] leading-tight sm:leading-normal sm:pr-2 text-blue-950">
+                                    <span className="font-semibold">Our motto:</span>
+                                    <span className="font-light"> People. Progress. Purpose. At Panorama,
+                                        we cultivate a culture of responsibility, inclusion,
+                                        and <span className="whitespace-nowrap">continuous growth</span></span>
+                                </p>
+                            </div>
                         </div>
+                    </>
+                )}
+                <LazyRender height="500px">
+                    <ManufacturingExcellence />
+                </LazyRender>
+                
+                <LazyRender height="700px">
+                    <DefinedByDetail />
+                </LazyRender>
+                
+                <LazyRender height="600px">
+                    <ResponsibilityShowcase videoSrc={intentionVideo} />
+                </LazyRender>
+                
+                {showOurLocation && <OurLocation />}
+                
+                <LazyRender height="400px">
+                    <JoinUs />
+                    <div className="w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 pb-16 lg:pb-24 flex justify-center mt-8">
+                        <Link to="/contactus">
+                            <button className="group inline-flex items-center hover:text-[#AD1E1E] font-semibold md:text-lg sm:text-sm text-[12px]">
+                                Contact Us
+                                <IoEnterOutline className="h-6 w-6 mx-2 group-hover:translate-x-1 transition-transform duration-300" />
+                            </button>
+                        </Link>
                     </div>
-                    {/* Mobile-only motto text */}
-                    <div className="block sm:hidden mb-4 text-[#01276a]">
-                        <p className="text-[12px] leading-tight text-blue-950">
-                            <span className="font-semibold">Our motto:</span>
-                            <span className="font-light"> People. Progress. Purpose. At Panorama,
-                                we cultivate a culture of responsibility, inclusion,
-                                and continuous growth</span>
-                        </p>
-                    </div>
-                </div>
-                <div className="xl:pt-4 lg:pt-2 md:pt-1 sm:pt-1 pt-1 bg-white">
-                    <div className="w-[90%] mx-auto px-6 md:px-10 lg:px-20 mb-[-2px] sm:mb-1">
-                        <img
-                            src={HumanTouch2}
-                            alt="Human Touch"
-                            className="rounded-t-md shadow-sm"
-                        />
-                    </div>
-                    <div
-                        className="w-full flex items-start mt-[-8px] pt-3 sm:pt-20 lg:pt-24 pr-2 sm:pr-5 lg:pr-0 justify-end aspect-[16/5] sm:aspect-[16/4.823]"
-                        style={{
-                            backgroundImage: `url(${HumanTouch1})`,
-                            backgroundSize: "contain",
-                            backgroundPosition: "center",
-                            backgroundRepeat: "no-repeat",
-                        }}
-                    >
-                        <p className="hidden sm:block 2xl:w-[550px] xl:w-[450px] lg:w-[350px] md:w-[300px] w-[240px] 2xl:text-xl lg:text-md md:text-sm sm:text-[10px] text-[12px] leading-tight sm:leading-normal sm:pr-2 text-blue-950">
-                            <span className="font-semibold">Our motto:</span>
-                            <span className="font-light"> People. Progress. Purpose. At Panorama,
-                                we cultivate a culture of responsibility, inclusion,
-                                and <span className="whitespace-nowrap">continuous growth</span></span>
-                        </p>
-                    </div>
-                </div>
-                <ManufacturingExcellence />
-                <OurLocation />
-                <JoinUs />
-                <div className="w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 pb-16 lg:pb-24 flex justify-center">
-                    <Link to="/contactus">
-                        <button className="group inline-flex items-center hover:text-red-600 font-semibold md:text-lg sm:text-sm text-[12px]">
-                            Contact Us
-                            <IoEnterOutline className="h-6 w-6 mx-2 group-hover:translate-x-1 transition-transform duration-300" />
-                        </button>
-                    </Link>
-                </div>
+                </LazyRender>
             </div>
-        </div>
-    );
+        );
 }

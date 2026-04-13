@@ -84,7 +84,7 @@ const LeadershipSection = () => {
                         transition={{ duration: 0.8 }}
                         className="flex-1 pr-4"
                     >
-                        <h2 className="text-2xl sm:text-3xl md:text-5xl font-light text-[#01276a] mb-1 sm:mb-4">
+                        <h2 className="text-2xl sm:text-3xl md:text-5xl font-light text-[#AD1E1E] mb-1 sm:mb-4">
                             Leadership
                         </h2>
                         <p className="text-[10px] sm:text-sm md:text-lg text-gray-600 max-w-2xl leading-relaxed font-normal mt-1 sm:mt-0">
@@ -94,7 +94,7 @@ const LeadershipSection = () => {
 
                     <div className="flex items-center justify-end shrink-0">
                         <Link to="/vision-values#leadership">
-                            <button className="my-4 group inline-flex items-center hover:text-red-600 font-semibold md:text-lg sm:text-sm text-[12px] text-[#01276a]">
+                            <button className="my-4 group inline-flex items-center hover:text-[#8B1818] font-semibold md:text-lg sm:text-sm text-[12px] text-[#AD1E1E]">
                                 Visit Leadership
                                 <IoEnterOutline className="h-4 w-4 md:h-6 md:w-6 mx-1 md:mx-2 group-hover:translate-x-1 transition-transform duration-300" />
                             </button>

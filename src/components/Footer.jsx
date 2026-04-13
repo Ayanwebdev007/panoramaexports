@@ -28,7 +28,7 @@ export default function Footer({ setIsNewsletterOpen }) {
     }, []);
 
     return (
-        <footer className="bg-[#01276a] text-white">
+        <footer className="bg-[#F9F6F1] text-[#1a1a1a] border-t border-[#AD1E1E]/10">
             {/* 'Smart Techy but Smooth': Cyber-Scan Decode Animation */}
             <style>{`
                 @keyframes techResolve {
@@ -58,8 +58,8 @@ export default function Footer({ setIsNewsletterOpen }) {
                     animation: techResolve 0.9s cubic-bezier(0.19, 1, 0.22, 1) both;
                 }
                 .tech-letter:hover {
-                    color: #ffcc00;
-                    text-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+                    color: #AD1E1E;
+                    text-shadow: 0 0 15px rgba(173, 30, 30, 0.3);
                     transition: all 0.3s ease;
                 }
             `}</style>
@@ -68,37 +68,37 @@ export default function Footer({ setIsNewsletterOpen }) {
             <div className="flex flex-col lg:flex-row border-b border-white/10">
 
                 {/* Module 1: Who We Are */}
-                <div className="lg:w-[30%] p-8 md:p-12 lg:p-16 border-b lg:border-b-0 lg:border-r border-white/10 flex flex-col justify-center">
-                    <h2 className="text-2xl md:text-3xl font-bold mb-6 tracking-tight">WHO WE ARE</h2>
-                    <p className="text-[#b89d6d] font-light leading-relaxed text-base md:text-lg max-w-md">
+                <div className="lg:w-[30%] p-8 md:p-12 lg:p-16 border-b lg:border-b-0 lg:border-r border-[#AD1E1E]/10 flex flex-col justify-center">
+                    <h2 className="text-2xl md:text-3xl font-bold mb-6 tracking-tight text-[#AD1E1E] font-outfit uppercase">WHO WE ARE</h2>
+                    <p className="text-[#4b5563] font-light leading-relaxed text-base md:text-lg max-w-md">
                         Since 1973, Panorama Exports has transformed fabric into global fashion, blending timeless craftsmanship with modern precision. From India to the world, every garment reflects creativity, technology, and decades of dedication.
                     </p>
                 </div>
 
                 {/* Module 2: Social Tabs */}
-                <div className="lg:w-1/6 flex flex-col border-b lg:border-b-0 lg:border-r border-white/10 min-w-[180px]">
-                    <a href="#" className="flex-1 flex items-center gap-4 p-6 md:px-8 hover:bg-white/5 transition-colors border-b border-white/10 group">
-                        <Youtube className="w-5 h-5 opacity-50 group-hover:opacity-100 transition-opacity" />
-                        <span className="font-bold tracking-widest text-sm uppercase">YouTube</span>
+                <div className="lg:w-1/6 flex flex-col border-b lg:border-b-0 lg:border-r border-[#AD1E1E]/10 min-w-[180px]">
+                    <a href="#" className="flex-1 flex items-center gap-4 p-6 md:px-8 hover:bg-black/5 transition-colors border-b border-[#AD1E1E]/10 group">
+                        <Youtube className="w-5 h-5 text-[#AD1E1E] opacity-70 group-hover:opacity-100 transition-opacity" />
+                        <span className="font-bold tracking-widest text-sm uppercase text-[#1a1a1a]">YouTube</span>
                     </a>
-                    <a href="#" className="flex-1 flex items-center gap-4 p-6 md:px-8 hover:bg-white/5 transition-colors border-b border-white/10 group">
-                        <Twitter className="w-5 h-5 opacity-50 group-hover:opacity-100 transition-opacity" />
-                        <span className="font-bold tracking-widest text-sm uppercase">Twitter</span>
+                    <a href="#" className="flex-1 flex items-center gap-4 p-6 md:px-8 hover:bg-black/5 transition-colors border-b border-[#AD1E1E]/10 group">
+                        <Twitter className="w-5 h-5 text-[#AD1E1E] opacity-70 group-hover:opacity-100 transition-opacity" />
+                        <span className="font-bold tracking-widest text-sm uppercase text-[#1a1a1a]">Twitter</span>
                     </a>
-                    <a href="#" className="flex-1 flex items-center gap-4 p-6 md:px-8 hover:bg-white/5 transition-colors group">
-                        <Linkedin className="w-5 h-5 opacity-50 group-hover:opacity-100 transition-opacity" />
-                        <span className="font-bold tracking-widest text-sm uppercase">LinkedIn</span>
+                    <a href="#" className="flex-1 flex items-center gap-4 p-6 md:px-8 hover:bg-black/5 transition-colors group">
+                        <Linkedin className="w-5 h-5 text-[#AD1E1E] opacity-70 group-hover:opacity-100 transition-opacity" />
+                        <span className="font-bold tracking-widest text-sm uppercase text-[#1a1a1a]">LinkedIn</span>
                     </a>
                 </div>
 
                 {/* Module 3: Reach Us */}
                 <div
                     ref={sectionRef}
-                    className="flex-1 p-8 md:p-12 lg:p-16 flex flex-col justify-center relative bg-white/5"
+                    className="flex-1 p-8 md:p-12 lg:p-16 flex flex-col justify-center relative bg-black/[0.02]"
                 >
                     <div className="absolute top-0 right-0 p-8">
                         <Link to="/contactus">
-                            <button className="bg-[#ffcc00] p-4 rounded-sm shadow-xl hover:bg-white hover:text-[#01276a] transition-all transform hover:scale-110 active:scale-95 group">
+                            <button className="bg-[#AD1E1E] p-4 rounded-sm shadow-xl hover:bg-[#1a1a1a] text-white transition-all transform hover:scale-110 active:scale-95 group">
                                 <Mail className="w-6 h-6 stroke-[2.5]" />
                             </button>
                         </Link>
@@ -132,24 +132,24 @@ export default function Footer({ setIsNewsletterOpen }) {
             {/* Bottom Bar */}
             <div className="px-8 md:px-12 lg:px-16 py-8">
                 <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-                    <div className="text-xs md:text-sm text-gray-400 space-y-1">
+                    <div className="text-xs md:text-sm text-gray-500 space-y-1">
                         <p>© 2025 – 2026 | All rights reserved by Panorama Exports Pvt Ltd</p>
                     </div>
                     <nav className="flex flex-wrap justify-center gap-6 md:gap-12">
-                        <Link to="/ourstory" className="text-xs md:text-sm font-bold tracking-wider hover:text-[#b89d6d] transition-colors">About</Link>
-                        <Link to="/peoples" className="text-xs md:text-sm font-bold tracking-wider hover:text-[#b89d6d] transition-colors">Career</Link>
-                        <Link to="/responsibility" className="text-xs md:text-sm font-bold tracking-wider hover:text-[#b89d6d] transition-colors">Sustainability</Link>
+                        <Link to="/ourstory" className="text-xs md:text-sm font-bold tracking-wider hover:text-[#AD1E1E] transition-colors text-[#1a1a1a]">About</Link>
+                        <Link to="/peoples" className="text-xs md:text-sm font-bold tracking-wider hover:text-[#AD1E1E] transition-colors text-[#1a1a1a]">Career</Link>
+                        <Link to="/responsibility" className="text-xs md:text-sm font-bold tracking-wider hover:text-[#AD1E1E] transition-colors text-[#1a1a1a]">Sustainability</Link>
                         <button 
                             onClick={() => setIsNewsletterOpen(true)}
-                            className="text-xs md:text-sm font-bold tracking-wider hover:text-[#b89d6d] transition-colors"
+                            className="text-xs md:text-sm font-bold tracking-wider hover:text-[#AD1E1E] transition-colors text-[#1a1a1a]"
                         >
                             Newsletter
                         </button>
-                        <Link to="/contactus" className="text-xs md:text-sm font-bold tracking-wider hover:text-[#b89d6d] transition-colors">Contact</Link>
+                        <Link to="/contactus" className="text-xs md:text-sm font-bold tracking-wider hover:text-[#AD1E1E] transition-colors text-[#1a1a1a]">Contact</Link>
                     </nav>
                     <button
                         onClick={scrollToTop}
-                        className="bg-white/10 p-3 rounded-full hover:bg-white hover:text-[#01276a] transition-all"
+                        className="bg-black/5 p-3 rounded-full hover:bg-[#AD1E1E] hover:text-white transition-all text-[#1a1a1a]"
                         aria-label="Scroll to top"
                     >
                         <ArrowUp className="w-5 h-5" />
