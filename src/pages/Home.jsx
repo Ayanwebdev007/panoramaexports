@@ -21,6 +21,8 @@ import GoogleMapUnits from "../components/GoogleMapUnits";
 import OurLocation from "../components/OurLocation/OurLocation";
 import JoinUs from "../components/JoinUs/JoinUs";
 import IntentionSection from "../components/IntentionSection";
+import MasonrySection from "../components/MasonrySection";
+import HeritageSection from "../components/HeritageSection";
 
 import HumanTouch1 from "../assets/Community/csr.webp";
 import HumanTouch2 from "../assets/Community/csr2.webp";
@@ -168,6 +170,8 @@ export default function Home() {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const showHero = false; // Set to true to show the Hero Section in the future
+    const showCraftingTomorrow = false;
+    const showGrowingEveryday = false;
 
     useEffect(() => {
         const swiper = swiperRef.current?.swiper;
@@ -440,41 +444,64 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* Crafting Tomorrow Content */}
-                <div
-                    className="relative bg-[#182123] text-white flex flex-col items-center justify-center overflow-hidden w-full"
-                    style={{ aspectRatio: "16 / 9" }}
-                >
-                    <div className="md:mb-6 w-full absolute inset-0">
-                        <AutoPlayVideo
-                            src={video}
-                            loopTime={26000}
-                            className="md:mb-6 w-full"
-                            bgColor="#5b4e39"
-                        />
+                <MasonrySection />
+
+                {/* Masonry Description Section */}
+                <section className="bg-[#F9F6F1] pb-20 sm:pb-32 font-outfit">
+                    <div className="max-w-[1700px] mx-auto px-6 sm:px-10 lg:px-20 flex flex-col items-center">
+                        <motion.div 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1.5 }}
+                            className="max-w-[1200px] text-center"
+                        >
+                            <p className="text-[#1a1a1a] text-sm sm:text-lg md:text-xl lg:text-[22px] leading-[1.8] font-light tracking-wide">
+                                We bring trends to life with thoughtful craftsmanship—from detailed embroidery to refined finishing. 
+                                Every garment is designed to look good, feel effortless, and resonate across international markets.
+                            </p>
+                        </motion.div>
                     </div>
+                </section>
+                <HeritageSection />
 
-                    {/* Dark overlay */}
-                    {/* <div className="absolute inset-0 bg-black/30 z-0"></div> */}
+                {/* Crafting Tomorrow Content */}
+                {showCraftingTomorrow && (
+                    <div
+                        className="relative bg-[#182123] text-white flex flex-col items-center justify-center overflow-hidden w-full"
+                        style={{ aspectRatio: "16 / 9" }}
+                    >
+                        <div className="md:mb-6 w-full absolute inset-0">
+                            <AutoPlayVideo
+                                src={video}
+                                loopTime={26000}
+                                className="md:mb-6 w-full"
+                                bgColor="#5b4e39"
+                            />
+                        </div>
 
-                    {/* Text + Button (always fixed on top) */}
-                    <div className="relative z-10 flex items-end justify-center w-[80%] h-full 2xl:pb-20 xl:pb-14 lg:pb-8 md:pb-6 sm:pb-5 pb-1">
-                        <div className="flex flex-col items-center">
-                            <h1 className="2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl text-xl shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)] flex flex-wrap gap-4">
-                                <p className="font-bold">Crafting</p> Tomorrow
-                            </h1>
+                        {/* Dark overlay */}
+                        {/* <div className="absolute inset-0 bg-black/30 z-0"></div> */}
 
-                            <Link to="/craftingtomorrow">
-                                <button className="xl:mt-10 lg:mt-6 md:mt-4 mt-1 lg:text-lg md:text-md sm:text-sm text-[10px] md:px-6 sm:px-4 px-2 md:py-3 py-1 md:rounded-xl rounded-md group inline-flex items-center gap-2 border text-white bg-transparent border-white hover:bg-white hover:text-blue-900 font-semibold shadow-[0_6px_10px_#ffffff88] hover:shadow-[0_8px_12px_#ffffffcc] transform hover:-translate-y-1 transition-all duration-300">
-                                    Click to Read More
-                                    <IoEnterOutline className="lg:h-7 lg:w-7 md:h-5 md:w-5 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-                                </button>
-                            </Link>
+                        {/* Text + Button (always fixed on top) */}
+                        <div className="relative z-10 flex items-end justify-center w-[80%] h-full 2xl:pb-20 xl:pb-14 lg:pb-8 md:pb-6 sm:pb-5 pb-1">
+                            <div className="flex flex-col items-center">
+                                <h1 className="2xl:text-6xl xl:text-5xl lg:text-4xl md:text-3xl sm:text-2xl text-xl shimmer-text drop-shadow-[2px_4px_6px_rgba(0,0,0,0.3)] flex flex-wrap gap-4">
+                                    <p className="font-bold">Crafting</p> Tomorrow
+                                </h1>
+
+                                <Link to="/craftingtomorrow">
+                                    <button className="xl:mt-10 lg:mt-6 md:mt-4 mt-1 lg:text-lg md:text-md sm:text-sm text-[10px] md:px-6 sm:px-4 px-2 md:py-3 py-1 md:rounded-xl rounded-md group inline-flex items-center gap-2 border text-white bg-transparent border-white hover:bg-white hover:text-blue-900 font-semibold shadow-[0_6px_10px_#ffffff88] hover:shadow-[0_8px_12px_#ffffffcc] transform hover:-translate-y-1 transition-all duration-300">
+                                        Click to Read More
+                                        <IoEnterOutline className="lg:h-7 lg:w-7 md:h-5 md:w-5 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                                    </button>
+                                </Link>
+                            </div>
                         </div>
                     </div>
-                </div>
+                )}
 
-                <OurStrengths />
+                {showGrowingEveryday && <OurStrengths />}
                 <LeadershipSection />
 
                 {/* Employee Testimonials Section */}
