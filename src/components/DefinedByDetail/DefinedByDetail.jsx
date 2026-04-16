@@ -31,7 +31,7 @@ const DefinedByDetail = () => {
         { id: 5, src: img5, rotation: -4, y: -5 },
     ];
 
-    const items = Array.from({ length: 10 }).flatMap((_, i) => 
+    const items = Array.from({ length: 4 }).flatMap((_, i) => 
         baseItems.map(item => ({ 
             ...item, 
             id: `${item.id}-${i}` // Unique IDs for each repeated item
@@ -77,15 +77,15 @@ const DefinedByDetail = () => {
                     slidesPerView={'auto'}
                     initialSlide={2}
                     spaceBetween={-60} 
-                    loopAdditionalSlides={30}
+                    loopAdditionalSlides={5}
                     watchSlidesProgress={true}
                     grabCursor={true}
-                    speed={900} /* Silky smooth transition speed */
+                    speed={800} /* Silky smooth transition speed */
                     freeMode={{
                         enabled: true,
                         sticky: true,
-                        momentumRatio: 0.45,
-                        momentumVelocityRatio: 0.45,
+                        momentumRatio: 0.35,
+                        momentumVelocityRatio: 0.35,
                         momentumBounce: false
                     }}
                     navigation={{

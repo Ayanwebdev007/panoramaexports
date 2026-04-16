@@ -80,11 +80,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: z-index 0.3s ease; /* Smooth layer transition */
-    z-index: 10; /* Default layer */
-    transform-style: preserve-3d;
     /* Performance: Hint the browser to prepare for 3D movements */
-    will-change: transform;
+    will-change: transform, z-index;
+    transition: z-index 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); /* Synced with transform duration */
 }
 
 .detail-slide.swiper-slide-active {
@@ -98,11 +96,12 @@
     height: 300px;
     /* Combine vertical jitter, initial tilt, and base position */
     transform: translate3d(0, var(--y-offset), 0) rotate(var(--initial-rotation)) scale(0.95);
-    /* Optimized transition: targeting specific properties avoids expensive layout recalculations */
-    transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+    /* Optimized transition: synchronized with z-index for seamless layering */
+    transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.6s ease;
     opacity: 1 !important; 
     filter: brightness(1) contrast(1);
     box-shadow: none; /* Removed shadow per user request */
+    backface-visibility: hidden;
 }
 
 @media (min-width: 768px) {
@@ -112,10 +111,10 @@
     }
 }
 
-/* Focused State: 3D SUPREMACY */
 .detail-card-wrapper.active {
     /* Physically move closer to viewer (translateZ) to ENSURE it sits ON TOP of all neighbors */
-    transform: translate3d(0, var(--y-offset), 300px) rotate(var(--initial-rotation)) scale(1.1); 
+    /* Lowered from 300px to 150px to prevent visual clipping/breaking during fast swipes */
+    transform: translate3d(0, var(--y-offset), 150px) rotate(var(--initial-rotation)) scale(1.1); 
     opacity: 1 !important;
     filter: brightness(1);
     box-shadow: none; /* Removed heavy shadow per user request */
