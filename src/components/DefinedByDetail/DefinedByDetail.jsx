@@ -11,24 +11,31 @@ import 'swiper/css/free-mode';
 import './DefinedByDetail.css';
 
 // Assets
-import img1 from '../../assets/Innovation/HandcraftedLuxury/1.webp';
-import img2 from '../../assets/Innovation/HandcraftedLuxury/2.webp';
-import img3 from '../../assets/Innovation/HandcraftedLuxury/03.webp';
-import img4 from '../../assets/Handcrafted-Luxury.webp';
-import img5 from '../../assets/Weaving-Brilliance.webp';
+import img1 from '../../assets/Details/detail-1.webp';
+import img2 from '../../assets/Details/detail-2.webp';
+import img3 from '../../assets/Details/detail-3.webp';
+import img4 from '../../assets/Details/detail-4.webp';
+import img5 from '../../assets/Details/detail-5.webp';
+import img6 from '../../assets/Details/detail-6.webp';
+import img7 from '../../assets/Details/detail-7.webp';
+import img8 from '../../assets/Details/detail-8.webp';
+import img9 from '../../assets/Details/detail-9.webp';
 
 const DefinedByDetail = () => {
     const prevRef = useRef(null);
     const nextRef = useRef(null);
 
     // Duplicating items for infinite loop with SUBTLE rotations and vertical offsets
-    // Decupling items (10x repetition) for true infinite loop on Desktop/4K screens
     const baseItems = [
         { id: 1, src: img1, rotation: -4, y: -30 },
         { id: 2, src: img2, rotation: 3, y: 15 },
-        { id: 3, src: img4, rotation: -3, y: -10 },
-        { id: 4, src: img3, rotation: 5, y: 35 },
-        { id: 5, src: img5, rotation: -4, y: -5 },
+        { id: 3, src: img3, rotation: -2, y: -10 },
+        { id: 4, src: img4, rotation: 5, y: 35 },
+        { id: 5, src: img5, rotation: -3, y: -5 },
+        { id: 6, src: img6, rotation: 4, y: 20 },
+        { id: 7, src: img7, rotation: -5, y: -25 },
+        { id: 8, src: img8, rotation: 2, y: 10 },
+        { id: 9, src: img9, rotation: -3, y: 40 },
     ];
 
     const items = Array.from({ length: 4 }).flatMap((_, i) => 

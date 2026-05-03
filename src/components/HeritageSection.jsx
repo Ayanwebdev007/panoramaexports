@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 // Selecting 5 premium images from assets
-import img1 from "../assets/HeroImages/WearYourStory.webp";
-import img2 from "../assets/HeroImages/Elegance.webp";
-import img3 from "../assets/HeroImages/WarmAlcove.webp";
-import img4 from "../assets/HeroImages/ThreadsLegacy.webp";
-import img5 from "../assets/HeroImages/AheadCurve.webp";
+import img1 from "../assets/Heritage/heritage-1.webp";
+import img2 from "../assets/Heritage/heritage-2.webp";
+import img3 from "../assets/Heritage/heritage-3.webp";
+import img4 from "../assets/Heritage/heritage-4.webp";
+import img5 from "../assets/Heritage/heritage-5.webp";
 
 const HeritageSection = () => {
     const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -89,18 +89,15 @@ const HeritageSection = () => {
                                 backfaceVisibility: "hidden"
                             }}
                         >
-                            <motion.img
+                        <div className="relative w-full h-full overflow-hidden">
+                            <img
                                 src={image}
                                 alt={`Heritage ${index + 1}`}
                                 decoding="async"
                                 className="w-full h-full object-cover"
-                                initial={false}
-                                animate={{
-                                    scale: hoveredIndex === index ? 1.08 : 1,
-                                }}
-                                transition={{ duration: 0.8, ease: "circOut" }}
-                                style={{ willChange: "transform" }}
+                                style={{ objectPosition: "center 15%" }}
                             />
+                        </div>
                             
                             {/* Overlay that vanishes when hovered */}
                             <div 

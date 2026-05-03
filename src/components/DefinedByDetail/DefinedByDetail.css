@@ -114,7 +114,7 @@
 .detail-card-wrapper.active {
     /* Physically move closer to viewer (translateZ) to ENSURE it sits ON TOP of all neighbors */
     /* Lowered from 300px to 150px to prevent visual clipping/breaking during fast swipes */
-    transform: translate3d(0, var(--y-offset), 150px) rotate(var(--initial-rotation)) scale(1.1); 
+    transform: translate3d(0, var(--y-offset), 150px) rotate(var(--initial-rotation)) scale(1); 
     opacity: 1 !important;
     filter: brightness(1);
     box-shadow: none; /* Removed heavy shadow per user request */
@@ -125,7 +125,7 @@
     height: 100%;
     overflow: hidden;
     border-radius: 2px;
-    border: 1px solid rgba(255, 255, 255, 0.6); /* Cleaner border */
+    border: none;
     background-color: #ede8e3;
 }
 

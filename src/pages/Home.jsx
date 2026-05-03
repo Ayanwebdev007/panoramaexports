@@ -91,7 +91,7 @@ import brand3 from "../assets/GlobalFootprint/new_brands/Boden-new-logo-.webp";
 import brand4 from "../assets/GlobalFootprint/new_brands/Boots_logo.svg.webp";
 import brand5 from "../assets/GlobalFootprint/new_brands/DKNY-Donna-Karan-New-York-logo-880x625.webp";
 import brand6 from "../assets/GlobalFootprint/new_brands/Matalan-logo.webp";
-import brand7 from "../assets/GlobalFootprint/new_brands/Mothercare-Emblem.webp";
+import brand7 from "../assets/GlobalFootprint/new_brands/Mothercare-Emblem.png";
 import brand8 from "../assets/GlobalFootprint/new_brands/Tesco_Logo.svg.webp";
 import brand9 from "../assets/GlobalFootprint/new_brands/c_and_a.webp";
 import brand10 from "../assets/GlobalFootprint/new_brands/george.webp";
@@ -742,7 +742,7 @@ export default function Home() {
                 </LazyRender>
                 
                 <LazyRender height="600px">
-                    <ResponsibilityShowcase videoSrc={intentionVideo} />
+                    <ResponsibilityShowcase videoSrc={video} />
                 </LazyRender>
                 
                 {showOurLocation && <OurLocation />}
