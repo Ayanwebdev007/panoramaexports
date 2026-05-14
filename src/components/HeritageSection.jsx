@@ -20,29 +20,27 @@ const HeritageSection = () => {
         return {
             stacked: {
                 opacity: 0.8,
-                scale: 0.85 - (Math.abs(index - 2) * 0.05),
-                x: `${offsetMultiplier * 105}%`, // Pull towards the center
-                z: -Math.abs(index - 2) * 50,
+                scale: (0.85 - (Math.abs(index - 2) * 0.05)) * 0.95,
+                x: `${(2 - index) * 105}%`, 
                 rotate: (index - 2) * 3,
                 transition: {
                     type: "spring",
-                    stiffness: 40,
-                    damping: 12,
-                    mass: 1.2
+                    stiffness: 30,
+                    damping: 15,
+                    mass: 1
                 }
             },
             spread: {
                 opacity: 1,
                 scale: 1,
                 x: 0,
-                z: 0,
                 rotate: 0,
                 transition: {
                     type: "spring",
-                    stiffness: 55,
-                    damping: 18,
+                    stiffness: 45,
+                    damping: 20,
                     mass: 1,
-                    delay: index * 0.08 // Staggered reveal for extraordinary smoothness
+                    delay: index * 0.05
                 }
             }
         };
@@ -52,12 +50,12 @@ const HeritageSection = () => {
         <section className="bg-[#F9F6F1] pt-4 pb-32 px-6 sm:px-10 lg:px-20 overflow-hidden">
             <motion.div 
                 className="max-w-[1750px] mx-auto"
-                viewport={{ once: true, amount: 0.15 }}
+                viewport={{ once: false, amount: 0.15 }}
             >
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.3 }}
+                    viewport={{ once: false, amount: 0.3 }}
                     transition={{ duration: 1, ease: "easeOut" }}
                     className="text-center mb-24"
                 >
@@ -68,11 +66,10 @@ const HeritageSection = () => {
                 </motion.div>
                 
                 <motion.div
-                    className="flex flex-col md:flex-row h-[250px] md:h-[320px] gap-4 items-center justify-center perspective-2000"
-                    style={{ transformStyle: "preserve-3d" }}
+                className="flex flex-col md:flex-row h-[250px] md:h-[320px] gap-4 items-center justify-center"
                     initial="stacked"
                     whileInView="spread"
-                    viewport={{ once: true, amount: 0.2 }}
+                    viewport={{ once: false, amount: 0.2 }}
                 >
                     {images.map((image, index) => (
                         <motion.div
@@ -80,11 +77,11 @@ const HeritageSection = () => {
                             variants={itemVariants(index)}
                             onHoverStart={() => setHoveredIndex(index)}
                             onHoverEnd={() => setHoveredIndex(null)}
-                            className="relative h-full overflow-hidden cursor-pointer rounded-sm border border-[#AD1E1E]/5 transition-all duration-700 ease-out shadow-sm"
+                            data-active={hoveredIndex === index}
+                            className="heritage-card relative h-full overflow-hidden cursor-pointer rounded-sm border border-[#AD1E1E]/5 transition-[flex,transform] duration-700 ease-out shadow-sm"
                             style={{
-                                flex: hoveredIndex === index ? 2.5 : 1,
                                 minWidth: "0px",
-                                willChange: "flex-grow, transform",
+                                willChange: "transform",
                                 backfaceVisibility: "hidden"
                             }}
                         >
@@ -95,6 +92,8 @@ const HeritageSection = () => {
                                 decoding="async"
                                 className="w-full h-full object-cover"
                                 style={{ 
+                                    willChange: 'transform',
+                                    transform: 'translateZ(0)',
                                     objectPosition: 
                                         index === 0 || index === 1 ? "25% 15%" : 
                                         index === 2 ? "center 70%" : 
@@ -113,8 +112,11 @@ const HeritageSection = () => {
             </motion.div>
             
             <style jsx>{`
-                .perspective-2000 {
-                    perspective: 2000px;
+                .heritage-card {
+                    flex: 1;
+                }
+                .heritage-card[data-active="true"] {
+                    flex: 2.5;
                 }
             `}</style>
         </section>

@@ -19,6 +19,8 @@
     background-size: 200% 200%;
     animation: meshGradientLeadership 20s ease infinite;
     position: relative;
+    will-change: background-position;
+    transform: translateZ(0);
 }
 
 @keyframes meshGradientLeadership {
@@ -68,8 +70,8 @@
     flex: 0 0 300px;
     max-width: 320px;
     background: rgba(239, 233, 225, 0.7); /* Soft Champagne Beige */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     border: 1px solid rgba(173, 30, 30, 0.15);
     border-radius: 24px;
     padding: 40px 20px;

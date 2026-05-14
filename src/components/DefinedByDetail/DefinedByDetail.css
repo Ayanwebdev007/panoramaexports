@@ -5,7 +5,6 @@
     padding: 40px 0 60px 0;
     overflow: hidden;
     position: relative;
-    perspective: 2000px;
 }
 
 @media (min-width: 768px) {
@@ -71,7 +70,6 @@
     width: 100%;
     padding: 80px 0 !important;
     overflow: visible !important;
-    transform-style: preserve-3d;
 }
 
 /* Swiper Slide Stacking Fix */
@@ -95,13 +93,12 @@
     width: 200px;
     height: 300px;
     /* Combine vertical jitter, initial tilt, and base position */
-    transform: translate3d(0, var(--y-offset), 0) rotate(var(--initial-rotation)) scale(0.95);
+    transform: translateY(var(--y-offset)) rotate(var(--initial-rotation)) scale(0.95);
     /* Optimized transition: synchronized with z-index for seamless layering */
     transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.6s ease;
     opacity: 1 !important; 
     filter: brightness(1) contrast(1);
     box-shadow: none; /* Removed shadow per user request */
-    backface-visibility: hidden;
 }
 
 @media (min-width: 768px) {
@@ -112,12 +109,11 @@
 }
 
 .detail-card-wrapper.active {
-    /* Physically move closer to viewer (translateZ) to ENSURE it sits ON TOP of all neighbors */
-    /* Lowered from 300px to 150px to prevent visual clipping/breaking during fast swipes */
-    transform: translate3d(0, var(--y-offset), 150px) rotate(var(--initial-rotation)) scale(1); 
+    /* Use 2D scale instead of 3D translateZ */
+    transform: translateY(var(--y-offset)) rotate(var(--initial-rotation)) scale(1.08); 
     opacity: 1 !important;
     filter: brightness(1);
-    box-shadow: none; /* Removed heavy shadow per user request */
+    box-shadow: none; 
 }
 
 .detail-image-inner {
@@ -135,11 +131,7 @@
     object-fit: cover;
     pointer-events: none;
     /* High-Performance Rendering */
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    transform: translate3d(0,0,0); /* Force GPU texture layer without breaking parent 3D */
+    transform: translateZ(0); 
 }
 
 .detail-image-overlay {

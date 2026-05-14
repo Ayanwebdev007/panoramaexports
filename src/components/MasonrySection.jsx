@@ -27,15 +27,15 @@ const MasonrySection = () => {
                 {/* Column 1 */}
                 <div className="flex-1 flex flex-col gap-8">
                     <div className="h-[900px] overflow-hidden">
-                        <img src={leftImg1} alt="Excellence 1" decoding="async" className="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500" style={{ objectPosition: '70% center' }} />
+                        <img src={leftImg1} alt="Excellence 1" decoding="async" loading="lazy" className="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500" style={{ objectPosition: '70% center', willChange: 'transform' }} />
                     </div>
 
                     <div className="h-[300px] overflow-hidden">
-                        <img src={leftImg2} alt="Excellence 2" decoding="async" className="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500" />
+                        <img src={leftImg2} alt="Excellence 2" decoding="async" loading="lazy" className="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500" style={{ willChange: 'transform' }} />
                     </div>
 
                     <div className="h-[500px] overflow-hidden">
-                        <img src={leftImg3} alt="Excellence 3" decoding="async" className="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500" />
+                        <img src={leftImg3} alt="Excellence 3" decoding="async" loading="lazy" className="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500" style={{ willChange: 'transform' }} />
                     </div>
 
                     <div className="bg-[#EFE9E1] p-12 flex flex-col justify-between h-[604px] border border-[#E5DFD5]">
@@ -60,38 +60,38 @@ const MasonrySection = () => {
                     </div>
 
                     <div className="h-[300px] overflow-hidden">
-                        <img src={middleImg1} alt="Excellence 4" decoding="async" className="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500" />
+                        <img src={middleImg1} alt="Excellence 4" decoding="async" loading="lazy" className="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500" style={{ willChange: 'transform' }} />
                     </div>
 
                     <div className="h-[550px] overflow-hidden">
-                        <img src={img6} alt="Excellence 5" decoding="async" className="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500" />
+                        <img src={img6} alt="Excellence 5" decoding="async" loading="lazy" className="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500" style={{ willChange: 'transform' }} />
                     </div>
 
                     <div className="h-[650px] overflow-hidden">
-                        <img src={img9} alt="Excellence 6" decoding="async" className="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500" />
+                        <img src={img9} alt="Excellence 6" decoding="async" loading="lazy" className="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500" style={{ willChange: 'transform' }} />
                     </div>
 
                     <div className="h-[322px] overflow-hidden">
-                        <img src={img10} alt="Excellence 7" decoding="async" className="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500" />
+                        <img src={img10} alt="Excellence 7" decoding="async" loading="lazy" className="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500" style={{ willChange: 'transform' }} />
                     </div>
                 </div>
 
                 {/* Column 3 */}
                 <div className="flex-1 flex flex-col gap-8">
                     <div className="h-[450px] overflow-hidden">
-                        <img src={rightImg1} alt="Excellence 8" decoding="async" className="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500" />
+                        <img src={rightImg1} alt="Excellence 8" decoding="async" loading="lazy" className="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500" style={{ willChange: 'transform' }} />
                     </div>
 
                     <div className="h-[650px] overflow-hidden">
-                        <img src={rightImg2} alt="Excellence 9" decoding="async" className="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500" />
+                        <img src={rightImg2} alt="Excellence 9" decoding="async" loading="lazy" className="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500" style={{ willChange: 'transform' }} />
                     </div>
 
                     <div className="h-[550px] overflow-hidden">
-                        <img src={rightImg3} alt="Excellence 10" decoding="async" className="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500" />
+                        <img src={rightImg3} alt="Excellence 10" decoding="async" loading="lazy" className="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500" style={{ willChange: 'transform' }} />
                     </div>
 
                     <div className="h-[654px] overflow-hidden">
-                        <img src={rightImg4} alt="Excellence 11" decoding="async" className="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500" />
+                        <img src={rightImg4} alt="Excellence 11" decoding="async" loading="lazy" className="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500" style={{ willChange: 'transform' }} />
                     </div>
                 </div>
 

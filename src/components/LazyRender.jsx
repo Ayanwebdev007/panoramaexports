@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const LazyRender = ({ children, threshold = 0.1, rootMargin = "300px", height = "auto" }) => {
+const LazyRender = ({ children, threshold = 0.1, rootMargin = "1200px", height = "auto" }) => {
     const [isVisible, setIsVisible] = useState(false);
     const ref = useRef(null);
 

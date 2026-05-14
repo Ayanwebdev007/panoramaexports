@@ -76,16 +76,14 @@ const ManufacturingExcellence = () => {
                         key={unit.id}
                         className="mfg-unit-item"
                         variants={{
-                            hidden: { opacity: 0, y: 50, scale: 0.95 },
+                            hidden: { opacity: 0, y: 30 },
                             visible: {
                                 opacity: 1,
                                 y: 0,
-                                scale: 1,
                                 transition: {
-                                    type: "spring",
-                                    stiffness: 70,
-                                    damping: 15,
-                                    delay: index * 0.1
+                                    duration: 0.8,
+                                    ease: [0.16, 1, 0.3, 1],
+                                    delay: index * 0.08
                                 }
                             }
                         }}

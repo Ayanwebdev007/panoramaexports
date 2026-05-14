@@ -38,7 +38,7 @@ const DefinedByDetail = () => {
         { id: 9, src: img9, rotation: -3, y: 40 },
     ];
 
-    const items = Array.from({ length: 4 }).flatMap((_, i) => 
+    const items = Array.from({ length: 2 }).flatMap((_, i) => 
         baseItems.map(item => ({ 
             ...item, 
             id: `${item.id}-${i}` // Unique IDs for each repeated item
@@ -51,7 +51,7 @@ const DefinedByDetail = () => {
                 <motion.h2 
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                     className="detail-title"
                 >
                     Defined by Detail
@@ -59,7 +59,7 @@ const DefinedByDetail = () => {
                 <motion.p 
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                     transition={{ delay: 0.2 }}
                     className="detail-description"
                 >
@@ -85,7 +85,7 @@ const DefinedByDetail = () => {
                     initialSlide={2}
                     spaceBetween={-60} 
                     loopAdditionalSlides={5}
-                    watchSlidesProgress={true}
+                    watchSlidesProgress={false}
                     grabCursor={true}
                     speed={800} /* Silky smooth transition speed */
                     freeMode={{

@@ -447,7 +447,7 @@ export default function Home() {
                     </div>
                 </section>
 
-                <LazyRender height="800px">
+                <LazyRender height="2300px">
                     <MasonrySection />
                 </LazyRender>
 
@@ -465,7 +465,7 @@ export default function Home() {
                     </section>
                 </LazyRender>
 
-                <LazyRender height="600px">
+                <LazyRender height="800px">
                     <HeritageSection />
                 </LazyRender>
 

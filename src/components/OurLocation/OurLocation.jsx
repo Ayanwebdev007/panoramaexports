@@ -173,7 +173,7 @@ const OurLocation = () => {
             <motion.div
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 className="w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 text-left mb-6 sm:mb-12"
             >
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-[#AD1E1E] tracking-tight whitespace-nowrap">
@@ -192,7 +192,7 @@ const OurLocation = () => {
                             onClick={() => setActiveLocation(loc)}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
+                            viewport={{ once: false }}
                             transition={{ delay: loc.id * 0.1 }}
                             className={`flex flex-col items-center py-2 sm:py-4 px-1 sm:px-6 rounded-xl sm:rounded-2xl border transition-all duration-300 sm:flex-1 hover:shadow-lg hover:-translate-y-1 ${activeLocation?.id === loc.id
                                 ? 'bg-[#AD1E1E] border-[#AD1E1E] text-white shadow-xl scale-105 z-10'
