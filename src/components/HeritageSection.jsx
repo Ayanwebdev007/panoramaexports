@@ -11,7 +11,7 @@ import img5 from "../assets/Heritage, Redefined/Heritage, Redefined/5.webp";
 const HeritageSection = () => {
     const [hoveredIndex, setHoveredIndex] = useState(null);
 
-    const images = [img1, img2, img3, img4, img5];
+    const images = [img1, img2, img5, img3, img4];
 
     // Ultra-smooth spring variants
     const itemVariants = (index) => {
@@ -66,8 +66,7 @@ const HeritageSection = () => {
                     </h2>
                     <div className="w-16 h-[1px] bg-[#AD1E1E] mx-auto mt-8 opacity-30"></div>
                 </motion.div>
-
-                {/* The "Deck" Container - Spreads automatically when in view */}
+                
                 <motion.div
                     className="flex flex-col md:flex-row h-[250px] md:h-[320px] gap-4 items-center justify-center perspective-2000"
                     style={{ transformStyle: "preserve-3d" }}
@@ -98,7 +97,7 @@ const HeritageSection = () => {
                                 style={{ 
                                     objectPosition: 
                                         index === 0 || index === 1 ? "25% 15%" : 
-                                        index === 4 ? "center 70%" : 
+                                        index === 2 ? "center 70%" : 
                                         "center 15%" 
                                 }}
                             />
