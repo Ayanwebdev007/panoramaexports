@@ -40,10 +40,10 @@ const MasonrySection = () => {
 
                     <div className="bg-[#EFE9E1] p-12 flex flex-col justify-between h-[604px] border border-[#E5DFD5]">
                         <p className="italic text-xl mb-6 text-[#1a1a1a] opacity-80 font-light leading-relaxed">
-                            “30 minutes behind the scenes of our craftsmanship; a return to the roots of design and an invitation to experience timeless elegance.”
+                            “An intimate look into our craftsmanship: a journey back to the roots of design, where timeless elegance quietly endures. Guided by authenticity and refined by hand, every element reflects a legacy of understated luxury.”
                         </p>
                         <h3 className="text-4xl lg:text-5xl font-bold text-[#1a1a1a] leading-tight tracking-tighter uppercase whitespace-pre-line">
-                            The Art {"\n"} of Living
+                            A Return to {"\n"} the Essence
                         </h3>
                     </div>
                 </div>

@@ -436,6 +436,9 @@ export default function Home() {
                 <section className="bg-white pt-4 pb-16 sm:pt-6 sm:pb-24 font-outfit">
                     <div className="max-w-[1700px] mx-auto px-6 sm:px-10 lg:px-20 flex flex-col items-center">
                         <div className="max-w-[1400px] text-center">
+                            <h2 className="text-[#AD1E1E] text-base sm:text-lg md:text-xl lg:text-2xl font-medium tracking-[0.3em] uppercase mb-6 sm:mb-8">
+                                Our Brand Story
+                            </h2>
                             <p className="text-[#1a1a1a] text-sm sm:text-lg md:text-xl lg:text-[20px] leading-[1.9] font-light tracking-wide">
                                 Panorama brings together craftsmanship and consistency to be a trusted partner to global brands—creating timeless fashion defined by responsiveness and meticulous attention to detail.
                                 From the outset, Panorama has been driven by a collective vision—to create timeless fashion, crafted with intention and designed to stand the test of time.
