@@ -40,20 +40,14 @@ const IntentionSection = ({ videoSrc }) => {
 
             <div className="max-w-[1700px] mx-auto px-6 sm:px-10 lg:px-20 flex flex-col items-center">
                 {/* Sézane-style Minimalist Statement */}
-                <motion.div 
-                    initial={{ opacity: 0, y: 15 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1.5, delay: 0.5 }}
-                    className="max-w-[1400px] text-center"
-                >
+                <div className="max-w-[1400px] text-center">
                     <p className="text-[#1a1a1a] text-sm sm:text-lg md:text-xl lg:text-[20px] leading-[1.9] font-light tracking-wide px-4">
                         Panorama Exports is committed to strengthening every dimension of its operations. 
                         Our approach focuses on expanding our global reach, elevating engagement across every 
                         customer touchpoint, advancing responsible practices, and empowering a skilled 
                         workforce that drives excellence at every level.
                     </p>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

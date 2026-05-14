@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 
 // Selecting 5 premium images from assets
-import img1 from "../assets/Heritage/heritage-1.webp";
-import img2 from "../assets/Heritage/heritage-2.webp";
-import img3 from "../assets/Heritage/heritage-3.webp";
-import img4 from "../assets/Heritage/heritage-4.webp";
-import img5 from "../assets/Heritage/heritage-5.webp";
+import img1 from "../assets/Heritage, Redefined/Heritage, Redefined/1.webp";
+import img2 from "../assets/Heritage, Redefined/Heritage, Redefined/2.webp";
+import img3 from "../assets/Heritage, Redefined/Heritage, Redefined/3.webp";
+import img4 from "../assets/Heritage, Redefined/Heritage, Redefined/4.webp";
+import img5 from "../assets/Heritage, Redefined/Heritage, Redefined/5.webp";
 
 const HeritageSection = () => {
     const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -95,7 +95,12 @@ const HeritageSection = () => {
                                 alt={`Heritage ${index + 1}`}
                                 decoding="async"
                                 className="w-full h-full object-cover"
-                                style={{ objectPosition: "center 15%" }}
+                                style={{ 
+                                    objectPosition: 
+                                        index === 0 || index === 1 ? "25% 15%" : 
+                                        index === 4 ? "center 70%" : 
+                                        "center 15%" 
+                                }}
                             />
                         </div>
                             

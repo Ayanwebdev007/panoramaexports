@@ -435,18 +435,12 @@ export default function Home() {
                 {/* New Brand Statement Section */}
                 <section className="bg-white pt-4 pb-16 sm:pt-6 sm:pb-24 font-outfit">
                     <div className="max-w-[1700px] mx-auto px-6 sm:px-10 lg:px-20 flex flex-col items-center">
-                        <motion.div 
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1.5 }}
-                            className="max-w-[1400px] text-center"
-                        >
+                        <div className="max-w-[1400px] text-center">
                             <p className="text-[#1a1a1a] text-sm sm:text-lg md:text-xl lg:text-[20px] leading-[1.9] font-light tracking-wide">
                                 Panorama brings together craftsmanship and consistency to be a trusted partner to global brands—creating timeless fashion defined by responsiveness and meticulous attention to detail.
                                 From the outset, Panorama has been driven by a collective vision—to create timeless fashion, crafted with intention and designed to stand the test of time.
                             </p>
-                        </motion.div>
+                        </div>
                     </div>
                 </section>
 
@@ -458,18 +452,12 @@ export default function Home() {
                 <LazyRender height="150px">
                     <section className="bg-[#F9F6F1] pt-4 pb-12 sm:pb-16 font-outfit">
                         <div className="max-w-[1700px] mx-auto px-6 sm:px-10 lg:px-20 flex flex-col items-center">
-                            <motion.div 
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 1.5 }}
-                                className="max-w-[1200px] text-center"
-                            >
+                            <div className="max-w-[1200px] text-center">
                                 <p className="text-[#1a1a1a] text-sm sm:text-lg md:text-xl lg:text-[22px] leading-[1.8] font-light tracking-wide">
                                     We bring trends to life with thoughtful craftsmanship—from detailed embroidery to refined finishing. 
                                     Every garment is designed to look good, feel effortless, and resonate across international markets.
                                 </p>
-                            </motion.div>
+                            </div>
                         </div>
                     </section>
                 </LazyRender>
