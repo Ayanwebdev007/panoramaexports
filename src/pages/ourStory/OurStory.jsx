@@ -11,6 +11,25 @@ import LegacyImage from "../../assets/Legacy/final.webp";
 import FounderImage from "../../assets/Founders/founderImage.webp";
 import FabricTexture from "../../assets/backgrounds/fabric-texture.webp";
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, FreeMode } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/free-mode';
+
+import StoryImg1 from "../../assets/OurStory/02.webp";
+import StoryImg2 from "../../assets/OurStory/03.webp";
+import StoryImg3 from "../../assets/OurStory/04.webp";
+import StoryImg4 from "../../assets/OurStory/05.webp";
+
+import Detail1 from "../../assets/Details/detail-1.webp";
+import Detail2 from "../../assets/Details/detail-2.webp";
+import Detail7 from "../../assets/Details/detail-7.webp";
+import Detail8 from "../../assets/Details/detail-8.webp";
+
+const storyImages = [StoryImg1, StoryImg2, StoryImg3, StoryImg4, StoryImg1, StoryImg2, StoryImg3, StoryImg4];
+const detailImages = [Detail1, Detail2, Detail7, Detail8, Detail1, Detail2, Detail7, Detail8];
+
 const heroImages = [LegacyImage];
 const labels = {
     "#legacy": "Legacy",
@@ -90,14 +109,130 @@ export default function OurStory() {
     return (
         <div className="text-gray-900 bg-white">
             <div className="sm:hidden w-full h-10 bg-gray-900"></div>
-            {/* Legacy Sections */}
+
+            {/* New Our Story Header Section */}
+            <section className="relative bg-white pt-16 pb-10 sm:pt-24 sm:pb-12 font-outfit overflow-hidden">
+                {/* Subtle Fabric Background for Texture */}
+                <div
+                    className="absolute inset-0 z-0 opacity-[0.04] pointer-events-none"
+                    style={{
+                        backgroundImage: `url(${FabricTexture})`,
+                        backgroundSize: '400px',
+                        backgroundRepeat: 'repeat'
+                    }}
+                ></div>
+
+                <div className="relative z-10 max-w-[1700px] mx-auto px-6 sm:px-10 lg:px-20 flex flex-col items-center">
+                    <div className="max-w-[1300px] text-center">
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.3 }}
+                            variants={{
+                                hidden: {},
+                                visible: { 
+                                    transition: { staggerChildren: 0.3 } 
+                                }
+                            }}
+                        >
+                            <motion.p 
+                                variants={{
+                                    hidden: { opacity: 0, y: 20 },
+                                    visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: "easeOut" } }
+                                }}
+                                style={{ fontFamily: "'Playfair Display', serif" }}
+                                className="text-[#1a1a1a] text-lg sm:text-xl md:text-2xl lg:text-[30px] xl:text-[32px] font-light italic leading-snug mb-10 tracking-tight"
+                            >
+                                Since 1973, Panorama Exports has been transforming fabric into global fashion.
+                            </motion.p>
+
+                            <motion.p 
+                                variants={{
+                                    hidden: { opacity: 0, y: 20 },
+                                    visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: "easeOut" } }
+                                }}
+                                className="text-[#AD1E1E] text-sm sm:text-base md:text-lg lg:text-[19px] leading-[2] font-light tracking-wide max-w-[950px] mx-auto"
+                            >
+                                What began as a vision rooted in craftsmanship has grown into a legacy of precision, innovation and scale. From India to the world, every garment we create carries the mark of creativity, technical expertise and an unwavering commitment to quality.
+                            </motion.p>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Image Loop Section */}
+            <section className="w-full pb-0 sm:pb-0">
+                <Swiper
+                    modules={[Pagination, FreeMode]}
+                    spaceBetween={0}
+                    slidesPerView={1.2}
+                    breakpoints={{
+                        640: {
+                            slidesPerView: 2.2,
+                        },
+                        1024: {
+                            slidesPerView: 2.8,
+                        }
+                    }}
+                    centeredSlides={true}
+                    loop={true}
+                    loopedSlides={4}
+                    freeMode={{
+                        enabled: true,
+                        momentum: true,
+                    }}
+                    pagination={{
+                        clickable: true,
+                        dynamicBullets: true,
+                    }}
+                    grabCursor={true}
+                    className="w-full h-[50vh] sm:h-[75vh] lg:h-[85vh] bg-gray-50"
+                >
+                    {storyImages.map((img, index) => (
+                        <SwiperSlide key={index} className="overflow-hidden bg-gray-100">
+                            <img 
+                                src={img} 
+                                alt={`Story Slide ${index + 1}`} 
+                                loading="eager"
+                                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </section>
+
+            {/* Welcome Section below images */}
+            <section className="bg-[#F9F6F1] pt-12 pb-16 sm:pt-16 sm:pb-20 font-outfit">
+                <div className="max-w-[1700px] mx-auto px-6 sm:px-10 lg:px-20 flex flex-col items-center">
+                    <div className="max-w-[1200px] text-center">
+                        <motion.h3 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1 }}
+                            className="text-[#AD1E1E] text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light tracking-[0.2em] uppercase mb-8"
+                        >
+                            Welcome to Panorama Exports
+                        </motion.h3>
+                        <motion.p 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, delay: 0.2 }}
+                            className="text-gray-600 text-sm sm:text-lg md:text-xl lg:text-[20px] leading-[1.9] font-light tracking-wide px-4"
+                        >
+                            Panorama brings together innovation, skill and technical excellence to create enduring apparel. 
+                            Beyond manufacturing, we focus on opportunity, responsible practices and constant evolution, 
+                            helping drive a more progressive future for the international garment industry.
+                        </motion.p>
+                    </div>
+                </div>
+            </section>
+            {/* Legacy Sections - Hidden as per request */}
+            {/* 
             <section id="legacy" ref={legacyRef} className="bg-white">
-                {/* Hero Section */}
                 <div
                     className="relative w-full bg-black overflow-hidden flex flex-col items-start justify-end 2xl:py-28 xl:py-20 lg:py-10 md:py-5 sm:py-4 py-2"
                     style={{ aspectRatio: "16 / 7" }}
                 >
-                    {/* Background Dissolve Animations images */}
                     {heroImages.map((img, index) => (
                         <div
                             key={index}
@@ -113,10 +248,8 @@ export default function OurStory() {
                         ></div>
                     ))}
 
-                    {/* Dark Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
 
-                    {/* Text Box */}
                     <div className="relative z-20 text-white w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 font-semibold font-outfit">
                         <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl xl:mb-5 md:mb-4 sm:mb-3 mb-2 uppercase tracking-wider">
                             Legacy
@@ -127,7 +260,10 @@ export default function OurStory() {
                     </div>
                 </div>
             </section>
-            {/* Breadcrumbs */}
+            */}
+
+            {/* Breadcrumbs - Hidden as per request */}
+            {/* 
             <div className="hidden md:block sticky lg:top-20 md:top-12 top-10 z-40 shadow-md bg-blue-950 text-lg py-3 transition-all duration-300">
                 <div className="w-[90%] mx-auto px-6 md:px-20 flex items-center justify-center gap-6">
                     {crumbs.map((crumb, index) => (
@@ -148,8 +284,11 @@ export default function OurStory() {
                     ))}
                 </div>
             </div>
+            */}
+
+            {/* Welcome Section - Hidden as per request */}
+            {/* 
             <div className="relative sm:pt-6 pt-3 lg:pb-6 md:pb-4 pb-0 sm:px-6 px-2 overflow-hidden">
-                {/* Fabric Texture Background Overlay */}
                 <div
                     className="absolute inset-0 z-0 opacity-20 pointer-events-none"
                     style={{
@@ -182,7 +321,9 @@ export default function OurStory() {
                     </motion.div>
                 </div>
             </div>
-            {/* Founder's Message Sections */}
+            */}
+
+            {/* Founder's Message Sections - KEPT */}
             <style>{`
                 @keyframes gradientShift {
                     0%   { background-position: 0% 50%; }
@@ -231,8 +372,6 @@ export default function OurStory() {
                             background: "radial-gradient(ellipse at 50% 30%, rgba(255,230,140,0.18) 0%, transparent 70%)",
                         }}
                     />
-
-
 
                     {/* Heading */}
                     <div className="w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 pt-3 sm:pt-10 pb-4 relative z-20 overflow-hidden flex flex-col sm:flex-row items-center justify-center">
@@ -331,7 +470,81 @@ export default function OurStory() {
                 </div>
             </section>
 
-            {/* MileStones Sections */}
+            {/* Where Every Season Begins Section */}
+            <section className="bg-white pt-16 pb-10 sm:pt-24 sm:pb-12 font-outfit">
+                <div className="max-w-[1700px] mx-auto px-6 sm:px-10 lg:px-20 flex flex-col items-center">
+                    <div className="max-w-[1200px] text-center">
+                        <motion.h3 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1 }}
+                            style={{ fontFamily: "'Playfair Display', serif" }}
+                            className="text-[#AD1E1E] text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-light italic mb-8"
+                        >
+                            Where Every Season Begins
+                        </motion.h3>
+                        <motion.p 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, delay: 0.2 }}
+                            className="text-[#1a1a1a] text-sm sm:text-lg md:text-xl lg:text-[19px] font-light leading-relaxed tracking-wide max-w-full lg:max-w-[1400px] mx-auto whitespace-nowrap lg:whitespace-normal"
+                        >
+                            For over five decades, we have pushed boundaries to keep pace with the energy and creativity that define Panorama.
+                        </motion.p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Second Image Loop Section */}
+            <section className="w-full pb-0">
+                <Swiper
+                    modules={[Pagination, FreeMode]}
+                    spaceBetween={0}
+                    slidesPerView={1.2}
+                    breakpoints={{
+                        640: { slidesPerView: 2.2 },
+                        1024: { slidesPerView: 2.8 }
+                    }}
+                    centeredSlides={true}
+                    loop={true}
+                    loopedSlides={4}
+                    freeMode={{ enabled: true, momentum: true }}
+                    pagination={{ clickable: true, dynamicBullets: true }}
+                    grabCursor={true}
+                    className="w-full h-[50vh] sm:h-[75vh] lg:h-[85vh] bg-gray-50"
+                >
+                    {detailImages.map((img, index) => (
+                        <SwiperSlide key={index} className="overflow-hidden bg-gray-100">
+                            <img 
+                                src={img} 
+                                alt={`Detail Slide ${index + 1}`} 
+                                loading="eager"
+                                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </section>
+
+            {/* Step Inside Our World Section */}
+            <section className="bg-[#F9F6F1] pt-12 pb-16 sm:pt-16 sm:pb-20 font-outfit">
+                <div className="max-w-[1700px] mx-auto px-6 sm:px-10 lg:px-20 flex flex-col items-center">
+                    <div className="max-w-[1200px] text-center">
+                        <motion.p 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1 }}
+                            className="text-gray-600 text-sm sm:text-lg md:text-xl lg:text-[20px] leading-[1.9] font-light tracking-wide px-4"
+                        >
+                            Step inside our world, where ideas take shape and possibilities are reimagined every day. 
+                            Season after season, we refine, rethink and elevate everything we do, always moving forward.
+                        </motion.p>
+                    </div>
+                </div>
+            </section>
+
+            {/* MileStones Sections - Hidden as per request */}
+            {/* 
             <section id="milestones" ref={milestonesRef} className="bg-white">
                 <div className="sm:pt-8 sm:pb-0 text-[#01276a] w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md mt-6">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6">
@@ -342,8 +555,9 @@ export default function OurStory() {
                 </div>
                 <Milestones />
             </section>
+            */}
 
-            {/* Our Purpose Cards Section */}
+            {/* Our Purpose Cards Section - KEPT */}
             <section id="our-purpose" ref={ourPurposeRef} className="bg-white border-t border-gray-100">
                 <PurposeCards />
             </section>
