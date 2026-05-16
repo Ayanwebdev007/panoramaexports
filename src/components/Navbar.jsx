@@ -31,7 +31,7 @@ export default function Navbar({ setIsNewsletterOpen }) {
             subItems: [
                 { label: "Discover Panorama", path: "/ourstory" },
                 { label: "Our Values", path: "/vision-values" },
-                { label: "Our Journey", path: "/ourstory" },
+                { label: "Our Journey", path: "/ourjourney" },
                 { label: "Leadership", path: "/vision-values#leadership" },
             ],
         },
