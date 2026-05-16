@@ -126,17 +126,17 @@ const PurposeCards = () => {
                     100% { background-position: 0% 0%; }
                 }
                 .heritage-mesh {
-                    background-color: #01276a;
+                    background-color: #AD1E1E;
                     background-image: 
-                        radial-gradient(at 0% 0%, #003399 0, transparent 50%),
-                        radial-gradient(at 50% 0%, #01276a 0, transparent 50%),
-                        radial-gradient(at 100% 0%, #001a4d 0, transparent 50%),
-                        radial-gradient(at 0% 50%, #01276a 0, transparent 50%),
-                        radial-gradient(at 50% 50%, #001233 0, transparent 50%),
-                        radial-gradient(at 100% 50%, #01276a 0, transparent 50%),
-                        radial-gradient(at 0% 100%, #001a4d 0, transparent 50%),
-                        radial-gradient(at 50% 100%, #01276a 0, transparent 50%),
-                        radial-gradient(at 100% 100%, #003399 0, transparent 50%);
+                        radial-gradient(at 0% 0%, #C62222 0, transparent 50%),
+                        radial-gradient(at 50% 0%, #AD1E1E 0, transparent 50%),
+                        radial-gradient(at 100% 0%, #8B1A1A 0, transparent 50%),
+                        radial-gradient(at 0% 50%, #AD1E1E 0, transparent 50%),
+                        radial-gradient(at 50% 50%, #5C1111 0, transparent 50%),
+                        radial-gradient(at 100% 50%, #AD1E1E 0, transparent 50%),
+                        radial-gradient(at 0% 100%, #8B1A1A 0, transparent 50%),
+                        radial-gradient(at 50% 100%, #AD1E1E 0, transparent 50%),
+                        radial-gradient(at 100% 100%, #C62222 0, transparent 50%);
                     background-size: 200% 200%;
                     animation: meshGradient 20s ease infinite;
                 }
@@ -157,7 +157,7 @@ const PurposeCards = () => {
                 {/* Section Header */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 text-left">
                     <div className="flex-1">
-                        <h2 className="text-2xl sm:text-3xl md:text-5xl font-light text-[#01276a] mb-4">
+                        <h2 className="text-2xl sm:text-3xl md:text-5xl font-light text-[#AD1E1E] mb-4">
                             Our Purpose
                         </h2>
                         <p className="text-sm md:text-lg text-gray-600 font-light max-w-2xl text-justify">
@@ -173,7 +173,7 @@ const PurposeCards = () => {
                 <button
                     onClick={() => handleScroll('left')}
                     disabled={isAnimating}
-                    className="absolute left-0 lg:-left-4 top-1/2 -translate-y-1/2 z-30 w-12 md:w-14 h-12 md:h-14 flex items-center justify-center rounded-full bg-white border border-[#01276a]/20 text-[#01276a] shadow-lg hover:bg-[#01276a] hover:text-white transition-all duration-500 group disabled:opacity-30 disabled:cursor-not-allowed md:opacity-0 group-hover/container:opacity-100"
+                    className="absolute left-0 lg:-left-4 top-1/2 -translate-y-1/2 z-30 w-12 md:w-14 h-12 md:h-14 flex items-center justify-center rounded-full bg-white border border-[#AD1E1E]/20 text-[#AD1E1E] shadow-lg hover:bg-[#AD1E1E] hover:text-white transition-all duration-500 group disabled:opacity-30 disabled:cursor-not-allowed md:opacity-0 group-hover/container:opacity-100"
                     aria-label="Previous"
                 >
                     <IoArrowForward className="rotate-180 group-hover:-translate-x-1 transition-transform text-xl" />
@@ -182,7 +182,7 @@ const PurposeCards = () => {
                 <button
                     onClick={() => handleScroll('right')}
                     disabled={isAnimating}
-                    className="absolute right-0 lg:-right-4 top-1/2 -translate-y-1/2 z-30 w-12 md:w-14 h-12 md:h-14 flex items-center justify-center rounded-full bg-white border border-[#01276a]/20 text-[#01276a] shadow-lg hover:bg-[#01276a] hover:text-white transition-all duration-500 group disabled:opacity-30 disabled:cursor-not-allowed md:opacity-0 group-hover/container:opacity-100"
+                    className="absolute right-0 lg:-right-4 top-1/2 -translate-y-1/2 z-30 w-12 md:w-14 h-12 md:h-14 flex items-center justify-center rounded-full bg-white border border-[#AD1E1E]/20 text-[#AD1E1E] shadow-lg hover:bg-[#AD1E1E] hover:text-white transition-all duration-500 group disabled:opacity-30 disabled:cursor-not-allowed md:opacity-0 group-hover/container:opacity-100"
                     aria-label="Next"
                 >
                     <IoArrowForward className="group-hover:translate-x-1 transition-transform text-xl" />
@@ -197,7 +197,7 @@ const PurposeCards = () => {
                         {items.map((item, idx) => (
                             <div
                                 key={idx}
-                                className="flex-none w-[calc(100vw-32px)] sm:w-[320px] md:w-[380px] group heritage-mesh cloth-texture shadow-[0_10px_30px_-10px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_50px_-12px_rgba(1,39,106,0.25)] transition-all duration-700 flex flex-col relative overflow-hidden"
+                                className="flex-none w-[calc(100vw-32px)] sm:w-[320px] md:w-[380px] group heritage-mesh cloth-texture shadow-[0_10px_30px_-10px_rgba(0,0,0,0.3)] hover:shadow-[0_25px_50px_-12px_rgba(173,30,30,0.25)] transition-all duration-700 flex flex-col relative overflow-hidden"
                             >
                                 {/* Image Container */}
                                 <div className="relative overflow-hidden aspect-[4/3] z-10">
