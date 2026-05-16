@@ -22,6 +22,7 @@ import AprajitaPng from "../../assets/Aparajita.png";
 
 import VisionImage from "../../assets/OurStory/visionMission/Vision.webp";
 import MissionImage from "../../assets/OurStory/visionMission/Mission.webp";
+import FabricTexture from "../../assets/backgrounds/fabric-texture.webp";
 
 const labels = {
     "#vision-values": "VisionValues",
@@ -259,42 +260,41 @@ export default function VisionMission() {
     return (
         <>
             <div className="sm:hidden w-full h-10 bg-gray-900"></div>
-            <div
-                ref={ref}
-                className="w-full bg-contain bg-center flex flex-col items-center justify-end aspect-[16/7] relative"
-                style={{ backgroundImage: `url(${bgImage})` }}
-            >
-                {/* Static Background Gradient - separated from animation to prevent tearing */}
-                <div className="absolute inset-x-0 bottom-0 h-[80%] bg-gradient-to-t from-black/90 via-black/80 via-black/70 to-transparent pointer-events-none z-0"></div>
+            
+            {/* Refined Modern Hero Section */}
+            <section className="relative bg-white pt-16 pb-12 sm:pt-24 sm:pb-20 font-outfit overflow-hidden">
+                <div className="relative z-10 max-w-[1700px] mx-auto px-6 sm:px-10 lg:px-20 text-center">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1.2, ease: "easeOut" }}
+                    >
+                        <h1 className="text-xl md:text-2xl lg:text-3xl font-light text-[#AD1E1E] mb-6 tracking-[0.3em] uppercase">
+                            Woven into Every Thread
+                        </h1>
+                        <p className="text-gray-500 text-base md:text-lg font-light leading-relaxed tracking-wide max-w-[800px] mx-auto mb-16">
+                            Our vision shapes the future of fashion; our values
+                            guide every stitch. We don’t just make clothing — we build
+                            trust, innovate with intent, and create with heart.
+                        </p>
 
-                <motion.div
-                    className="text-white lg:px-[10%] md:px-[8%] sm:px-[6%] px-[4%] lg:pb-[4%] md:pb-5 sm:pb-4 pb-2 pt-[10%] relative z-10 w-full"
-                    variants={{
-                        hidden: { opacity: 0, y: 50 },
-                        visible: { opacity: 1, y: 0 },
-                    }}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: false, amount: 0.2, margin: "0px 0px -50px 0px" }}
-                    transition={{
-                        duration: 0.8,
-                        ease: "easeOut",
-                    }}
-                >
-                    <h1 className="text-base sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold mb-1 sm:mb-0 font-outfit uppercase tracking-wider">
-                        Woven into Every Thread
-                    </h1>
-                    <div className="text-[11px] sm:text-sm md:text-md lg:text-xl xl:text-2xl lg:mt-4 sm:mt-2 mt-1 w-[100%] text-justify sm:text-left leading-snug sm:font-extralight font-light font-outfit">
-                        Our vision shapes the future of fashion; our values
-                        guide every stitch. We don’t just make clothing-we build
-                        trust, innovate with intent, and create with heart.
-                    </div>
-                </motion.div>
-            </div>
+                        {/* Featured Hero Image with Premium Treatment */}
+                        <div className="relative w-full max-w-[1200px] mx-auto aspect-[21/9] overflow-hidden shadow-sm group border border-gray-100">
+                            <img 
+                                src={bgImage} 
+                                alt="Hero" 
+                                className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-black/5"></div>
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
 
-            {/* Breadcrumbs */}
-            <div className="hidden md:block sticky md:top-12 lg:top-20 z-40 shadow-md bg-blue-950 text-lg py-3 transition-all duration-300">
-                <div className="w-[90%] mx-auto px-6 md:px-20 flex items-center justify-center gap-6">
+            {/* Refined Breadcrumbs */}
+            <div className="hidden md:block sticky top-10 lg:top-12 z-40 shadow-sm border-y border-gray-100 bg-white text-lg py-4 transition-all duration-300">
+                <div className="w-[90%] mx-auto px-6 md:px-20 flex items-center justify-center gap-10">
                     {crumbs.map((crumb, index) => (
                         <span
                             key={index}
@@ -302,9 +302,9 @@ export default function VisionMission() {
                         >
                             <Link
                                 to={crumb.path}
-                                className={`hover:underline md:text-sm lg:text-lg sm:my-1 font-outfit ${activeCrumb === crumb.label
-                                    ? "font-semibold text-white"
-                                    : "text-gray-300"
+                                className={`text-[11px] uppercase tracking-[0.2em] transition-all duration-300 font-outfit ${activeCrumb === crumb.label
+                                    ? "font-semibold text-[#AD1E1E] border-b border-[#AD1E1E] pb-1"
+                                    : "text-gray-400 hover:text-black"
                                     }`}
                             >
                                 {crumb.label}
@@ -314,72 +314,77 @@ export default function VisionMission() {
                 </div>
             </div>
 
-            {/* Vision mission Sections */}
-            <section id="vision-values" ref={visionRef} className="bg-white">
-                <div className="bg-white w-full sm:py-16 py-2 flex flex-col items-center">
-                    {/* Mission and Vision blocks */}
-                    <div className="w-full sm:my-5 my-2 flex flex-col">
-                        <div className="flex flex-col sm:flex-row items-end sm:items-center gap-4 md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12">
-                            <div className="flex sm:justify-end justify-center items-center md:w-[40%] sm:w-[30%] w-full">
-                                <div className="">
-                                    <h2 className="text-lg sm:text-3xl md:text-5xl lg:text-6xl 2xl:text-7xl font-bold text-black font-outfit">
-                                        Our Mission
-                                        <br />& Vision
-                                    </h2>
+            {/* Modern Staggered Vision & Mission Section */}
+            <section id="vision-values" ref={visionRef} className="bg-white py-16 md:py-24 font-outfit">
+                <div className="max-w-[1700px] mx-auto px-6 lg:px-20">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1 }}
+                        className="mb-12 md:mb-16 text-center"
+                    >
+                        <h2 className="text-[#AD1E1E] text-xl md:text-3xl font-light tracking-[0.2em] uppercase mb-6">
+                            Our Mission & Vision
+                        </h2>
+                        <div className="w-24 h-[1px] bg-[#AD1E1E] mx-auto opacity-30"></div>
+                    </motion.div>
 
-                                    <div className="mt-2 w-28 lg:w-36 2xl:w-48 h-1 bg-blue-800 rounded border" />
-                                    <div className="mt-1 w-28 lg:w-36 2xl:w-48 h-1 bg-gray-400 rounded border" />
-                                </div>
+                    <div className="flex flex-col gap-16 md:gap-24 items-center">
+                        {/* Mission - Staggered Left Image */}
+                        <motion.div 
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1 }}
+                            className="flex flex-col md:flex-row items-center gap-8 md:gap-16 w-full max-w-[1200px]"
+                        >
+                            <div className="w-full md:w-1/2 aspect-[16/9] overflow-hidden bg-gray-50 border border-gray-100 shadow-sm group">
+                                <img
+                                    src={MissionImage}
+                                    alt="Our Mission"
+                                    className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
+                                />
                             </div>
-                            {/* Mission */}
-                            <div className="flex items-center justify-between bg-[#f2f2f2] shadow-xl mb-4 md:w-[60%] sm:w-[70%] w-[90%]">
-                                <div className="flex items-center w-full">
-                                    <div className="overflow-hidden flex items-center justify-center relative">
-                                        <img
-                                            src={MissionImage}
-                                            alt="Mission"
-                                            className="object-cover w-[140px] md:w-[160px] lg:w-[180px] xl:w-[200px] 2xl:w-[250px] h-[140px] md:h-[160px] lg:h-[180px] xl:h-[200px] 2xl:h-[250px]"
-                                        />
-                                        <div className="absolute inset-0 bg-green-300 mix-blend-multiply opacity-40"></div>
-                                    </div>
-                                    <div className="md:mx-8 sm:mx-5 mx-3 md:my-6 my-4">
-                                        <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-md font-bold text-black font-outfit uppercase tracking-tight">
-                                            Mission
-                                        </h3>
-                                        <p className="text-[10px] sm:text-[12px] md:text-sm xl:text-md 2xl:text-lg text-gray-700 2xl:max-w-xl lg:max-w-md max-w-xs md:mt-1 mt-2px font-outfit">
-                                            To exceed expectations through
-                                            innovation, efficiency, and a
-                                            people-first culture-redefining
-                                            global apparel manufacturing.
-                                        </p>
-                                    </div>
-                                </div>
+                            <div className="w-full md:w-1/2 text-center md:text-left px-4">
+                                <h3 className="text-lg md:text-xl font-light text-[#AD1E1E] mb-4 tracking-[0.2em] uppercase">
+                                    Mission
+                                </h3>
+                                <p className="text-gray-500 text-base md:text-lg leading-relaxed font-light max-w-md mx-auto md:mx-0">
+                                    To exceed expectations through
+                                    innovation, efficiency, and a
+                                    people-first culture — redefining
+                                    global apparel manufacturing.
+                                </p>
                             </div>
-                        </div>
+                        </motion.div>
 
-                        {/* Vision */}
-                        <div className="flex items-center justify-between bg-[#f2f2f2] shadow-xl xl:w-[55%] md:w-[60%] sm:w-[70%] w-[90%] sm:mt-8 mt-2 xl:mt-12">
-                            <div className="flex items-center justify-end w-full">
-                                <div className="text-end md:mx-8 sm:mx-5 mx-3 md:my-6 my-4">
-                                    <h3 className="2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-md font-bold text-black font-outfit uppercase tracking-tight">
-                                        Vision
-                                    </h3>
-                                    <p className="text-[10px] sm:text-[12px] md:text-sm xl:text-md 2xl:text-lg text-gray-700 2xl:max-w-xl lg:max-w-md max-w-xs md:mt-1 mt-2px font-outfit">
-                                        To be the world’s most trusted apparel
-                                        partner, championing technology,
-                                        sustainability, and design excellence.
-                                    </p>
-                                </div>
-                                <div className="overflow-hidden flex items-center justify-center relative">
-                                    <img
-                                        src={VisionImage}
-                                        alt="Mission"
-                                        className="object-cover w-[140px] md:w-[160px] lg:w-[180px] xl:w-[200px] 2xl:w-[250px] h-[140px] md:h-[160px] lg:h-[180px] xl:h-[200px] 2xl:h-[250px]"
-                                    />
-                                    <div className="absolute inset-0 bg-green-100 mix-blend-multiply opacity-60"></div>
-                                </div>
+                        {/* Vision - Staggered Right Image */}
+                        <motion.div 
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 1, delay: 0.2 }}
+                            className="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16 w-full max-w-[1200px]"
+                        >
+                            <div className="w-full md:w-1/2 aspect-[16/9] overflow-hidden bg-gray-50 border border-gray-100 shadow-sm group">
+                                <img
+                                    src={VisionImage}
+                                    alt="Our Vision"
+                                    className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
+                                />
                             </div>
-                        </div>
+                            <div className="w-full md:w-1/2 text-center md:text-right px-4">
+                                <h3 className="text-lg md:text-xl font-light text-[#AD1E1E] mb-4 tracking-[0.2em] uppercase">
+                                    Vision
+                                </h3>
+                                <p className="text-gray-500 text-base md:text-lg leading-relaxed font-light max-w-md mx-auto md:ml-auto md:mr-0">
+                                    To be the world’s most trusted apparel
+                                    partner, championing technology,
+                                    sustainability, and design excellence.
+                                </p>
+                            </div>
+                        </motion.div>
                     </div>
                 </div>
             </section>
@@ -387,12 +392,12 @@ export default function VisionMission() {
             <section
                 id="core-values"
                 ref={corevalueRef}
-                className="w-full bg-[#f3ebdf]"
+                className="w-full bg-[#F9F6F1] pt-10 pb-8 md:pt-16 md:pb-12"
             >
                 <CoreValues />
             </section>
             {/* New Leadership Section */}
-            <section id="leadership" ref={leadershipRef} className="bg-[#fcfbf9] py-24">
+            <section id="leadership" ref={leadershipRef} className="bg-white py-24">
                 <div className="w-[90%] mx-auto px-4 sm:px-6 md:px-10 lg:px-20 mb-12 text-center">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -400,10 +405,10 @@ export default function VisionMission() {
                         viewport={{ once: false, amount: 0.2, margin: "0px 0px -50px 0px" }}
                         transition={{ duration: 0.5, ease: "easeOut" }}
                     >
-                        <h2 className="text-2xl md:text-4xl font-light text-[#01276a] font-outfit tracking-[0.2em] mb-4 uppercase">
+                        <h2 className="text-2xl md:text-4xl font-light text-[#AD1E1E] font-outfit tracking-[0.2em] mb-4 uppercase">
                             Leadership
                         </h2>
-                        <div className="w-24 h-0.5 bg-[#01276a] mx-auto opacity-30"></div>
+                        <div className="w-24 h-[1px] bg-[#AD1E1E] mx-auto opacity-30"></div>
                     </motion.div>
                 </div>
 
@@ -415,38 +420,38 @@ export default function VisionMission() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: false, amount: 0.1, margin: "0px 0px -50px 0px" }}
                             transition={{ duration: 0.4, delay: (index % 2) * 0.15, ease: "easeOut" }}
-                            className="flex flex-col bg-white shadow-[0_15px_40px_-15px_rgba(0,0,0,0.1)] rounded-sm overflow-hidden group cursor-pointer border border-gray-100 w-[calc(50%-12px)] lg:w-[calc(25%-30px)] max-w-[320px]"
+                            className="flex flex-col bg-white shadow-[0_15px_40px_-15px_rgba(0,0,0,0.05)] border border-gray-100 rounded-sm overflow-hidden group cursor-pointer w-[calc(50%-12px)] lg:w-[calc(25%-30px)] max-w-[320px]"
                             onClick={() => setSelectedLeader(leader)}
                         >
                             {/* Card Image Section */}
-                            <div className="aspect-square overflow-hidden relative">
+                            <div className="aspect-square overflow-hidden relative bg-gray-50">
                                 <img
                                     src={leader.img}
                                     alt={leader.name}
-                                    className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-110"
+                                    className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-105"
                                     style={{
                                         objectPosition: leader.objectPosition || "center",
                                         filter: "grayscale(100%)",
                                     }}
                                 />
-                                <div className="absolute inset-0 bg-[#01276a]/0 group-hover:bg-[#01276a]/10 transition-colors duration-500"></div>
+                                <div className="absolute inset-0 bg-[#AD1E1E]/0 group-hover:bg-[#AD1E1E]/10 transition-colors duration-500"></div>
 
                                 {/* Overlay Reveal */}
                                 <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             </div>
 
                             {/* Footer Section */}
-                            <div className="p-3 sm:p-5 text-center flex flex-col justify-between flex-grow bg-white transition-colors duration-500 group-hover:bg-[#01276a]">
+                            <div className="p-3 sm:p-5 text-center flex flex-col justify-between flex-grow bg-white transition-colors duration-500 group-hover:bg-[#AD1E1E]">
                                 <div className="space-y-1">
-                                    <h3 className="text-[#01276a] font-bold text-sm sm:text-xl tracking-tighter transition-colors duration-500 group-hover:text-white font-outfit">
+                                    <h3 className="text-gray-900 font-medium text-sm sm:text-xl tracking-wide transition-colors duration-500 group-hover:text-white font-outfit">
                                         {leader.name}
                                     </h3>
-                                    <p className="text-[#dcb65b] text-[10px] sm:text-xs font-semibold tracking-wider transition-colors duration-500 font-outfit">
+                                    <p className="text-gray-500 text-[10px] sm:text-xs font-light tracking-wider transition-colors duration-500 group-hover:text-white/80 font-outfit uppercase">
                                         {leader.role}
                                     </p>
                                 </div>
-                                <div className="mt-2">
-                                    <span className="inline-block text-[#01276a] text-[8px] sm:text-[10px] uppercase font-bold tracking-widest border-b border-[#01276a]/20 pb-1 group-hover:text-white group-hover:border-white/40 transition-all duration-500 font-outfit">
+                                <div className="mt-3">
+                                    <span className="inline-block text-[#AD1E1E] text-[8px] sm:text-[10px] uppercase font-medium tracking-widest border-b border-[#AD1E1E]/30 pb-1 group-hover:text-white group-hover:border-white/40 transition-all duration-500 font-outfit">
                                         Read Message
                                     </span>
                                 </div>
@@ -457,7 +462,7 @@ export default function VisionMission() {
 
                 {/* Enhanced Modal / Popup Implementation */}
                 {selectedLeader && (
-                    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8 bg-[#01276a]/95 backdrop-blur-md" onClick={() => setSelectedLeader(null)}>
+                    <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-8 bg-black/80 backdrop-blur-sm" onClick={() => setSelectedLeader(null)}>
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
@@ -466,48 +471,47 @@ export default function VisionMission() {
                             onClick={(e) => e.stopPropagation()}
                         >
                             <button
-                                className="absolute top-3 right-3 sm:top-6 sm:right-6 z-20 bg-[#01276a] text-white w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-transform hover:rotate-90 duration-300 shadow-lg"
+                                className="absolute top-3 right-3 sm:top-6 sm:right-6 z-20 bg-[#AD1E1E] text-white w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-transform hover:rotate-90 duration-300 shadow-lg"
                                 onClick={() => setSelectedLeader(null)}
                             >
-                                <span className="text-lg sm:text-xl">✕</span>
+                                <span className="text-lg sm:text-xl font-light">✕</span>
                             </button>
 
-                            <div className="w-full lg:w-[45%] h-[250px] sm:h-auto lg:aspect-auto overflow-hidden bg-gray-100 flex-shrink-0">
+                            <div className="w-full lg:w-[45%] h-[250px] sm:h-auto lg:aspect-auto overflow-hidden bg-gray-50 flex-shrink-0">
                                 <motion.img
-                                    initial={{ scale: 1.1 }}
+                                    initial={{ scale: 1.05 }}
                                     animate={{ scale: 1 }}
                                     transition={{ duration: 1.2 }}
                                     src={selectedLeader.img}
                                     alt={selectedLeader.name}
-                                    className="w-full h-full object-cover"
+                                    className="w-full h-full object-cover grayscale"
                                     style={{ objectPosition: selectedLeader.modalPosition || selectedLeader.objectPosition || "center" }}
                                 />
                             </div>
 
                             <div className="w-full lg:w-[55%] p-6 sm:p-10 lg:p-16 flex flex-col justify-center bg-white relative">
-
                                 <motion.div
                                     initial={{ opacity: 0, x: 20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ delay: 0.2 }}
                                 >
-                                    <h2 className="text-2xl sm:text-4xl md:text-5xl font-light text-[#01276a] font-outfit tracking-tight">{selectedLeader.name}</h2>
-                                    <div className="flex items-center gap-3 sm:gap-4 mt-1 sm:mt-2 mb-4 sm:mb-10">
-                                        <div className="h-px w-8 sm:w-12 bg-[#dcb65b]"></div>
-                                        <p className="text-[#dcb65b] font-semibold tracking-wider text-xs sm:text-base font-outfit">{selectedLeader.role}</p>
+                                    <h2 className="text-2xl sm:text-4xl md:text-5xl font-light text-[#AD1E1E] font-outfit tracking-tight">{selectedLeader.name}</h2>
+                                    <div className="flex items-center gap-3 sm:gap-4 mt-2 mb-6 sm:mb-10">
+                                        <div className="h-[1px] w-8 sm:w-12 bg-gray-300"></div>
+                                        <p className="text-gray-500 font-light tracking-wider text-xs sm:text-sm font-outfit uppercase">{selectedLeader.role}</p>
                                     </div>
 
                                     <div className="relative">
-                                        <div className="text-gray-600 leading-relaxed sm:leading-[1.8] text-sm sm:text-lg md:text-xl font-normal text-justify font-outfit">
+                                        <div className="text-gray-600 leading-relaxed sm:leading-[1.8] text-sm sm:text-base font-light text-justify font-outfit">
                                             {selectedLeader.message}
                                         </div>
                                     </div>
 
-                                    <div className="mt-6 sm:mt-12 pt-4 sm:pt-8 border-t border-gray-100 flex items-center justify-between">
-                                        <div className="uppercase tracking-[0.2em] sm:tracking-[0.3em] text-[8px] sm:text-[10px] font-bold text-[#01276a]/40 font-outfit">
+                                    <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-100 flex items-center justify-between">
+                                        <div className="uppercase tracking-[0.2em] sm:tracking-[0.3em] text-[8px] sm:text-[10px] font-medium text-gray-400 font-outfit">
                                             Panorama Executive Leadership
                                         </div>
-                                        <div className="hidden sm:block w-12 h-px bg-[#01276a]/20"></div>
+                                        <div className="hidden sm:block w-12 h-[1px] bg-gray-200"></div>
                                     </div>
                                 </motion.div>
                             </div>
