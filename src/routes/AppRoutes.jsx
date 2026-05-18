@@ -6,6 +6,7 @@ import Home from "../pages/Home";
 import OurStory from "../pages/ourStory/OurStory";
 import VisionMission from "../pages/ourStory/VisionMission";
 import OurJourney from "../pages/ourStory/OurJourney";
+import Leadership from "../pages/ourStory/Leadership";
 import CraftedPrecision from "../pages/CraftedPrecision/CraftedPrecision";
 import MfgExcellence from "../pages/CraftedPrecision/MfgExcellence";
 import SmartWarehousing from "../pages/CraftedPrecision/SmartWarehousing";
@@ -40,6 +41,7 @@ export default function AppRoutes() {
             <Route path="/ourstory" element={<OurStory />} />
             <Route path="/vision-values" element={<VisionMission />} />
             <Route path="/ourjourney" element={<OurJourney />} />
+            <Route path="/leadership" element={<Leadership />} />
 
             <Route path="/craftedprecision" element={<CraftedPrecision />} />
             <Route path="/mfg-excellence" element={<MfgExcellence />} />

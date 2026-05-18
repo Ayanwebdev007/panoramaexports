@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import EnrichingLives from "../../assets/OurPurpose/1.webp";
+import EnrichingLives from "../../assets/CM100595.webp";
 import DynamicHeart from "../../assets/OurPurpose/2.webp";
 import ResponsibleReverence from "../../assets/OurPurpose/Responsible.webp";
 import TrustCore from "../../assets/OurPurpose/Trusted.webp";
@@ -9,31 +9,22 @@ const purposeItems = [
     {
         img: EnrichingLives,
         title: "Enriching Lives",
-        description: `Empowering people, uplifting communities, and shaping better futures
-                        that sustains ecosystems, anticipates new lifestyles, and supports the aspirations of
-                        every member of our team`,
+        description: `We aim to create positive impact by empowering people, supporting communities, and contributing to a more responsible future. Our focus is on building an environment where individuals grow, communities benefit, and long-term value is created.`,
     },
     {
         img: DynamicHeart,
-        title: "Dynamic Heart",
-        description: `Agile, bold, and ever-evolving with ideas, technology, and
-        learning.We acquire new capabilities, master fresh capacities, and continuously innovate
-        to pioneer and reinvent the future`,
+        title: "A Dynamic Core",
+        description: `We continue to evolve through ideas, technology, and learning. By strengthening our capabilities and embracing change, we adapt to new opportunities and support the future of fashion manufacturing.`,
     },
     {
         img: TrustCore,
-        title: "Trusted at Core",
-        description: `Reliability and intent define every product, partnership, and promise.
-        Trust is our greatest currency-built in every interaction, upheld in all circumstances, and
-        strengthened over time through our products, services, and unwavering intent`,
+        title: "Built on Trust",
+        description: `Trust defines how we work. It is reflected in the quality of our products, the strength of our partnerships, and the consistency of our actions over time.`,
     },
     {
         img: ResponsibleReverence,
         title: "Responsible Reverence",
-        description: `Committed to people, planet, and purpose—balancing profit
-        with progress. We foster a culture where every decision is thoughtful, accountable, and
-        value-driven. Advancing the circular economy, and creating capacity through smart
-        resource use and ethical governance`,
+        description: `Committed to people, planet, and purpose—balancing profit with progress. We foster a culture where every decision is thoughtful, accountable, and value-driven. Advancing the circular economy, and creating capacity through smart resource use and ethical governance.`,
     },
 ];
 

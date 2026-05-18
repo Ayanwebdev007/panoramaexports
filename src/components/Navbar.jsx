@@ -11,7 +11,7 @@ import craftImg from "../assets/mastery-of-craft.webp";
 import innovationSubImg from "../assets/innovation-dropdown.webp";
 import lookbookImg from "../assets/lookbook1.webp";
 import peopleImg from "../assets/people-hero-demo.webp";
-import esgImg from "../assets/ESG.webp";
+import responsibilityDropdownImg from "../assets/responsibility dropdown.webp";
 import mediaImg from "../assets/AMIT FINAL.jpeg";
 
 export default function Navbar({ setIsNewsletterOpen }) {
@@ -23,7 +23,6 @@ export default function Navbar({ setIsNewsletterOpen }) {
     const timeoutRef = useRef(null);
 
     const navItems = [
-        { label: "HOME", path: "/" },
         {
             label: "OUR STORY",
             path: "/ourstory",
@@ -32,7 +31,7 @@ export default function Navbar({ setIsNewsletterOpen }) {
                 { label: "Discover Panorama", path: "/ourstory" },
                 { label: "Our Values", path: "/vision-values" },
                 { label: "Our Journey", path: "/ourjourney" },
-                { label: "Leadership", path: "/vision-values#leadership" },
+                { label: "Leadership", path: "/leadership" },
             ],
         },
         {
@@ -58,9 +57,18 @@ export default function Navbar({ setIsNewsletterOpen }) {
                 { label: "Refined Craft", path: "/innovation/handcraftedluxury" },
             ],
         },
+        {
+            label: "RESPONSIBILITY",
+            path: "/responsibility",
+            featuredImage: responsibilityDropdownImg,
+            subItems: [
+                { label: "Responsible Craft", path: "/responsibility" },
+                { label: "Certifications", path: "/certificates" },
+                { label: "Corporate Social Responsibility", path: "/responsibility#csr" },
+            ],
+        },
         { label: "LOOK BOOK", path: "/lookbook", featuredImage: lookbookImg },
         { label: "PANORAMA FAMILY", path: "/peoples", featuredImage: peopleImg },
-        { label: "RESPONSIBILITY", path: "/responsibility", featuredImage: esgImg },
     ];
 
     useEffect(() => {
@@ -186,15 +194,16 @@ export default function Navbar({ setIsNewsletterOpen }) {
                         }}
                         className="absolute top-full left-0 w-full bg-white border-b border-gray-200 shadow-2xl overflow-hidden"
                     >
-                        {/* Streamlined Top-Aligned 3-Column Layout with Sliding Animation */}
+                        {/* Streamlined Top-Aligned 4-Column Layout with Spacious Sliding Animation */}
                         <div className="w-full px-4 lg:px-8 xl:px-12 py-8 overflow-hidden">
                             <motion.div 
-                                className="flex w-full divide-x divide-gray-100"
+                                className="flex w-[133.33%] divide-x divide-gray-100"
                                 style={{ willChange: "transform" }}
                                 animate={{ 
-                                    x: hoveredIndex === 1 ? "0%" : 
-                                       hoveredIndex === 2 ? "-33.33%" : 
-                                       hoveredIndex === 3 ? "-66.66%" : "0%"
+                                    x: hoveredIndex === 0 ? "0%" : 
+                                       hoveredIndex === 1 ? "-25%" : 
+                                       hoveredIndex === 2 ? "-50%" : 
+                                       hoveredIndex === 3 ? "-75%" : "0%"
                                 }}
                                 transition={{ type: "spring", stiffness: 80, damping: 20 }}
                             >
@@ -206,7 +215,7 @@ export default function Navbar({ setIsNewsletterOpen }) {
                                     return (
                                         <div 
                                             key={index} 
-                                            className={`flex-none w-1/3 flex flex-col justify-start min-h-[150px] transition-opacity duration-300 ${hoveredIndex === fullIndex ? "opacity-100" : "opacity-40"} 
+                                            className={`flex-none w-1/4 flex flex-col justify-start min-h-[150px] transition-opacity duration-300 ${hoveredIndex === fullIndex ? "opacity-100" : "opacity-40"} 
                                                 ${isFirst ? "pr-8 xl:pr-12 pl-0" : isLast ? "pl-8 xl:pl-12 pr-0" : "px-8 xl:px-12"}`}
                                         >
                                             <div className="flex items-start justify-between gap-4 pt-1">

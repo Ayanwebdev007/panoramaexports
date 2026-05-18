@@ -17,18 +17,32 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/free-mode';
 
-import StoryImg1 from "../../assets/OurStory/02.webp";
-import StoryImg2 from "../../assets/OurStory/03.webp";
-import StoryImg3 from "../../assets/OurStory/04.webp";
-import StoryImg4 from "../../assets/OurStory/05.webp";
+import StoryImg1 from "../../assets/OurStory/01.webp";
+import StoryImg2 from "../../assets/OurStory/02.webp";
+import StoryImg3 from "../../assets/OurStory/03.webp";
+import StoryImg4 from "../../assets/OurStory/04.webp";
 
-import Detail1 from "../../assets/Details/detail-1.webp";
-import Detail2 from "../../assets/Details/detail-2.webp";
-import Detail7 from "../../assets/Details/detail-7.webp";
-import Detail8 from "../../assets/Details/detail-8.webp";
+import SeasonImg1 from "../../assets/Where every season begins/1.webp";
+import SeasonImg2 from "../../assets/Where every season begins/2.webp";
+import SeasonImg3 from "../../assets/Where every season begins/3.webp";
+import SeasonImg4 from "../../assets/Where every season begins/4.webp";
+import SeasonImg5 from "../../assets/Where every season begins/5.webp";
+import WeavingLuxury from "../../assets/luxury woven 2.webp";
+import HandcraftedLuxury from "../../assets/luxury woven 1.webp";
 
 const storyImages = [StoryImg1, StoryImg2, StoryImg3, StoryImg4, StoryImg1, StoryImg2, StoryImg3, StoryImg4];
-const detailImages = [Detail1, Detail2, Detail7, Detail8, Detail1, Detail2, Detail7, Detail8];
+const detailImages = [
+    SeasonImg1,
+    SeasonImg2,
+    SeasonImg3,
+    SeasonImg4,
+    SeasonImg5,
+    SeasonImg1,
+    SeasonImg2,
+    SeasonImg3,
+    SeasonImg4,
+    SeasonImg5
+];
 
 const heroImages = [LegacyImage];
 const labels = {
@@ -540,6 +554,71 @@ export default function OurStory() {
                             Season after season, we refine, rethink and elevate everything we do, always moving forward.
                         </motion.p>
                     </div>
+                </div>
+            </section>
+
+            {/* Luxury Woven into Every Design Section */}
+            <section className="bg-white pt-16 pb-10 sm:pt-24 sm:pb-12 font-outfit">
+                <div className="max-w-[1700px] mx-auto px-6 sm:px-10 lg:px-20 flex flex-col items-center">
+                    <div className="max-w-[1200px] text-center">
+                        <motion.h3 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1 }}
+                            style={{ fontFamily: "'Playfair Display', serif" }}
+                            className="text-[#AD1E1E] text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-light italic mb-8"
+                        >
+                            Luxury Woven into Every Design
+                        </motion.h3>
+                        <motion.p 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1, delay: 0.2 }}
+                            className="text-[#1a1a1a] text-sm sm:text-lg md:text-xl lg:text-[19px] font-light leading-relaxed tracking-wide max-w-full lg:max-w-[1400px] mx-auto whitespace-normal"
+                        >
+                            At Panorama Exports, luxury is not simply added — it is thoughtfully woven into every design we create. From the first sketch to the final stitch, every garment reflects a seamless blend of creativity, craftsmanship, and attention to detail. Our team’s visionary approach is shaped by analysing the latest global trend reports and receiving valuable daily feedback from our customers.
+                        </motion.p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Upper Showcase Image Section */}
+            <section className="w-full pb-0 overflow-hidden bg-gray-50 h-[50vh] sm:h-[75vh] lg:h-[85vh]">
+                <div className="w-full h-full overflow-hidden">
+                    <img 
+                        src={HandcraftedLuxury} 
+                        alt="Handcrafted Luxury Showcase" 
+                        loading="eager"
+                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                    />
+                </div>
+            </section>
+
+            {/* Evolving Fashion Sensibilities Section */}
+            <section className="bg-[#F9F6F1] pt-12 pb-16 sm:pt-16 sm:pb-20 font-outfit">
+                <div className="max-w-[1700px] mx-auto px-6 sm:px-10 lg:px-20 flex flex-col items-center">
+                    <div className="max-w-[1200px] text-center">
+                        <motion.p 
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 1 }}
+                            className="text-gray-600 text-sm sm:text-lg md:text-xl lg:text-[20px] leading-[1.9] font-light tracking-wide px-4"
+                        >
+                            By staying closely connected to evolving fashion sensibilities, we are able to authentically interpret — and often intuitively anticipate — our customers’ desires with precision and elegance.
+                        </motion.p>
+                    </div>
+                </div>
+            </section>
+
+            {/* Single Showcase Image Section */}
+            <section className="w-full pb-0 overflow-hidden bg-gray-50 h-[50vh] sm:h-[75vh] lg:h-[85vh]">
+                <div className="w-full h-full overflow-hidden">
+                    <img 
+                        src={WeavingLuxury} 
+                        alt="Weaving Brilliance Showcase" 
+                        loading="eager"
+                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                    />
                 </div>
             </section>
 

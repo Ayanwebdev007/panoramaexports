@@ -2,64 +2,64 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-// Import dummy images
-import Detail1 from "../../assets/Details/detail-1.webp";
-import Detail2 from "../../assets/Details/detail-2.webp";
-import Detail7 from "../../assets/Details/detail-7.webp";
-import Detail8 from "../../assets/Details/detail-8.webp";
-import StoryImg1 from "../../assets/OurStory/02.webp";
-import StoryImg2 from "../../assets/OurStory/03.webp";
-import StoryImg3 from "../../assets/OurStory/04.webp";
+// Import milestone images from milestones images folder
+import Milestone1973 from "../../assets/milestones images/1973.webp";
+import Milestone1980 from "../../assets/milestones images/1980.webp";
+import Milestone1990 from "../../assets/milestones images/1990.webp";
+import Milestone2000 from "../../assets/milestones images/2000.webp";
+import Milestone2010 from "../../assets/milestones images/2010.webp";
+import Milestone2024 from "../../assets/milestones images/2024.webp";
+import Milestone2025 from "../../assets/milestones images/2025.webp";
 
 export const milestones = [
     {
         id: "1973",
         year: "1973",
         title: "Founded",
-        text: "Founded with a vision to blend craftsmanship with global appeal.",
-        image: Detail1,
+        text: "Founded with a vision to bring Indian craft to a global audience.",
+        image: Milestone1973,
     },
     {
         id: "1980s",
         year: "1980s",
         title: "Modern Technology",
-        text: "Embraced modern stamped technology, laid foundation for future-ready manufacturing.",
-        image: Detail2,
+        text: "Adopted modern technology, building a strong foundation for future-ready manufacturing.",
+        image: Milestone1980,
     },
     {
         id: "1990s",
         year: "1990s",
         title: "International Expansion",
-        text: "Expanded internationally; deepened global collaborations.",
-        image: Detail7,
+        text: "Expanded internationally, strengthening global partnerships and collaborations.",
+        image: Milestone1990,
     },
     {
         id: "2000",
         year: "2000",
-        title: "Growth",
-        text: "",
-        image: Detail8,
+        title: "Scaling Operations",
+        text: "Continued to scale operations while enhancing manufacturing capabilities and processes.",
+        image: Milestone2000,
     },
     {
         id: "2010",
         year: "2010",
-        title: "Sustainability & Efficiency",
-        text: "We’ve launched ESG-driven sustainability programs that blend environmental sensitivity with critical prediction—creating impact for both society and industry development. Established state-of-the-art manufacturing units in Faridabad, enhancing production capabilities and elevating delivery efficiency.",
-        image: StoryImg1,
+        title: "Advanced Manufacturing",
+        text: "Established advanced manufacturing units in Faridabad, improving efficiency and delivery.",
+        image: Milestone2010,
     },
     {
         id: "2024",
         year: "2024",
-        title: "Global Reach",
-        text: "Powered by 5,000+ skilled hands, we craft 12 million garments a year-now growing stronger with a new fabric warehouse fuelling global reach. Unit-3 (Plot-11) A fresh stitch in time! This unit joined the fashion brigade with cutting-edge capabilities.",
-        image: StoryImg2,
+        title: "Infrastructure & Innovation",
+        text: "Expanded capabilities with new infrastructure, strengthening production and innovation.\n\nWe have introduced ESG-led initiatives that bring together people, responsible processes, and strong partnerships to create long-term value for both society and the industry.",
+        image: Milestone2024,
     },
     {
         id: "2025",
         year: "2025",
         title: "Noida Factory Launch",
-        text: "We’ve expanded our presence with a new head office in Faridabad and launched our new factory in Noida—a benchmark where tradition meets technology and quiet luxury takes form. From production to quality control, we craft elevated essentials and rare, refined pieces for the global market.",
-        image: StoryImg3,
+        text: "Expanded with a new head office in Faridabad and a new factory in Noida, bringing together tradition and technology. From production to quality control, we create refined garments for the global market.\n\nPowered by 5,000+ skilled hands, we craft 12 million garments annually, strengthening our global reach with a new fabric warehouse.",
+        image: Milestone2025,
     },
 ];
 
@@ -126,7 +126,7 @@ const MilestoneItem = ({ milestone, index }) => {
                 >
                     {milestone.title}
                 </h3>
-                <p className="text-gray-600 text-base md:text-lg leading-relaxed font-outfit font-light">
+                <p className="whitespace-pre-line text-gray-600 text-base md:text-lg leading-relaxed font-outfit font-light">
                     {milestone.text}
                 </p>
                 <div className="mt-8 w-12 h-[1px] bg-[#AD1E1E]"></div>
