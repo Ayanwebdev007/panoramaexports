@@ -7,7 +7,6 @@ import ShivaanPng from "../../assets/Founders/shivaan.webp";
 import SidharthPng from "../../assets/Founders/Sidharth.webp";
 import AmitPng from "../../assets/AMIT FINAL.jpeg";
 import KritiPng from "../../assets/Gemini_Generated_Image_jtuumnjtuumnjtuu.png";
-import AprajitaPng from "../../assets/Aparajita.png";
 import LeadershipBanner from "../../assets/5 Exacting Standards.webp";
 import FabricTexture from "../../assets/backgrounds/fabric-texture.webp";
 
@@ -70,16 +69,6 @@ const executiveDirectors = [
         message: `Panorama Exports has built a strong foundation over the years, and I’m excited to lead its next phase of transformation. Our focus is on strengthening innovation, enhancing our design-led approach, and building a more agile and future-ready organization. By empowering our teams and nurturing strong global partnerships, we aim to drive sustainable growth and long-term success.`,
     },
     {
-        id: 5,
-        name: "Aprajita Verma",
-        role: "Vice President",
-        bg: AprajitaPng,
-        img: AprajitaPng,
-        objectPosition: "center 20%",
-        modalPosition: "center 20%",
-        message: `At Panorama Exports, leadership is built on collaboration, trust, and a shared pursuit of excellence. Working with dedicated teams and global partners allows us to constantly innovate and deliver value through strong product and design capabilities. It is a privilege to contribute to the company’s growth and future direction. It is inspiring to work alongside passionate individuals who share a common vision of growth and building lasting partnerships.`,
-    },
-    {
         id: 4,
         name: "Kriti Tewary",
         role: "Lead - Sustainability",
@@ -94,28 +83,33 @@ const executiveDirectors = [
 const seniorManagement = [
     {
         number: "01",
-        name: "Robert K. Sterling",
-        role: "VICE PRESIDENT - MARKETING BOARD"
+        name: "Kriti",
+        role: "General Manager HR & Compliance"
     },
     {
         number: "02",
-        name: "Andrew Schmidt",
-        role: "VICE PRESIDENT - SALES AND MARKETING"
+        name: "Mudita Ahuja",
+        role: "VP Design Marketing"
     },
     {
         number: "03",
-        name: "David B. Allen",
-        role: "VICE PRESIDENT - FINANCE & ACCOUNTS"
+        name: "Shija Lal",
+        role: "AVP Business Development"
     },
     {
         number: "04",
-        name: "John Mitchell",
-        role: "PRESIDENT - CORPORATE AFFAIRS"
+        name: "Suresh Sharma",
+        role: "GM Business Development"
     },
     {
         number: "05",
-        name: "Patricia Donnelly",
-        role: "COMPANY SECRETARY & COMPLIANCE OFFICER"
+        name: "Vandana Mukhi",
+        role: "AGM Merchandising"
+    },
+    {
+        number: "06",
+        name: "Janet Kulke",
+        role: "Design Manager UK"
     }
 ];
 

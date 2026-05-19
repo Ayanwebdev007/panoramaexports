@@ -44,8 +44,6 @@ import testmon2 from "../assets/testmon2.JPG";
 import testmon3 from "../assets/testmon3.JPG";
 import testmon4 from "../assets/testmon4.jpg";
 import GSR from "../assets/GSR.jpg";
-import narendraImg from "../assets/Gemini_Generated_Image_qnvlj4qnvlj4qnvl.png";
-import aprajitaImg from "../assets/Aparajita.png";
 
 
 // Hero data
@@ -129,15 +127,6 @@ const testimonials = [
         department: "",
         image: GSR,
         text: "My 20-year journey & being the Head of Sampling, has been an inspiring experience. Watching our organization grow into a global leader fills me with immense pride. It stands as a testament to our shared vision, commitment, and the power of teamwork. I truly believe great teams always achieve great victories.",
-        objectPosition: "object-center"
-    },
-    {
-        id: 5,
-        name: "Narendra Nath",
-        designation: "GM - HR, Compliance & Admin",
-        department: "",
-        image: narendraImg,
-        text: "As the GM – HR, Compliance & Admin, I have witnessed how Panorama Exports prioritizes its people, maintains strong compliance standards, and fosters a culture of accountability and respect. The organization’s dedication to continuous improvement and responsible business practices makes it a trusted partner for employees, clients, and stakeholders.",
         objectPosition: "object-center"
     },
     {

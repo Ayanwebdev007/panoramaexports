@@ -47,7 +47,6 @@ import wd2 from "../../assets/WD2.webp";
 import wd3 from "../../assets/WD3.webp";
 import testmon4 from "../../assets/testmon4.jpg";
 import GSR from "../../assets/GSR.jpg";
-import narendraImg from "../../assets/Gemini_Generated_Image_qnvlj4qnvlj4qnvl.png";
 
 import TeamworkImage from "../../assets/People/TeamWork1.webp";
 import ForwardThinkingImage from "../../assets/People/ForwardThinking1.webp";
