@@ -30,7 +30,7 @@ import SeasonImg5 from "../../assets/Where every season begins/5.webp";
 import WeavingLuxury from "../../assets/luxury woven 2.webp";
 import HandcraftedLuxury from "../../assets/luxury woven 1.webp";
 
-const storyImages = [StoryImg1, StoryImg2, StoryImg3, StoryImg4, StoryImg1, StoryImg2, StoryImg3, StoryImg4];
+const storyImages = [StoryImg2, StoryImg3, StoryImg1, StoryImg4, StoryImg2, StoryImg3, StoryImg1, StoryImg4];
 const detailImages = [
     SeasonImg1,
     SeasonImg2,
@@ -178,14 +178,14 @@ export default function OurStory() {
             <section className="w-full pb-0 sm:pb-0">
                 <Swiper
                     modules={[Pagination, FreeMode]}
-                    spaceBetween={0}
-                    slidesPerView={1.2}
+                    spaceBetween={15}
+                    slidesPerView={1.1}
                     breakpoints={{
                         640: {
-                            slidesPerView: 2.2,
+                            slidesPerView: 1.8,
                         },
                         1024: {
-                            slidesPerView: 2.8,
+                            slidesPerView: 2.2,
                         }
                     }}
                     centeredSlides={true}
@@ -200,7 +200,7 @@ export default function OurStory() {
                         dynamicBullets: true,
                     }}
                     grabCursor={true}
-                    className="w-full h-[50vh] sm:h-[75vh] lg:h-[85vh] bg-gray-50"
+                    className="w-full h-[40vh] sm:h-[60vh] lg:h-[70vh] bg-gray-50"
                 >
                     {storyImages.map((img, index) => (
                         <SwiperSlide key={index} className="overflow-hidden bg-gray-100">
@@ -513,11 +513,11 @@ export default function OurStory() {
             <section className="w-full pb-0">
                 <Swiper
                     modules={[Pagination, FreeMode]}
-                    spaceBetween={0}
-                    slidesPerView={1.2}
+                    spaceBetween={15}
+                    slidesPerView={1.1}
                     breakpoints={{
-                        640: { slidesPerView: 2.2 },
-                        1024: { slidesPerView: 2.8 }
+                        640: { slidesPerView: 1.8 },
+                        1024: { slidesPerView: 2.2 }
                     }}
                     centeredSlides={true}
                     loop={true}
@@ -525,7 +525,7 @@ export default function OurStory() {
                     freeMode={{ enabled: true, momentum: true }}
                     pagination={{ clickable: true, dynamicBullets: true }}
                     grabCursor={true}
-                    className="w-full h-[50vh] sm:h-[75vh] lg:h-[85vh] bg-gray-50"
+                    className="w-full h-[40vh] sm:h-[60vh] lg:h-[70vh] bg-gray-50"
                 >
                     {detailImages.map((img, index) => (
                         <SwiperSlide key={index} className="overflow-hidden bg-gray-100">

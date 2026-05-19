@@ -157,8 +157,8 @@ const PurposeCards = () => {
                 {/* Section Header */}
                 <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 text-left">
                     <div className="flex-1">
-                        <h2 className="text-2xl sm:text-3xl md:text-5xl font-light text-[#AD1E1E] mb-4">
-                            Our Purpose
+                        <h2 className="text-xl sm:text-2xl md:text-4xl font-light text-[#AD1E1E] mb-4">
+                            Our Approach to Delivery
                         </h2>
                         <p className="text-sm md:text-lg text-gray-600 font-light max-w-2xl text-justify">
                             To enrich lives by building a dynamic, responsible, and trusted global enterprise.

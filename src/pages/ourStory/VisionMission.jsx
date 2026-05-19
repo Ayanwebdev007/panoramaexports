@@ -10,11 +10,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import bgImage from "../../assets/OurStory/visionMission/main_bg.webp";
+import bgImage from "../../assets/Legacy/final.webp";
 import CoreValues from "./CoreValues";
 
 
-import VisionImage from "../../assets/OurStory/visionMission/Vision.webp";
 import MissionImage from "../../assets/OurStory/visionMission/Mission.webp";
 import FabricTexture from "../../assets/backgrounds/fabric-texture.webp";
 
@@ -193,74 +192,54 @@ export default function VisionMission() {
 
 
 
-            {/* Modern Staggered Vision & Mission Section */}
-            <section id="vision-values" className="bg-white py-16 md:py-24 font-outfit">
-                <div className="max-w-[1700px] mx-auto px-6 lg:px-20">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1 }}
-                        className="mb-12 md:mb-16 text-center"
-                    >
-                        <h2 className="text-[#AD1E1E] text-xl md:text-3xl font-light tracking-[0.2em] uppercase mb-6">
-                            Our Mission & Vision
-                        </h2>
-                        <div className="w-24 h-[1px] bg-[#AD1E1E] mx-auto opacity-30"></div>
-                    </motion.div>
-
-                    <div className="flex flex-col gap-16 md:gap-24 items-center">
-                        {/* Mission - Staggered Left Image */}
+            {/* Redesigned Mission & Vision Section */}
+            <section id="vision-values" className="bg-[#AD1E1E] py-16 md:py-24 font-outfit text-white">
+                <div className="max-w-[1400px] mx-auto px-6 lg:px-20">
+                    <div className="flex flex-col md:flex-row items-center gap-12 md:gap-20">
+                        {/* Left Column: Mission Image */}
                         <motion.div 
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, x: -50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 1 }}
-                            className="flex flex-col md:flex-row items-center gap-8 md:gap-16 w-full max-w-[1200px]"
+                            transition={{ duration: 1, ease: "easeOut" }}
+                            className="w-full md:w-1/2"
                         >
-                            <div className="w-full md:w-1/2 aspect-[16/9] overflow-hidden bg-gray-50 border border-gray-100 shadow-sm group">
+                            <div className="overflow-hidden rounded-[20px] border-[4px] border-white shadow-2xl aspect-[16/10] bg-white/10">
                                 <img
                                     src={MissionImage}
-                                    alt="Our Mission"
-                                    className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
+                                    alt="Panorama Mission"
+                                    className="w-full h-full object-cover"
                                 />
-                            </div>
-                            <div className="w-full md:w-1/2 text-center md:text-left px-4">
-                                <h3 className="text-lg md:text-xl font-light text-[#AD1E1E] mb-4 tracking-[0.2em] uppercase">
-                                    Mission
-                                </h3>
-                                <p className="text-gray-500 text-base md:text-lg leading-relaxed font-light max-w-md mx-auto md:mx-0">
-                                    To exceed expectations through
-                                    innovation, efficiency, and a
-                                    people-first culture — redefining
-                                    global apparel manufacturing.
-                                </p>
                             </div>
                         </motion.div>
 
-                        {/* Vision - Staggered Right Image */}
+                        {/* Right Column: Mission & Vision Text */}
                         <motion.div 
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, x: 50 }}
+                            whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
-                            transition={{ duration: 1, delay: 0.2 }}
-                            className="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-16 w-full max-w-[1200px]"
+                            transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+                            className="w-full md:w-1/2 flex flex-col justify-center text-left"
                         >
-                            <div className="w-full md:w-1/2 aspect-[16/9] overflow-hidden bg-gray-50 border border-gray-100 shadow-sm group">
-                                <img
-                                    src={VisionImage}
-                                    alt="Our Vision"
-                                    className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
-                                />
+                            {/* Mission */}
+                            <div className="mb-12">
+                                <h3 className="text-2xl md:text-3xl font-semibold text-white tracking-[0.1em] uppercase mb-2">
+                                    Mission
+                                </h3>
+                                <div className="w-20 h-[1.5px] bg-white/30 mb-4"></div>
+                                <p className="text-white/95 text-base md:text-lg leading-relaxed font-light max-w-xl">
+                                    To exceed expectations through innovation, efficiency, and a people-first culture — redefining global apparel manufacturing.
+                                </p>
                             </div>
-                            <div className="w-full md:w-1/2 text-center md:text-right px-4">
-                                <h3 className="text-lg md:text-xl font-light text-[#AD1E1E] mb-4 tracking-[0.2em] uppercase">
+
+                            {/* Vision */}
+                            <div>
+                                <h3 className="text-2xl md:text-3xl font-semibold text-white tracking-[0.1em] uppercase mb-2">
                                     Vision
                                 </h3>
-                                <p className="text-gray-500 text-base md:text-lg leading-relaxed font-light max-w-md mx-auto md:ml-auto md:mr-0">
-                                    To be the world’s most trusted apparel
-                                    partner, championing technology,
-                                    sustainability, and design excellence.
+                                <div className="w-20 h-[1.5px] bg-white/30 mb-4"></div>
+                                <p className="text-white/95 text-base md:text-lg leading-relaxed font-light max-w-xl">
+                                    To be the world’s most trusted apparel partner, championing technology, sustainability, and design excellence.
                                 </p>
                             </div>
                         </motion.div>

@@ -75,17 +75,37 @@ const MilestoneItem = ({ milestone, index }) => {
         <div 
             id={`milestone-${milestone.id}`}
             ref={ref}
-            className={`flex flex-col md:flex-row items-center justify-between mb-24 md:mb-40 last:mb-0 ${
+            className={`flex flex-col md:flex-row items-center justify-between mb-24 md:mb-40 last:mb-0 relative z-10 ${
                 isEven ? "md:flex-row" : "md:flex-row-reverse"
             }`}
         >
+            {/* Connecting Vertical Line Segment (Desktop) */}
+            <div 
+                className={`hidden md:block absolute left-1/2 top-0 w-[2px] -translate-x-1/2 z-0 transition-colors duration-700 ease-in-out ${
+                    inView ? "bg-[#AD1E1E]" : "bg-gray-100"
+                }`}
+                style={{
+                    height: index === milestones.length - 1 ? "100%" : "calc(100% + 10rem)"
+                }}
+            />
+
+            {/* Connecting Vertical Line Segment (Mobile) */}
+            <div 
+                className={`md:hidden absolute left-[-12px] top-0 w-[2px] z-0 transition-colors duration-700 ease-in-out ${
+                    inView ? "bg-[#AD1E1E]" : "bg-gray-100"
+                }`}
+                style={{
+                    height: index === milestones.length - 1 ? "100%" : "calc(100% + 6rem)"
+                }}
+            />
+
             {/* Image Side */}
             <motion.div 
                 initial={{ opacity: 0, x: isEven ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, ease: "easeOut" }}
-                className="w-full md:w-[55%] relative group"
+                className="w-full md:w-[55%] relative group z-10"
             >
                 <div className="overflow-hidden bg-gray-100 aspect-[16/10]">
                     <img 
@@ -98,9 +118,13 @@ const MilestoneItem = ({ milestone, index }) => {
                 <div 
                     className={`hidden md:block absolute top-10 ${
                         isEven ? "-right-12" : "-left-12"
-                    } z-10 bg-white px-8 py-4 shadow-2xl`}
+                    } z-20 px-8 py-4 shadow-2xl transition-all duration-700 ease-in-out ${
+                        inView ? "bg-[#AD1E1E] text-white" : "bg-white text-[#AD1E1E]"
+                    }`}
                 >
-                    <span className="text-4xl font-light tracking-[0.1em] text-[#AD1E1E] font-outfit">
+                    <span className={`text-4xl font-light tracking-[0.1em] font-outfit transition-colors duration-700 ${
+                        inView ? "text-white" : "text-[#AD1E1E]"
+                    }`}>
                         {milestone.year}
                     </span>
                 </div>
@@ -112,14 +136,22 @@ const MilestoneItem = ({ milestone, index }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-                className={`w-full md:w-[40%] mt-8 md:mt-0 ${
+                className={`w-full md:w-[40%] mt-8 md:mt-0 relative z-10 ${
                     isEven ? "md:pl-12" : "md:pr-12"
                 }`}
             >
-                <div className="md:hidden mb-4">
-                    <span className="text-3xl font-light tracking-[0.1em] text-[#AD1E1E] font-outfit">
-                        {milestone.year}
-                    </span>
+                <div className="md:hidden mb-4 relative z-10">
+                    <div 
+                        className={`inline-block px-5 py-2 shadow-md border border-gray-100 rounded-sm transition-all duration-700 ease-in-out ${
+                            inView ? "bg-[#AD1E1E] text-white" : "bg-white text-[#AD1E1E]"
+                        }`}
+                    >
+                        <span className={`text-2xl font-light tracking-[0.1em] font-outfit transition-colors duration-700 ${
+                            inView ? "text-white" : "text-[#AD1E1E]"
+                        }`}>
+                            {milestone.year}
+                        </span>
+                    </div>
                 </div>
                 <h3 
                     className="text-xl md:text-2xl font-light mb-4 text-[#AD1E1E] leading-tight font-outfit uppercase tracking-[0.2em]"

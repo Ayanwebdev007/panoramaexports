@@ -94,27 +94,27 @@ const executiveDirectors = [
 const seniorManagement = [
     {
         number: "01",
-        name: "Ravi Kumar Sharma",
+        name: "Robert K. Sterling",
         role: "VICE PRESIDENT - MARKETING BOARD"
     },
     {
         number: "02",
-        name: "Aditya Sharma",
+        name: "Andrew Schmidt",
         role: "VICE PRESIDENT - SALES AND MARKETING"
     },
     {
         number: "03",
-        name: "Deepak B Asopa",
+        name: "David B. Allen",
         role: "VICE PRESIDENT - FINANCE & ACCOUNTS"
     },
     {
         number: "04",
-        name: "Joshua Madhuker",
+        name: "John Mitchell",
         role: "PRESIDENT - CORPORATE AFFAIRS"
     },
     {
         number: "05",
-        name: "Pooja Daftary",
+        name: "Patricia Donnelly",
         role: "COMPANY SECRETARY & COMPLIANCE OFFICER"
     }
 ];
@@ -149,10 +149,10 @@ export default function Leadership() {
                         transition={{ duration: 1.2, ease: "easeOut" }}
                     >
                         <h1 className="text-xl md:text-2xl lg:text-3xl font-light text-[#AD1E1E] mb-6 tracking-[0.3em] uppercase">
-                            Our Visionary Leadership
+                            Building a Legacy of Excellence
                         </h1>
                         <p className="max-w-[850px] mx-auto text-gray-600 text-base md:text-xl font-light leading-relaxed tracking-wide mb-16">
-                            A visionary team bringing together decades of craftsmanship, technical mastery, and design-led innovation.
+                            Panorama has built a legacy defined by visionary leadership, enduring values, and a lasting impact on the industry.
                         </p>
 
                         {/* Side-cut Banner Image Container (styled exactly like vision hero) */}
@@ -181,7 +181,7 @@ export default function Leadership() {
                         className="space-y-6"
                     >
                         <p className="text-gray-600 text-base md:text-lg lg:text-xl font-light leading-relaxed text-justify md:text-center">
-                            At Panorama Exports, leadership is built on collaboration, trust, and a shared pursuit of excellence. Working with dedicated teams and global partners allows us to constantly innovate and deliver value through strong product and design capabilities, carrying forward a rich heritage of craft while shaping a future defined by responsibility, respect, and sustainable growth.
+                            Leadership at Panorama goes beyond driving results for today. It involves building strong foundations, enabling teams to thrive, and setting benchmarks that influence the future of the industry. Through a progressive and purposeful approach, Panorama delivers sustained performance, meaningful transformation, and lasting value.
                         </p>
                         <div className="w-24 h-[1px] bg-[#AD1E1E] mx-auto opacity-30 mt-8"></div>
                     </motion.div>
@@ -192,7 +192,7 @@ export default function Leadership() {
             <section className="bg-gray-50/50 pt-10 pb-10 md:pt-12 md:pb-12">
                 <div className="w-[90%] mx-auto px-4 sm:px-6 md:px-10 lg:px-20 mb-16 text-center">
                     <h2 className="text-2xl md:text-4xl font-light text-[#AD1E1E] font-outfit tracking-[0.2em] mb-4 uppercase">
-                        Board of Directors
+                        Our Visionary Leaders
                     </h2>
                     <div className="w-24 h-[1px] bg-[#AD1E1E] mx-auto opacity-30"></div>
                 </div>

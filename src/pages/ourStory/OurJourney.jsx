@@ -3,12 +3,13 @@ import { motion } from "framer-motion";
 import Milestones from "./Milestones";
 import TimelineNav from "./TimelineNav";
 import FabricTexture from "../../assets/backgrounds/fabric-texture.webp";
+import MilestoneFirstImage from "../../assets/MILESTONE FIRST IMAGE.webp";
 
 export default function OurJourney() {
     return (
         <div className="bg-white min-h-screen pt-12 font-outfit">
             {/* Hero Section */}
-            <section className="relative bg-[#F9F6F1] py-16 md:py-28 overflow-hidden">
+            <section className="relative bg-[#F9F6F1] pt-16 md:pt-28 pb-0 overflow-hidden">
                 {/* Subtle Fabric Background for Texture */}
                 <div
                     className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none"
@@ -30,9 +31,19 @@ export default function OurJourney() {
                         >
                             Our Journey
                         </h1>
-                        <p className="max-w-[750px] mx-auto text-gray-600 text-base md:text-xl font-light leading-relaxed tracking-wide">
+                        <p className="max-w-[750px] mx-auto text-gray-600 text-base md:text-xl font-light leading-relaxed tracking-wide mb-16">
                             Since 1973, Panorama Exports has evolved from a small workshop into a global powerhouse of garment manufacturing. This is the story of our growth, our innovations, and our commitment to excellence.
                         </p>
+
+                        {/* Featured Journey Hero Image */}
+                        <div className="relative w-full max-w-[1400px] mx-auto aspect-[21/10] overflow-hidden shadow-sm group border border-gray-100 bg-white">
+                            <img
+                                src={MilestoneFirstImage}
+                                alt="Panorama Journey Banner"
+                                className="w-full h-full object-cover transition-transform duration-[3s] group-hover:scale-105"
+                            />
+                            <div className="absolute inset-0 bg-black/5"></div>
+                        </div>
                     </motion.div>
                 </div>
             </section>
@@ -53,13 +64,10 @@ export default function OurJourney() {
                         className="p-10 md:p-20 bg-white shadow-sm border border-gray-100"
                     >
                         <h2 
-                            className="text-2xl md:text-4xl font-light text-[#AD1E1E] mb-6 tracking-[0.1em]"
+                            className="text-2xl md:text-4xl font-light text-[#AD1E1E] tracking-[0.15em] font-outfit uppercase"
                         >
-                            THE JOURNEY OF A THOUSAND STITCHES BEGINS WITH A SINGLE THREAD.
+                            OUR JOURNEY CONTINUES......
                         </h2>
-                        <p className="text-gray-600 text-base md:text-lg font-light max-w-[750px] mx-auto leading-relaxed">
-                            Today, we stand at the intersection of heritage and high technology, continuing to craft garments that represent the best of global fashion. Our journey continues with every season, every collection, and every partnership.
-                        </p>
                     </motion.div>
                 </div>
             </section>
