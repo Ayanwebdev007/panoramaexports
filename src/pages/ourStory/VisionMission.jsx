@@ -10,7 +10,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import bgImage from "../../assets/Legacy/final.webp";
+import bgImage from "../../assets/OurStory/visionMission/main_bg.webp";
 import CoreValues from "./CoreValues";
 
 

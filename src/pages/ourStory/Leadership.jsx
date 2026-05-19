@@ -7,7 +7,7 @@ import ShivaanPng from "../../assets/Founders/shivaan.webp";
 import SidharthPng from "../../assets/Founders/Sidharth.webp";
 import AmitPng from "../../assets/AMIT FINAL.jpeg";
 import KritiPng from "../../assets/Gemini_Generated_Image_jtuumnjtuumnjtuu.png";
-import LeadershipBanner from "../../assets/5 Exacting Standards.webp";
+import LeadershipBanner from "../../assets/Legacy/final.webp";
 import FabricTexture from "../../assets/backgrounds/fabric-texture.webp";
 
 const directors = [
