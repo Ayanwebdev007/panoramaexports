@@ -20,6 +20,7 @@ export default function Navbar({ setIsNewsletterOpen }) {
     const [scrolled, setScrolled] = useState(false);
     const [hoveredIndex, setHoveredIndex] = useState(null);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [activeMobileIndex, setActiveMobileIndex] = useState(null);
     const timeoutRef = useRef(null);
 
     const navItems = [
@@ -109,16 +110,35 @@ export default function Navbar({ setIsNewsletterOpen }) {
                     
                     {/* Left: Nav Links (First 4) */}
                     <div className="flex-1 flex justify-start items-center gap-x-1 xl:gap-x-2">
-                        {navItems.slice(0, 4).map((item, index) => (
-                            <Link
-                                key={index}
-                                to={item.path}
-                                onMouseEnter={() => handleMouseEnter(index)}
-                                className={`text-[#AD1E1E] text-[10px] xl:text-[11px] font-medium tracking-[0.1em] hover:text-black transition-all duration-300 uppercase whitespace-nowrap py-4 px-1.5 ${hoveredIndex === index ? "opacity-60" : ""}`}
-                            >
-                                {item.label}
-                            </Link>
-                        ))}
+                        {navItems.slice(0, 4).map((item, index) => {
+                            const hasSubItems = !!item.subItems;
+                            return hasSubItems ? (
+                                <button
+                                    key={index}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        if (hoveredIndex === index) {
+                                            setIsMenuOpen(!isMenuOpen);
+                                        } else {
+                                            handleMouseEnter(index);
+                                        }
+                                    }}
+                                    onMouseEnter={() => handleMouseEnter(index)}
+                                    className={`text-[#AD1E1E] text-[10px] xl:text-[11px] font-medium tracking-[0.1em] hover:text-black transition-all duration-300 uppercase whitespace-nowrap py-4 px-1.5 focus:outline-none ${hoveredIndex === index ? "opacity-60" : ""}`}
+                                >
+                                    {item.label}
+                                </button>
+                            ) : (
+                                <Link
+                                    key={index}
+                                    to={item.path}
+                                    onMouseEnter={() => handleMouseEnter(index)}
+                                    className={`text-[#AD1E1E] text-[10px] xl:text-[11px] font-medium tracking-[0.1em] hover:text-black transition-all duration-300 uppercase whitespace-nowrap py-4 px-1.5 ${hoveredIndex === index ? "opacity-60" : ""}`}
+                                >
+                                    {item.label}
+                                </Link>
+                            );
+                        })}
                     </div>
 
                     {/* Center: Logo */}
@@ -132,7 +152,24 @@ export default function Navbar({ setIsNewsletterOpen }) {
                     <div className="flex-1 flex justify-end items-center gap-x-2 xl:gap-x-3">
                         {navItems.slice(4).map((item, index) => {
                             const actualIndex = index + 4;
-                            return (
+                            const hasSubItems = !!item.subItems;
+                            return hasSubItems ? (
+                                <button
+                                    key={actualIndex}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        if (hoveredIndex === actualIndex) {
+                                            setIsMenuOpen(!isMenuOpen);
+                                        } else {
+                                            handleMouseEnter(actualIndex);
+                                        }
+                                    }}
+                                    onMouseEnter={() => handleMouseEnter(actualIndex)}
+                                    className={`text-[#AD1E1E] text-[10px] xl:text-[11px] font-medium tracking-[0.1em] hover:text-black transition-all duration-300 uppercase whitespace-nowrap py-4 px-1.5 focus:outline-none ${hoveredIndex === actualIndex ? "opacity-60" : ""}`}
+                                >
+                                    {item.label}
+                                </button>
+                            ) : (
                                 <Link
                                     key={actualIndex}
                                     to={item.path}
@@ -259,31 +296,89 @@ export default function Navbar({ setIsNewsletterOpen }) {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="fixed inset-0 z-50 bg-white">
+                <div className="fixed inset-0 z-50 bg-white overflow-y-auto">
                     <button
-                        className="absolute top-4 right-4 text-gray-900 text-2xl"
-                        onClick={() => setIsOpen(false)}
+                        className="absolute top-4 right-4 text-gray-900 text-2xl z-10"
+                        onClick={() => {
+                            setIsOpen(false);
+                            setActiveMobileIndex(null);
+                        }}
                     >
                         ✕
                     </button>
-                    <ul className="flex flex-col items-center justify-center h-full space-y-6 text-[#AD1E1E] text-lg uppercase font-medium tracking-widest">
-                        {navItems.map((item, index) => (
-                            <li key={index}>
-                                <Link to={item.path} onClick={() => setIsOpen(false)}>
-                                    {item.label}
-                                </Link>
-                            </li>
-                        ))}
-                        <li>
+                    <ul className="flex flex-col items-center justify-center min-h-full py-20 space-y-6 text-[#AD1E1E] text-lg uppercase font-medium tracking-widest w-[80%] mx-auto">
+                        {navItems.map((item, index) => {
+                            const hasSubItems = !!item.subItems;
+                            const isMobileActive = activeMobileIndex === index;
+                            return (
+                                <li key={index} className="w-full text-center">
+                                    {hasSubItems ? (
+                                        <div className="flex flex-col items-center w-full">
+                                            <button
+                                                onClick={() => setActiveMobileIndex(isMobileActive ? null : index)}
+                                                className="uppercase font-medium tracking-widest text-[#AD1E1E] hover:text-black transition-colors text-lg flex items-center justify-center gap-1 py-2 focus:outline-none w-full"
+                                            >
+                                                {item.label}
+                                                <IoMdArrowDropdown 
+                                                    className={`transition-transform duration-300 ${isMobileActive ? "rotate-180" : ""}`} 
+                                                    size={20}
+                                                />
+                                            </button>
+                                            
+                                            {/* Sub-items accordion */}
+                                            <AnimatePresence>
+                                                {isMobileActive && (
+                                                    <motion.ul
+                                                        initial={{ opacity: 0, height: 0 }}
+                                                        animate={{ opacity: 1, height: "auto" }}
+                                                        exit={{ opacity: 0, height: 0 }}
+                                                        transition={{ duration: 0.3 }}
+                                                        className="mt-2 space-y-3 bg-gray-50/50 py-3 rounded-md w-full text-center flex flex-col items-center"
+                                                    >
+                                                        {item.subItems.map((sub, idx) => (
+                                                            <li key={idx} className="w-full">
+                                                                <Link 
+                                                                    to={sub.path} 
+                                                                    onClick={() => {
+                                                                        setIsOpen(false);
+                                                                        setActiveMobileIndex(null);
+                                                                    }}
+                                                                    className="text-gray-700 hover:text-[#AD1E1E] transition-colors text-sm tracking-wide block py-1 font-light"
+                                                                >
+                                                                    {sub.label}
+                                                                </Link>
+                                                            </li>
+                                                        ))}
+                                                    </motion.ul>
+                                                )}
+                                            </AnimatePresence>
+                                        </div>
+                                    ) : (
+                                        <Link 
+                                            to={item.path} 
+                                            onClick={() => setIsOpen(false)}
+                                            className="uppercase font-medium tracking-widest text-[#AD1E1E] hover:text-black transition-colors text-lg block py-2"
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    )}
+                                </li>
+                            );
+                        })}
+                        <li className="w-full">
                             <button 
-                                onClick={() => { setIsOpen(false); setIsNewsletterOpen(true); }}
-                                className="uppercase font-medium tracking-widest text-[#AD1E1E] hover:text-black transition-colors"
+                                onClick={() => { 
+                                    setIsOpen(false); 
+                                    setActiveMobileIndex(null);
+                                    setIsNewsletterOpen(true); 
+                                }}
+                                className="uppercase font-medium tracking-widest text-[#AD1E1E] hover:text-black transition-colors text-lg w-full py-2"
                             >
                                 Newsletter
                             </button>
                         </li>
-                        <li>
-                            <Link to="/contactus" onClick={() => setIsOpen(false)}>
+                        <li className="w-full">
+                            <Link to="/contactus" onClick={() => setIsOpen(false)} className="uppercase font-medium tracking-widest text-[#AD1E1E] hover:text-black transition-colors text-lg block py-2">
                                 Contact Us
                             </Link>
                         </li>

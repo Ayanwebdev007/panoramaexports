@@ -1,15 +1,82 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+import React from "react";
 import AutoPlayVideo from "../../components/AutoPlayVideo";
 
 import video from "../../assets/Crafted_Precision/Manufacturing_Excellence/1st-big-pic.mp4";
 import mfg1 from "../../assets/Crafted_Precision/Manufacturing_Excellence/Small1stPic.webp";
 import mfg2 from "../../assets/Crafted_Precision/Manufacturing_Excellence/Small2ndPic.webp";
 import mfg3 from "../../assets/Crafted_Precision/Manufacturing_Excellence/Small3rdPic.webp";
+
+function MfgExcellence() {
+    return (
+        <div className="bg-[#fafafa] min-h-screen font-outfit text-gray-900 pb-20">
+            {/* Header Spacer to account for fixed navbar */}
+            <div className="w-full h-12 md:h-16 lg:h-20 bg-[#fafafa]"></div>
+            
+            <main className="max-w-[1700px] mx-auto px-4 md:px-8 lg:px-12">
+                {/* Header Section */}
+                <header className="flex flex-col items-center justify-center text-center mt-6 md:mt-12 mb-10 md:mb-16 w-full overflow-hidden">
+                    <h1 
+                        className="text-3xl md:text-4xl lg:text-[40px] xl:text-[46px] font-light italic tracking-tight text-gray-700 mb-4 md:mb-6"
+                        style={{ fontFamily: "'Playfair Display', serif" }}
+                    >
+                        Technical Mastery
+                    </h1>
+                    <p className="text-lg md:text-xl lg:text-2xl font-light text-[#AD1E1E] max-w-5xl tracking-wide leading-relaxed">
+                        Technical mastery at Panorama Exports is driven by a strong foundation of industry knowledge, skilled craftsmanship, and advanced manufacturing capabilities.
+                    </p>
+                </header>
+
+                {/* Video Section */}
+                <div className="w-full mx-auto mb-16 md:mb-28 rounded-2xl overflow-hidden shadow-md aspect-video relative group">
+                    <AutoPlayVideo
+                        src={video}
+                        loopTime={5000}
+                        className="w-full h-full"
+                        videoClassName="w-full h-full object-cover"
+                        bgColor="#f3f4f6"
+                    />
+                </div>
+
+                {/* Main Text Section */}
+                <div className="flex justify-center mb-16 md:mb-28">
+                    <p className="text-base md:text-lg lg:text-[1.35rem] font-light text-gray-800 text-justify max-w-[1550px] leading-[1.8] tracking-wide">
+                        Every garment is developed through carefully managed processes that focus on precision, efficiency, and consistency at every stage of production. From pattern engineering and garment construction to fabric handling, finishing, and production planning, our technical expertise ensures every product is developed to meet exact specifications and performance expectations. We work closely with brands and partners to refine fits, improve functionality, and maintain consistency across every collection.
+                    </p>
+                </div>
+
+                {/* Three Images Section */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 mb-16 md:mb-28">
+                    <div className="overflow-hidden rounded-xl shadow-sm group h-full">
+                        <img src={mfg1} alt="Premium Quality Fabric 1" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                    </div>
+                    <div className="overflow-hidden rounded-xl shadow-sm group h-full">
+                        <img src={mfg2} alt="Premium Quality Fabric 2" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                    </div>
+                    <div className="overflow-hidden rounded-xl shadow-sm group h-full">
+                        <img src={mfg3} alt="Premium Quality Fabric 3" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                    </div>
+                </div>
+
+                {/* Bottom Text Section */}
+                <div className="flex justify-center mb-12">
+                    <p className="text-base md:text-lg lg:text-xl font-light text-gray-600 text-center max-w-4xl leading-relaxed tracking-wide">
+                        By combining craftsmanship with modern manufacturing capabilities, we are able to adapt to changing market requirements while maintaining high standards of quality and reliability. Continuous learning, process optimisation, and innovation remain central to our approach, allowing us to deliver garments that reflect both technical precision and lasting value.
+                    </p>
+                </div>
+            </main>
+        </div>
+    );
+}
+
+// ==========================================
+// LEGACY CONTENT - Preserved for future use
+// ==========================================
+import { useEffect, useRef, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 // const mfgImages = [
 //     {
@@ -33,7 +100,7 @@ const VisionImages = [
     },
 ];
 
-function MfgExcellence() {
+function LegacyMfgExcellence() {
     const swiperRef = useRef(null);
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 

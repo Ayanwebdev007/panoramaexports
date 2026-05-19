@@ -1,15 +1,83 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
+import AutoPlayVideo from "../../components/AutoPlayVideo";
+
+import video from "../../assets/QUALITY ASSURANCE/mp_.mp4";
+import aet1 from "../../assets/QUALITY ASSURANCE/Art in every thread.png";
+import aet2 from "../../assets/QUALITY ASSURANCE/CM100146.JPG";
+import aet3 from "../../assets/QUALITY ASSURANCE/3.png";
+
+function ExactingStandards() {
+    return (
+        <div className="bg-[#fafafa] min-h-screen font-outfit text-gray-900 pb-20">
+            {/* Header Spacer to account for fixed navbar */}
+            <div className="w-full h-12 md:h-16 lg:h-20 bg-[#fafafa]"></div>
+            
+            <main className="max-w-[1700px] mx-auto px-4 md:px-8 lg:px-12">
+                {/* Header Section */}
+                <header className="flex flex-col items-center justify-center text-center mt-6 md:mt-12 mb-10 md:mb-16 w-full overflow-hidden">
+                    <h1 
+                        className="text-3xl md:text-4xl lg:text-[40px] xl:text-[46px] font-light italic tracking-tight text-gray-700 mb-4 md:mb-6"
+                        style={{ fontFamily: "'Playfair Display', serif" }}
+                    >
+                        Quality Assurance
+                    </h1>
+                    <p className="text-lg md:text-xl lg:text-2xl font-light text-[#AD1E1E] max-w-4xl tracking-wide leading-relaxed">
+                        Quality assurance at Panorama Exports is driven by precision, consistency, and strong attention to detail.
+                    </p>
+                </header>
+
+                {/* Video Section */}
+                <div className="w-full mx-auto mb-16 md:mb-28 rounded-2xl overflow-hidden shadow-md aspect-video relative group">
+                    <AutoPlayVideo
+                        src={video}
+                        loopTime={5000}
+                        className="w-full h-full"
+                        videoClassName="w-full h-full object-cover"
+                        bgColor="#f3f4f6"
+                    />
+                </div>
+
+                {/* Main Text Section */}
+                <div className="flex justify-center mb-16 md:mb-28">
+                    <p className="text-base md:text-lg lg:text-[1.35rem] font-light text-gray-800 text-justify max-w-[1400px] leading-[1.8] tracking-wide">
+                        Our dedicated experts carry out detailed inspections, precision testing, and continuous evaluations to ensure every garment meets the highest standards of quality and consistency. From fabric and stitching to fit, finishing, colour accuracy, and durability, each product is carefully assessed before reaching our clients. By combining skilled craftsmanship with structured quality management practices, we maintain reliability and attention to detail across every collection.
+                    </p>
+                </div>
+
+                {/* Three Images Section */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 mb-16 md:mb-28">
+                    <div className="overflow-hidden rounded-xl shadow-sm group h-full">
+                        <img src={aet1} alt="Premium Quality Fabric 1" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                    </div>
+                    <div className="overflow-hidden rounded-xl shadow-sm group h-full">
+                        <img src={aet2} alt="Premium Quality Fabric 2" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                    </div>
+                    <div className="overflow-hidden rounded-xl shadow-sm group h-full">
+                        <img src={aet3} alt="Premium Quality Fabric 3" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                    </div>
+                </div>
+
+                {/* Bottom Text Section */}
+                <div className="flex justify-center mb-12">
+                    <p className="text-base md:text-lg lg:text-xl font-light text-gray-600 text-center max-w-4xl leading-relaxed tracking-wide">
+                        At Panorama, quality is not simply about meeting expectations — it is about delivering products our partners can rely on and building long-term relationships through trust, consistency, and dependable craftsmanship.
+                    </p>
+                </div>
+            </main>
+        </div>
+    );
+}
+
+// ==========================================
+// LEGACY CONTENT - Preserved for future use
+// ==========================================
+
+import { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import AutoPlayVideo from "../../components/AutoPlayVideo";
-
-import video from "../../assets/Crafted_Precision/Exacting_Standards/1st-big-pic.mp4";
-import aet1 from "../../assets/Crafted_Precision/Exacting_Standards/1.webp";
-import aet2 from "../../assets/Crafted_Precision/Exacting_Standards/Small2.webp";
-import aet3 from "../../assets/Crafted_Precision/Exacting_Standards/3.webp";
 
 // const mfgImages = [
 //     {
@@ -18,7 +86,7 @@ import aet3 from "../../assets/Crafted_Precision/Exacting_Standards/3.webp";
 //     },
 // ];
 
-function ExactingStandards() {
+function LegacyExactingStandards() {
     const swiperRef = useRef(null);
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 

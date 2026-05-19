@@ -1,4 +1,76 @@
-import React from 'react'
+import React from "react";
+import AutoPlayVideo from "../../components/AutoPlayVideo";
+
+import video from "../../assets/DESIGN & DEVELOPMENT/Weaving Excellence.mp4";
+import aet1 from "../../assets/DESIGN & DEVELOPMENT/S1.JPG";
+import aet2 from "../../assets/DESIGN & DEVELOPMENT/S2.JPG";
+import aet3 from "../../assets/DESIGN & DEVELOPMENT/P3 (1).png";
+
+function CraftedPrecision() {
+    return (
+        <div className="bg-[#fafafa] min-h-screen font-outfit text-gray-900 pb-20">
+            {/* Header Spacer to account for fixed navbar */}
+            <div className="w-full h-12 md:h-16 lg:h-20 bg-[#fafafa]"></div>
+            
+            <main className="max-w-[1700px] mx-auto px-4 md:px-8 lg:px-12">
+                {/* Header Section */}
+                <header className="flex flex-col items-center justify-center text-center mt-6 md:mt-12 mb-10 md:mb-16 w-full overflow-hidden">
+                    <h1 
+                        className="text-3xl md:text-4xl lg:text-[40px] xl:text-[46px] font-light italic tracking-tight text-gray-700 mb-4 md:mb-6"
+                        style={{ fontFamily: "'Playfair Display', serif" }}
+                    >
+                        Design & Development
+                    </h1>
+                    <p className="text-lg md:text-xl lg:text-2xl font-light text-[#AD1E1E] max-w-4xl tracking-wide leading-relaxed">
+                        At Panorama Exports, design and development are driven by a deep understanding of evolving fashion, functionality, and consumer expectations.
+                    </p>
+                </header>
+
+                {/* Video Section */}
+                <div className="w-full mx-auto mb-16 md:mb-28 rounded-2xl overflow-hidden shadow-md aspect-video relative group">
+                    <AutoPlayVideo
+                        src={video}
+                        loopTime={5000}
+                        className="w-full h-full"
+                        videoClassName="w-full h-full object-cover"
+                        bgColor="#f3f4f6"
+                    />
+                </div>
+
+                {/* Main Text Section */}
+                <div className="flex justify-center mb-16 md:mb-28">
+                    <p className="text-base md:text-lg lg:text-[1.35rem] font-light text-gray-800 text-justify max-w-[1400px] leading-[1.8] tracking-wide">
+                        From trend research and fabric selection to sampling and fit refinement, each stage of design and development is carefully considered to ensure every detail feels right. Our team works closely with brands and partners to transform concepts into thoughtfully developed garments that combine style, comfort, and functionality. By blending innovative thinking with technical precision, we create products that not only look refined but are designed to perform in everyday life.
+                    </p>
+                </div>
+
+                {/* Three Images Section */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 mb-16 md:mb-28">
+                    <div className="overflow-hidden rounded-xl shadow-sm group">
+                        <img src={aet1} alt="Premium Quality Fabric 1" className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-105" />
+                    </div>
+                    <div className="overflow-hidden rounded-xl shadow-sm group">
+                        <img src={aet2} alt="Premium Quality Fabric 2" className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-105" />
+                    </div>
+                    <div className="overflow-hidden rounded-xl shadow-sm group">
+                        <img src={aet3} alt="Premium Quality Fabric 3" className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-105" />
+                    </div>
+                </div>
+
+                {/* Bottom Text Section */}
+                <div className="flex justify-center mb-12">
+                    <p className="text-base md:text-lg lg:text-xl font-light text-gray-600 text-center max-w-4xl leading-relaxed tracking-wide">
+                        We also recognise the importance of responsible development. By integrating conscious sourcing and mindful manufacturing practices, we strive to create products that reflect a more sustainable approach to fashion.
+                    </p>
+                </div>
+            </main>
+        </div>
+    );
+}
+
+// ==========================================
+// LEGACY CONTENT - Preserved for future use
+// ==========================================
 import { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -49,7 +121,7 @@ const craftedP = [
     },
 ];
 
-function CraftedPrecision() {
+function LegacyCraftedPrecision() {
     const [activeIndex, setActiveIndex] = useState(0);
     const [paused, setPaused] = useState(false); // track pause state
 
@@ -130,4 +202,4 @@ function CraftedPrecision() {
     );
 }
 
-export default CraftedPrecision
+export default CraftedPrecision;
