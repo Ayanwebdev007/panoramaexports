@@ -10,36 +10,40 @@ import HandcraftedImg from "../../assets/Handcrafted-Luxury.webp";
 function InnovationThatLeads() {
     const stackingItems = [
         {
-            id: "innovation-leads-stack",
+            id: "digital-precision",
             img: CadImg,
-            title: "CAD & 3D Draping",
-            description: "Visualizing designs with precision before production",
+            title: "Digital Precision",
+            description: "CAD and 3D Draping Visualising designs with precision before production. Our digital capabilities allow us to refine fit, form, and detail early in the process, ensuring efficiency and accuracy at every stage.",
             alignItems: "items-start pt-12",
             justifyContent: "justify-end",
             containerPadding: "pl-[5%] md:pl-[10%] pr-2 md:pr-4"
         },
         {
+            id: "weaving-brilliance",
             img: WeavingImg,
             title: "Weaving Brilliance",
-            description: "From loom to luxury, we unite cutting-edge fabric innovation with eco-conscious materials and refined finishing—infusing every creation with the artistry and heritage of Made in India.",
+            description: "Weaving Brilliance Focused on fabric development and performance. From yarn to fabric, we work closely with mills to ensure consistency, quality, and responsible material selection.",
             alignItems: "items-start pt-12",
             justifyContent: "justify-start",
             containerPadding: "pr-[5%] md:pr-[10%] pl-2 md:pl-4"
         },
         {
+            id: "operational-intelligence",
             img: OperationalImg,
-            title: "Operational Excellence",
-            description: "Systems for faster, cleaner, better production. It’s an art blending innovation with craftsmanship to reduce waste, enhance efficiency, and deliver quality that speaks for itself."
+            title: "Operational Intelligence",
+            description: "Operational Excellence Building systems for efficient, consistent, and high-quality production. From material selection to process optimization, we focus on reducing impact while improving efficiency and quality. We continuously improve our processes to enhance productivity and deliver dependable results."
         },
         {
+            id: "evolving-methodologies",
             img: UbtImg,
-            title: "UBT Sewing Technology",
-            description: "Seam integrity meets advanced performance. We engineer resilience into every stitch—using ultra-bond thread technology to create seams that endure, perform, and excel in high-intensity outerwear."
+            title: "Evolving Methodologies",
+            description: "Advanced Manufacturing Strength engineered into every seam. Through advanced sewing techniques, including UBT sewing and ultra-bond thread technologies, we enhance durability and performance, especially for high-intensity garments."
         },
         {
+            id: "refined-craft",
             img: HandcraftedImg,
-            title: "Handcrafted Luxury",
-            description: "Rooted in tradition, designed for tomorrow. Each piece reflects generational wisdom, modern refinement, and the soulful artistry of “Made in India.”",
+            title: "Refined Craft",
+            description: "Handcrafted Luxury Rooted in tradition and shaped for the future. Each piece reflects skilled craftsmanship, refined detailing, and the enduring value of Made in India.",
             alignItems: "items-start pt-12",
             justifyContent: "justify-end",
             containerPadding: "pl-[5%] md:pl-[10%] pr-2 md:pr-4"

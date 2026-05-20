@@ -52,11 +52,11 @@ export default function Navbar({ setIsNewsletterOpen }) {
             path: "/innovation",
             featuredImage: innovationSubImg,
             subItems: [
-                { label: "Digital Precision", path: "/innovation/innovationleads" },
-                { label: "Weaving Brilliance", path: "/innovation/standardperfection" },
-                { label: "Operational Intelligence", path: "/innovation" },
-                { label: "Evolving Methodologies", path: "/innovation" },
-                { label: "Refined Craft", path: "/innovation/handcraftedluxury" },
+                { label: "Digital Precision", path: "/innovation#digital-precision" },
+                { label: "Weaving Brilliance", path: "/innovation#weaving-brilliance" },
+                { label: "Operational Intelligence", path: "/innovation#operational-intelligence" },
+                { label: "Evolving Methodologies", path: "/innovation#evolving-methodologies" },
+                { label: "Refined Craft", path: "/innovation#refined-craft" },
             ],
         },
         {

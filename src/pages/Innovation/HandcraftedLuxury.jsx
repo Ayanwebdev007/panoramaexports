@@ -1,11 +1,16 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import InnovationStack from "../../components/Innovation/InnovationStack";
+import InnovationBreadcrumb from "../../components/Innovation/InnovationBreadcrumb";
 
 import HlImg1 from "../../assets/Innovation/HandcraftedLuxury/1.webp";
 import HlImg2 from "../../assets/Innovation/HandcraftedLuxury/2.webp";
 import HlImg3 from "../../assets/Innovation/HandcraftedLuxury/03.webp";
 
 const HandcraftedLuxury = () => {
+    const location = useLocation();
+    const isStandalone = location.pathname.includes("/handcraftedluxury");
+
     const stackingItems = [
         {
             img: HlImg1,
@@ -24,13 +29,29 @@ const HandcraftedLuxury = () => {
         }
     ];
 
-    return (
+    const content = (
         <section className="bg-blue-950">
             <InnovationStack items={stackingItems} />
             {/* Spacer for scroll depth */}
             <div className="h-24 bg-blue-950" />
         </section>
     );
+
+    if (isStandalone) {
+        return (
+            <div className="bg-[#fafafa] min-h-screen font-outfit text-gray-900 pb-20">
+                {/* Header Spacer to account for fixed navbar */}
+                <div className="w-full h-12 md:h-16 lg:h-20 bg-[#fafafa]"></div>
+                
+                {/* Reusable Innovation Breadcrumb */}
+                <InnovationBreadcrumb />
+
+                {content}
+            </div>
+        );
+    }
+
+    return content;
 };
 
 export default HandcraftedLuxury;

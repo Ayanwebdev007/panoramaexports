@@ -1,8 +1,13 @@
 import React from 'react'
+import { useLocation } from "react-router-dom";
 import SegregatedCertifications from '../../components/SegregatedCertifications';
+import InnovationBreadcrumb from '../../components/Innovation/InnovationBreadcrumb';
 
 function StandardOfPerfection() {
-    return (
+    const location = useLocation();
+    const isStandalone = location.pathname.includes("/standardperfection");
+
+    const content = (
         <>
             <div className="text-[#01276a] mt-0 w-[90%] mx-auto lg:pt-14 lg:pb-0 md:pt-10 md:pb-0 sm:pt-8 sm:pb-0 pt-6 pb-0 px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">
                 <div className="flex items-center justify-center pt-0">
@@ -27,6 +32,22 @@ function StandardOfPerfection() {
             <SegregatedCertifications />
         </>
     );
+
+    if (isStandalone) {
+        return (
+            <div className="bg-[#fafafa] min-h-screen font-outfit text-gray-900 pb-20">
+                {/* Header Spacer to account for fixed navbar */}
+                <div className="w-full h-12 md:h-16 lg:h-20 bg-[#fafafa]"></div>
+                
+                {/* Reusable Innovation Breadcrumb */}
+                <InnovationBreadcrumb />
+
+                {content}
+            </div>
+        );
+    }
+
+    return content;
 }
 
 export default StandardOfPerfection

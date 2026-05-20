@@ -71,7 +71,7 @@ export default function AppRoutes() {
 
             <Route
                 path="/innovation/innovationleads"
-                element={<InnovationThatLeads />}
+                element={<Innovation />}
             />
             <Route
                 path="/innovation/standardperfection"
