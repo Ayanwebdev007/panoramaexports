@@ -13,6 +13,7 @@ import lookbookImg from "../assets/lookbook1.webp";
 import peopleImg from "../assets/people-hero-demo.webp";
 import responsibilityDropdownImg from "../assets/responsibility dropdown.webp";
 import mediaImg from "../assets/AMIT FINAL.jpeg";
+import logoImg from "../assets/panorama final logo.png";
 
 export default function Navbar({ setIsNewsletterOpen }) {
     const location = useLocation();
@@ -63,8 +64,8 @@ export default function Navbar({ setIsNewsletterOpen }) {
             path: "/responsibility",
             featuredImage: responsibilityDropdownImg,
             subItems: [
-                { label: "Responsible Craft", path: "/responsibility" },
-                { label: "Certifications", path: "/certificates" },
+                { label: "Responsible Craft", path: "/responsibility#responsible-craft" },
+                { label: "Certifications", path: "/responsibility#certifications" },
                 { label: "Corporate Social Responsibility", path: "/responsibility#csr" },
             ],
         },
@@ -101,7 +102,7 @@ export default function Navbar({ setIsNewsletterOpen }) {
     return (
         <nav
             onMouseLeave={handleMouseLeave}
-            className="bg-white border-b border-gray-100 shadow-sm fixed top-0 left-0 right-0 z-50 transition-all duration-500 w-full lg:h-12 h-10"
+            className="bg-white border-b border-gray-100 shadow-sm fixed top-0 left-0 right-0 z-50 transition-all duration-500 w-full lg:h-16 h-12"
         >
             <div className="w-full px-4 lg:px-8 xl:px-12 h-full flex items-center">
                 
@@ -144,7 +145,11 @@ export default function Navbar({ setIsNewsletterOpen }) {
                     {/* Center: Logo */}
                     <div className="flex-none flex justify-center items-center px-6">
                         <Link to="/" className="flex items-center">
-                            <span className="text-[16px] xl:text-[18px] font-bold tracking-[0.15em] text-[#AD1E1E] whitespace-nowrap">PANORAMA EXPORTS</span>
+                            <img
+                                src={logoImg}
+                                alt="Panorama Exports Logo"
+                                className="h-10 lg:h-14 w-auto object-contain"
+                            />
                         </Link>
                     </div>
 
@@ -210,7 +215,11 @@ export default function Navbar({ setIsNewsletterOpen }) {
                     {/* Centered Mobile Logo */}
                     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                         <Link to="/" className="flex items-center">
-                            <span className="text-[13px] font-bold tracking-[0.1em] text-[#AD1E1E] whitespace-nowrap">PANORAMA EXPORTS</span>
+                            <img
+                                src={logoImg}
+                                alt="Panorama Exports Logo"
+                                className="h-10 w-auto object-contain"
+                            />
                         </Link>
                     </div>
 

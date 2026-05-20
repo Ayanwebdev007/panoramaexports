@@ -68,7 +68,7 @@ const RegenerativeCycle = () => {
             <div className="cycle-content">
                 <h2 className="cycle-title font-outfit font-bold">
                     Responsible Craft <br />
-                    <span className="font-light text-blue-900 leading-tight block mt-2 text-xl lg:text-2xl max-w-sm lg:max-w-md">Thoughtful Manufacturing for People, Partners and Planet</span>
+                    <span className="font-light text-[#AD1E1E]/85 leading-tight block mt-2 text-xl lg:text-2xl max-w-sm lg:max-w-md">Thoughtful Manufacturing for People, Partners and Planet</span>
                 </h2>
                 <p className="cycle-description font-outfit">
                     At Panorama, responsibility is not defined by a single initiative—it is reflected in the way we work, every single day.

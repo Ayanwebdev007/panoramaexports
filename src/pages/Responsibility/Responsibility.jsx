@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 import { IoEnterOutline } from "react-icons/io5";
 import {
     Droplet,
@@ -22,9 +23,14 @@ import img2 from "../../assets/Responsible/pic2.webp";
 import img3 from "../../assets/Responsible/pic3.webp";
 import img4 from "../../assets/Responsible/Full.webp";
 
+import rImg1 from "../../assets/responsibility images final/3 (3).JPG";
+import rImg2 from "../../assets/responsibility images final/DSC03041 (1).JPG";
+import rImg3 from "../../assets/responsibility images final/DSC03065 (2).JPG";
+import rImg4 from "../../assets/responsibility images final/pic 2.JPG";
+
 import cimg1 from "../../assets/Responsible/Corporate/1.webp";
-import cimg2 from "../../assets/Responsible/Corporate/2.webp";
-import cimg3 from "../../assets/Responsible/Corporate/3.webp";
+import empoweringImg from "../../assets/empowering communities.jpeg";
+import inclusiveImg from "../../assets/inclusive growth.JPG";
 
 import cert1 from "../../assets/Responsible/certificate/gots.webp";
 import cert2 from "../../assets/Responsible/certificate/grs.webp";
@@ -34,7 +40,35 @@ import wasteImg from "../../assets/waste-diversion.webp";
 import sroiImg from "../../assets/sroi-impact.webp";
 import esgImg from "../../assets/CM100387 copy.jpg";
 import RegenerativeCycle from "../../components/RegenerativeCycle/RegenerativeCycle";
+
+// Import ESG Certifications
+import certIcon1 from "../../assets/Certificates/cert-1.webp";
+import certIcon2 from "../../assets/Certificates/cert-2.webp";
+import certIcon3 from "../../assets/Certificates/oeko-tex-new.webp";
+import certIcon4 from "../../assets/Certificates/cuc-new.webp";
+import certIcon5 from "../../assets/Certificates/cert-6.webp";
+import certIcon6 from "../../assets/Certificates/cert-3.webp";
+import certIcon7 from "../../assets/Certificates/cert-4.webp";
+import certIcon8 from "../../assets/Certificates/gmp-new.webp";
+import certIcon9 from "../../assets/Certificates/PDCA.webp";
+import certIcon10 from "../../assets/Certificates/cert-7.webp";
+import certIcon11 from "../../assets/Certificates/cert-8.webp";
+
 import "./Responsibility.css";
+
+const esgCerts = [
+    certIcon1,
+    certIcon2,
+    certIcon3,
+    certIcon4,
+    certIcon5,
+    certIcon6,
+    certIcon7,
+    certIcon8,
+    certIcon9,
+    certIcon10,
+    certIcon11
+];
 
 const icons = [
     {
@@ -67,12 +101,12 @@ const csrItems = [
     },
     {
         id: 2,
-        image: cimg2,
+        image: empoweringImg,
         title: "Empowering Communities",
     },
     {
         id: 3,
-        image: cimg3,
+        image: inclusiveImg,
         title: "Inclusive Growth",
     },
 ];
@@ -99,18 +133,52 @@ const certifications = [
 ];
 
 function Responsibility() {
+    const location = useLocation();
 
-
-
+    useEffect(() => {
+        if (location.hash) {
+            const id = location.hash.replace("#", "");
+            const element = document.getElementById(id);
+            if (element) {
+                setTimeout(() => {
+                    const yOffset = -80; // adjust for navbar height
+                    const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+                    window.scrollTo({ top: y, behavior: "smooth" });
+                }, 100);
+            }
+        } else {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    }, [location]);
 
     return (
-        <div className="font-outfit">
-            <div className="h-10 md:h-12 lg:h-20 w-full bg-gray-900"></div>
-            <div className="mesh-gradient-bg lg:py-20 py-12 px-2 sm:px-6 md:px-10 lg:px-20">
-                <h1 className="text-3xl sm:text-4xl md:text-6xl font-light text-white text-center font-outfit">
-                    Responsibility
-                </h1>
-            </div>
+        <div className="font-outfit bg-white pt-10 lg:pt-12">
+            
+            {/* Hero Section */}
+            <section id="responsible-craft" className="relative bg-[#F9F6F1] pt-16 md:pt-24 pb-12 overflow-hidden">
+                <div className="relative z-10 max-w-[1700px] mx-auto px-6 sm:px-10 lg:px-20 text-center font-outfit">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1.2, ease: "easeOut" }}
+                    >
+                        <h1 
+                            style={{ fontFamily: "'Playfair Display', serif" }}
+                            className="text-2xl sm:text-3xl md:text-4xl lg:text-[40px] font-light italic text-[#AD1E1E] mb-6 tracking-wide"
+                        >
+                            Our Sustainability Commitments
+                        </h1>
+                        <div className="max-w-[1100px] mx-auto text-gray-600 text-sm md:text-lg font-light leading-relaxed tracking-wide space-y-6 text-center">
+                            <p>
+                                At Panorama, our identity is defined by the people who shape it every day — from our teams and partners to the customers who place their trust in us. Together, we continue to build a journey grounded in craftsmanship, collaboration, and long-term vision.
+                            </p>
+                            <p>
+                                We believe progress should be purposeful. That is why we continue to strengthen our commitment to innovation, inclusivity, and sustainable practices across every part of our business. Guided by authenticity and responsibility, we focus on meaningful actions, continuous learning, and creating positive impact that extends beyond products and production.
+                            </p>
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
 
             {/* Regenerative Cycle Section */}
             <div className="lg:w-[90%] w-full mx-auto px-2 sm:px-6 md:px-10 lg:px-20">
@@ -144,28 +212,35 @@ function Responsibility() {
                 ))}
             </section> */}
 
-            {/* Images Area - Premium Layout */}
+            {/* Images Area - Premium 4-Column Layout */}
             <section className="px-2 sm:px-6 md:px-10 lg:px-20 mb-12">
-                <div className="lg:w-[90%] w-full mx-auto grid sm:grid-cols-3 grid-cols-1 gap-6">
+                <div className="lg:w-[90%] w-full mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div className="overflow-hidden rounded-2xl group shadow-lg hover:shadow-2xl transition-all duration-500">
                         <img
-                            src={img1}
-                            alt="Sustainable Manufacturing"
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            src={rImg1}
+                            alt="Responsible Manufacturing"
+                            className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-110"
                         />
                     </div>
                     <div className="overflow-hidden rounded-2xl group shadow-lg hover:shadow-2xl transition-all duration-500">
                         <img
-                            src={img2}
-                            alt="Ethical Sourcing"
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            src={rImg2}
+                            alt="Ethical Production"
+                            className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-110"
                         />
                     </div>
                     <div className="overflow-hidden rounded-2xl group shadow-lg hover:shadow-2xl transition-all duration-500">
                         <img
-                            src={img3}
+                            src={rImg3}
+                            alt="Sustainable Practices"
+                            className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-110"
+                        />
+                    </div>
+                    <div className="overflow-hidden rounded-2xl group shadow-lg hover:shadow-2xl transition-all duration-500">
+                        <img
+                            src={rImg4}
                             alt="Community Impact"
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            className="w-full h-auto object-contain transition-transform duration-700 group-hover:scale-110"
                         />
                     </div>
                 </div>
@@ -173,12 +248,12 @@ function Responsibility() {
             <div className="w-[90%] w-full mx-auto 2xl:py-16 md:py-10 py-5 px-2 sm:px-6 md:px-10 lg:px-20">
                 {/* Our Approaches */}
                 <section className="lg:my-16 md:my-10 my-5 flex flex-col justify- items-center md:gap-10 gap-5">
-                    <p className="text-lg sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-light text-[#01276a] leading-snug text-center">
+                    <p className="text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light text-[#AD1E1E] leading-snug text-center font-outfit uppercase tracking-[0.15em]">
                         Sustainability is stitched into everything we do
                     </p>
-                    <div className="text-gray-700 2xl:text-xl lg:text-lg text-sm leading-relaxed font-light text-justify">
+                    <div className="text-gray-600 2xl:text-xl lg:text-lg text-sm leading-[1.9] font-light tracking-wide text-center max-w-[1100px] mx-auto">
                         Responsible sourcing and clean production guide our
-                        operations-powered by renewable energy, efficient
+                        operations—powered by renewable energy, efficient
                         logistics, and eco-conscious infrastructure. Ethical
                         practices, workplace safety, community upliftment,
                         transparency, and circularity define our commitment at
@@ -187,12 +262,22 @@ function Responsibility() {
                 </section>
 
 
+                {/* Certifications Header - Hidden as per request */}
+                {/* <div id="certifications" className="lg:mt-24 mt-12 mb-8">
+                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#01276a] mb-5">
+                        Our Certifications
+                    </h2>
+                    <div className="text-gray-700 2xl:text-xl lg:text-lg text-sm leading-relaxed font-light text-justify">
+                        Our compliance and certifications reflect our dedication to sustainability, quality, and ethical manufacturing practices at every stage. We hold ourselves to the highest global standards to ensure that every garment we produce is safe, sustainable, and responsible.
+                    </div>
+                </div> */}
+
                 {/* Certifications - Premium Card Layout */}
-                <section className="lg:mb-12 md:mb-10 mb-5 grid grid-cols-1 lg:grid-cols-3 gap-8 lg:mt-24 mt-12">
+                <section className="lg:mb-12 md:mb-10 mb-5 grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {certifications.map((cert) => (
                         <div
                             key={cert.id}
-                            className="flex flex-col items-center bg-slate-50 p-10 rounded-[2.5rem] shadow-[0_10px_40px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.08)] transition-all duration-500 border border-gray-100 group hover:-translate-y-2"
+                            className="flex flex-col items-center bg-[#FDF8F8] p-10 rounded-[2.5rem] shadow-[0_10px_40px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_60px_rgba(173,30,30,0.08)] transition-all duration-500 border border-red-50 group hover:-translate-y-2"
                         >
                             <div className="h-40 w-full flex items-center justify-center mb-8 px-6">
                                 <img
@@ -201,10 +286,10 @@ function Responsibility() {
                                     className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500"
                                 />
                             </div>
-                            <h3 className="font-semibold text-xl text-center text-[#01276a] mb-6 min-h-[3.5rem] flex items-center justify-center px-2">
+                            <h3 className="font-semibold text-xl text-center text-[#AD1E1E] mb-6 min-h-[3.5rem] flex items-center justify-center px-2">
                                 {cert.title}
                             </h3>
-                            <p className="text-justify leading-relaxed text-[15px] text-gray-500 font-light px-2">
+                            <p className="text-center leading-relaxed text-[15px] text-gray-500 font-light px-2">
                                 {cert.description}
                             </p>
                         </div>
@@ -212,7 +297,25 @@ function Responsibility() {
                 </section>
 
                 {/* ESG Report & Bento Grid Section */}
-                <section className="sm:pt-8 sm:pb-0 text-[#01276a] w-full mt-24 mb-12">
+                <section className="sm:pt-2 sm:pb-0 text-[#AD1E1E] w-full mt-10 sm:mt-12 mb-12 font-outfit">
+                    
+                    {/* Certifications Infinite Horizontal Scroll */}
+                    <div className="px-2 sm:px-6 md:px-10 lg:px-20 mb-12">
+                        <div className="marquee-container bg-[#FDF8F8] py-10 sm:py-12 rounded-[2rem] border border-red-50/50 shadow-[0_4px_20px_rgba(0,0,0,0.01)]">
+                            <div className="marquee-track">
+                                {[...esgCerts, ...esgCerts].map((imgSrc, idx) => (
+                                    <div key={idx} className="inline-flex items-center justify-center mx-4 sm:mx-6 h-24 sm:h-28 w-44 sm:w-52 group flex-shrink-0">
+                                        <img
+                                            src={imgSrc}
+                                            alt="Certification logo"
+                                            className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 mix-blend-multiply"
+                                        />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 px-2 sm:px-6 md:px-10 lg:px-20">
                         <div className="text-2xl sm:text-3xl md:text-5xl font-light">
                             ESG Report
@@ -230,7 +333,7 @@ function Responsibility() {
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 min-h-[500px] lg:h-[550px]">
                             {/* Column 1 */}
                             <div className="grid grid-rows-2 gap-4 h-full">
-                                <div className="bg-[#01276a] text-white p-6 rounded-lg flex flex-col justify-between relative group hover:bg-[#02388e] transition-colors duration-300">
+                                <div className="bg-[#AD1E1E] text-white p-6 rounded-lg flex flex-col justify-between relative group hover:bg-[#8B1818] transition-colors duration-300">
                                     <div>
                                         <span className="text-3xl font-light block mb-2">2X</span>
                                         <p className="text-sm font-light leading-snug">water positivity through daily operations</p>
@@ -263,7 +366,7 @@ function Responsibility() {
                                     />
                                 </div>
                                 <div className="flex-grow p-6 flex flex-col justify-center">
-                                    <span className="text-2xl font-light text-[#01276a] block mb-2">10X</span>
+                                    <span className="text-2xl font-light text-[#AD1E1E] block mb-2">10X</span>
                                     <p className="text-xs text-gray-500 font-light leading-snug uppercase tracking-widest">SROI to be accomplished</p>
                                 </div>
                             </div>
@@ -271,7 +374,7 @@ function Responsibility() {
                             {/* Column 3 - Carbon Intensity Tall Card */}
                             <div className="h-full flex flex-col bg-white border border-gray-100 rounded-lg overflow-hidden group">
                                 <div className="flex-grow p-6 flex flex-col justify-center">
-                                    <span className="text-2xl font-light text-[#01276a] block mb-2">60%</span>
+                                    <span className="text-2xl font-light text-[#AD1E1E] block mb-2">60%</span>
                                     <p className="text-xs text-gray-500 font-light leading-snug uppercase tracking-widest">Energy Save</p>
                                 </div>
                                 <div className="h-[65%] relative overflow-hidden">
@@ -281,7 +384,7 @@ function Responsibility() {
                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                                     />
                                     <div className="absolute top-4 right-4">
-                                        <ChevronsDown className="w-6 h-6 text-[#01276a] opacity-60" strokeWidth={1.2} />
+                                        <ChevronsDown className="w-6 h-6 text-[#AD1E1E] opacity-60" strokeWidth={1.2} />
                                     </div>
                                 </div>
                             </div>
@@ -302,12 +405,12 @@ function Responsibility() {
                                         <Zap className="w-6 h-6 opacity-60 self-end" strokeWidth={1.2} />
                                     </div>
                                 </div>
-                                <div className="bg-white border border-gray-200 p-6 rounded-lg flex flex-col justify-between group hover:border-[#01276a]/30 transition-colors duration-300">
+                                <div className="bg-white border border-gray-200 p-6 rounded-lg flex flex-col justify-between group hover:border-[#AD1E1E]/30 transition-colors duration-300">
                                     <div className="mt-auto">
-                                        <span className="text-2xl font-light text-[#01276a] block mb-2">100%</span>
+                                        <span className="text-2xl font-light text-[#AD1E1E] block mb-2">100%</span>
                                         <p className="text-xs text-gray-600 font-light leading-snug">inclusive communities and supply chains to be set across</p>
                                     </div>
-                                    <Globe className="w-6 h-6 text-[#01276a] opacity-60 self-end" strokeWidth={1.2} />
+                                    <Globe className="w-6 h-6 text-[#AD1E1E] opacity-60 self-end" strokeWidth={1.2} />
                                 </div>
                             </div>
                         </div>
@@ -315,8 +418,8 @@ function Responsibility() {
                 </section>
             </div>
 
-            <section className="w-[90%] mx-auto md:pb-16 pb-5 px-2 sm:px-6 md:px-10 lg:px-20">
-                <h2 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#01276a]">
+            <section id="csr" className="w-[90%] mx-auto md:pb-16 pb-5 px-2 sm:px-6 md:px-10 lg:px-20">
+                <h2 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#AD1E1E]">
                     Corporate Social Responsibility
                 </h2>
                 <div className="mt-5 md:mt-10 text-sm md:text-lg flex flex-col gap-3 font-light text-justify">
@@ -340,7 +443,7 @@ function Responsibility() {
                                 className="w-full h-full object-cover transform transition-transform duration-[4000ms] ease-out group-hover:scale-[1.1]"
                             />
                             {/* Overlay */}
-                            <div className="absolute bottom-0 h-[50%] w-full py-[10%] bg-gradient-to-t from-[#01276a]/90 via-[#01276a]/80 via-[#01276a]/50 via-[#01276a]/40 to-transparent transition-all duration-500 flex flex-col justify-end p-6">
+                            <div className="absolute bottom-0 h-[50%] w-full py-[10%] bg-gradient-to-t from-[#C4AA80]/90 via-[#C4AA80]/60 via-[#C4AA80]/30 to-transparent transition-all duration-500 flex flex-col justify-end p-6">
                                 <p className="text-white text-md md:text-lg lg:text-xl xl:text-xl font-semibold text-center whitespace-nowrap">
                                     {item.title}
                                 </p>
