@@ -273,7 +273,7 @@ function Responsibility() {
                 </div> */}
 
                 {/* Certifications - Premium Card Layout */}
-                <section className="lg:mb-12 md:mb-10 mb-5 grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <section id="certifications" className="lg:mb-12 md:mb-10 mb-5 grid grid-cols-1 lg:grid-cols-3 gap-8">
                     {certifications.map((cert) => (
                         <div
                             key={cert.id}
