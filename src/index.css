@@ -497,3 +497,23 @@ body {
   position: relative;
   z-index: 2;
 }
+
+/* Global Fixed Navbar Spacers Height Overrides to match new navbar height */
+.h-10.md\:h-12.lg\:h-20,
+.h-12.md\:h-16.lg\:h-20 {
+  height: 80px !important; /* Mobile height */
+}
+
+@media (min-width: 768px) {
+  .h-10.md\:h-12.lg\:h-20,
+  .h-12.md\:h-16.lg\:h-20 {
+    height: 96px !important; /* Tablet / MD height */
+  }
+}
+
+@media (min-width: 1024px) {
+  .h-10.md\:h-12.lg\:h-20,
+  .h-12.md\:h-16.lg\:h-20 {
+    height: 96px !important; /* Desktop / LG height */
+  }
+}

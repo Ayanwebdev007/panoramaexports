@@ -7,7 +7,7 @@ import MilestoneFirstImage from "../../assets/MILESTONE FIRST IMAGE.webp";
 
 export default function OurJourney() {
     return (
-        <div className="bg-white min-h-screen pt-12 font-outfit">
+        <div className="bg-white min-h-screen pt-20 lg:pt-24 font-outfit">
             {/* Hero Section */}
             <section className="relative bg-[#F9F6F1] pt-16 md:pt-28 pb-0 overflow-hidden">
                 {/* Subtle Fabric Background for Texture */}

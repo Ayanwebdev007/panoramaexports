@@ -44,13 +44,12 @@ function ArtInEveryThread() {
                     </p>
                 </div>
 
-                {/* Three Images Section */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 mb-16 md:mb-28">
                     <div className="overflow-hidden rounded-xl shadow-sm group">
-                        <img src={aet1} alt="Premium Quality Fabric 1" className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-105" />
+                        <img src={aet2} alt="Premium Quality Fabric 2" className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-105" />
                     </div>
                     <div className="overflow-hidden rounded-xl shadow-sm group">
-                        <img src={aet2} alt="Premium Quality Fabric 2" className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-105" />
+                        <img src={aet1} alt="Premium Quality Fabric 1" className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-105" />
                     </div>
                     <div className="overflow-hidden rounded-xl shadow-sm group">
                         <img src={aet3} alt="Premium Quality Fabric 3" className="w-full h-auto object-cover transition-transform duration-1000 group-hover:scale-105" />

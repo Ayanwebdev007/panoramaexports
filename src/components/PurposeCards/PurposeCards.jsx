@@ -4,7 +4,7 @@ import { motion, useAnimation } from "framer-motion";
 import { IoArrowForward } from "react-icons/io5";
 
 import EnrichingLives from "../../assets/CM100595.webp";
-import DynamicHeart from "../../assets/OurPurpose/2.webp";
+import DynamicHeart from "../../assets/OurPurpose/Slide 2 R Pic 2.JPG";
 import ResponsibleReverence from "../../assets/our-purpose-responsible-reverence.webp";
 import TrustCore from "../../assets/OurPurpose/Trusted.webp";
 

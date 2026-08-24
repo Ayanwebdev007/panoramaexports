@@ -3,12 +3,12 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 // Import milestone images from milestones images folder
-import Milestone1973 from "../../assets/milestones images/1973.webp";
+import Milestone1973 from "../../assets/milestones images/1973.png";
 import Milestone1980 from "../../assets/milestones images/1980.webp";
-import Milestone1990 from "../../assets/milestones images/1990.webp";
+import Milestone1990 from "../../assets/milestones images/1990.jpg";
 import Milestone2000 from "../../assets/milestones images/2000.webp";
 import Milestone2010 from "../../assets/milestones images/2010.webp";
-import Milestone2024 from "../../assets/milestones images/2024.webp";
+import Milestone2024 from "../../assets/milestones images/2024.JPG";
 import Milestone2025 from "../../assets/milestones images/2025.webp";
 
 export const milestones = [

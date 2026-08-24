@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Mail, ArrowUp, Youtube, Twitter, Linkedin } from "lucide-react";
+import { Mail, ArrowUp, Youtube, Instagram, Linkedin } from "lucide-react";
 
 const LETTERS = "REACH US".split("");
 
@@ -69,25 +69,25 @@ export default function Footer({ setIsNewsletterOpen }) {
 
                 {/* Module 1: Who We Are */}
                 <div className="lg:w-[30%] p-8 md:p-12 lg:p-16 border-b lg:border-b-0 lg:border-r border-[#AD1E1E]/10 flex flex-col justify-center">
-                    <h2 className="text-2xl md:text-3xl font-bold mb-6 tracking-tight text-[#AD1E1E] font-outfit uppercase">WHO WE ARE</h2>
-                    <p className="text-[#4b5563] font-light leading-relaxed text-base md:text-lg max-w-md">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight text-[#AD1E1E] font-outfit uppercase">WHO WE ARE</h2>
+                    <p className="text-[#4b5563] font-light leading-relaxed text-lg md:text-xl max-w-lg">
                         Since 1973, Panorama Exports has transformed fabric into global fashion, blending timeless craftsmanship with modern precision. From India to the world, every garment reflects creativity, technology, and decades of dedication.
                     </p>
                 </div>
 
                 {/* Module 2: Social Tabs */}
                 <div className="lg:w-1/6 flex flex-col border-b lg:border-b-0 lg:border-r border-[#AD1E1E]/10 min-w-[180px]">
-                    <a href="#" className="flex-1 flex items-center gap-4 p-6 md:px-8 hover:bg-black/5 transition-colors border-b border-[#AD1E1E]/10 group">
-                        <Youtube className="w-5 h-5 text-[#AD1E1E] opacity-70 group-hover:opacity-100 transition-opacity" />
-                        <span className="font-bold tracking-widest text-sm uppercase text-[#1a1a1a]">YouTube</span>
+                    <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center gap-4 p-6 md:px-8 hover:bg-black/5 transition-colors border-b border-[#AD1E1E]/10 group">
+                        <Youtube className="w-6 h-6 text-[#AD1E1E] opacity-80 group-hover:opacity-100 transition-opacity" />
+                        <span className="font-bold tracking-widest text-base md:text-lg uppercase text-[#1a1a1a] group-hover:text-[#AD1E1E] transition-colors">YouTube</span>
                     </a>
-                    <a href="#" className="flex-1 flex items-center gap-4 p-6 md:px-8 hover:bg-black/5 transition-colors border-b border-[#AD1E1E]/10 group">
-                        <Twitter className="w-5 h-5 text-[#AD1E1E] opacity-70 group-hover:opacity-100 transition-opacity" />
-                        <span className="font-bold tracking-widest text-sm uppercase text-[#1a1a1a]">Twitter</span>
+                    <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center gap-4 p-6 md:px-8 hover:bg-black/5 transition-colors border-b border-[#AD1E1E]/10 group">
+                        <Instagram className="w-6 h-6 text-[#AD1E1E] opacity-80 group-hover:opacity-100 transition-opacity" />
+                        <span className="font-bold tracking-widest text-base md:text-lg uppercase text-[#1a1a1a] group-hover:text-[#AD1E1E] transition-colors">Instagram</span>
                     </a>
-                    <a href="#" className="flex-1 flex items-center gap-4 p-6 md:px-8 hover:bg-black/5 transition-colors group">
-                        <Linkedin className="w-5 h-5 text-[#AD1E1E] opacity-70 group-hover:opacity-100 transition-opacity" />
-                        <span className="font-bold tracking-widest text-sm uppercase text-[#1a1a1a]">LinkedIn</span>
+                    <a href="https://www.linkedin.com/company/panorama-exports/" target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center gap-4 p-6 md:px-8 hover:bg-black/5 transition-colors group">
+                        <Linkedin className="w-6 h-6 text-[#AD1E1E] opacity-80 group-hover:opacity-100 transition-opacity" />
+                        <span className="font-bold tracking-widest text-base md:text-lg uppercase text-[#1a1a1a] group-hover:text-[#AD1E1E] transition-colors">LinkedIn</span>
                     </a>
                 </div>
 
@@ -106,7 +106,7 @@ export default function Footer({ setIsNewsletterOpen }) {
                     <div className="mt-12 lg:mt-0 select-none overflow-visible h-full flex items-center">
                         <h1
                             key={animKey}
-                            className="text-5xl md:text-6xl lg:text-[clamp(3.5rem,8.5vw,7.5rem)] font-bold tracking-tighter leading-[1.1] whitespace-nowrap"
+                            className="text-4xl md:text-5xl lg:text-[clamp(2.5rem,5.5vw,5rem)] font-bold tracking-tighter leading-[1.1] whitespace-nowrap"
                             style={{ display: "flex", flexWrap: "wrap" }}
                         >
                             {LETTERS.map((letter, i) =>

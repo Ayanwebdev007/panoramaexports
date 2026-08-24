@@ -54,7 +54,7 @@ import SpeedActionImage from "../../assets/People/SpeedAction1.webp";
 import CustomerCentricityImage from "../../assets/People/CustomerCentricity1.webp";
 
 import PeopleHeroPng from "../../assets/shivaan and sidharth new.webp";
-import CareerPng from "../../assets/People/Career.webp";
+import CareerPng from "../../assets/People/Discover Panorama Image.jpeg";
 
 const crumbs = [
     { label: "Our Strength", path: "#our-strength" },
@@ -374,9 +374,11 @@ function Peoples() {
 
             <section
                 id="career"
-                className="relative bg-cover md:bg-contain bg-center flex items-center justify-center min-h-[250px] sm:min-h-[300px] md:min-h-0 md:aspect-[16/5]"
+                className="relative bg-no-repeat flex items-center justify-center min-h-[250px] sm:min-h-[300px] md:min-h-0 md:aspect-[16/5]"
                 style={{
                     backgroundImage: `url(${CareerPng})`,
+                    backgroundPosition: "center 28%",
+                    backgroundSize: "145%",
                 }}
             >
                 {/* Overlay */}

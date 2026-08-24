@@ -123,7 +123,7 @@ export default function Leadership() {
     }, []);
 
     return (
-        <div className="bg-white min-h-screen pt-12 font-outfit">
+        <div className="bg-white min-h-screen pt-20 lg:pt-24 font-outfit">
             
             {/* Hero Section */}
             <section className="relative bg-[#F9F6F1] pt-16 md:pt-24 pb-0 overflow-hidden">

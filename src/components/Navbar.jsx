@@ -8,12 +8,12 @@ import { motion, AnimatePresence } from "framer-motion";
 // Import Mega-Menu Images
 import storyImg from "../assets/our-story.webp";
 import craftImg from "../assets/mastery-of-craft.webp";
-import innovationSubImg from "../assets/innovation-dropdown.webp";
+import innovationSubImg from "../assets/Drop Down Innovation that Leads.png";
 import lookbookImg from "../assets/lookbook1.webp";
 import peopleImg from "../assets/people-hero-demo.webp";
 import responsibilityDropdownImg from "../assets/responsibility dropdown.webp";
 import mediaImg from "../assets/AMIT FINAL.jpeg";
-import logoImg from "../assets/panorama final logo.png";
+import logoImg from "../assets/panorama-logo.jpeg";
 
 export default function Navbar({ setIsNewsletterOpen }) {
     const location = useLocation();
@@ -102,7 +102,7 @@ export default function Navbar({ setIsNewsletterOpen }) {
     return (
         <nav
             onMouseLeave={handleMouseLeave}
-            className="bg-white border-b border-gray-100 shadow-sm fixed top-0 left-0 right-0 z-50 transition-all duration-500 w-full lg:h-16 h-12"
+            className="bg-white border-b border-gray-100 shadow-sm fixed top-0 left-0 right-0 z-50 transition-all duration-500 w-full lg:h-24 h-20"
         >
             <div className="w-full px-4 lg:px-8 xl:px-12 h-full flex items-center">
                 
@@ -125,7 +125,7 @@ export default function Navbar({ setIsNewsletterOpen }) {
                                         }
                                     }}
                                     onMouseEnter={() => handleMouseEnter(index)}
-                                    className={`text-[#AD1E1E] text-[10px] xl:text-[11px] font-medium tracking-[0.1em] hover:text-black transition-all duration-300 uppercase whitespace-nowrap py-4 px-1.5 focus:outline-none ${hoveredIndex === index ? "opacity-60" : ""}`}
+                                    className={`text-[#AD1E1E] text-[13px] xl:text-[14px] font-medium tracking-[0.09em] xl:tracking-[0.1em] hover:text-black transition-all duration-300 uppercase whitespace-nowrap py-4 px-1.5 focus:outline-none ${hoveredIndex === index ? "opacity-60" : ""}`}
                                 >
                                     {item.label}
                                 </button>
@@ -134,7 +134,7 @@ export default function Navbar({ setIsNewsletterOpen }) {
                                     key={index}
                                     to={item.path}
                                     onMouseEnter={() => handleMouseEnter(index)}
-                                    className={`text-[#AD1E1E] text-[10px] xl:text-[11px] font-medium tracking-[0.1em] hover:text-black transition-all duration-300 uppercase whitespace-nowrap py-4 px-1.5 ${hoveredIndex === index ? "opacity-60" : ""}`}
+                                    className={`text-[#AD1E1E] text-[13px] xl:text-[14px] font-medium tracking-[0.09em] xl:tracking-[0.1em] hover:text-black transition-all duration-300 uppercase whitespace-nowrap py-4 px-1.5 ${hoveredIndex === index ? "opacity-60" : ""}`}
                                 >
                                     {item.label}
                                 </Link>
@@ -143,12 +143,12 @@ export default function Navbar({ setIsNewsletterOpen }) {
                     </div>
 
                     {/* Center: Logo */}
-                    <div className="flex-none flex justify-center items-center px-6">
+                    <div className="flex-none flex justify-center items-center px-4 lg:px-6">
                         <Link to="/" className="flex items-center">
                             <img
                                 src={logoImg}
                                 alt="Panorama Exports Logo"
-                                className="h-10 lg:h-14 w-auto object-contain"
+                                className="h-[68px] lg:h-[86px] w-auto object-contain transition-all duration-300"
                             />
                         </Link>
                     </div>
@@ -170,7 +170,7 @@ export default function Navbar({ setIsNewsletterOpen }) {
                                         }
                                     }}
                                     onMouseEnter={() => handleMouseEnter(actualIndex)}
-                                    className={`text-[#AD1E1E] text-[10px] xl:text-[11px] font-medium tracking-[0.1em] hover:text-black transition-all duration-300 uppercase whitespace-nowrap py-4 px-1.5 focus:outline-none ${hoveredIndex === actualIndex ? "opacity-60" : ""}`}
+                                    className={`text-[#AD1E1E] text-[13px] xl:text-[14px] font-medium tracking-[0.09em] xl:tracking-[0.1em] hover:text-black transition-all duration-300 uppercase whitespace-nowrap py-4 px-1.5 focus:outline-none ${hoveredIndex === actualIndex ? "opacity-60" : ""}`}
                                 >
                                     {item.label}
                                 </button>
@@ -179,14 +179,14 @@ export default function Navbar({ setIsNewsletterOpen }) {
                                     key={actualIndex}
                                     to={item.path}
                                     onMouseEnter={() => handleMouseEnter(actualIndex)}
-                                    className={`text-[#AD1E1E] text-[10px] xl:text-[11px] font-medium tracking-[0.1em] hover:text-black transition-all duration-300 uppercase whitespace-nowrap py-4 px-1.5 ${hoveredIndex === actualIndex ? "opacity-60" : ""}`}
+                                    className={`text-[#AD1E1E] text-[13px] xl:text-[14px] font-medium tracking-[0.09em] xl:tracking-[0.1em] hover:text-black transition-all duration-300 uppercase whitespace-nowrap py-4 px-1.5 ${hoveredIndex === actualIndex ? "opacity-60" : ""}`}
                                 >
                                     {item.label}
                                 </Link>
                             );
                         })}
                         <div className="h-4 w-[1px] bg-gray-200 mx-2"></div>
-                        <div className="flex items-center gap-x-2 xl:gap-x-3 text-[#AD1E1E] text-[10px] xl:text-[11px] font-medium tracking-[0.1em] uppercase whitespace-nowrap">
+                        <div className="flex items-center gap-x-2 xl:gap-x-3 text-[#AD1E1E] text-[13px] xl:text-[14px] font-medium tracking-[0.09em] xl:tracking-[0.1em] uppercase whitespace-nowrap">
                             <Link
                                 to="/media"
                                 className="hover:text-black transition-all duration-300"
@@ -218,7 +218,7 @@ export default function Navbar({ setIsNewsletterOpen }) {
                             <img
                                 src={logoImg}
                                 alt="Panorama Exports Logo"
-                                className="h-10 w-auto object-contain"
+                                className="h-[68px] w-auto object-contain"
                             />
                         </Link>
                     </div>
@@ -345,7 +345,7 @@ export default function Navbar({ setIsNewsletterOpen }) {
                                                         className="mt-2 space-y-3 bg-gray-50/50 py-3 rounded-md w-full text-center flex flex-col items-center"
                                                     >
                                                         {item.subItems.map((sub, idx) => (
-                                                            <li key={idx} className="w-full">
+                                                             <li key={idx} className="w-full">
                                                                 <Link 
                                                                     to={sub.path} 
                                                                     onClick={() => {

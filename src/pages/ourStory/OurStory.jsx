@@ -124,99 +124,8 @@ export default function OurStory() {
         <div className="text-gray-900 bg-white">
             <div className="sm:hidden w-full h-10 bg-gray-900"></div>
 
-            {/* New Our Story Header Section */}
-            <section className="relative bg-white pt-16 pb-10 sm:pt-24 sm:pb-12 font-outfit overflow-hidden">
-                {/* Subtle Fabric Background for Texture */}
-                <div
-                    className="absolute inset-0 z-0 opacity-[0.04] pointer-events-none"
-                    style={{
-                        backgroundImage: `url(${FabricTexture})`,
-                        backgroundSize: '400px',
-                        backgroundRepeat: 'repeat'
-                    }}
-                ></div>
-
-                <div className="relative z-10 max-w-[1700px] mx-auto px-6 sm:px-10 lg:px-20 flex flex-col items-center">
-                    <div className="max-w-[1300px] text-center">
-                        <motion.div
-                            initial="hidden"
-                            whileInView="visible"
-                            viewport={{ once: true, amount: 0.3 }}
-                            variants={{
-                                hidden: {},
-                                visible: { 
-                                    transition: { staggerChildren: 0.3 } 
-                                }
-                            }}
-                        >
-                            <motion.p 
-                                variants={{
-                                    hidden: { opacity: 0, y: 20 },
-                                    visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: "easeOut" } }
-                                }}
-                                style={{ fontFamily: "'Playfair Display', serif" }}
-                                className="text-[#1a1a1a] text-lg sm:text-xl md:text-2xl lg:text-[30px] xl:text-[32px] font-light italic leading-snug mb-10 tracking-tight"
-                            >
-                                Since 1973, Panorama Exports has been transforming fabric into global fashion.
-                            </motion.p>
-
-                            <motion.p 
-                                variants={{
-                                    hidden: { opacity: 0, y: 20 },
-                                    visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: "easeOut" } }
-                                }}
-                                className="text-[#AD1E1E] text-sm sm:text-base md:text-lg lg:text-[19px] leading-[2] font-light tracking-wide max-w-[950px] mx-auto"
-                            >
-                                What began as a vision rooted in craftsmanship has grown into a legacy of precision, innovation and scale. From India to the world, every garment we create carries the mark of creativity, technical expertise and an unwavering commitment to quality.
-                            </motion.p>
-                        </motion.div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Image Loop Section */}
-            <section className="w-full pb-0 sm:pb-0">
-                <Swiper
-                    modules={[Pagination, FreeMode]}
-                    spaceBetween={15}
-                    slidesPerView={1.1}
-                    breakpoints={{
-                        640: {
-                            slidesPerView: 1.8,
-                        },
-                        1024: {
-                            slidesPerView: 2.2,
-                        }
-                    }}
-                    centeredSlides={true}
-                    loop={true}
-                    loopedSlides={4}
-                    freeMode={{
-                        enabled: true,
-                        momentum: true,
-                    }}
-                    pagination={{
-                        clickable: true,
-                        dynamicBullets: true,
-                    }}
-                    grabCursor={true}
-                    className="w-full h-[40vh] sm:h-[60vh] lg:h-[70vh] bg-gray-50"
-                >
-                    {storyImages.map((img, index) => (
-                        <SwiperSlide key={index} className="overflow-hidden bg-gray-100">
-                            <img 
-                                src={img} 
-                                alt={`Story Slide ${index + 1}`} 
-                                loading="eager"
-                                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                            />
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
-            </section>
-
-            {/* Welcome Section below images */}
-            <section className="bg-[#F9F6F1] pt-12 pb-16 sm:pt-16 sm:pb-20 font-outfit">
+            {/* Welcome Section */}
+            <section className="bg-[#F9F6F1] pt-24 pb-16 lg:pt-32 lg:pb-20 font-outfit">
                 <div className="max-w-[1700px] mx-auto px-6 sm:px-10 lg:px-20 flex flex-col items-center">
                     <div className="max-w-[1200px] text-center">
                         <motion.h3 
@@ -240,102 +149,6 @@ export default function OurStory() {
                     </div>
                 </div>
             </section>
-            {/* Legacy Sections - Hidden as per request */}
-            {/* 
-            <section id="legacy" ref={legacyRef} className="bg-white">
-                <div
-                    className="relative w-full bg-black overflow-hidden flex flex-col items-start justify-end 2xl:py-28 xl:py-20 lg:py-10 md:py-5 sm:py-4 py-2"
-                    style={{ aspectRatio: "16 / 7" }}
-                >
-                    {heroImages.map((img, index) => (
-                        <div
-                            key={index}
-                            className={`absolute inset-0 transition-all duration-[1500ms] ease-in-out ${index === currentIndex
-                                ? "opacity-100 blur-0 scale-100"
-                                : "opacity-0 blur-md scale-105"
-                                }`}
-                            style={{
-                                backgroundImage: `url(${img})`,
-                                backgroundSize: "contain",
-                                backgroundPosition: "center",
-                            }}
-                        ></div>
-                    ))}
-
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
-
-                    <div className="relative z-20 text-white w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 font-semibold font-outfit">
-                        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl xl:mb-5 md:mb-4 sm:mb-3 mb-2 uppercase tracking-wider">
-                            Legacy
-                        </h1>
-                        <h2 className="text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-extralight">
-                            Where Heritage Meets Modern Luxury
-                        </h2>
-                    </div>
-                </div>
-            </section>
-            */}
-
-            {/* Breadcrumbs - Hidden as per request */}
-            {/* 
-            <div className="hidden md:block sticky lg:top-20 md:top-12 top-10 z-40 shadow-md bg-blue-950 text-lg py-3 transition-all duration-300">
-                <div className="w-[90%] mx-auto px-6 md:px-20 flex items-center justify-center gap-6">
-                    {crumbs.map((crumb, index) => (
-                        <span
-                            key={index}
-                            className="flex items-center justify-center"
-                        >
-                            <Link
-                                to={crumb.path}
-                                className={`hover:underline md:text-sm lg:text-lg sm:my-1 font-outfit ${activeCrumb === crumb.label
-                                    ? "font-semibold text-white"
-                                    : "text-gray-300"
-                                    }`}
-                            >
-                                {crumb.label}
-                            </Link>
-                        </span>
-                    ))}
-                </div>
-            </div>
-            */}
-
-            {/* Welcome Section - Hidden as per request */}
-            {/* 
-            <div className="relative sm:pt-6 pt-3 lg:pb-6 md:pb-4 pb-0 sm:px-6 px-2 overflow-hidden">
-                <div
-                    className="absolute inset-0 z-0 opacity-20 pointer-events-none"
-                    style={{
-                        backgroundImage: `url(${FabricTexture})`,
-                        backgroundSize: '400px',
-                        backgroundRepeat: 'repeat'
-                    }}
-                ></div>
-                <div className="relative z-10 w-[90%] mx-auto">
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between sm:mb-6 mb-4 text-[#01276a] sm:max-w-[85%] w-full mx-auto px-2 sm:px-0">
-                        <div className="text-2xl sm:text-2xl md:text-4xl font-light font-outfit">
-                            Welcome to Panorama Exports Pvt. Ltd.
-                        </div>
-                    </div>
-                    <motion.div
-                        className="2xl:text-2xl lg:text-xl md:text-lg sm:text-base text-[15px] sm:leading-relaxed leading-normal text-gray-600 text-justify sm:max-w-[85%] w-full mx-auto px-2 sm:px-0 font-light tracking-wide font-outfit mb-8 sm:mb-0"
-                        initial={{ opacity: 0, y: 30 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false, amount: 0.3 }}
-                        transition={{ duration: 1.2, ease: "easeOut" }}
-                    >
-                        A destination where innovation, dedication, and artistry
-                        converge to craft apparel for a global audience.
-                        Here, design thinking, precision engineering, and human skill
-                        collaborate to transform fabric into timeless fashion.
-                        At Panorama, our philosophy extends far beyond production — we
-                        cultivate opportunity, encourage responsible operations, and
-                        continuously explore forward-thinking methods that shape a
-                        progressive future for the textile and garment industry.
-                    </motion.div>
-                </div>
-            </div>
-            */}
 
             {/* Founder's Message Sections - KEPT */}
             <style>{`
@@ -355,6 +168,9 @@ export default function OurStory() {
                     50%  { transform: translate(-1%, 4%); }
                     70%  { transform: translate(4%, -1%); }
                     90%  { transform: translate(-3%, 1%); }
+                }
+                .smooth-swiper .swiper-wrapper {
+                    transition-timing-function: linear !important;
                 }
             `}</style>
 
@@ -484,6 +300,102 @@ export default function OurStory() {
                 </div>
             </section>
 
+            {/* New Our Story Header Section */}
+            <section className="relative bg-white pt-16 pb-10 sm:pt-24 sm:pb-12 font-outfit overflow-hidden">
+                {/* Subtle Fabric Background for Texture */}
+                <div
+                    className="absolute inset-0 z-0 opacity-[0.04] pointer-events-none"
+                    style={{
+                        backgroundImage: `url(${FabricTexture})`,
+                        backgroundSize: '400px',
+                        backgroundRepeat: 'repeat'
+                    }}
+                ></div>
+
+                <div className="relative z-10 max-w-[1700px] mx-auto px-6 sm:px-10 lg:px-20 flex flex-col items-center">
+                    <div className="max-w-[1300px] text-center">
+                        <motion.div
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true, amount: 0.3 }}
+                            variants={{
+                                hidden: {},
+                                visible: { 
+                                    transition: { staggerChildren: 0.3 } 
+                                }
+                            }}
+                        >
+                            <motion.p 
+                                variants={{
+                                    hidden: { opacity: 0, y: 20 },
+                                    visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: "easeOut" } }
+                                }}
+                                style={{ fontFamily: "'Playfair Display', serif" }}
+                                className="text-[#1a1a1a] text-lg sm:text-xl md:text-2xl lg:text-[30px] xl:text-[32px] font-light italic leading-snug mb-10 tracking-tight"
+                            >
+                                Since 1973, Panorama Exports has been transforming fabric into global fashion.
+                            </motion.p>
+
+                            <motion.p 
+                                variants={{
+                                    hidden: { opacity: 0, y: 20 },
+                                    visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: "easeOut" } }
+                                }}
+                                className="text-[#AD1E1E] text-sm sm:text-base md:text-lg lg:text-[19px] leading-[2] font-light tracking-wide max-w-[950px] mx-auto"
+                            >
+                                What began as a vision rooted in craftsmanship has grown into a legacy of precision, innovation and scale. From India to the world, every garment we create carries the mark of creativity, technical expertise and an unwavering commitment to quality.
+                            </motion.p>
+                        </motion.div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Image Loop Section */}
+            <section className="w-full pb-0 sm:pb-0">
+                <Swiper
+                    modules={[Autoplay, FreeMode]}
+                    spaceBetween={15}
+                    slidesPerView={1.1}
+                    breakpoints={{
+                        640: {
+                            slidesPerView: 1.8,
+                        },
+                        1024: {
+                            slidesPerView: 2.5,
+                        }
+                    }}
+                    loop={true}
+                    speed={8000}
+                    autoplay={{
+                        delay: 0,
+                        disableOnInteraction: false,
+                    }}
+                    freeMode={{
+                        enabled: true,
+                        momentum: false,
+                    }}
+                    allowTouchMove={true}
+                    grabCursor={true}
+                    onTouchEnd={(swiper) => {
+                        setTimeout(() => {
+                            swiper.autoplay.start();
+                        }, 100);
+                    }}
+                    className="w-full h-[40vh] sm:h-[60vh] lg:h-[70vh] bg-gray-50 smooth-swiper"
+                >
+                    {storyImages.map((img, index) => (
+                        <SwiperSlide key={index} className="overflow-hidden bg-gray-100">
+                            <img 
+                                src={img} 
+                                alt={`Story Slide ${index + 1}`} 
+                                loading="eager"
+                                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
+            </section>
+
             {/* Where Every Season Begins Section */}
             <section className="bg-white pt-16 pb-10 sm:pt-24 sm:pb-12 font-outfit">
                 <div className="max-w-[1700px] mx-auto px-6 sm:px-10 lg:px-20 flex flex-col items-center">
@@ -501,7 +413,7 @@ export default function OurStory() {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1, delay: 0.2 }}
-                            className="text-[#1a1a1a] text-sm sm:text-lg md:text-xl lg:text-[19px] font-light leading-relaxed tracking-wide max-w-full lg:max-w-[1400px] mx-auto whitespace-nowrap lg:whitespace-normal"
+                            className="text-[#1a1a1a] text-sm sm:text-lg md:text-xl lg:text-[19px] font-light leading-relaxed tracking-wide max-w-full lg:max-w-[1400px] mx-auto whitespace-normal"
                         >
                             For over five decades, we have pushed boundaries to keep pace with the energy and creativity that define Panorama.
                         </motion.p>
@@ -512,20 +424,31 @@ export default function OurStory() {
             {/* Second Image Loop Section */}
             <section className="w-full pb-0">
                 <Swiper
-                    modules={[Pagination, FreeMode]}
+                    modules={[Autoplay, FreeMode]}
                     spaceBetween={15}
                     slidesPerView={1.1}
                     breakpoints={{
                         640: { slidesPerView: 1.8 },
-                        1024: { slidesPerView: 2.2 }
+                        1024: { slidesPerView: 2.5 }
                     }}
-                    centeredSlides={true}
                     loop={true}
-                    loopedSlides={4}
-                    freeMode={{ enabled: true, momentum: true }}
-                    pagination={{ clickable: true, dynamicBullets: true }}
+                    speed={8000}
+                    autoplay={{
+                        delay: 0,
+                        disableOnInteraction: false,
+                    }}
+                    freeMode={{
+                        enabled: true,
+                        momentum: false,
+                    }}
+                    allowTouchMove={true}
                     grabCursor={true}
-                    className="w-full h-[40vh] sm:h-[60vh] lg:h-[70vh] bg-gray-50"
+                    onTouchEnd={(swiper) => {
+                        setTimeout(() => {
+                            swiper.autoplay.start();
+                        }, 100);
+                    }}
+                    className="w-full h-[40vh] sm:h-[60vh] lg:h-[70vh] bg-gray-50 smooth-swiper"
                 >
                     {detailImages.map((img, index) => (
                         <SwiperSlide key={index} className="overflow-hidden bg-gray-100">

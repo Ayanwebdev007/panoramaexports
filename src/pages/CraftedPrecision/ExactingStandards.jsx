@@ -1,7 +1,7 @@
 import React from "react";
 import AutoPlayVideo from "../../components/AutoPlayVideo";
 
-import video from "../../assets/QUALITY ASSURANCE/mp_.mp4";
+import video from "../../assets/QUALITY ASSURANCE/Quality Assurance Hero section.mp4";
 import aet1 from "../../assets/QUALITY ASSURANCE/Art in every thread.png";
 import aet2 from "../../assets/QUALITY ASSURANCE/CM100146.JPG";
 import aet3 from "../../assets/QUALITY ASSURANCE/3.png";

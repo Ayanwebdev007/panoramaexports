@@ -6,7 +6,7 @@ import img9 from "../assets/Responsible/pic1.webp";
 import img10 from "../assets/Responsible/pic2.webp";
 
 // New Left Row assets
-import leftImg1 from "../assets/Left Row/Left Row/1.webp";
+import leftImg1 from "../assets/Left Row/Left Row/R Pic 1.JPG";
 import leftImg2 from "../assets/Left Row/Left Row/2.webp";
 import leftImg3 from "../assets/Left Row/Left Row/3.webp";
 
@@ -27,7 +27,7 @@ const MasonrySection = () => {
                 {/* Column 1 */}
                 <div className="flex-1 flex flex-col gap-8">
                     <div className="h-[900px] overflow-hidden">
-                        <img src={leftImg1} alt="Excellence 1" decoding="async" loading="lazy" className="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500" style={{ objectPosition: '70% center', willChange: 'transform' }} />
+                        <img src={leftImg1} alt="Excellence 1" decoding="async" loading="lazy" className="w-full h-full object-cover rounded-sm hover:scale-[1.02] transition-transform duration-500" style={{ objectPosition: '35% center', willChange: 'transform' }} />
                     </div>
 
                     <div className="h-[300px] overflow-hidden">

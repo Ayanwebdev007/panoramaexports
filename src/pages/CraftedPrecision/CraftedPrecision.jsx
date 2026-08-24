@@ -2,9 +2,9 @@ import React from "react";
 import AutoPlayVideo from "../../components/AutoPlayVideo";
 
 import video from "../../assets/DESIGN & DEVELOPMENT/Weaving Excellence.mp4";
-import aet1 from "../../assets/DESIGN & DEVELOPMENT/S1.JPG";
+import aet1 from "../../assets/DESIGN & DEVELOPMENT/Slide 17 R Pic 1.JPG";
 import aet2 from "../../assets/DESIGN & DEVELOPMENT/S2.JPG";
-import aet3 from "../../assets/DESIGN & DEVELOPMENT/P3 (1).png";
+import aet3 from "../../assets/DESIGN & DEVELOPMENT/S1.JPG";
 
 function CraftedPrecision() {
     return (

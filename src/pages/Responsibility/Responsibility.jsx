@@ -26,7 +26,7 @@ import img4 from "../../assets/Responsible/Full.webp";
 import rImg1 from "../../assets/responsibility images final/3 (3).JPG";
 import rImg2 from "../../assets/responsibility images final/DSC03041 (1).JPG";
 import rImg3 from "../../assets/responsibility images final/DSC03065 (2).JPG";
-import rImg4 from "../../assets/responsibility images final/pic 2.JPG";
+import rImg4 from "../../assets/responsibility images final/Slide 13 Sustainability Commitments.jpg";
 
 import cimg1 from "../../assets/Responsible/Corporate/1.webp";
 import empoweringImg from "../../assets/empowering communities.jpeg";
@@ -283,7 +283,7 @@ function Responsibility() {
                                 <img
                                     src={cert.image}
                                     alt={cert.title}
-                                    className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-500"
+                                    className="max-h-full max-w-full object-contain transition-all duration-500"
                                 />
                             </div>
                             <h3 className="font-semibold text-xl text-center text-[#AD1E1E] mb-6 min-h-[3.5rem] flex items-center justify-center px-2">
@@ -308,7 +308,7 @@ function Responsibility() {
                                         <img
                                             src={imgSrc}
                                             alt="Certification logo"
-                                            className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300 mix-blend-multiply"
+                                            className="max-h-full max-w-full object-contain transition-all duration-300 mix-blend-multiply"
                                         />
                                     </div>
                                 ))}
