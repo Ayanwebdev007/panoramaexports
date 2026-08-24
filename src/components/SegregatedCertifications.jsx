@@ -15,6 +15,7 @@ import C4 from "../assets/Certificates/cert-4.webp";
 import C6 from "../assets/Certificates/cert-6.webp";
 import C7 from "../assets/Certificates/cert-7.webp";
 import C8 from "../assets/Certificates/cert-8.webp";
+import Intertek from "../assets/Certificates/intertek.webp";
 
 const segregatedData = [
     {
@@ -40,7 +41,8 @@ const segregatedData = [
             { img: gmpNew },
             { img: pdca },
             { img: C7 },
-            { img: C8 }
+            { img: C8 },
+            { img: Intertek }
         ]
     }
 ];

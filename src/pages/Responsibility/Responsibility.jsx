@@ -53,6 +53,7 @@ import certIcon8 from "../../assets/Certificates/gmp-new.webp";
 import certIcon9 from "../../assets/Certificates/PDCA.webp";
 import certIcon10 from "../../assets/Certificates/cert-7.webp";
 import certIcon11 from "../../assets/Certificates/cert-8.webp";
+import certIcon12 from "../../assets/Certificates/intertek.webp";
 
 import "./Responsibility.css";
 
@@ -67,7 +68,8 @@ const esgCerts = [
     certIcon8,
     certIcon9,
     certIcon10,
-    certIcon11
+    certIcon11,
+    certIcon12
 ];
 
 const icons = [

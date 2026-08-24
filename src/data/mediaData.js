@@ -11,13 +11,17 @@ import NewsletterImg9 from "../assets/Media/Workshop/Img9.webp";
 import NewsletterImg10 from "../assets/Media/Workshop/Img10.webp";
 
 import Safety from "../assets/Media/Workshop/Safety.webp";
+import Safety1 from "../assets/Media/Workshop/Safety1.webp";
+import Safety2 from "../assets/Media/Workshop/Safety2.webp";
+import Safety3 from "../assets/Media/Workshop/Safety3.webp";
+import Safety4 from "../assets/Media/Workshop/Safety4.webp";
 import Environment1 from "../assets/Media/Workshop/Environment1.webp";
 import Environment2 from "../assets/Media/Workshop/Environment2.webp";
 import Environment3 from "../assets/Media/Workshop/DSC03107.webp";
 import Environment4 from "../assets/Media/Workshop/CM100651.webp";
 import wd4 from "../assets/WD4.webp";
 import wd5 from "../assets/WD-5.webp";
-import ChristmasMain from "../assets/The warm Alcovec.jpg";
+import Christmas1 from "../assets/Christmas1.webp";
 import Christmas2 from "../assets/DSC03400.JPG";
 import Christmas3 from "../assets/Christmas3.jpg";
 import Christmas4 from "../assets/Christmas4.jpg";
@@ -51,9 +55,9 @@ export const mediaData = {
             id: 5,
             title: "Christmas Day Celebration 2025",
             date: "December 25, 2025",
-            image: Christmas2,
-            images: [Christmas2, Christmas3, Christmas4, Environment4],
-            count: 4
+            image: Christmas1,
+            images: [Christmas1, Christmas3, Christmas4, Christmas2, Environment4],
+            count: 5
         },
         {
             id: 3,
@@ -67,9 +71,9 @@ export const mediaData = {
             id: 4,
             title: "Safety Drills 2025",
             date: "February 2025",
-            image: Safety,
-            images: [Safety],
-            count: 1
+            image: Safety1,
+            images: [Safety1, Safety2, Safety3, Safety4, Safety],
+            count: 5
         }
     ],
     Newsletter: [

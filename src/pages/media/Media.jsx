@@ -9,7 +9,7 @@ import "react-pdf/dist/Page/TextLayer.css";
 import pdfjsWorker from "pdfjs-dist/build/pdf.worker.min.mjs?url";
 pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
-import TopHeader from "../../assets/Media/LeftImg.webp";
+import TopHeader from "../../assets/Media/MediaHero.webp";
 
 
 
@@ -70,18 +70,18 @@ export default function Media() {
             {/* Top Hero Section - Full Width */}
             <section className="w-full">
                 <div className="relative w-full overflow-hidden shadow-2xl group">
-                    <div className="relative aspect-[21/9] md:aspect-[21/7] overflow-hidden">
+                    <div className="relative w-full h-[80vh] md:h-[calc(100vh-3rem)] lg:h-[calc(100vh-5rem)] min-h-[550px] overflow-hidden">
                         <img
                             src={TopHeader}
                             alt="Panorama Exports Sustainable Fashion Innovation"
-                            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                            className="w-full h-full object-cover object-center transition-transform duration-1000 group-hover:scale-105"
                         />
                         {/* Overlay Gradient */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                         
                         {/* Centered Text at Bottom */}
                         <div className="absolute inset-0 flex flex-col justify-end items-center pb-12 md:pb-24 px-6 text-center">
-                            <h2 className="text-white font-extralight text-[10px] md:text-xl lg:text-3xl tracking-[0.3em] whitespace-nowrap uppercase">
+                            <h2 className="text-white font-extralight text-sm md:text-xl lg:text-3xl tracking-[0.3em] whitespace-nowrap uppercase">
                                 Panorama Exports Sustainable Fashion Innovation
                             </h2>
                         </div>
