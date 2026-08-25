@@ -87,7 +87,7 @@ const LeadershipSection = () => {
                     </motion.div>
 
                     <div className="flex items-center justify-end shrink-0">
-                        <Link to="/vision-values#leadership">
+                        <Link to="/leadership">
                             <button className="my-4 group inline-flex items-center hover:text-[#8B1818] font-semibold md:text-lg sm:text-sm text-[12px] text-[#AD1E1E]">
                                 Visit Leadership
                                 <IoEnterOutline className="h-4 w-4 md:h-6 md:w-6 mx-1 md:mx-2 group-hover:translate-x-1 transition-transform duration-300" />
