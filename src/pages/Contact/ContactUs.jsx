@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import CareerPng from "../../assets/People/Career.webp";
 
 const ContactUs = () => {
     const [form, setForm] = useState({
@@ -144,6 +145,42 @@ const ContactUs = () => {
                     </button>
                 </form>
             </div>
+
+            {/* Career Section */}
+            <section
+                id="career"
+                className="relative bg-cover md:bg-contain bg-center flex items-center justify-center min-h-[250px] sm:min-h-[300px] md:min-h-0 md:aspect-[16/5]"
+                style={{
+                    backgroundImage: `url(${CareerPng})`,
+                }}
+            >
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/50"></div>
+
+                {/* Content */}
+                <div className="relative z-10 text-white 2xl:w-[65%] lg:w-[70%] md:w-[75%] sm:w-[80%] w-[95%] md:px-4 px-1 md:py-4 py-1">
+                    <h2 className="text-md sm:text-2xl lg:text-3xl 2xl:text-5xl font-medium mb-1 md:mb-6 w-full font-outfit">
+                        Explore a career at PANORAMA.
+                    </h2>
+                    <p className="text-[10px] sm:text-sm lg:text-lg leading-relaxed lg:mb-8 md:mb-5 mb-2">
+                        Turn your job into a career at Panorama Exports. Learn,
+                        grow, and work alongside driven minds. Join us—contact
+                        HR for openings.
+                    </p>
+
+                    <div className="flex items-center gap-2 text-[10px] md:text-sm lg:text-lg">
+                        <a
+                            href="https://www.linkedin.com/company/panorama-exports/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="md:px-6 px-2 md:py-3 py-1 border border-white rounded-full
+               hover:bg-white hover:text-black transition duration-300"
+                        >
+                            Follow us on LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </section>
         </div>
     );
 };

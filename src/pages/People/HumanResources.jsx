@@ -64,7 +64,7 @@ function HumanResources() {
                                 opacity: 1,
                                 zIndex: 20,
                             };
-                            classNames += " shadow-2xl border-[8px] border-blue-900";
+                            classNames += " shadow-2xl border-[8px] border-[#AD1E1E]";
                         } else if (i === (index + 1) % peopleImages.length) {
                             // right card
                             style = {
@@ -121,7 +121,7 @@ function HumanResources() {
                     </div>
                 </div>
                 <div className="lg:w-[60%] mx-auto text-center 2xl:mt-36 mt-28 2xl:mb-20 mb-14">
-                    <h1 className="lg:text-4xl md:text-3xl text-2xl font-light text-[#01276a] mb-5 font-outfit">
+                    <h1 className="lg:text-4xl md:text-3xl text-2xl font-light text-[#AD1E1E] mb-5 font-outfit">
                         Human Resources
                     </h1>
                     <p className="lg:text-xl leading-relaxed text-justify font-light">

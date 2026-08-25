@@ -67,17 +67,21 @@
 
 /* Glassmorphism Card Style - Now Champagne-Beige Tinted */
 .leadership-glass-card {
-    flex: 0 0 300px;
-    max-width: 320px;
-    background: rgba(239, 233, 225, 0.7); /* Soft Champagne Beige */
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    width: 100%;
+    min-height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(239, 233, 225, 0.75); /* Soft Champagne Beige */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     border: 1px solid rgba(173, 30, 30, 0.15);
     border-radius: 24px;
-    padding: 40px 20px;
+    padding: 36px 20px;
     transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
     position: relative;
     overflow: hidden;
+    user-select: none;
 }
 
 .leadership-glass-card::after {

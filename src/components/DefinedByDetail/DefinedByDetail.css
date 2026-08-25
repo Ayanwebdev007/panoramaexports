@@ -5,6 +5,7 @@
     padding: 40px 0 60px 0;
     overflow: hidden;
     position: relative;
+    z-index: 1;
 }
 
 @media (min-width: 768px) {
@@ -19,7 +20,7 @@
     margin: 0 auto 30px auto; /* Balanced header margin */
     text-align: center;
     position: relative;
-    z-index: 200;
+    z-index: 2;
 }
 
 .detail-title {
@@ -84,7 +85,7 @@
 }
 
 .detail-slide.swiper-slide-active {
-    z-index: 2000 !important; /* Secondary backup for non-3D browsers */
+    z-index: 10 !important; /* Secondary backup for non-3D browsers */
 }
 
 /* Dynamic Tilt & FULL OPACITY Logic with Organic Scattering */
@@ -150,7 +151,7 @@
     border: none;
     cursor: pointer;
     color: #1a1a1a;
-    z-index: 1000;
+    z-index: 20;
     width: 80px;
     height: 80px;
     display: flex;

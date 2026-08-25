@@ -81,10 +81,18 @@ export default function Navbar({ setIsNewsletterOpen }) {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    // Close menus on route change
+    useEffect(() => {
+        setIsMenuOpen(false);
+        setHoveredIndex(null);
+        setIsOpen(false);
+        setActiveMobileIndex(null);
+    }, [location]);
+
     const handleMouseEnter = (index) => {
         if (timeoutRef.current) clearTimeout(timeoutRef.current);
         // Open menu for items with subItems (Story, Precision, Innovation)
-        if (navItems[index].subItems) {
+        if (navItems[index]?.subItems) {
             setHoveredIndex(index);
             setIsMenuOpen(true);
         } else {
@@ -102,7 +110,7 @@ export default function Navbar({ setIsNewsletterOpen }) {
     return (
         <nav
             onMouseLeave={handleMouseLeave}
-            className="bg-white border-b border-gray-100 shadow-sm fixed top-0 left-0 right-0 z-50 transition-all duration-500 w-full lg:h-24 h-20"
+            className="bg-white border-b border-gray-100 shadow-sm fixed top-0 left-0 right-0 z-[100] transition-all duration-500 w-full lg:h-24 h-20"
         >
             <div className="w-full px-4 lg:px-8 xl:px-12 h-full flex items-center">
                 
@@ -111,35 +119,20 @@ export default function Navbar({ setIsNewsletterOpen }) {
                     
                     {/* Left: Nav Links (First 4) */}
                     <div className="flex-1 flex justify-start items-center gap-x-1 xl:gap-x-2">
-                        {navItems.slice(0, 4).map((item, index) => {
-                            const hasSubItems = !!item.subItems;
-                            return hasSubItems ? (
-                                <button
-                                    key={index}
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        if (hoveredIndex === index) {
-                                            setIsMenuOpen(!isMenuOpen);
-                                        } else {
-                                            handleMouseEnter(index);
-                                        }
-                                    }}
-                                    onMouseEnter={() => handleMouseEnter(index)}
-                                    className={`text-[#AD1E1E] text-[13px] xl:text-[14px] font-medium tracking-[0.09em] xl:tracking-[0.1em] hover:text-black transition-all duration-300 uppercase whitespace-nowrap py-4 px-1.5 focus:outline-none ${hoveredIndex === index ? "opacity-60" : ""}`}
-                                >
-                                    {item.label}
-                                </button>
-                            ) : (
-                                <Link
-                                    key={index}
-                                    to={item.path}
-                                    onMouseEnter={() => handleMouseEnter(index)}
-                                    className={`text-[#AD1E1E] text-[13px] xl:text-[14px] font-medium tracking-[0.09em] xl:tracking-[0.1em] hover:text-black transition-all duration-300 uppercase whitespace-nowrap py-4 px-1.5 ${hoveredIndex === index ? "opacity-60" : ""}`}
-                                >
-                                    {item.label}
-                                </Link>
-                            );
-                        })}
+                        {navItems.slice(0, 4).map((item, index) => (
+                            <Link
+                                key={index}
+                                to={item.path}
+                                onClick={() => {
+                                    setIsMenuOpen(false);
+                                    setHoveredIndex(null);
+                                }}
+                                onMouseEnter={() => handleMouseEnter(index)}
+                                className={`text-[#AD1E1E] text-[13px] xl:text-[14px] font-medium tracking-[0.09em] xl:tracking-[0.1em] hover:text-black transition-all duration-300 uppercase whitespace-nowrap py-4 px-1.5 ${hoveredIndex === index ? "opacity-60" : ""}`}
+                            >
+                                {item.label}
+                            </Link>
+                        ))}
                     </div>
 
                     {/* Center: Logo */}
@@ -157,27 +150,14 @@ export default function Navbar({ setIsNewsletterOpen }) {
                     <div className="flex-1 flex justify-end items-center gap-x-2 xl:gap-x-3">
                         {navItems.slice(4).map((item, index) => {
                             const actualIndex = index + 4;
-                            const hasSubItems = !!item.subItems;
-                            return hasSubItems ? (
-                                <button
-                                    key={actualIndex}
-                                    onClick={(e) => {
-                                        e.preventDefault();
-                                        if (hoveredIndex === actualIndex) {
-                                            setIsMenuOpen(!isMenuOpen);
-                                        } else {
-                                            handleMouseEnter(actualIndex);
-                                        }
-                                    }}
-                                    onMouseEnter={() => handleMouseEnter(actualIndex)}
-                                    className={`text-[#AD1E1E] text-[13px] xl:text-[14px] font-medium tracking-[0.09em] xl:tracking-[0.1em] hover:text-black transition-all duration-300 uppercase whitespace-nowrap py-4 px-1.5 focus:outline-none ${hoveredIndex === actualIndex ? "opacity-60" : ""}`}
-                                >
-                                    {item.label}
-                                </button>
-                            ) : (
+                            return (
                                 <Link
                                     key={actualIndex}
                                     to={item.path}
+                                    onClick={() => {
+                                        setIsMenuOpen(false);
+                                        setHoveredIndex(null);
+                                    }}
                                     onMouseEnter={() => handleMouseEnter(actualIndex)}
                                     className={`text-[#AD1E1E] text-[13px] xl:text-[14px] font-medium tracking-[0.09em] xl:tracking-[0.1em] hover:text-black transition-all duration-300 uppercase whitespace-nowrap py-4 px-1.5 ${hoveredIndex === actualIndex ? "opacity-60" : ""}`}
                                 >
@@ -189,12 +169,20 @@ export default function Navbar({ setIsNewsletterOpen }) {
                         <div className="flex items-center gap-x-2 xl:gap-x-3 text-[#AD1E1E] text-[13px] xl:text-[14px] font-medium tracking-[0.09em] xl:tracking-[0.1em] uppercase whitespace-nowrap">
                             <Link
                                 to="/media"
+                                onClick={() => {
+                                    setIsMenuOpen(false);
+                                    setHoveredIndex(null);
+                                }}
                                 className="hover:text-black transition-all duration-300"
                             >
                                 Media
                             </Link>
                             <Link
                                 to="/contactus"
+                                onClick={() => {
+                                    setIsMenuOpen(false);
+                                    setHoveredIndex(null);
+                                }}
                                 className="hover:text-black transition-all duration-300"
                             >
                                 Contact Us
@@ -272,6 +260,10 @@ export default function Navbar({ setIsNewsletterOpen }) {
                                                             <li key={idx}>
                                                                 <Link
                                                                     to={sub.path}
+                                                                    onClick={() => {
+                                                                        setIsMenuOpen(false);
+                                                                        setHoveredIndex(null);
+                                                                    }}
                                                                     className="text-gray-900 hover:text-[#AD1E1E] transition-colors text-[14px] font-medium tracking-wide block whitespace-nowrap"
                                                                 >
                                                                     {sub.label}
@@ -282,8 +274,15 @@ export default function Navbar({ setIsNewsletterOpen }) {
                                                 </div>
 
                                                 {/* Landscape Featured Image (Conditional Grayscale) */}
-                                                <div className="w-[170px] xl:w-[210px] aspect-[4/3] overflow-hidden rounded-[1px] relative group flex-shrink-0"
-                                                     style={{ willChange: "transform, opacity" }}>
+                                                <Link
+                                                    to={item.path}
+                                                    onClick={() => {
+                                                        setIsMenuOpen(false);
+                                                        setHoveredIndex(null);
+                                                    }}
+                                                    className="w-[170px] xl:w-[210px] aspect-[4/3] overflow-hidden rounded-[1px] relative group flex-shrink-0 block cursor-pointer"
+                                                    style={{ willChange: "transform, opacity" }}
+                                                >
                                                     <img
                                                         src={item.featuredImage}
                                                         alt={item.label}
@@ -292,7 +291,7 @@ export default function Navbar({ setIsNewsletterOpen }) {
                                                         className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-105 ${hoveredIndex === fullIndex ? "grayscale-0" : "grayscale"}`}
                                                     />
                                                     <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500"></div>
-                                                </div>
+                                                </Link>
                                             </div>
                                         </div>
                                     );
@@ -305,7 +304,7 @@ export default function Navbar({ setIsNewsletterOpen }) {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="fixed inset-0 z-50 bg-white overflow-y-auto">
+                <div className="fixed inset-0 z-[101] bg-white overflow-y-auto">
                     <button
                         className="absolute top-4 right-4 text-gray-900 text-2xl z-10"
                         onClick={() => {

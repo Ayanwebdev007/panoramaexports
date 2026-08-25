@@ -5,8 +5,8 @@ import { Link, useLocation } from "react-router-dom";
 import InnovationThatLeads from "./InnovationThatLeads";
 import StandardOfPerfection from "./StandardOfPerfection";
 import InnovationBreadcrumb from "../../components/Innovation/InnovationBreadcrumb";
-// import bgImage from "../../assets/Innovation/Header/frontbg.webp";
-import bgImage from "../../assets/Innovation/Header/Header1.webp";
+import AutoPlayVideo from "../../components/AutoPlayVideo";
+import heroVideo from "../../assets/Innovation/1.mp4";
 
 function Innovation() {
     const location = useLocation();
@@ -82,12 +82,13 @@ function Innovation() {
                     </p>
                 </header>
 
-                {/* Banner Image Section (matching video layout in Mastery of Craft) */}
+                {/* Banner Video Section */}
                 <div className="w-full mx-auto mb-16 md:mb-28 rounded-2xl overflow-hidden shadow-md aspect-video relative group">
-                    <img
-                        src={bgImage}
-                        alt="Innovation That Leads"
-                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
+                    <AutoPlayVideo
+                        src={heroVideo}
+                        className="w-full h-full"
+                        videoClassName="w-full h-full object-cover"
+                        bgColor="#f3f4f6"
                     />
                 </div>
             </main>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Mail, Check } from "lucide-react";
-import legacyImg from "../../assets/Threads of Legacy.JPG";
+import discoverPanoramaImg from "../../assets/People/Discover Panorama Image.jpeg";
 
 export default function NewsletterPopup({ isOpen, onClose }) {
     const [isSubscribed, setIsSubscribed] = useState(false);
@@ -18,7 +18,7 @@ export default function NewsletterPopup({ isOpen, onClose }) {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
+                    className="fixed inset-0 z-[999] flex items-center justify-center bg-black/60 backdrop-blur-sm p-4"
                     onClick={onClose}
                 >
                     <motion.div
@@ -30,13 +30,17 @@ export default function NewsletterPopup({ isOpen, onClose }) {
                         onClick={(e) => e.stopPropagation()}
                     >
                         {/* Left side: Image */}
-                        <div className="hidden md:block w-2/5 relative h-full">
+                        <div className="hidden md:block w-2/5 relative h-full overflow-hidden">
                             <img
-                                src={legacyImg}
-                                alt="Panorama"
-                                className="w-full h-full object-cover"
+                                src={discoverPanoramaImg}
+                                alt="Discover Panorama"
+                                className="w-full h-full object-cover scale-[2.0] transition-transform duration-500"
+                                style={{
+                                    objectPosition: "center 10%",
+                                    transformOrigin: "center 10%",
+                                }}
                             />
-                            <div className="absolute inset-0 bg-black/5"></div>
+                            <div className="absolute inset-0 bg-black/5 pointer-events-none"></div>
                         </div>
 
                         {/* Right side: Form */}

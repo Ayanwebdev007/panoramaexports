@@ -81,32 +81,25 @@ const heroSlides = [
     },
 ];
 
-// Brands images
 // Brands images from new brands folder
-import brand1 from "../assets/GlobalFootprint/new_brands/1733565170_Falabella_Logo.webp";
 import brand2 from "../assets/GlobalFootprint/new_brands/383220.KS-5023690c.webp";
 import brand3 from "../assets/GlobalFootprint/new_brands/Boden-new-logo-.webp";
 import brand4 from "../assets/GlobalFootprint/new_brands/Boots_logo.svg.webp";
 import brand5 from "../assets/GlobalFootprint/new_brands/DKNY-Donna-Karan-New-York-logo-880x625.webp";
-import brand6 from "../assets/GlobalFootprint/new_brands/Matalan-logo.webp";
 import brand7 from "../assets/GlobalFootprint/new_brands/Mothercare-Emblem.png";
 import brand8 from "../assets/GlobalFootprint/new_brands/Tesco_Logo.svg.webp";
-import brand9 from "../assets/GlobalFootprint/new_brands/c_and_a.webp";
 import brand10 from "../assets/GlobalFootprint/new_brands/george.webp";
 import brand11 from "../assets/GlobalFootprint/new_brands/gjg.webp";
 import brand12 from "../assets/GlobalFootprint/new_brands/landmark.webp";
-import brand13 from "../assets/GlobalFootprint/new_brands/le_logo_2lines.webp";
 import brand14 from "../assets/GlobalFootprint/new_brands/logo_FARM-RIO.webp";
 import brand15 from "../assets/GlobalFootprint/new_brands/luckybrand.webp";
-import brand16 from "../assets/GlobalFootprint/new_brands/marea_by_liz_joy_logo.webp";
 import brand17 from "../assets/GlobalFootprint/new_brands/monsoon.webp";
 import brand18 from "../assets/GlobalFootprint/new_brands/quince-logo-bigger-file.webp";
 import brand19 from "../assets/GlobalFootprint/new_brands/reiss.webp";
-import brand20 from "../assets/GlobalFootprint/new_brands/street-one-logo-png_seeklogo-339581.webp";
 
 const brands = [
-    brand1, brand2, brand3, brand4, brand5, brand6, brand7, brand8, brand9, brand10,
-    brand11, brand12, brand13, brand14, brand15, brand16, brand17, brand18, brand19, brand20
+    brand2, brand3, brand4, brand5, brand7, brand8, brand10,
+    brand11, brand12, brand14, brand15, brand17, brand18, brand19
 ];
 
 // Crafting Tomorrow images
@@ -115,7 +108,7 @@ import img2 from "../assets/CraftingTomorrow/2.webp";
 import img3 from "../assets/CraftingTomorrow/3.webp";
 import img4 from "../assets/CraftingTomorrow/4.webp";
 import video from "../assets/CraftingTomorrow/Crafting-Tomorrow.mp4";
-import intentionVideo from "../assets/Master Video.mp4";
+import intentionVideo from "../assets/hero_v3.mp4";
 
 const crImages = [img2, img4];
 

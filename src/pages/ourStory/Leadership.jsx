@@ -1,12 +1,17 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay, FreeMode } from 'swiper/modules';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/free-mode';
 
 import RajanPng from "../../assets/Founders/rajan.webp";
 import NavinPng from "../../assets/Founders/navin.webp";
 import ShivaanPng from "../../assets/Founders/shivaan.webp";
 import SidharthPng from "../../assets/Founders/Sidharth.webp";
 import AmitPng from "../../assets/AMIT FINAL.jpeg";
-import KritiPng from "../../assets/Gemini_Generated_Image_jtuumnjtuumnjtuu.png";
 import LeadershipBanner from "../../assets/Legacy/final.webp";
 import FabricTexture from "../../assets/backgrounds/fabric-texture.webp";
 
@@ -68,47 +73,32 @@ const executiveDirectors = [
         modalPosition: "center 20%",
         message: `Panorama Exports has built a strong foundation over the years, and I’m excited to lead its next phase of transformation. Our focus is on strengthening innovation, enhancing our design-led approach, and building a more agile and future-ready organization. By empowering our teams and nurturing strong global partnerships, we aim to drive sustainable growth and long-term success.`,
     },
-    {
-        id: 4,
-        name: "Kriti Tewary",
-        role: "Lead - Sustainability",
-        bg: KritiPng,
-        img: KritiPng,
-        objectPosition: "center 20%",
-        modalPosition: "center 20%",
-        message: `At Panorama, we believe in doing things right the first time. We carry with us the heritage of decades, decades of craft and a future shaped by responsibility. As we continue to grow, we are strengthening our efforts to produce garments in ways that respect people, partners, and the planet. Thoughtfully made. Responsibly delivered.`,
-    },
 ];
 
 const seniorManagement = [
     {
         number: "01",
-        name: "Kriti",
-        role: "General Manager HR & Compliance"
+        name: "Mudita Ahuja",
+        role: "VP Design"
     },
     {
         number: "02",
-        name: "Mudita Ahuja",
-        role: "VP Design Marketing"
+        name: "Kriti",
+        role: "HR & Sustainability"
     },
     {
         number: "03",
         name: "Shija Lal",
-        role: "AVP Business Development"
+        role: "AVP Marketing"
     },
     {
         number: "04",
         name: "Suresh Sharma",
-        role: "GM Business Development"
+        role: "GM Marketing"
     },
     {
         number: "05",
-        name: "Vandana Mukhi",
-        role: "AGM Merchandising"
-    },
-    {
-        number: "06",
-        name: "Janet Kulke",
+        name: "Janet Kulkej",
         role: "Design Manager UK"
     }
 ];
@@ -117,6 +107,11 @@ const seniorManagement = [
 
 export default function Leadership() {
     const [selectedLeader, setSelectedLeader] = useState(null);
+    const prevRef = useRef(null);
+    const nextRef = useRef(null);
+
+    const allLeaders = [...directors, ...executiveDirectors];
+    const loopedLeaders = [...allLeaders, ...allLeaders];
 
     useEffect(() => {
         window.scrollTo({ top: 0, behavior: "smooth" });
@@ -183,58 +178,100 @@ export default function Leadership() {
             </section>
 
             {/* Executive Board Cards Section */}
-            <section className="bg-gray-50/50 pt-10 pb-10 md:pt-12 md:pb-12">
-                <div className="w-[90%] mx-auto px-4 sm:px-6 md:px-10 lg:px-20 mb-16 text-center">
+            <section className="bg-gray-50/50 pt-10 pb-12 md:pt-14 md:pb-16 relative">
+                <div className="w-[90%] mx-auto px-4 sm:px-6 md:px-10 lg:px-20 mb-10 md:mb-14 text-center">
                     <h2 className="text-2xl md:text-4xl font-light text-[#AD1E1E] font-outfit tracking-[0.2em] mb-4 uppercase">
                         Our Visionary Leaders
                     </h2>
                     <div className="w-24 h-[1px] bg-[#AD1E1E] mx-auto opacity-30"></div>
                 </div>
 
-                <div className="w-[90%] md:w-[85%] mx-auto flex flex-wrap justify-center gap-6 sm:gap-10">
-                    {[...directors, ...executiveDirectors].map((leader, index) => (
-                        <motion.div
-                            key={leader.name + leader.role}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: (index % 2) * 0.1, ease: "easeOut" }}
-                            className="flex flex-col bg-white shadow-[0_15px_40px_-15px_rgba(0,0,0,0.05)] border border-gray-100 rounded-sm overflow-hidden group cursor-pointer w-[calc(50%-12px)] lg:w-[calc(25%-30px)] max-w-[320px]"
-                            onClick={() => setSelectedLeader(leader)}
-                        >
-                            {/* Card Image Section */}
-                            <div className="aspect-square overflow-hidden relative bg-gray-50">
-                                <img
-                                    src={leader.img}
-                                    alt={leader.name}
-                                    className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-105"
-                                    style={{
-                                        objectPosition: leader.objectPosition || "center",
-                                        filter: "grayscale(100%)",
-                                    }}
-                                />
-                                <div className="absolute inset-0 bg-[#AD1E1E]/0 group-hover:bg-[#AD1E1E]/10 transition-colors duration-500"></div>
-                                <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            </div>
+                <div className="w-[92%] max-w-[1700px] mx-auto px-2 sm:px-6 relative z-10">
+                    {/* Navigation Buttons */}
+                    <button
+                        ref={prevRef}
+                        className="absolute -left-2 sm:left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 hover:bg-[#AD1E1E] text-gray-800 hover:text-white shadow-lg flex items-center justify-center transition-all duration-300 backdrop-blur-sm border border-gray-200"
+                        aria-label="Previous Leader"
+                    >
+                        <ChevronLeft size={22} />
+                    </button>
+                    <button
+                        ref={nextRef}
+                        className="absolute -right-2 sm:right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 hover:bg-[#AD1E1E] text-gray-800 hover:text-white shadow-lg flex items-center justify-center transition-all duration-300 backdrop-blur-sm border border-gray-200"
+                        aria-label="Next Leader"
+                    >
+                        <ChevronRight size={22} />
+                    </button>
 
-                            {/* Card Details */}
-                            <div className="p-3 sm:p-5 text-center flex flex-col justify-between flex-grow bg-white transition-colors duration-500 group-hover:bg-[#AD1E1E]">
-                                <div className="space-y-1">
-                                    <h3 className="text-gray-900 font-medium text-sm sm:text-xl tracking-wide transition-colors duration-500 group-hover:text-white font-outfit">
-                                        {leader.name}
-                                    </h3>
-                                    <p className="text-gray-500 text-[10px] sm:text-xs font-light tracking-wider transition-colors duration-500 group-hover:text-white/80 font-outfit uppercase">
-                                        {leader.role}
-                                    </p>
+                    <Swiper
+                        modules={[Navigation, Autoplay, FreeMode]}
+                        loop={true}
+                        autoplay={{
+                            delay: 3000,
+                            disableOnInteraction: false,
+                            pauseOnMouseEnter: true,
+                        }}
+                        speed={800}
+                        grabCursor={true}
+                        slidesPerView={1.2}
+                        spaceBetween={18}
+                        onInit={(swiper) => {
+                            swiper.params.navigation.prevEl = prevRef.current;
+                            swiper.params.navigation.nextEl = nextRef.current;
+                            swiper.navigation.init();
+                            swiper.navigation.update();
+                        }}
+                        breakpoints={{
+                            480: { slidesPerView: 1.6, spaceBetween: 20 },
+                            640: { slidesPerView: 2.2, spaceBetween: 24 },
+                            768: { slidesPerView: 2.8, spaceBetween: 26 },
+                            1024: { slidesPerView: 3.5, spaceBetween: 28 },
+                            1280: { slidesPerView: 4.2, spaceBetween: 30 },
+                            1536: { slidesPerView: 5, spaceBetween: 30 }
+                        }}
+                        className="!py-4"
+                    >
+                        {loopedLeaders.map((leader, index) => (
+                            <SwiperSlide key={`${leader.name}-${leader.role}-${index}`} className="h-auto">
+                                <div
+                                    className="flex flex-col bg-white shadow-[0_15px_40px_-15px_rgba(0,0,0,0.05)] border border-gray-100 rounded-sm overflow-hidden group cursor-pointer h-full select-none"
+                                    onClick={() => setSelectedLeader(leader)}
+                                >
+                                    {/* Card Image Section */}
+                                    <div className="aspect-square overflow-hidden relative bg-gray-50">
+                                        <img
+                                            src={leader.img}
+                                            alt={leader.name}
+                                            className="w-full h-full object-cover transition-all duration-700 ease-in-out group-hover:scale-105"
+                                            style={{
+                                                objectPosition: leader.objectPosition || "center",
+                                                filter: "grayscale(100%)",
+                                            }}
+                                        />
+                                        <div className="absolute inset-0 bg-[#AD1E1E]/0 group-hover:bg-[#AD1E1E]/10 transition-colors duration-500"></div>
+                                        <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                                    </div>
+
+                                    {/* Card Details */}
+                                    <div className="p-4 sm:p-5 text-center flex flex-col justify-between flex-grow bg-white transition-colors duration-500 group-hover:bg-[#AD1E1E]">
+                                        <div className="space-y-1">
+                                            <h3 className="text-gray-900 font-medium text-sm sm:text-xl tracking-wide transition-colors duration-500 group-hover:text-white font-outfit">
+                                                {leader.name}
+                                            </h3>
+                                            <p className="text-gray-500 text-[10px] sm:text-xs font-light tracking-wider transition-colors duration-500 group-hover:text-white/80 font-outfit uppercase">
+                                                {leader.role}
+                                            </p>
+                                        </div>
+                                        <div className="mt-3">
+                                            <span className="inline-block text-[#AD1E1E] text-[8px] sm:text-[10px] uppercase font-medium tracking-widest border-b border-[#AD1E1E]/30 pb-1 group-hover:text-white group-hover:border-white/40 transition-all duration-500 font-outfit">
+                                                Read Message
+                                            </span>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="mt-3">
-                                    <span className="inline-block text-[#AD1E1E] text-[8px] sm:text-[10px] uppercase font-medium tracking-widest border-b border-[#AD1E1E]/30 pb-1 group-hover:text-white group-hover:border-white/40 transition-all duration-500 font-outfit">
-                                        Read Message
-                                    </span>
-                                </div>
-                            </div>
-                        </motion.div>
-                    ))}
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
                 </div>
 
                 {/* Leader Message Modal */}

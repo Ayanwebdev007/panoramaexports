@@ -54,7 +54,6 @@ import SpeedActionImage from "../../assets/People/SpeedAction1.webp";
 import CustomerCentricityImage from "../../assets/People/CustomerCentricity1.webp";
 
 import PeopleHeroPng from "../../assets/shivaan and sidharth new.webp";
-import CareerPng from "../../assets/People/Discover Panorama Image.jpeg";
 
 const crumbs = [
     { label: "Our Strength", path: "#our-strength" },
@@ -182,7 +181,7 @@ function Peoples() {
             </section>
 
             {/* Breadcrumbs */}
-            <div className="hidden md:block sticky lg:top-20 md:top-12 z-40 shadow-md bg-blue-950 text-lg py-3 transition-all duration-300">
+            <div className="hidden md:block sticky lg:top-20 md:top-12 z-40 shadow-md bg-[#AD1E1E] text-lg py-3 transition-all duration-300">
                 <div className="w-[90%] mx-auto px-6 md:px-20 flex items-center justify-center gap-6">
                     {crumbs.map((crumb, index) => (
                         <span
@@ -205,7 +204,7 @@ function Peoples() {
 
             <section>
                 <div className="w-[90%] mx-auto md:py-16 pt-2 pb-5 px-2 sm:px-6 md:px-10 lg:px-20">
-                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#01276a]">
+                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#AD1E1E]">
                         People
                     </h2>
                     <p className="text-sm sm:text-md lg:text-lg py-3 md:mt-5 mt-1 text-justify leading-relaxed font-light">
@@ -219,12 +218,12 @@ function Peoples() {
             </section>
             <section
                 id="our-strength"
-                className="w-full bg-blue-950 flex justify-center md:py-20 py-10"
+                className="w-full bg-[#AD1E1E] flex justify-center md:py-20 py-10"
             >
                 <div className="w-[90%] md:w-[80%] bg-white flex flex-col sm:flex-row">
                     {/* Left Side */}
                     <div className="sm:w-[50%] p-6 md:p-10 flex flex-col justify-center">
-                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-light text-center sm:text-left text-blue-950 font-outfit">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-light text-center sm:text-left text-[#AD1E1E] font-outfit">
                             Our Strength
                         </h2>
                         <p className="text-[10px] sm:text-[12px] md:text-sm 2xl:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-light text-justify">
@@ -257,7 +256,7 @@ function Peoples() {
                 className="w-[90%] mx-auto md:pt-16 pt-5 px-2 sm:px-6 md:px-10 lg:px-20"
             >
                 <div className="pb-5 md:pb-16">
-                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#01276a]">
+                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#AD1E1E]">
                         Life at Panorama
                     </h2>
                 </div>
@@ -290,10 +289,10 @@ function Peoples() {
                     </Swiper>
 
                     {/* Custom navigation buttons - enabled on all screens */}
-                    <button className="swiper-button-prev-custom absolute left-0 md:left-[-45px] top-1/2 -translate-y-1/2 z-10 bg-blue-950/80 hover:bg-blue-700 text-white md:w-10 w-8 md:h-10 h-8 rounded-full shadow-md flex items-center justify-center">
+                    <button className="swiper-button-prev-custom absolute left-0 md:left-[-45px] top-1/2 -translate-y-1/2 z-10 bg-[#AD1E1E]/80 hover:bg-[#AD1E1E] text-white md:w-10 w-8 md:h-10 h-8 rounded-full shadow-md flex items-center justify-center">
                         ❮
                     </button>
-                    <button className="swiper-button-next-custom absolute right-0 md:right-[-45px] top-1/2 -translate-y-1/2 z-10 bg-blue-950/80 hover:bg-blue-700 text-white md:w-10 w-8 md:h-10 h-8 rounded-full shadow-md flex items-center justify-center">
+                    <button className="swiper-button-next-custom absolute right-0 md:right-[-45px] top-1/2 -translate-y-1/2 z-10 bg-[#AD1E1E]/80 hover:bg-[#AD1E1E] text-white md:w-10 w-8 md:h-10 h-8 rounded-full shadow-md flex items-center justify-center">
                         ❯
                     </button>
                 </div>
@@ -301,7 +300,7 @@ function Peoples() {
 
             <section>
                 <div className="w-[90%] mx-auto md:py-16 py-5 px-2 sm:px-6 md:px-10 lg:px-20">
-                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#01276a]">
+                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#AD1E1E]">
                         We Believe In
                     </h2>
                 </div>
@@ -317,7 +316,7 @@ function Peoples() {
                                 className="w-full object-contain transform transition-transform duration-[4000ms] ease-out group-hover:scale-[1.1]"
                             />
                             {/* Overlay */}
-                            <div className="absolute bottom-0 h-[60%] sm:h-[50%] w-full py-[10%] bg-gradient-to-t from-blue-950/90 via-blue-950/80 via-blue-950/50 via-blue-950/40 to-transparent transition-all duration-500 flex flex-col justify-end p-2 sm:p-6">
+                            <div className="absolute bottom-0 h-[60%] sm:h-[50%] w-full py-[10%] bg-gradient-to-t from-[#AD1E1E]/90 via-[#AD1E1E]/80 via-[#AD1E1E]/50 via-[#AD1E1E]/40 to-transparent transition-all duration-500 flex flex-col justify-end p-2 sm:p-6">
                                 <p className="text-white text-[10px] sm:text-md md:text-lg lg:text-xl xl:text-xl font-semibold mx-[1%] text-center whitespace-normal sm:whitespace-nowrap">
                                     {item.text}
                                 </p>
@@ -332,12 +331,12 @@ function Peoples() {
 
             <section
                 id="commitment"
-                className="w-full bg-blue-950 flex justify-center md:py-20 py-10"
+                className="w-full bg-[#AD1E1E] flex justify-center md:py-20 py-10"
             >
                 <div className="w-[90%] md:w-[80%] bg-white flex flex-col lg:flex-row">
                     {/* Left Side */}
                     <div className="lg:w-[50%] p-6 md:p-10 flex flex-col justify-center">
-                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-light text-center sm:text-left text-blue-950 font-outfit">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-light text-center sm:text-left text-[#AD1E1E] font-outfit">
                             Commitment to Care & Compliance
                         </h2>
                         <div className="text-[10px] sm:text-[12px] md:text-sm 2xl:text-lg md:mt-3 mt-1 sm:mb-3 text-gray-600 ml-1 font-light text-justify">
@@ -366,45 +365,6 @@ function Peoples() {
                             alt="Innovation"
                             className="w-full h-full object-cover"
                         />
-                    </div>
-                </div>
-            </section>
-
-            {/* Career section */}
-
-            <section
-                id="career"
-                className="relative bg-no-repeat flex items-center justify-center min-h-[250px] sm:min-h-[300px] md:min-h-0 md:aspect-[16/5]"
-                style={{
-                    backgroundImage: `url(${CareerPng})`,
-                    backgroundPosition: "center 28%",
-                    backgroundSize: "145%",
-                }}
-            >
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/50"></div>
-
-                {/* Content */}
-                <div className="relative z-10 text-white 2xl:w-[65%] lg:w-[70%] md:w-[75%] sm:w-[80%] w-[95%] md:px-4 px-1 md:py-4 py-1">
-                    <h1 className="text-md sm:text-2xl lg:text-3xl 2xl:text-5xl font-medium mb-1 md:mb-6 w-full">
-                        Explore a career at PANORAMA.
-                    </h1>
-                    <p className="text-[10px] sm:text-sm lg:text-lg leading-relaxed lg:mb-8 md:mb-5 mb-2">
-                        Turn your job into a career at Panorama Exports. Learn,
-                        grow, and work alongside driven minds. Join us—contact
-                        HR for openings.
-                    </p>
-
-                    <div className="flex items-center gap-2 text-[10px] md:text-sm lg:text-lg">
-                        <a
-                            href="https://www.linkedin.com/company/panorama-exports/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="md:px-6 px-2 md:py-3 py-1 border border-white rounded-full
-               hover:bg-white hover:text-black transition duration-300"
-                        >
-                            Follow us on LinkedIn
-                        </a>
                     </div>
                 </div>
             </section>

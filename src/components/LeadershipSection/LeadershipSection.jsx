@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { IoEnterOutline } from "react-icons/io5";
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay, FreeMode } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/free-mode';
 import './LeadershipSection.css';
 
 import RajanPng from "../../assets/Founders/rajan.webp";
@@ -9,9 +15,8 @@ import NavinPng from "../../assets/Founders/navin.webp";
 import ShivaanPng from "../../assets/Founders/shivaan.webp";
 import SidharthPng from "../../assets/Founders/Sidharth.webp";
 import AmitPng from "../../assets/AMIT FINAL.jpeg";
-import KritiPng from "../../assets/Gemini_Generated_Image_jtuumnjtuumnjtuu.png";
 
-const leaders = [
+const baseLeaders = [
     {
         id: 1,
         name: "RAJAN SAHNI",
@@ -51,22 +56,20 @@ const leaders = [
         image: AmitPng,
         bgPos: "center 20%",
         bgSize: "120%"
-    },
-    {
-        id: 6,
-        name: "KRITI TEWARY",
-        role: "Lead - Sustainability",
-        image: KritiPng,
-        bgPos: "center 35%",
-        bgSize: "120%"
     }
 ];
 
 const LeadershipSection = () => {
+    const prevRef = useRef(null);
+    const nextRef = useRef(null);
+
+    // Duplicated list to ensure continuous infinite loop
+    const loopedLeaders = [...baseLeaders, ...baseLeaders];
+
     return (
         <section className="leadership-outer-container">
-            {/* Header Section - Matches 'People' section style */}
-            <div className="leadership-header-container w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 mb-12">
+            {/* Header Section */}
+            <div className="leadership-header-container w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 mb-8 md:mb-12">
                 <div className="flex flex-row items-center justify-between mb-6">
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
@@ -94,46 +97,85 @@ const LeadershipSection = () => {
                 </div>
             </div>
 
-            {/* Grid Section with Mesh Gradient Background */}
-            <div className="leadership-grid-bg relative overflow-hidden">
-                <div className="leadership-container max-w-[1400px] mx-auto px-6 py-16 md:py-24 relative z-10">
-                    <div className="leadership-grid">
-                        {leaders.map((leader, index) => (
-                            <motion.div
-                                key={leader.id}
-                                className="leadership-glass-card group"
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: false }}
-                                transition={{ delay: index * 0.1, duration: 0.6 }}
-                            >
-                                <div className="glass-card-inner">
-                                    {/* Circle Image Wrapper */}
-                                    <div className="leader-circle-wrapper flex items-center justify-center overflow-hidden">
-                                        <div
-                                            className="leader-circle-image-bg w-full h-full grayscale transition-all duration-500 group-hover:grayscale-0"
-                                            style={{
-                                                backgroundImage: `url(${leader.image})`,
-                                                backgroundPosition: leader.bgPos,
-                                                backgroundSize: leader.bgSize,
-                                                backgroundRepeat: 'no-repeat'
-                                            }}
-                                        />
-                                    </div>
+            {/* Horizontal Loop Slider Section */}
+            <div className="leadership-grid-bg relative overflow-hidden py-10 md:py-16">
+                <div className="w-[92%] max-w-[1700px] mx-auto px-2 sm:px-6 relative z-10">
+                    
+                    {/* Navigation Buttons */}
+                    <button
+                        ref={prevRef}
+                        className="leadership-nav-btn left absolute -left-2 sm:left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 hover:bg-[#AD1E1E] text-gray-800 hover:text-white shadow-lg flex items-center justify-center transition-all duration-300 backdrop-blur-sm border border-gray-200"
+                        aria-label="Previous Leader"
+                    >
+                        <ChevronLeft size={22} />
+                    </button>
+                    <button
+                        ref={nextRef}
+                        className="leadership-nav-btn right absolute -right-2 sm:right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/90 hover:bg-[#AD1E1E] text-gray-800 hover:text-white shadow-lg flex items-center justify-center transition-all duration-300 backdrop-blur-sm border border-gray-200"
+                        aria-label="Next Leader"
+                    >
+                        <ChevronRight size={22} />
+                    </button>
 
-                                    {/* Name and Designation */}
-                                    <div className="leader-details">
-                                        <h3 className="leader-name">
-                                            {leader.name}
-                                        </h3>
-                                        <p className="leader-role">
-                                            {leader.role}
-                                        </p>
+                    <Swiper
+                        modules={[Navigation, Autoplay, FreeMode]}
+                        loop={true}
+                        autoplay={{
+                            delay: 3000,
+                            disableOnInteraction: false,
+                            pauseOnMouseEnter: true,
+                        }}
+                        speed={800}
+                        grabCursor={true}
+                        slidesPerView={1.2}
+                        spaceBetween={18}
+                        onInit={(swiper) => {
+                            swiper.params.navigation.prevEl = prevRef.current;
+                            swiper.params.navigation.nextEl = nextRef.current;
+                            swiper.navigation.init();
+                            swiper.navigation.update();
+                        }}
+                        breakpoints={{
+                            480: { slidesPerView: 1.6, spaceBetween: 20 },
+                            640: { slidesPerView: 2.2, spaceBetween: 24 },
+                            768: { slidesPerView: 2.8, spaceBetween: 26 },
+                            1024: { slidesPerView: 3.5, spaceBetween: 28 },
+                            1280: { slidesPerView: 4.2, spaceBetween: 30 },
+                            1536: { slidesPerView: 5, spaceBetween: 30 }
+                        }}
+                        className="leadership-swiper !py-4"
+                    >
+                        {loopedLeaders.map((leader, index) => (
+                            <SwiperSlide key={`${leader.id}-${index}`} className="h-auto">
+                                <div className="leadership-glass-card group h-full">
+                                    <div className="glass-card-inner">
+                                        {/* Circle Image Wrapper */}
+                                        <div className="leader-circle-wrapper flex items-center justify-center overflow-hidden">
+                                            <div
+                                                className="leader-circle-image-bg w-full h-full grayscale transition-all duration-500 group-hover:grayscale-0"
+                                                style={{
+                                                    backgroundImage: `url(${leader.image})`,
+                                                    backgroundPosition: leader.bgPos,
+                                                    backgroundSize: leader.bgSize,
+                                                    backgroundRepeat: 'no-repeat'
+                                                }}
+                                            />
+                                        </div>
+
+                                        {/* Name and Designation */}
+                                        <div className="leader-details">
+                                            <h3 className="leader-name">
+                                                {leader.name}
+                                            </h3>
+                                            <p className="leader-role">
+                                                {leader.role}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </motion.div>
+                            </SwiperSlide>
                         ))}
-                    </div>
+                    </Swiper>
                 </div>
             </div>
         </section>
