@@ -20,13 +20,13 @@ export default function JoinUs() {
                                 JOIN
                             </h2>
                         </div>
-                        <div className="flex-1 min-w-0 h-full overflow-hidden rounded-[0.75rem] sm:rounded-[1.25rem] relative group shadow-[0_4px_15px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(1,39,106,0.12)] hover:-translate-y-1 transition-all duration-700 ease-out ring-1 ring-gray-900/5">
+                        <div className="flex-1 min-w-0 h-full overflow-hidden rounded-[0.75rem] sm:rounded-[1.25rem] relative group shadow-[0_4px_15px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(173,30,30,0.12)] hover:-translate-y-1 transition-all duration-700 ease-out ring-1 ring-gray-900/5">
                             <img src={img1} alt="Workspace" className="w-full h-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-[1.03]" />
-                            <div className="absolute inset-0 bg-[#01276a]/0 group-hover:bg-[#01276a]/5 transition-colors duration-700 z-10 pointer-events-none"></div>
+                            <div className="absolute inset-0 bg-[#AD1E1E]/0 group-hover:bg-[#AD1E1E]/5 transition-colors duration-700 z-10 pointer-events-none"></div>
                         </div>
-                        <div className="flex-1 min-w-0 h-full overflow-hidden rounded-[0.75rem] sm:rounded-[1.25rem] relative group shadow-[0_4px_15px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(1,39,106,0.12)] hover:-translate-y-1 transition-all duration-700 ease-out ring-1 ring-gray-900/5">
+                        <div className="flex-1 min-w-0 h-full overflow-hidden rounded-[0.75rem] sm:rounded-[1.25rem] relative group shadow-[0_4px_15px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(173,30,30,0.12)] hover:-translate-y-1 transition-all duration-700 ease-out ring-1 ring-gray-900/5">
                             <img src={img2} alt="Apparel Display" className="w-full h-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-[1.03]" />
-                            <div className="absolute inset-0 bg-[#01276a]/0 group-hover:bg-[#01276a]/5 transition-colors duration-700 z-10 pointer-events-none"></div>
+                            <div className="absolute inset-0 bg-[#AD1E1E]/0 group-hover:bg-[#AD1E1E]/5 transition-colors duration-700 z-10 pointer-events-none"></div>
                         </div>
                     </div>
 
@@ -37,18 +37,18 @@ export default function JoinUs() {
                                 US
                             </h2>
                         </div>
-                        <div className="w-[83%] h-full overflow-hidden rounded-[0.75rem] sm:rounded-[1.25rem] relative group shadow-[0_4px_15px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(1,39,106,0.12)] hover:-translate-y-1 transition-all duration-700 ease-out ring-1 ring-gray-900/5">
+                        <div className="w-[83%] h-full overflow-hidden rounded-[0.75rem] sm:rounded-[1.25rem] relative group shadow-[0_4px_15px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(173,30,30,0.12)] hover:-translate-y-1 transition-all duration-700 ease-out ring-1 ring-gray-900/5">
                             <img src={img3} alt="Factory Floor" className="w-full h-full object-cover object-[center_88%] transition-transform duration-[1200ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-[1.03]" />
-                            <div className="absolute inset-0 bg-[#01276a]/0 group-hover:bg-[#01276a]/5 transition-colors duration-700 z-10 pointer-events-none"></div>
+                            <div className="absolute inset-0 bg-[#AD1E1E]/0 group-hover:bg-[#AD1E1E]/5 transition-colors duration-700 z-10 pointer-events-none"></div>
                         </div>
                     </div>
 
                 </div>
 
                 {/* Right Side Square Image - This relative child defines the height for the entire section */}
-                <div className="w-[28%] ml-auto aspect-square overflow-hidden rounded-[0.75rem] sm:rounded-[1.25rem] relative group shadow-[0_4px_15px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(1,39,106,0.12)] hover:-translate-y-1 transition-all duration-700 ease-out ring-1 ring-gray-900/5">
+                <div className="w-[28%] ml-auto aspect-square overflow-hidden rounded-[0.75rem] sm:rounded-[1.25rem] relative group shadow-[0_4px_15px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_50px_rgba(173,30,30,0.12)] hover:-translate-y-1 transition-all duration-700 ease-out ring-1 ring-gray-900/5">
                     <img src={img4} alt="Team" className="w-full h-full object-cover object-center transition-transform duration-[1200ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-[1.03]" />
-                    <div className="absolute inset-0 bg-[#01276a]/0 group-hover:bg-[#01276a]/5 transition-colors duration-700 z-10 pointer-events-none"></div>
+                    <div className="absolute inset-0 bg-[#AD1E1E]/0 group-hover:bg-[#AD1E1E]/5 transition-colors duration-700 z-10 pointer-events-none"></div>
                 </div>
 
             </div>

@@ -103,7 +103,7 @@ export default function NewsletterViewer() {
                         onLoadSuccess={onDocumentLoadSuccess}
                         loading={
                             <div className="flex flex-col items-center justify-center p-20 w-full h-full">
-                                <div className="w-12 h-12 border-4 border-gray-200 border-t-blue-600 rounded-full animate-spin mb-4"></div>
+                                <div className="w-12 h-12 border-4 border-gray-200 border-t-[#AD1E1E] rounded-full animate-spin mb-4"></div>
                                 <p className="text-gray-500">Loading Newsletter...</p>
                             </div>
                         }

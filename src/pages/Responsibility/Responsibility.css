@@ -1,22 +1,22 @@
 /* Mesh Gradient Background for Responsibility Hero */
 .mesh-gradient-bg {
-    --panorama-blue: #01276a;
-    --deep-navy: #001233;
-    --midnight-blue: #001a4d;
-    --cobalt-deep: #003399;
+    --panorama-red: #AD1E1E;
+    --deep-maroon: #5A0E0E;
+    --midnight-red: #801616;
+    --crimson-deep: #C93030;
     --text-white: #ffffff;
 
-    background-color: var(--panorama-blue);
+    background-color: var(--panorama-red);
     background-image:
-        radial-gradient(at 0% 0%, var(--cobalt-deep) 0, transparent 50%),
-        radial-gradient(at 50% 0%, var(--panorama-blue) 0, transparent 50%),
-        radial-gradient(at 100% 0%, var(--midnight-blue) 0, transparent 50%),
-        radial-gradient(at 0% 50%, var(--panorama-blue) 0, transparent 50%),
-        radial-gradient(at 50% 50%, var(--deep-navy) 0, transparent 50%),
-        radial-gradient(at 100% 50%, var(--panorama-blue) 0, transparent 50%),
-        radial-gradient(at 0% 100%, var(--midnight-blue) 0, transparent 50%),
-        radial-gradient(at 50% 100%, var(--panorama-blue) 0, transparent 50%),
-        radial-gradient(at 100% 100%, var(--cobalt-deep) 0, transparent 50%);
+        radial-gradient(at 0% 0%, var(--crimson-deep) 0, transparent 50%),
+        radial-gradient(at 50% 0%, var(--panorama-red) 0, transparent 50%),
+        radial-gradient(at 100% 0%, var(--midnight-red) 0, transparent 50%),
+        radial-gradient(at 0% 50%, var(--panorama-red) 0, transparent 50%),
+        radial-gradient(at 50% 50%, var(--deep-maroon) 0, transparent 50%),
+        radial-gradient(at 100% 50%, var(--panorama-red) 0, transparent 50%),
+        radial-gradient(at 0% 100%, var(--midnight-red) 0, transparent 50%),
+        radial-gradient(at 50% 100%, var(--panorama-red) 0, transparent 50%),
+        radial-gradient(at 100% 100%, var(--crimson-deep) 0, transparent 50%);
     background-size: 200% 200%;
     animation: meshGradientAnimation 20s ease infinite;
     position: relative;

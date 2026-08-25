@@ -1,15 +1,15 @@
 .cert-header-bg {
-    background-color: #01276a;
+    background-color: #AD1E1E;
     background-image:
-        radial-gradient(at 0% 0%, #003399 0, transparent 50%),
-        radial-gradient(at 50% 0%, #01276a 0, transparent 50%),
-        radial-gradient(at 100% 0%, #001a4d 0, transparent 50%),
-        radial-gradient(at 0% 50%, #01276a 0, transparent 50%),
-        radial-gradient(at 50% 50%, #001233 0, transparent 50%),
-        radial-gradient(at 100% 50%, #01276a 0, transparent 50%),
-        radial-gradient(at 0% 100%, #001a4d 0, transparent 50%),
-        radial-gradient(at 50% 100%, #01276a 0, transparent 50%),
-        radial-gradient(at 100% 100%, #003399 0, transparent 50%);
+        radial-gradient(at 0% 0%, #C93030 0, transparent 50%),
+        radial-gradient(at 50% 0%, #AD1E1E 0, transparent 50%),
+        radial-gradient(at 100% 0%, #801616 0, transparent 50%),
+        radial-gradient(at 0% 50%, #AD1E1E 0, transparent 50%),
+        radial-gradient(at 50% 50%, #5A0E0E 0, transparent 50%),
+        radial-gradient(at 100% 50%, #AD1E1E 0, transparent 50%),
+        radial-gradient(at 0% 100%, #801616 0, transparent 50%),
+        radial-gradient(at 50% 100%, #AD1E1E 0, transparent 50%),
+        radial-gradient(at 100% 100%, #C93030 0, transparent 50%);
     background-size: 200% 200%;
     animation: meshGradient 20s ease infinite;
     position: relative;

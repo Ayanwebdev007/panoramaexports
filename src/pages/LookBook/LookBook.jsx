@@ -15,7 +15,7 @@ function LookBook() {
             <header className="w-full pt-10 pb-2 md:pt-14 md:pb-4 bg-white">
                 <div className="w-[90%] mx-auto px-4 sm:px-6 md:px-10 lg:px-20">
                     <div className="max-w-3xl">
-                        <h1 className="text-4xl md:text-5xl font-light text-[#01276a] leading-tight">
+                        <h1 className="text-4xl md:text-5xl font-light text-[#AD1E1E] leading-tight">
                             Lookbook Collections
                         </h1>
                     </div>

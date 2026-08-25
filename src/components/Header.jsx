@@ -83,13 +83,13 @@ export default function Header() {
                                 
                                 {/* Mega Dropdown for Our Story only */}
                                 {item.title === "Our Story" && activeDropdown === index && (
-                                    <div className="absolute top-full left-0 w-[32rem] bg-white shadow-xl border-t-4 border-blue-800 py-8 px-8 z-50">
+                                    <div className="absolute top-full left-0 w-[32rem] bg-white shadow-xl border-t-4 border-[#AD1E1E] py-8 px-8 z-50">
                                         <div className="grid grid-cols-3 gap-6">
                                             {item.dropdown.map((subItem, subIndex) => (
                                                 <Link
                                                     key={subIndex}
                                                     to={subItem.path}
-                                                    className="bg-[#073281] text-white rounded-lg p-6 text-center font-semibold text-lg hover:bg-blue-900 transition-colors duration-200 flex flex-col items-center justify-center shadow-md"
+                                                    className="bg-[#AD1E1E] text-white rounded-lg p-6 text-center font-semibold text-lg hover:bg-[#801616] transition-colors duration-200 flex flex-col items-center justify-center shadow-md"
                                                 >
                                                     {subItem.title}
                                                 </Link>

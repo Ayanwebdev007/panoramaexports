@@ -62,7 +62,7 @@ export default function NewsletterItem({ item, onClick }) {
             {/* Date & Info Label */}
             <div className="flex flex-col items-start px-2 font-outfit">
                 <div className="flex items-baseline space-x-3 w-full border-b border-gray-100 pb-3 mb-3 group-hover:border-gray-300 transition-colors duration-500">
-                    <h3 className="text-xl font-light text-gray-800 group-hover:text-blue-900 transition-colors duration-300">
+                    <h3 className="text-xl font-light text-gray-800 group-hover:text-[#AD1E1E] transition-colors duration-300">
                         {item.month}
                     </h3>
                     <span className="text-sm font-light tracking-[0.2em] uppercase text-gray-400 group-hover:text-gray-600 transition-colors">
@@ -71,7 +71,7 @@ export default function NewsletterItem({ item, onClick }) {
                     <div className="flex-grow"></div>
                     <ArrowUpRight
                         size={18}
-                        className="text-gray-300 group-hover:text-blue-900 transform translate-y-2 opacity-0 -translate-x-2 group-hover:translate-y-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500"
+                        className="text-gray-300 group-hover:text-[#AD1E1E] transform translate-y-2 opacity-0 -translate-x-2 group-hover:translate-y-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500"
                     />
                 </div>
 

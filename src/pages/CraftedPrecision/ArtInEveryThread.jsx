@@ -112,7 +112,7 @@ function LegacyArtInEveryThread() {
                 <div className="w-full h-10 md:h-12 lg:h-20 bg-gray-900"></div>
                 <div className="w-[90%] mx-auto lg:py-16 md:py-12 sm:py-10 py-5 px-2 sm:px-6 md:px-10 lg:px-20">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6">
-                        <h1 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#01276a]">
+                        <h1 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#AD1E1E]">
                             Art In Every Thread
                         </h1>
                     </div>
@@ -125,7 +125,7 @@ function LegacyArtInEveryThread() {
                         bgColor="#5b4e39"
                     />
                 </div>
-                <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-blue-950">
+                <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-gray-700 font-light font-outfit">
                     Bridging innovation and heritage, our modern embroidery
                     ecosystem delivers superior intricacy and flawless
                     execution. Each design is crafted with engineered precision
@@ -144,7 +144,7 @@ function LegacyArtInEveryThread() {
                     <img src={aet3} alt="" className="w-full h-full object-cover" />
                 </div>
             </section>
-            <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-blue-950">
+            <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-gray-700 font-light font-outfit">
                 From Schiffli artistry to contemporary embroidery techniques,
                 every thread is placed with purpose. Automated controls ensure
                 repeat accuracy, while skilled specialists refine detailing

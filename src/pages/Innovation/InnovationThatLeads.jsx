@@ -51,7 +51,7 @@ function InnovationThatLeads() {
     ];
 
     return (
-        <section className="bg-blue-950">
+        <section className="bg-[#AD1E1E]">
             <InnovationStack items={stackingItems} />
         </section>
     );

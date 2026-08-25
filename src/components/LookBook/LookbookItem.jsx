@@ -23,7 +23,7 @@ export default function LookbookItem({ item, onClick }) {
                 
                 {/* Visual Accent */}
                 <div className="absolute bottom-4 right-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                    <div className="bg-white/90 backdrop-blur-md p-2 rounded-full text-blue-950">
+                    <div className="bg-white/90 backdrop-blur-md p-2 rounded-full text-[#AD1E1E]">
                         <ArrowUpRight size={20} />
                     </div>
                 </div>
@@ -31,7 +31,7 @@ export default function LookbookItem({ item, onClick }) {
 
             {/* Info Label */}
             <div className="flex flex-col items-center px-2 font-outfit">
-                <h3 className="text-sm font-light tracking-[0.3em] uppercase text-gray-400 group-hover:text-blue-900 transition-all duration-500 text-center">
+                <h3 className="text-sm font-light tracking-[0.3em] uppercase text-gray-400 group-hover:text-[#AD1E1E] transition-all duration-500 text-center">
                     {item.subtitle}
                 </h3>
             </div>

@@ -43,7 +43,7 @@ export default function CraftingTomorrow() {
                     <div className="flex flex-col md:flex-row md:gap-5 gap-2 lg:gap-10">
                         <button
                             onClick={handleToggleModal}
-                            className="md:mt-10 mt-5 group inline-flex items-center gap-2 rounded-xl border px-6 py-3 text-white bg-transparent border-white hover:bg-white hover:text-blue-900 lg:text-lg md:text-md sm:text-sm text-[12px] font-semibold shadow-[0_6px_10px_#ffffff88] hover:shadow-[0_8px_12px_#ffffffcc] transform hover:-translate-y-1 transition-all duration-300"
+                            className="md:mt-10 mt-5 group inline-flex items-center gap-2 rounded-xl border px-6 py-3 text-white bg-transparent border-white hover:bg-white hover:text-[#AD1E1E] lg:text-lg md:text-md sm:text-sm text-[12px] font-semibold shadow-[0_6px_10px_#ffffff88] hover:shadow-[0_8px_12px_#ffffffcc] transform hover:-translate-y-1 transition-all duration-300"
                         >
                             Watch Now
                             <CiPlay1 className="lg:text-lg md:text-md sm:text-sm text-[12px] group-hover:translate-x-1 transition-transform duration-300" />

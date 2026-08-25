@@ -548,7 +548,7 @@ export default function OurStory() {
             {/* MileStones Sections - Hidden as per request */}
             {/* 
             <section id="milestones" ref={milestonesRef} className="bg-white">
-                <div className="sm:pt-8 sm:pb-0 text-[#01276a] w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md mt-6">
+                <div className="sm:pt-8 sm:pb-0 text-[#AD1E1E] w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md mt-6">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6">
                         <div className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit">
                             Milestones

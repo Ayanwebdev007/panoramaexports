@@ -15,7 +15,7 @@ const StackCard = ({ item, index, total }) => {
     return (
         <div
             id={item.id}
-            className="h-screen sticky top-[112px] flex items-center justify-center overflow-hidden bg-blue-950"
+            className="h-screen sticky top-[112px] flex items-center justify-center overflow-hidden bg-[#AD1E1E]"
             style={{ zIndex: index + 1 }}
         >
             <motion.div

@@ -477,7 +477,7 @@ export default function Home() {
                                 </h1>
 
                                 <Link to="/craftingtomorrow">
-                                    <button className="xl:mt-10 lg:mt-6 md:mt-4 mt-1 lg:text-lg md:text-md sm:text-sm text-[10px] md:px-6 sm:px-4 px-2 md:py-3 py-1 md:rounded-xl rounded-md group inline-flex items-center gap-2 border text-white bg-transparent border-white hover:bg-white hover:text-blue-900 font-semibold shadow-[0_6px_10px_#ffffff88] hover:shadow-[0_8px_12px_#ffffffcc] transform hover:-translate-y-1 transition-all duration-300">
+                                    <button className="xl:mt-10 lg:mt-6 md:mt-4 mt-1 lg:text-lg md:text-md sm:text-sm text-[10px] md:px-6 sm:px-4 px-2 md:py-3 py-1 md:rounded-xl rounded-md group inline-flex items-center gap-2 border text-white bg-transparent border-white hover:bg-white hover:text-[#AD1E1E] font-semibold shadow-[0_6px_10px_#ffffff88] hover:shadow-[0_8px_12px_#ffffffcc] transform hover:-translate-y-1 transition-all duration-300">
                                         Click to Read More
                                         <IoEnterOutline className="lg:h-7 lg:w-7 md:h-5 md:w-5 h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                                     </button>
@@ -584,7 +584,7 @@ export default function Home() {
 
                 {/* Commenting out old manufacturing units section as requested */}
                 {/* 
-                <div className="md:py-8 py-6 sm:mt-6 text-[#01276a] w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">
+                <div className="md:py-8 py-6 sm:mt-6 text-[#AD1E1E] w-[90%] mx-auto px-2 sm:px-6 md:px-10 lg:px-20 rounded-t-md">
                     <div className="flex flex-col items-start justify-center">
                         <div className="text-2xl sm:text-3xl md:text-5xl font-regular flex flex-wrap gap-4">
                             <p className="font-bold">Manufacturing</p> Units
@@ -671,7 +671,7 @@ export default function Home() {
                             </div>
                             {/* Mobile-only motto text */}
                             <div className="block sm:hidden mb-4 text-[#AD1E1E]">
-                                <p className="text-[12px] leading-tight text-blue-950">
+                                <p className="text-[12px] leading-tight text-gray-800">
                                     <span className="font-semibold">Our motto:</span>
                                     <span className="font-light"> People. Progress. Purpose. At Panorama,
                                         we cultivate a culture of responsibility, inclusion,
@@ -696,7 +696,7 @@ export default function Home() {
                                     backgroundRepeat: "no-repeat",
                                 }}
                             >
-                                <p className="hidden sm:block 2xl:w-[550px] xl:w-[450px] lg:w-[350px] md:w-[300px] w-[240px] 2xl:text-xl lg:text-md md:text-sm sm:text-[10px] text-[12px] leading-tight sm:leading-normal sm:pr-2 text-blue-950">
+                                <p className="hidden sm:block 2xl:w-[550px] xl:w-[450px] lg:w-[350px] md:w-[300px] w-[240px] 2xl:text-xl lg:text-md md:text-sm sm:text-[10px] text-[12px] leading-tight sm:leading-normal sm:pr-2 text-gray-800">
                                     <span className="font-semibold">Our motto:</span>
                                     <span className="font-light"> People. Progress. Purpose. At Panorama,
                                         we cultivate a culture of responsibility, inclusion,

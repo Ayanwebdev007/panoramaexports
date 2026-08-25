@@ -1,8 +1,6 @@
 
 import NewsletterImg1 from "../assets/Media/Workshop/Img1.webp";
 import NewsletterImg2 from "../assets/Media/Workshop/Img2.webp";
-import NewsletterImg3 from "../assets/Media/Workshop/Img3.webp";
-import NewsletterImg4 from "../assets/Media/Workshop/Img4.webp";
 import NewsletterImg5 from "../assets/Media/Workshop/Img5.webp";
 import NewsletterImg6 from "../assets/Media/Workshop/Img6.webp";
 import NewsletterImg7 from "../assets/Media/Workshop/Img7.webp";
@@ -22,7 +20,6 @@ import Environment4 from "../assets/Media/Workshop/CM100651.webp";
 import wd4 from "../assets/WD4.webp";
 import wd5 from "../assets/WD-5.webp";
 import Christmas1 from "../assets/Christmas1.webp";
-import Christmas2 from "../assets/DSC03400.JPG";
 import Christmas3 from "../assets/Christmas3.jpg";
 import Christmas4 from "../assets/Christmas4.jpg";
 
@@ -38,10 +35,10 @@ export const mediaData = {
             date: "December 2024",
             image: NewsletterImg1,
             images: [
-                NewsletterImg1, NewsletterImg2, NewsletterImg3, NewsletterImg4, NewsletterImg5,
+                NewsletterImg1, NewsletterImg2, NewsletterImg5,
                 NewsletterImg6, NewsletterImg7, NewsletterImg8, NewsletterImg9, NewsletterImg10
             ],
-            count: 10
+            count: 8
         },
         {
             id: 2,
@@ -56,8 +53,8 @@ export const mediaData = {
             title: "Christmas Day Celebration 2025",
             date: "December 25, 2025",
             image: Christmas1,
-            images: [Christmas1, Christmas3, Christmas4, Christmas2, Environment4],
-            count: 5
+            images: [Christmas1, Christmas3, Christmas4, Environment4],
+            count: 4
         },
         {
             id: 3,

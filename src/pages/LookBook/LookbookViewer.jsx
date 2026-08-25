@@ -60,7 +60,7 @@ export default function LookbookViewer() {
                         <div className="hidden sm:flex items-center space-x-1 bg-gray-100 rounded-full px-2 py-1">
                             <button
                                 onClick={() => setScale(s => Math.max(0.5, s - 0.2))}
-                                className="p-1.5 text-gray-500 hover:text-blue-900 transition-colors"
+                                className="p-1.5 text-gray-500 hover:text-[#AD1E1E] transition-colors"
                                 title="Zoom Out"
                             >
                                 <ZoomOut size={18} />
@@ -70,7 +70,7 @@ export default function LookbookViewer() {
                             </span>
                             <button
                                 onClick={() => setScale(s => Math.min(3.0, s + 0.2))}
-                                className="p-1.5 text-gray-500 hover:text-blue-900 transition-colors"
+                                className="p-1.5 text-gray-500 hover:text-[#AD1E1E] transition-colors"
                                 title="Zoom In"
                             >
                                 <ZoomIn size={18} />
@@ -90,7 +90,7 @@ export default function LookbookViewer() {
                         <a
                             href={lookbook.image}
                             download={`${lookbook.title}.webp`}
-                            className="flex items-center px-5 py-2.5 bg-blue-950 text-white rounded-sm text-sm font-light hover:bg-blue-900 transition-all shadow-sm hover:shadow-md active:scale-95"
+                            className="flex items-center px-5 py-2.5 bg-[#AD1E1E] text-white rounded-sm text-sm font-light hover:bg-[#801616] transition-all shadow-sm hover:shadow-md active:scale-95"
                         >
                             <Download size={16} className="mr-2" />
                             <span className="hidden sm:inline">Export Card</span>

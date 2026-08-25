@@ -71,7 +71,7 @@ function SustainableDesigns() {
                 <div className="w-full h-10 md:h-12 lg:h-20 bg-gray-900"></div>
                 <div className="w-[90%] mx-auto lg:py-16 md:py-12 sm:py-10 py-5 px-2 sm:px-6 md:px-10 lg:px-20">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6">
-                        <h1 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#01276a]">
+                        <h1 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#AD1E1E]">
                             Sustainable Designs
                         </h1>
                     </div>
@@ -84,7 +84,7 @@ function SustainableDesigns() {
                         bgColor="#5b4e39"
                     />
                 </div>
-                <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-blue-950">
+                <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-gray-700 font-light font-outfit">
                     {/* <p className="font-bold text-xl md:text-2xl my-2 text-center">
                         Sustainable Designs
                     </p> */}
@@ -107,7 +107,7 @@ function SustainableDesigns() {
                     <img src={aet3} alt="" loading="lazy" className="w-full h-full object-cover" />
                 </div>
             </section>
-            <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-blue-950">
+            <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-gray-700 font-light font-outfit">
                 Our approach to sustainable design integrates performance,
                 precision, and environmental accountability—delivering products
                 that meet global standards while reducing ecological impact.

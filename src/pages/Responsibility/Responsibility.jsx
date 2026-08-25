@@ -207,7 +207,7 @@ function Responsibility() {
                             alt="image"
                             className="rounded-lg xl:w-36 md:w-28 w-36 xl:h-36 md:h-28 h-36"
                         />
-                        <h2 className="text-blue-950 font-light my-4 text-[12px] sm:text-sm md:text-[12px] lg:text-sm xl:text-md 2xl:text-lg font-outfit">
+                        <h2 className="text-gray-800 font-light my-4 text-[12px] sm:text-sm md:text-[12px] lg:text-sm xl:text-md 2xl:text-lg font-outfit">
                             {item.header}
                         </h2>
                     </div>
@@ -266,7 +266,7 @@ function Responsibility() {
 
                 {/* Certifications Header - Hidden as per request */}
                 {/* <div id="certifications" className="lg:mt-24 mt-12 mb-8">
-                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#01276a] mb-5">
+                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#AD1E1E] mb-5">
                         Our Certifications
                     </h2>
                     <div className="text-gray-700 2xl:text-xl lg:text-lg text-sm leading-relaxed font-light text-justify">

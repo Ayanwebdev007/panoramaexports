@@ -142,7 +142,7 @@ function LegacyCraftedPrecision() {
                 <div className="w-full h-10 md:h-12 lg:h-20 bg-gray-900"></div>
                 <div className="w-[90%] mx-auto lg:py-16 md:py-12 sm:py-10 py-5 px-2 sm:px-6 md:px-10 lg:px-20">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6">
-                        <h1 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#01276a]">
+                        <h1 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#AD1E1E]">
                             Crafted Precision
                         </h1>
                     </div>
@@ -175,7 +175,7 @@ function LegacyCraftedPrecision() {
                                 <div
                                     className={`absolute inset-0 pointer-events-none ${activeIndex === i
                                         ? "bg-transparent"
-                                        : "bg-blue-950/60 text-white"
+                                        : "bg-[#AD1E1E]/60 text-white"
                                         }`}
                                 ></div>
                                 <div

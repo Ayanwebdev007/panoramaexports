@@ -137,7 +137,7 @@ export default function Footer({ setIsNewsletterOpen }) {
                     </div>
                     <nav className="flex flex-wrap justify-center gap-6 md:gap-12">
                         <Link to="/ourstory" className="text-xs md:text-sm font-bold tracking-wider hover:text-[#AD1E1E] transition-colors text-[#1a1a1a]">About</Link>
-                        <Link to="/peoples" className="text-xs md:text-sm font-bold tracking-wider hover:text-[#AD1E1E] transition-colors text-[#1a1a1a]">Career</Link>
+                        <Link to="/contactus#career" className="text-xs md:text-sm font-bold tracking-wider hover:text-[#AD1E1E] transition-colors text-[#1a1a1a]">Career</Link>
                         <Link to="/responsibility" className="text-xs md:text-sm font-bold tracking-wider hover:text-[#AD1E1E] transition-colors text-[#1a1a1a]">Sustainability</Link>
                         <button 
                             onClick={() => setIsNewsletterOpen(true)}

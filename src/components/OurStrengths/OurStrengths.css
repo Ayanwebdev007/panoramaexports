@@ -1,30 +1,25 @@
 :root {
-    --panorama-blue: #01276a;
-    /* The exact "Manufacturing Units" blue */
-    --deep-navy: #001233;
-    /* Deep shadow navy */
-    --midnight-blue: #001a4d;
-    /* Midnight shade */
-    --cobalt-deep: #003399;
-    /* Stronger blue accent */
+    --panorama-red: #AD1E1E;
+    --deep-maroon: #5A0E0E;
+    --midnight-red: #801616;
+    --crimson-deep: #C93030;
     --accent-gold: #ffd700;
-    /* Bright Gold */
     --text-white: #ffffff;
 }
 
 .key-highlights {
     padding: 120px 20px 100px 20px;
-    background-color: var(--panorama-blue);
+    background-color: var(--panorama-red);
     background-image:
-        radial-gradient(at 0% 0%, var(--cobalt-deep) 0, transparent 50%),
-        radial-gradient(at 50% 0%, var(--panorama-blue) 0, transparent 50%),
-        radial-gradient(at 100% 0%, var(--midnight-blue) 0, transparent 50%),
-        radial-gradient(at 0% 50%, var(--panorama-blue) 0, transparent 50%),
-        radial-gradient(at 50% 50%, var(--deep-navy) 0, transparent 50%),
-        radial-gradient(at 100% 50%, var(--panorama-blue) 0, transparent 50%),
-        radial-gradient(at 0% 100%, var(--midnight-blue) 0, transparent 50%),
-        radial-gradient(at 50% 100%, var(--panorama-blue) 0, transparent 50%),
-        radial-gradient(at 100% 100%, var(--cobalt-deep) 0, transparent 50%);
+        radial-gradient(at 0% 0%, var(--crimson-deep) 0, transparent 50%),
+        radial-gradient(at 50% 0%, var(--panorama-red) 0, transparent 50%),
+        radial-gradient(at 100% 0%, var(--midnight-red) 0, transparent 50%),
+        radial-gradient(at 0% 50%, var(--panorama-red) 0, transparent 50%),
+        radial-gradient(at 50% 50%, var(--deep-maroon) 0, transparent 50%),
+        radial-gradient(at 100% 50%, var(--panorama-red) 0, transparent 50%),
+        radial-gradient(at 0% 100%, var(--midnight-red) 0, transparent 50%),
+        radial-gradient(at 50% 100%, var(--panorama-red) 0, transparent 50%),
+        radial-gradient(at 100% 100%, var(--crimson-deep) 0, transparent 50%);
     background-size: 200% 200%;
     animation: meshGradient 20s ease infinite;
     position: relative;

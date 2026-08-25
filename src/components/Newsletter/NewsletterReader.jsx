@@ -39,7 +39,7 @@ export default function NewsletterReader({ url, onClose }) {
                 <div className="flex items-center space-x-4 bg-gray-800 rounded-full px-4 py-2">
                     <button
                         onClick={() => setScale(s => Math.max(0.5, s - 0.1))}
-                        className="p-1 hover:text-blue-400 transition"
+                        className="p-1 hover:text-[#AD1E1E] transition"
                         title="Zoom Out"
                     >
                         <ZoomOut size={20} />
@@ -49,7 +49,7 @@ export default function NewsletterReader({ url, onClose }) {
                     </span>
                     <button
                         onClick={() => setScale(s => Math.min(2.0, s + 0.1))}
-                        className="p-1 hover:text-blue-400 transition"
+                        className="p-1 hover:text-[#AD1E1E] transition"
                         title="Zoom In"
                     >
                         <ZoomIn size={20} />

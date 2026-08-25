@@ -30,10 +30,10 @@ const HandcraftedLuxury = () => {
     ];
 
     const content = (
-        <section className="bg-blue-950">
+        <section className="bg-[#AD1E1E]">
             <InnovationStack items={stackingItems} />
             {/* Spacer for scroll depth */}
-            <div className="h-24 bg-blue-950" />
+            <div className="h-24 bg-[#AD1E1E]" />
         </section>
     );
 

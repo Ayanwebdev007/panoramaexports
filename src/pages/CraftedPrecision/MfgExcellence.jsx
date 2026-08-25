@@ -158,7 +158,7 @@ function LegacyMfgExcellence() {
                 <div className="w-full h-10 md:h-12 lg:h-20 bg-gray-900"></div>
                 <div className="w-[90%] mx-auto lg:py-16 md:py-12 sm:py-10 py-5 px-2 sm:px-6 md:px-10 lg:px-20">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6">
-                        <h1 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#01276a]">
+                        <h1 className="text-2xl sm:text-3xl md:text-5xl font-light font-outfit text-[#AD1E1E]">
                             Manufacturing Excellence
                         </h1>
                     </div>
@@ -171,7 +171,7 @@ function LegacyMfgExcellence() {
                         bgColor="#5b4e39"
                     />
                 </div>
-                <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-blue-950">
+                <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-gray-700 font-light font-outfit">
                     {/* <p className="font-bold text-xl md:text-2xl my-2 text-center">
                         Manufacturing Excellence{" "}
                     </p> */}
@@ -183,30 +183,6 @@ function LegacyMfgExcellence() {
                 </div>
             </section>
             <section className="">
-                {/* <div className="lg:w-[100%] mx-auto px-6 md:px-8 lg:px-10 2xl:px-12 md:py-12 py-5 grid lg:grid-cols-2 2xl:gap-12 lg:gap-10 md:gap-8 gap-6">
-                    {VisionImages.map((item) => (
-                        <div
-                            key={item.id}
-                            className="relative overflow-hidden shadow-lg group"
-                        >
-                            <img
-                                src={item.image}
-                                alt="vision"
-                                className="w-full object-contain transform transition-transform duration-[4000ms] ease-out group-hover:scale-[1.1]"
-                            />
-                            
-                            <div className="absolute inset-0 py-[10%] bg-gradient-to-t from-blue-950/50 via-blue-950/40 via-blue-950/30 via-blue-950/20 to-transparent group-hover:from-blue-950/90 group-hover:via-blue-950/80 group-hover:via-blue-950/50 group-hover:via-blue-950/40 group-hover:to-transparent transition-all duration-500 flex flex-col justify-end p-6">
-                                <p className="text-white text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold mx-[10%]">
-                                    {item.text}
-                                </p>
-                                <p className="mx-[10%] mt-4 text-white">
-                                    {item.subtext}
-                                </p>
-                            </div>
-                        </div>
-                    ))}
-                </div> */}
-
                 {/* Images Area */}
                 <section className="w-[90%] mx-auto grid md:grid-cols-3 grid-cols-1 2xl:gap-5 lg:gap-4 md:gap-3 gap-2">
                     <div className="overflow-hidden rounded-[2rem]">
@@ -219,7 +195,7 @@ function LegacyMfgExcellence() {
                         <img src={mfg3} alt="" className="w-full h-full object-cover" />
                     </div>
                 </section>
-                <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-blue-950">
+                <div className="lg:my-16 md:my-10 my-5 text-justify md:w-[70%] w-[95%] mx-auto px-4 text-sm md:text-xl text-gray-700 font-light font-outfit">
                     At Panorama, excellence is both a process and a promise.
                     Integrated quality control ensures uniformity, resilience,
                     and refinement throughout production. Sustainability remains

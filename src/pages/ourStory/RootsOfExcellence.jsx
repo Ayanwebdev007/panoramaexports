@@ -3,7 +3,7 @@ import React from "react";
 const RootsOfExcellence = () => {
     return (
         <>
-            <div className="bg-blue-950 h-20 mb-12"></div>
+            <div className="bg-[#AD1E1E] h-20 mb-12"></div>
             <section className="bg-white text-gray-800 px-6 py-12 md:px-20">
                 <div className="max-w-5xl mx-auto text-center">
                     {/* Main Heading */}
@@ -39,7 +39,7 @@ const RootsOfExcellence = () => {
                     <div className="relative border-l border-gray-300">
                         {/* 1973 */}
                         <div className="mb-10 ml-6">
-                            <div className="absolute w-3 h-3 bg-blue-600 rounded-full -left-1.5 top-1.5"></div>
+                            <div className="absolute w-3 h-3 bg-[#AD1E1E] rounded-full -left-1.5 top-1.5"></div>
                             <h3 className="text-xl font-semibold font-outfit">
                                 1973 – The Beginning
                             </h3>
@@ -52,7 +52,7 @@ const RootsOfExcellence = () => {
 
                         {/* 1990s */}
                         <div className="mb-10 ml-6">
-                            <div className="absolute w-3 h-3 bg-blue-600 rounded-full -left-1.5 top-1.5"></div>
+                            <div className="absolute w-3 h-3 bg-[#AD1E1E] rounded-full -left-1.5 top-1.5"></div>
                             <h3 className="text-xl font-semibold font-outfit">
                                 1990s – Growth & Recognition
                             </h3>
@@ -65,7 +65,7 @@ const RootsOfExcellence = () => {
 
                         {/* 2000s */}
                         <div className="mb-10 ml-6">
-                            <div className="absolute w-3 h-3 bg-blue-600 rounded-full -left-1.5 top-1.5"></div>
+                            <div className="absolute w-3 h-3 bg-[#AD1E1E] rounded-full -left-1.5 top-1.5"></div>
                             <h3 className="text-xl font-semibold font-outfit">
                                 2000s – Innovation
                             </h3>
@@ -77,7 +77,7 @@ const RootsOfExcellence = () => {
 
                         {/* Today */}
                         <div className="ml-6">
-                            <div className="absolute w-3 h-3 bg-blue-600 rounded-full -left-1.5 top-1.5"></div>
+                            <div className="absolute w-3 h-3 bg-[#AD1E1E] rounded-full -left-1.5 top-1.5"></div>
                             <h3 className="text-xl font-semibold font-outfit">
                                 Today – Global Legacy
                             </h3>

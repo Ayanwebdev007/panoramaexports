@@ -70,7 +70,7 @@ const FlipCard = ({ imageUrl, title, address, locationUrl, text }) => {
                             <div className="font-semibold text-md text-white rounded-md px-2 py-1 mt-2">
                                 {address}
                             </div>
-                            <button className="font-semibold text-black bg-white hover:text-white hover:bg-blue-900 rounded-md px-2 py-1 mt-2">
+                            <button className="font-semibold text-black bg-white hover:text-white hover:bg-[#AD1E1E] rounded-md px-2 py-1 mt-2">
                                 {text}
                             </button>
                         </div> */}
